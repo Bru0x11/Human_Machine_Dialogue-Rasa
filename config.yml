@@ -28,5 +28,17 @@ pipeline:
 
 
 # Configuration for Rasa Core.
-# policies:
+policies:
+  - name: TEDPolicy
+    max_history: 8
+    epochs: 20
+    constrain_similarities: yes
+   - name: UnexpecTEDIntentPolicy
+    epochs: 20
+    nlu_threshold: 0.3
+    ambiguity_threshold: 0.1
+    core_threshold: 0.3
+   - name: AugmentedMemoizationPolicy
+    max_history: 4
+  - name: RulePolicy
   
