@@ -1,6 +1,6 @@
 #### This file contains tests to evaluate that your bot behaves as expected.
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
-
+"""
 stories:
 - story: happy path 1
   steps:
@@ -89,3 +89,4 @@ stories:
       are you a bot?
     intent: bot_challenge
   - action: utter_iamabot
+"""

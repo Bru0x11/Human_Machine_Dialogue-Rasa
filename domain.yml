@@ -1,33 +1,31 @@
 version: "3.1"
 
 intents:
-  - greet
+  - greetings
   - goodbye
   - affirm
   - deny
   - mood_great
-  - mood_unhappy
-  - bot_challenge
-
+  - movie_question
+  - give_movie_title
+  - movie_recommendation
+  - out_of_scope
+ 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Hello! I'm Amadeus, your movie assistant. It's great to meet you! "
 
   utter_goodbye:
-  - text: "Thanks for using me, have a nice day!"
+  - text: "Goodbye! It was great chatting with you. Feel free to come back anytime if you have more questions or just want to chat about movies. Have a great day!"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_self_introduction:
+  - text: "I'm here to be your ultimate guide to the world of cinema. Whether you're a die-hard film buff or just looking for a casual movie night suggestion, I'm here to assist you with all your movie-related needs. From classic blockbusters to indie gems, I've got recommendations to suit every taste. So let's dive in and explore the wonderful world of movies together!"
+
+  utter_out_of_scope:
+  - text: "I'm sorry, but that question is out of my scope as a movie assistant. My purpose is to help you with anything related to movies, such as providing recommendations, movie reviews, trivia, and other related information. If you have any movie-related questions, I'd be happy to help you out!"
+
+  utter_still_to_implement:
+  - text: "Still to implement!"
 
 session_config:
   session_expiration_time: 60

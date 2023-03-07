@@ -2,29 +2,41 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: greeting
   steps:
-  - intent: greet
+  - intent: greetings
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - action: utter_self_introduction
+  - checkpoint: start_question_on_movie
 
-- story: sad path 1
+- story: greeting
   steps:
-  - intent: greet
+  - intent: greetings
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - action: utter_self_introduction
+  - checkpoint: start_title_retrieval
 
-- story: sad path 2
+- story: greeting
   steps:
-  - intent: greet
+  - intent: greetings
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - action: utter_self_introduction
+  - checkpoint: start_recommendation
+
+- story: question_on_movie
+  steps:
+  - intent: movie_question
+  - action: utter_still_to_implement
+
+- story: title_retrieval
+  steps:
+  - intent: give_movie_title
+  - action: utter_still_to_implement
+
+- story: recommendation
+  steps:
+  - intent: movie_recommendation
+  - action: utter_still_to_implement
+
+
+

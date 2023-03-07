@@ -1,12 +1,16 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: greetings
   examples: |
     - hey
+    - Hey
     - hello
+    - Hello
     - hi
+    - Hi
     - hello there
+    - Hello there
     - good morning
     - good evening
     - moin
@@ -16,6 +20,9 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - howdy
+    - Howdy
+    - long time no see
 
 - intent: goodbye
   examples: |
@@ -66,26 +73,32 @@ nlu:
     - so good
     - so perfect
 
-- intent: mood_unhappy
+- intent: movie_question 
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - Who created music for The Dark Knight?
 
-- intent: bot_challenge
+- intent: give_movie_title
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Can you remind me the title of that horror movie?
+
+- intent: movie_recommendation
+  examples: |
+    - Can you recommend me a movie?
+
+- intent: out_of_scope
+  examples: |
+    - What's the meaning of life?
+    - What's the best pizza place in town?
+    - Can you help me with my math homework?
+    - What's the weather like today?
+    - How do I fix my broken phone screen?
+    - Who won the Super Bowl last year?
+    - What's the capital of Australia?
+    - Can you recommend a good dentist?
+    - How do I start my own business?
+    - What's the best way to learn a new language?
+    - Can you help me find my lost keys?
+    - What's the price of Bitcoin right now?
+    - How do I make a homemade cake?
+    - Can you recommend a good gym?
+    - What's the meaning of a particular dream I had?
