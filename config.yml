@@ -38,6 +38,7 @@ policies:
     nlu_threshold: 0.3
     ambiguity_threshold: 0.1
     core_threshold: 0.3
+    fallback_action_name: 'action_default_fallback' # TODO: define your own fallback action
    - name: AugmentedMemoizationPolicy
     max_history: 4
   - name: RulePolicy
