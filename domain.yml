@@ -1,15 +1,83 @@
 version: "3.1"
 
 intents:
+  # General intents
   - greetings
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - movie_question
-  - give_movie_title
-  - movie_recommendation
   - out_of_scope
+
+  # Task specific intents
+
+  # Information retrieval (task #1) -> the user knows the title of the movie
+  - movie_genre
+  - movie_producer
+  - movie_director
+  - movie_composer
+  - movie_cast
+  - movie_plot
+  - movie_release_date
+  - movie_budget
+  - movie_runtime
+  - movie_revenue
+  - movie_rating
+  - movie_distributor
+
+  # Title retrieval (task #2) -> the user knows some informations related to a movie (but not the title)
+  - movie_title
+
+  # Movie recommendation (task #3) -> the user asks for a movie similar to other movies/has certain charatestistics
+  - movie_recommendation
+
+entities:
+  - movie_name
+  - genre
+  
+  - composer_name
+  - producer_name
+  - composer_name
+  - director_name
+  - distributor
+  - release_date
+  - budget
+  - runtime
+  - revenue
+  - rating
+
+slots:
+  movie_name:
+    type: text
+  composer_name:
+    type: text
+  producer_name:
+    type: text
+  composer_name:
+    type: text
+  director_name:
+    type: text
+  release_date:
+    type: text
+  budget:
+    type: float
+  runtime:
+    type: text
+  revenue:
+    type: float
+  genre:
+    type: text
+  rating:
+    type: float
+  distributor:
+    type: text
+  plot:
+    type: text
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_self_introduction
+  - utter_out_of_scope
  
 responses:
   utter_greet:

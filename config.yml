@@ -30,16 +30,16 @@ pipeline:
 # Configuration for Rasa Core.
 policies:
   - name: TEDPolicy
-    max_history: 8
-    epochs: 20
+    max_history: 7
+    epochs: 10
     constrain_similarities: yes
-   - name: UnexpecTEDIntentPolicy
-    epochs: 20
+  - name: AugmentedMemoizationPolicy
+    max_history: 4
+  - name: RulePolicy
+  - name: UnexpecTEDIntentPolicy
+    epochs: 10
     nlu_threshold: 0.3
     ambiguity_threshold: 0.1
     core_threshold: 0.3
-    fallback_action_name: 'action_default_fallback' # TODO: define your own fallback action
-   - name: AugmentedMemoizationPolicy
-    max_history: 4
-  - name: RulePolicy
+    fallback_action_name: 'action_default_fallback'
   
