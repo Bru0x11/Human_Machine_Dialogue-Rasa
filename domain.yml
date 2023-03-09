@@ -1,16 +1,11 @@
 version: "3.1"
 
 intents:
-  # General intents
   - greetings
   - goodbye
   - affirm
   - deny
-  - out_of_scope
-
-  # Task specific intents
-
-  # Information retrieval (task #1) -> the user knows the title of the movie
+  - out_of_scopee
   - movie_genre
   - movie_producer
   - movie_director
@@ -23,20 +18,14 @@ intents:
   - movie_revenue
   - movie_rating
   - movie_distributor
-
-  # Title retrieval (task #2) -> the user knows some informations related to a movie (but not the title)
   - movie_title
-
-  # Movie recommendation (task #3) -> the user asks for a movie similar to other movies/has certain charatestistics
   - movie_recommendation
 
 entities:
   - movie_name
   - genre
-  
   - composer_name
   - producer_name
-  - composer_name
   - director_name
   - distributor
   - release_date
@@ -47,37 +36,64 @@ entities:
 
 slots:
   movie_name:
-    type: text
-  composer_name:
-    type: text
-  producer_name:
-    type: text
-  composer_name:
-    type: text
-  director_name:
-    type: text
-  release_date:
-    type: text
-  budget:
-    type: float
-  runtime:
-    type: text
-  revenue:
-    type: float
+    type: any
+    mappings:
+    - type: from_entity
+      entity: movie_name 
   genre:
-    type: text
-  rating:
-    type: float
-  distributor:
-    type: text
-  plot:
-    type: text
-
-actions:
-  - utter_greet
-  - utter_goodbye
-  - utter_self_introduction
-  - utter_out_of_scope
+    type: any
+    mappings:
+    - type: from_entity
+      entity: genre
+  # producer_name:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: producer_name
+  # composer_name:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: composer_name
+  # director_name:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: director_name
+  # release_date:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: release_date
+  # budget:
+  #   type: float
+  #   mappings:
+  #   - type: from_entity
+  #     entity: budget
+  # runtime:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: runtime
+  # revenue:
+  #   type: float
+  #   mappings:
+  #   - type: from_entity
+  #     entity: revenue
+  # rating:
+  #   type: float
+  #   mappings:
+  #   - type: from_entity
+  #     entity: rating
+  # distributor:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: distributor
+  # plot:
+  #   type: text
+  #   mappings:
+  #   - type: custom
  
 responses:
   utter_greet:
@@ -94,6 +110,20 @@ responses:
 
   utter_still_to_implement:
   - text: "Still to implement!"
+
+  utter_prova:
+  - text: "Sono nel posto giusto"
+
+  utter_ask_whatever:
+  - text: "What would you like to know?"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_self_introduction
+  - utter_out_of_scope
+  - utter_ask_whatever
+  - utter_prova
 
 session_config:
   session_expiration_time: 60
