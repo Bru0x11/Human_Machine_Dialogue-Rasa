@@ -1,4 +1,4 @@
-version: "3.1"
+version: "2.0"
 
 stories:
 - story: greeting
@@ -6,16 +6,30 @@ stories:
   - intent: greetings
   - action: utter_greet
   - action: utter_self_introduction
+  - action: utter_ask_whatever
+  - checkpoint: make_question
 
-- story: question_on_movie
+- story: retrieve_movie_info
   steps:
+  - checkpoint: make_question
   - intent: movie_genre
-  - action: utter_prova
+  - action: utter_return_movie_name
+  - action: action_retrieve_genre
 
-- story: question_on_movie
+- story: retrieve_movie_info
   steps:
+  - checkpoint: make_question
   - intent: movie_producer
-  - action: utter_still_to_implement
+  - action: utter_return_movie_producer
+  - action: utter_ask_whatever
+
+- story: retrieve_movie_info
+  steps:
+  - checkpoint: make_question
+  - intent: movie_composer
+  - action: utter_return_movie_composer
+  - action: utter_ask_whatever
+
 # - story: greeting
 #   steps:
 #   - intent: greetings

@@ -7,8 +7,15 @@ import requests
 import tmdbsimple as tmdb
 
 tmdb.API_KEY = "a3d485e7dbba8ea69c0d9041ab46207a"
-movie = tmdb.Movies(603)
+movie = tmdb.Movies()
 search = tmdb.Search()
-response = movie.info()
-query = search.movie(query='Tomb Raider')
-print(query)
+genres = tmdb.Genres()
+
+query = search.movie(query="Scream")
+movie_id = query.get("results")[0].get("id")
+print(movie_id)
+response = tmdb.Movies(movie_id).info()
+print(response)
+all_movie_genres = response.get("producer")
+print(all_movie_genres)
+

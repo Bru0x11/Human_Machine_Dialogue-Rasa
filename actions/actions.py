@@ -1,27 +1,54 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
+from typing import Any, Text, Dict, List
 
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 
-# This is a simple example for a custom action which utters "Hello World!"
+import requests
+import tmdbsimple as tmdb
 
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
+tmdb.API_KEY = "a3d485e7dbba8ea69c0d9041ab46207a"
+
+class ActionRetrieveGenre(Action):
+
+    def name(self):
+        return 'action_retrieve_genre'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        search = tmdb.Search()
+
+        movie_title = tracker.get_slot("movie_name")
+        query = search.movie(query=movie_title)
+        movie_id = query.get("results")[0].get("id")
+        response = tmdb.Movies(movie_id).info()
+        all_movie_genres = response.get("genres")
+        result = ""
+        for i in range(len(all_movie_genres)):
+           print(all_movie_genres[i].get("name"))
+           result += str(all_movie_genres[i].get("name")) + " "
+        
+        dispatcher.utter_message(text=result)
+
+        return []
+
+class ActionRetrieveProducer(Action):
+
+    def name(self):
+        return 'action_retrieve_genre'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        search = tmdb.Search()
+
+        movie_title = tracker.get_slot("movie_name")
+        query = search.movie(query=movie_title)
+        movie_id = query.get("results")[0].get("id")
+        response = tmdb.Movies(movie_id).info()
+        all_movie_genres = response.get("genres")
+        result = ""
+        for i in range(len(all_movie_genres)):
+           print(all_movie_genres[i].get("name"))
+           result += str(all_movie_genres[i].get("name")) + " "
+        
+        dispatcher.utter_message(text=result)
+
+        return []
