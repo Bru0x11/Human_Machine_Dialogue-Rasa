@@ -39,6 +39,39 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - ok, bye
+    - ok perfect, bye
+    - Alright, see you later.
+    - Okay, goodbye for now.
+    - Got it, talk to you soon.
+    - Sounds good, catch you later.
+    - Understood, bye for now.
+    - Agreed, talk to you later.
+    - Fine, see you soon.
+    - Sure, bye for now.
+    - All right, chat with you later.
+    - Acknowledged, talk to you soon.
+    - Affirmative, goodbye for now.
+    - Roger that, see you later.
+    - Copy that, talk to you soon.
+    - No problem, bye for now.
+    - Cool, catch you later.
+    - Alrighty then, talk to you soon.
+    - Gotcha, see you later.
+    - Fine with me, goodbye for now.
+    - I understand, talk to you later.
+    - No worries, catch you later.
+    - Alright then, talk to you soon.
+    - OK, bye now.
+    - Affirmative, see you later.
+    - Copy that, goodbye for now.
+    - Sounds good to me, talk to you later.
+    - Sure thing, catch you later.
+    - Agreeable, bye for now.
+    - Okay then, talk to you soon.
+    - Got it, see you later.
+    - That's fine, goodbye for now.
+    - I comprehend, talk to you later.
 
 - intent: affirm
   examples: |
@@ -95,6 +128,40 @@ nlu:
 # Task specific intents
 
 # TASK #1
+- intent: ask_movie_question
+  examples: |
+    - I have some questions about movies that I'd like to ask.
+    - My questions are related to movies and I'd like to inquire about them.
+    - I'm interested in asking questions about movies.
+    - I'd like to pose some questions that pertain to movies.
+    - My queries are movie-centric and I'd like to ask them.
+    - I'm curious about movies and have some questions I'd like to ask.
+    - I have some movie-related inquiries that I would like to make.
+    - I'm hoping to ask questions specifically about movies.
+    - I have some questions about the cinema that I'd like to inquire about.
+    - I'd like to ask some questions that are related to the world of movies.
+    - I'm looking to pose some questions related to movies.
+    - My intention is to ask questions pertaining to movies.
+    - I have a few inquiries about movies that I'd like to make.
+    - I'm interested in asking questions about the world of movies.
+    - I'd like to ask some questions about films.
+    - Can I ask some questions related to movies?
+    - I want to ask a few questions about movies, if that's alright.
+    -- I'm hoping to discuss some movie-related questions.
+    - I have some movie-related questions that I'd like to ask.
+    - Could I trouble you with some questions about movies?
+    - I'm curious and would like to ask some questions about movies.
+    - I'd like to learn more about movies by asking some questions.
+    - I have a thirst for knowledge and want to ask some movie-related questions.
+    - Can we talk about movies and ask some questions?
+    - I'd appreciate the opportunity to ask some questions about movies.
+    - I'm eager to ask some questions about movies if that's okay.
+    - May I ask a few questions about movies?
+    - I'm keen to discuss some questions related to movies.
+    - I have some burning questions about movies that I'd like to ask.
+    - I want to pick your brain about movies by asking some questions.
+
+
 - intent: movie_genre
   examples: |
     - What genre would you classify [The Shawshank Redemption](movie_name) as?
@@ -118,7 +185,7 @@ nlu:
     - Would you classify [The Terminator](movie_name) as a [sci-fi](genre) or an [action](genre) movie?
     - What genre does [The Sound of Music](movie_name) fall under?
     - Can you tell me the genre of [E.T. the Extra-Terrestrial](movie_name)?
-    - I'm curious, what genre does [Titanic](movie_name) belong to?
+    - I'm curious, what genre does [Scream](movie_name) belong to?
     - How would you categorize [The Exorcist](movie_name) in terms of genre?
     - Do you know the genre of [The Princess Diaries](movie_name)?
     - Can you give me an idea of the genre of [Finding Nemo](movie_name)?
@@ -141,6 +208,27 @@ nlu:
     - Can you tell me the genre of [Toy Story 3](movie_name)?
     - I'm wondering, what genre does [Finding Dory](movie_name) fall under?
     - How would you categorize [Wreck-It Ralph](movie_name) in terms of genre?
+    - What genre does it belong to?
+    - Could you tell me the movie's genre?
+    - What category does it fall under?
+    - What kind of movie is it?
+    - In what genre does the movie fit?
+    - What is the movie's classification?
+    - What genre does the movie fall into?
+    - What is the movie's style?
+    - What type of movie is it?
+    - Can you describe the movie's genre?
+    - What is the genre of the movie we're discussing?
+    - What is the movie's theme?
+    - What is the nature of the movie?
+    - What is the movie's classification in terms of genre?
+    - What genre does the movie fall under specifically?
+    - Can you tell me the movie's category?
+    - What is the movie's genre classification?
+    - In what genre does the movie primarily belong to?
+    - What category of film does the movie fall under?
+    - Can you clarify the genre of the movie?
+    - its genre
 
 - intent: movie_producer
   examples: |
@@ -193,6 +281,28 @@ nlu:
     - Who was the producer of [The Godfather](movie_name)?
     - Can you find out who produced [The King's Speech](movie_name)?
     - Who produced [Rain Man](movie_name)?
+    - its producer
+    - Who produced the movie?
+    - Could you tell me about the film's production company?
+    - Who is behind the making of the movie?
+    - Who was in charge of producing the movie?
+    - What is the name of the movie's producer?
+    - Who funded the movie's production?
+    - Can you give me more information about the movie's producer?
+    - Who is responsible for producing the movie?
+    - Who backed the making of the movie?
+    - Could you tell me about the production team behind the movie?
+    - What company produced the movie?
+    - Who is the producer of the movie?
+    - Can you provide more details about the people behind the movie's production?
+    - Who oversaw the making of the movie?
+    - Who financed the movie's production?
+    - Who are the executive producers of the movie?
+    - Who was involved in producing the movie?
+    - Can you give me some information about the production of the movie?
+    - Who is credited as the producer for the movie?
+    - Who put together the movie's production team?
+
 
 - intent: movie_director
   examples: |
@@ -246,6 +356,27 @@ nlu:
     - Who was the director of [Taxi Driver](movie_name)?
     - [The Good, the Bad and the Ugly](movie_name), who directed this film?
     - Who directed [Psycho](movie_name)?
+    - its director
+    - Who directed the movie?
+    - Can you tell me the name of the film's director?
+    - What is the director's name?
+    - Who is the person behind the movie's direction?
+    - Could you provide more information about the movie's director?
+    - Who was in charge of directing the movie?
+    - What is the name of the person who directed the movie?
+    - Who is responsible for the direction of the movie?
+    - Who is the director of the movie?
+    - Can you give me some details about the movie's director?
+    - Who helmed the movie's direction?
+    - Who was in charge of the movie's creative vision?
+    - Who led the movie's direction and creative choices?
+    - Who was responsible for directing the actors in the movie?
+    - Who oversaw the movie's direction and production?
+    - Can you tell me who was at the helm of the movie's direction?
+    - Who is credited as the director for the movie?
+    - Who was involved in the movie's direction?
+    - Who put together the movie's creative team, including the director?
+    - Who had creative control over the movie's direction?
 
 - intent: movie_composer
   examples: |
@@ -284,11 +415,32 @@ nlu:
     - Who composed the music for [The Exorcist](movie_name)?
     - [Psycho](movie_name), who was the composer of this film?
     - Who is the composer of [Schindler's List](movie_name)?
-    - [The Godfather: Part II](movie_name), who composed the music for this film?
+    - [Scream](movie_name), who composed the music for this film?
     - Who composed the music for [The Hateful Eight](movie_name)?
     - [Ghostbusters](movie_name), who was the composer of this film? 
     - Who is the composer of [The Grand Budapest Hotel](movie_name)?
     - [Doctor Zhivago](movie_name), who composed the music for this movie?
+    - its composer
+    - Who composed the music for the movie?
+    - Could you tell me about the film's composer?
+    - What is the name of the person who created the movie's score?
+    - Who is responsible for the movie's soundtrack?
+    - Can you give me more information about the movie's music composer?
+    - Who was in charge of composing the movie's music?
+    - What is the name of the person who composed the movie's music?
+    - Who is credited with creating the movie's music?
+    - Who is the composer of the movie's score?
+    - Can you provide more details about the person behind the movie's music?
+    - Who wrote the movie's score?
+    - Who is responsible for the movie's musical arrangements?
+    - Who oversaw the creation of the movie's music?
+    - Who was involved in composing the movie's score?
+    - Who created the musical themes for the movie?
+    - Can you tell me about the composer's previous work?
+    - Who collaborated with the composer on the movie's music?
+    - Who put together the movie's musical team, including the composer?
+    - Who had creative control over the movie's music?
+    - Can you give me some information about the music created specifically for the movie?
 
 - intent: movie_cast
   examples: |
@@ -339,6 +491,27 @@ nlu:
     - Who is in the cast of [The Matrix Reloaded](movie_name)?
     - [The Lord of the Rings: The Two Towers](movie_name), who stars in this movie?
     - Who are the actors in [The Sixth Sense](movie_name)?
+    - its cast
+    - Who starred in the movie?
+    - Can you tell me about the film's cast?
+    - What is the name of the movie's actors?
+    - Who are the main actors in the movie?
+    - Could you provide more information about the movie's cast?
+    - Who played the lead roles in the movie?
+    - What is the name of the person who portrayed the main character?
+    - Who is credited with acting in the movie?
+    - Who were the supporting actors in the movie?
+    - Can you give me some details about the cast of the movie?
+    - Who performed the movie's major roles?
+    - Who was responsible for casting the actors in the movie?
+    - Who are the people behind the movie's performances?
+    - Who was involved in selecting the actors for the movie?
+    - Who had significant roles in the movie's casting?
+    - Can you tell me about the previous works of the movie's actors?
+    - Who collaborated with the actors in the movie's production?
+    - Who put together the movie's cast?
+    - Who had creative control over the movie's casting choices?
+    - Can you provide some information about the chemistry between the actors in the movie?
 
 - intent: movie_plot
   examples: |
@@ -392,6 +565,27 @@ nlu:
     - What is [One Flew Over the Cuckoo's Nest](movie_name) about?
     - Can you tell me the storyline of [The Godfather: Part III](movie_name)?
     - [The Dark Knight](movie_name), what is the plot of this movie?
+    - its plot
+    - Could you tell me more about the movie's storyline?
+    - What is the movie's premise?
+    - Can you give me an overview of the movie's plot?
+    - What is the movie about?
+    - Could you describe the movie's narrative?
+    - What is the main storyline of the movie?
+    - What is the movie's central conflict?
+    - Can you give me a brief summary of the movie's plot?
+    - What is the movie's main storyline?
+    - What is the movie's primary plot?
+    - Can you tell me what happens in the movie?
+    - What is the movie's storyline?
+    - Could you elaborate on the movie's plot?
+    - What is the movie's storyline or narrative arc?
+    - Can you provide more information about the movie's plot?
+    - What is the movie's central theme or message?
+    - Could you describe the movie's main events?
+    - What is the movie's main plotline?
+    - What are the major plot points of the movie?
+    - Can you give me a rundown of the movie's plot?
 
 - intent: movie_release_date
   examples: |
@@ -444,6 +638,27 @@ nlu:
     - [The Sixth Sense](movie_name), what is the release date for this movie?
     - What is the release date of [One Flew Over the Cuckoo's Nest](movie_name)?
     - Can you tell me when [The Godfather: Part III](movie_name) was released?
+    - its release date
+    - When was the movie released?
+    - Can you tell me when the film was released?
+    - What is the movie's release date?
+    - When did the movie hit theaters?
+    - Could you provide more information about the movie's release date?
+    - When was the movie made available for public viewing?
+    - What date did the movie come out?
+    - When was the movie first screened to the public?
+    - When did the movie premiere?
+    - Can you give me some details about the movie's release?
+    - When did the movie become available for streaming or rental?
+    - What is the date the movie was distributed?
+    - When did the movie become widely available to the public?
+    - When was the movie officially released in theaters?
+    - When did the movie become commercially available?
+    - Can you tell me about any significant events that happened on the movie's release date?
+    - When was the movie released in different countries?
+    - When did the movie become available on DVD or Blu-ray?
+    - Can you provide information about any delays in the movie's release?
+    - When did the movie's promotional campaign begin in anticipation of its release?
 
 - intent: movie_budget
   examples: |
@@ -483,6 +698,27 @@ nlu:
     - What was the total budget for [Rocky](movie_name)?
     - Do you happen to know how much [The Terminator](movie_name) cost to produce?
     - How much did [E.T. the Extra-Terrestrial](movie_name) cost to make?
+    - its budget
+    - What was the movie's budget?
+    - Can you tell me about the film's budget?
+    - What is the budget of the movie?
+    - How much money was spent on the movie?
+    - Could you provide more information about the movie's budget?
+    - What was the production budget for the movie?
+    - What was the cost of making the movie?
+    - How much did it cost to produce the movie?
+    - What is the estimated budget for the movie?
+    - Can you give me some details about the movie's financing?
+    - What was the movie's funding source?
+    - What was the budget allocation for various aspects of the movie?
+    - How much was spent on the movie's special effects?
+    - How much did the movie's cast and crew get paid?
+    - Can you provide information about the profitability of the movie?
+    - What was the return on investment for the movie?
+    - What was the production budget compared to the box office revenue?
+    - How did the budget affect the movie's creative choices?
+    - Can you tell me about any significant financial decisions made during the movie's production?
+    - What were the economic factors that affected the movie's budget?
 
 - intent: movie_runtime
   examples: |
@@ -506,6 +742,27 @@ nlu:
     - How much time does [The Terminator](movie_name) take up?
     - Do you know the length of [The Princess Bride](movie_name)?
     - Could you tell me the duration of [The Wizard of Oz](movie_name)?
+    - its runtime
+    - How long is the movie?
+    - Can you tell me the film's runtime?
+    - What is the movie's length?
+    - How much time does the movie take up?
+    - Could you provide more information about the movie's runtime?
+    - What is the duration of the movie?
+    - How long does the movie run for?
+    - How much time does the movie require?
+    - Can you give me some details about the movie's duration?
+    - What is the running time of the movie?
+    - How long is the movie from beginning to end?
+    - What is the total length of the movie?
+    - Can you tell me how many minutes the movie is?
+    - How long does the movie last?
+    - What is the time limit for the movie?
+    - How long is the movie compared to other movies?
+    - Can you provide information about any significant cuts made to the movie's runtime?
+    - How did the runtime affect the movie's pacing and storytelling?
+    - Can you tell me about any notable scenes or moments in the movie's runtime?
+    - How did the runtime compare to the movie's source material or genre standards?
 
 - intent: movie_revenue
   examples: |
@@ -529,6 +786,27 @@ nlu:
     - How much did [The Exorcist](movie_name) make at the box office?
     - Do you know the financial success of [The Sound of Music](movie_name)?
     - Could you tell me the total revenue of [Gone with the Wind](movie_name)?
+    - its revenue
+    - How much money did the movie make?
+    - Can you tell me about the film's revenue?
+    - What was the movie's box office earnings?
+    - How successful was the movie at the box office?
+    - Could you provide more information about the movie's revenue?
+    - What is the total revenue generated by the movie?
+    - How much profit did the movie make?
+    - What was the gross revenue of the movie?
+    - Can you give me some details about the movie's financial performance?
+    - What was the movie's return on investment?
+    - How much revenue did the movie generate compared to its budget?
+    - What is the overall financial success of the movie?
+    - Can you tell me about any significant events that impacted the movie's revenue?
+    - How did the movie's marketing and promotion affect its revenue?
+    - What was the distribution revenue of the movie?
+    - Can you provide information about the movie's international revenue?
+    - What was the movie's profit margin?
+    - How did the revenue compare to other movies of the same genre or release period?
+    - Can you tell me about any long-term revenue streams related to the movie, such as home video sales or merchandise?
+    - What was the audience and critical reception of the movie's revenue performance?
 
 - intent: movie_rating
   examples: |
@@ -552,6 +830,27 @@ nlu:
     - What's the general opinion of [The Terminator](movie_name)?
     - I'm curious, how well was [The Princess Bride](movie_name) received by audiences and critics?
     - Could you tell me how [The Wizard of Oz](movie_name) is generally rated?
+    - its rating
+    - What is the movie's rating?
+    - Can you tell me about the film's rating?
+    - How was the movie rated?
+    - What rating did the movie receive?
+    - Could you provide more information about the movie's rating?
+    - How did audiences and critics rate the movie?
+    - What is the movie's overall rating?
+    - Can you give me some details about the movie's rating system?
+    - What are the factors that influenced the movie's rating?
+    - What is the movie's classification or certification?
+    - How does the movie's rating compare to other movies of the same genre or rating system?
+    - Can you provide information about the movie's content rating?
+    - What was the audience response to the movie's rating?
+    - How did the rating impact the movie's marketing and promotion?
+    - What was the critical response to the movie's rating?
+    - Can you tell me about any controversies surrounding the movie's rating?
+    - How did the movie's rating influence its distribution and release?
+    - What are the implications of the movie's rating for viewers?
+    - Can you provide information about any alternative ratings or classifications for the movie?
+    - What was the impact of the movie's rating on its overall success or reception?
 
 - intent: movie_distributor
   examples: |
@@ -602,12 +901,50 @@ nlu:
     - Which studio is handling distribution for [Terminator 2: Judgment Day](movie_name)?
     - Can you tell me the distributor of [Braveheart](movie_name)?
     - I'm trying to find out who's handling distribution for [The Green Mile](movie_name), can you help?
+    - its distributor
+    - Who distributed the movie?
+    - Can you tell me about the film's distributor?
+    - How was the movie distributed?
+    - What company distributed the movie?
+    - Could you provide more information about the movie's distribution?
+    - What is the name of the movie's distributor?
+    - Can you give me some details about the movie's distribution channels?
+    - Can you provide information about the movie's international distribution?
 
 
 # TASK #2
-- intent: movie_title
+- intent: ask_movie_title
   examples: |
-    - Can you remind me the title of that horror movie?
+    - Can you help me find the name of a movie?
+    - I'm interested in discovering the title of a particular movie.
+    - I'm trying to remember the name of a movie and was wondering if you could help me out.
+    - I'd appreciate it if you could tell me the title of a certain movie.
+    - Could you provide me with the name of a specific movie?
+    - I'm searching for the title of a particular movie, can you assist me?
+    - I'm looking to find out the name of a movie, do you know it?
+    - Would you happen to know the title of a certain movie I'm thinking of?
+    - I'm curious about the title of a certain movie, can you tell me?
+    - I'd like to know the name of a certain movie, if you don't mind.
+    - Can you help me recall the title of a movie that's on the tip of my tongue?
+    - I need help identifying the title of a movie, can you assist me?
+    - I'm trying to find out the name of a movie that I saw a while back.
+    - Could you tell me the title of a particular movie that I'm thinking of?
+    - I'm looking for the name of a movie that I can't seem to remember.
+    - I'm interested in knowing the title of a specific movie, can you help me out?
+    - Can you provide me with the title of a certain movie that I'm thinking of?
+    - I'm curious to know the name of a certain movie that I saw part of.
+    - Would you be able to tell me the title of a certain movie that I'm trying to remember?
+    - I'd like to find out the name of a certain movie that's been on my mind lately.
+    - Can you help me figure out the title of a movie that I saw a while ago?
+    - I'm looking to identify the title of a certain movie that I remember liking.
+    - Could you assist me in finding the title of a movie that I saw a clip of?
+    - I'm searching for the name of a movie that I remember only a few details about.
+    - I'm trying to recall the name of a movie and would appreciate any help you can give.
+    - Can you tell me the name of a specific movie that I'm thinking of?
+    - I'm interested in discovering the title of a certain movie that I heard about.
+    - I'd like to know the name of a certain movie that I watched a long time ago.
+    - Can you help me find the title of a movie that I remember only parts of?
+    - I'm curious about the title of a certain movie that I heard good things about.
 
 
 # - What is the main theme of the movie?
@@ -661,6 +998,35 @@ nlu:
 
 
 # TASK #3
-- intent: movie_recommendation
+- intent: ask_recommendation
   examples: |
-    - Can you recommend me a movie?
+    - Could you suggest a good movie to watch?
+    - Do you have any recommendations for a movie to watch?
+    - What movie would you suggest I watch?
+    - Can you give me a movie recommendation?
+    - I'm looking for a movie to watch, do you have any suggestions?
+    - Could you recommend a movie that you enjoyed?
+    - What's a good movie you'd recommend?
+    - Do you have a favorite movie that you'd recommend?
+    - Can you suggest a movie that's worth watching?
+    - I'm in the mood for a movie, do you have any recommendations?
+    - Could you suggest a movie that's similar to one I liked?
+    - What's a movie you'd recommend for a movie night?
+    - Can you recommend a movie that's suitable for kids?
+    - I'm looking for a movie that's not too heavy, can you recommend one?
+    - Could you recommend a classic movie to watch?
+    - Do you have a favorite comedy movie you'd recommend?
+    - Can you suggest a movie with a good plot?
+    - I'm in the mood for a thriller, could you recommend one?
+    - Could you suggest a movie that's based on a true story?
+    - What's a good action movie you'd recommend?
+    - Can you recommend a movie with great cinematography?
+    - I'm looking for a romantic movie to watch, do you have any suggestions?
+    - Could you recommend a movie that won an award?
+    - What's a movie you'd recommend for a rainy day?
+    - Can you suggest a movie that's suitable for the whole family?
+    - I'm in the mood for a foreign movie, could you recommend one?
+    - Could you recommend a movie that's set in a specific time period?
+    - What's a good science fiction movie you'd recommend?
+    - Can you suggest a movie that's based on a book?
+    - I'm looking for a feel-good movie, could you recommend one?

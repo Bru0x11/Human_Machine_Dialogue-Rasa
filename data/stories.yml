@@ -6,77 +6,22 @@ stories:
   - intent: greetings
   - action: utter_greet
   - action: utter_self_introduction
-  - action: utter_ask_whatever
-  - checkpoint: make_question
+  - action: utter_decision
 
-- story: retrieve_movie_info
+# TASK #1
+- story: begin_asking_questions
   steps:
-  - checkpoint: make_question
-  - intent: movie_genre
-  - action: utter_return_movie_name
-  - action: action_retrieve_genre
-
-- story: retrieve_movie_info
-  steps:
-  - checkpoint: make_question
-  - intent: movie_producer
-  - action: utter_return_movie_producer
+  - intent: ask_movie_question
   - action: utter_ask_whatever
 
-- story: retrieve_movie_info
+# TASK #2
+- story: title_retrieval
   steps:
-  - checkpoint: make_question
-  - intent: movie_composer
-  - action: utter_return_movie_composer
-  - action: utter_ask_whatever
+  - intent: ask_movie_title
+  - action: utter_still_to_implement
 
-# - story: greeting
-#   steps:
-#   - intent: greetings
-#   - action: utter_greet
-#   - action: utter_self_introduction
-#   - checkpoint: information_retrival
-#   - action: utter_ask_whatever
-#   - checkpoint: start_title_retrieval
-
-# - story: greeting
-#   steps:
-#   - intent: greetings
-#   - action: utter_greet
-#   - action: utter_self_introduction
-#   - checkpoint: movie_recommendation
-#   - action: utter_ask_whatever
-#   - checkpoint: start_recommendation
-
-# # TASK #1
-# - story: question_on_movie
-#   steps:
-#   - checkpoint: start_question_on_movie
-#   - intent: movie_genre
-#   - action: utter_still_to_implement
-#   #- checkpoint: movie_related_queries
-
-# - story: question_on_producer
-#   steps:
-#   - checkpoint: start_question_on_movie
-#   - intent: movie_producer
-#   - action: utter_still_to_implement
-#   - checkpoint: movie_related_queries
-
-# - story: finish_querying
-#   steps:
-#   - checkpoint: start_question_on_movie
-#   - intent: deny
-#   - action: utter_goodbye
-
-# # TASK #2
-# - story: title_retrieval
-#   steps:
-#   - intent: movie_title
-#   - action: utter_still_to_implement
-
-# # TASK #3
-# - story: recommendation
-#   steps:
-#   - intent: movie_recommendation
-#   - action: utter_still_to_implement
+# TASK #3
+- story: recommendation
+  steps:
+  - intent: ask_recommendation
+  - action: utter_still_to_implement

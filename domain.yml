@@ -5,9 +5,11 @@ intents:
   - goodbye
   - affirm
   - deny
-  - out_of_scopee
+  - out_of_scope
+  - ask_movie_question
+  - ask_movie_title
+  - ask_recommendation
   - movie_genre
-  - movie_producer
   - movie_director
   - movie_composer
   - movie_cast
@@ -18,15 +20,14 @@ intents:
   - movie_revenue
   - movie_rating
   - movie_distributor
-  - movie_title
-  - movie_recommendation
+  - movie_producer
 
 entities:
   - movie_name
   - genre
   - composer_name
-  - producer_name
   - director_name
+  - producer_name
   - distributor
   - release_date
   - budget
@@ -36,53 +37,32 @@ entities:
 
 slots:
   movie_name:
-    type: any
-  genre:
-    type: any
-  producer_name:
     type: text
-  composer_name:
+  genre:
+    type: text
+  release_date:
+    type: text
+  budget:
     type: any
-  
-  # director_name:
-  #   type: text
-  #   mappings:
-  #   - type: from_entity
-  #     entity: director_name
-  # release_date:
-  #   type: text
-  #   mappings:
-  #   - type: from_entity
-  #     entity: release_date
-  # budget:
-  #   type: float
-  #   mappings:
-  #   - type: from_entity
-  #     entity: budget
-  # runtime:
-  #   type: text
-  #   mappings:
-  #   - type: from_entity
-  #     entity: runtime
-  # revenue:
-  #   type: float
-  #   mappings:
-  #   - type: from_entity
-  #     entity: revenue
-  # rating:
-  #   type: float
-  #   mappings:
-  #   - type: from_entity
-  #     entity: rating
+  runtime:
+    type: any
+  revenue:
+    type: any
+  plot:
+    type: text
+  rating:
+    type: float
   # distributor:
   #   type: text
   #   mappings:
   #   - type: from_entity
   #     entity: distributor
-  # plot:
-  #   type: text
-  #   mappings:
-  #   - type: custom
+  composer_name:
+    type: any
+  director_name:
+    type: any
+  producer_name:
+    type: any
  
 responses:
   utter_greet:
@@ -94,6 +74,22 @@ responses:
   utter_self_introduction:
   - text: "I'm here to be your ultimate guide to the world of cinema. Whether you're a die-hard film buff or just looking for a casual movie night suggestion, I'm here to assist you with all your movie-related needs. From classic blockbusters to indie gems, I've got recommendations to suit every taste. So let's dive in and explore the wonderful world of movies together!"
 
+  utter_decision:
+  - text: "What would you like to do?"
+    buttons:
+      - title: "Ask movie-related questions"
+        payload: "/ask_movie_question"
+      - title: "Find out the title of a movie"
+        payload: "/ask_movie_title"
+      - title: "Recommend a movie"
+        payload: "/ask_recommendation"
+
+  utter_ask_whatever:
+  - text: "What would you like to know?"
+
+  utter_keep_asking:
+  - text: "Do you want to know something else about {movie_name} or other films?"
+
   utter_out_of_scope:
   - text: "I'm sorry, but that question is out of my scope as a movie assistant. My purpose is to help you with anything related to movies, such as providing recommendations, movie reviews, trivia, and other related information. If you have any movie-related questions, I'd be happy to help you out!"
 
@@ -103,14 +99,35 @@ responses:
   utter_return_movie_genre:
   - text: "The genre of {movie_name} is {genre}"
 
+  utter_return_movie_release_date:
+  - text: "The release_date of the movie {movie_name} is {release_date}"
+
+  utter_return_movie_budget:
+  - text: "The total budget for {movie_name} is {budget}"
+
+  utter_return_movie_runtime:
+  - text: "The {movie_name} lasts {runtime}"
+
+  utter_return_movie_revenue:
+  - text: "The revenue of {movie_name} amounts to {revenue}"
+
+  utter_return_movie_plot:
+  - text: "The plot of {movie_name} is the following: {plot}"
+
+  utter_return_movie_rating:
+  - text: "The rating of {movie_name} is {rating}"
+
+  utter_return_movie_director:
+  - text: "The director of {movie_name} is {director_name}"
+
   utter_return_movie_producer:
   - text: "The producer of {movie_name} is {producer_name}"
 
   utter_return_movie_composer:
   - text: "The composer of {movie_name} is {composer_name}"
 
-  utter_ask_whatever:
-  - text: "What would you like to know?"
+  utter_finished_information:
+  - text: "You asked all the information I know about {movie_name}"
 
   utter_still_to_implement:
   - text: "Still to implement!"
@@ -123,12 +140,29 @@ actions:
   - utter_goodbye
   - utter_self_introduction
   - utter_return_movie_genre
-  - utter_return_movie_producer
   - utter_return_movie_composer
+  - utter_return_movie_release_date
+  - utter_return_movie_budget
+  - utter_return_movie_runtime
+  - utter_return_movie_revenue
+  - utter_return_movie_plot
+  - utter_return_movie_rating
+  - utter_return_movie_director
   - utter_out_of_scope
   - utter_ask_whatever
   - utter_prova
   - action_retrieve_genre
+  - action_retrieve_director
+  - action_retrieve_release_date
+  - action_retrieve_budget
+  - action_retrieve_runtime
+  - action_retrieve_revenue
+  - action_retrieve_plot
+  - action_retrieve_rating
+  - action_retrieve_composer
+  - action_retrieve_producer
+
+
 
 session_config:
   session_expiration_time: 60

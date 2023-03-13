@@ -16,3 +16,67 @@ rules:
   steps:
   - intent: movie_genre
   - action: action_retrieve_genre
+  - action: utter_return_movie_genre
+  - action: utter_keep_asking
+
+- rule: Movie director retrieval
+  steps:
+  - intent: movie_director
+  - action: action_retrieve_director
+  - action: utter_return_movie_director
+  - action: utter_keep_asking
+
+- rule: Movie release date retrieval
+  steps:
+  - intent: movie_release_date
+  - action: action_retrieve_release_date
+  - action: utter_return_movie_release_date
+  - action: utter_keep_asking
+
+- rule: Movie budget retrieval
+  steps:
+  - intent: movie_budget
+  - action: action_retrieve_budget
+  - action: utter_return_movie_budget
+  - action: utter_keep_asking
+
+- rule: Movie runtime retrieval
+  steps:
+  - intent: movie_runtime
+  - action: action_retrieve_runtime
+  - action: utter_return_movie_runtime
+  - action: utter_keep_asking
+
+- rule: Movie revenue retrieval
+  steps:
+  - intent: movie_revenue
+  - action: action_retrieve_revenue
+  - action: utter_return_movie_revenue
+  - action: utter_keep_asking
+
+- rule: Movie plot retrieval
+  steps:
+  - intent: movie_plot
+  - action: action_retrieve_plot
+  - action: utter_return_movie_plot
+  - action: utter_keep_asking
+
+- rule: Movie rating retrieval
+  steps:
+  - intent: movie_rating
+  - action: action_retrieve_rating
+  - action: utter_return_movie_rating
+  - action: utter_keep_asking
+
+- rule: Movie composer retrieval
+  steps:
+  - intent: movie_composer
+  - action: action_retrieve_composer
+  - action: utter_return_movie_composer
+  - action: utter_keep_asking
+
+- rule: Movie producer retrieval
+  steps:
+  - intent: movie_producer
+  - action: utter_return_movie_producer
+  - action: utter_keep_asking

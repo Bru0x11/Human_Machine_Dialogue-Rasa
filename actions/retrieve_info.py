@@ -7,15 +7,16 @@ import requests
 import tmdbsimple as tmdb
 
 tmdb.API_KEY = "a3d485e7dbba8ea69c0d9041ab46207a"
-movie = tmdb.Movies()
 search = tmdb.Search()
-genres = tmdb.Genres()
-
-query = search.movie(query="Scream")
+movie_title = "Avatar"
+query = search.movie(query=movie_title)
 movie_id = query.get("results")[0].get("id")
-print(movie_id)
-response = tmdb.Movies(movie_id).info()
-print(response)
-all_movie_genres = response.get("producer")
-print(all_movie_genres)
 
+request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), "a3d485e7dbba8ea69c0d9041ab46207a")
+raw = requests.get(request_url).json()
+mhd = []
+for crew_element in raw["crew"]:
+    if "Original Music Composer" == crew_element["job"]:
+        mhd.append(crew_element["name"])    
+
+print(mhd)
