@@ -303,6 +303,28 @@ nlu:
     - Who is credited as the producer for the movie?
     - Who put together the movie's production team?
 
+- intent: movie_genre+movie_producer
+  examples: |
+    - Could you tell me the genre and producer of [Inception]?
+    - What is the genre and who produced [The Dark Knight]?
+    - Can you give me some information about the genre and producer of [The Lion King]?
+    - I'm curious about [Saving private Ryan]. Can you tell me its genre and producer?
+    - Do you know who produced and what genre [The Departed] belongs to?
+    - I'm interested in [The Prestige]. Can you provide me with its genre and producer?
+    - Would you mind sharing the genre and producer of [The Terminator] with me?
+    - I'm not sure about the genre and producer of [Scream]. Could you help me out?
+    - What can you tell me about the genre and producer of [Toy Story]?
+    - Could you inform me of the genre and producer of [Lord of the Rings]?
+    - Can you give me some insight into the genre and producer of [Saw I]?
+    - I'm looking for some information on [Saw II]'s genre and producer. Can you assist me?
+    - What do you know about the genre and producer of [Dunkirk]?
+    - Can you provide me with the genre and producer of [Gravity], please?
+    - I'm curious to know the genre and producer of [Interstellar]. Can you help me with that?
+    - Would you happen to know the genre and producer of [The Martian]?
+    - Can you tell me the genre and producer of [The Great Gatsby]? I'm interested in it.
+    - What is the genre and producer of [Jurassic Park]? I'd appreciate it if you could tell me.
+    - Do you have any information about the genre and producer of [Saw IV] that you could share with me?
+    - If you don't mind, could you provide me with the genre and producer of [Saw V]?
 
 - intent: movie_director
   examples: |

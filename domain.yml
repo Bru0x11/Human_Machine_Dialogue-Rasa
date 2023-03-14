@@ -21,6 +21,7 @@ intents:
   - movie_rating
   - movie_distributor
   - movie_producer
+  - movie_genre+movie_producer
 
 entities:
   - movie_name

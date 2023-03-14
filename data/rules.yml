@@ -78,5 +78,15 @@ rules:
 - rule: Movie producer retrieval
   steps:
   - intent: movie_producer
+  - action: action_retrieve_producer
+  - action: utter_return_movie_producer
+  - action: utter_keep_asking
+
+- rule: Movie genre and producer retrieval
+  steps:
+  - intent: movie_genre+movie_producer
+  - action: action_retrieve_genre
+  - action: utter_return_movie_genre
+  - action: action_retrieve_producer
   - action: utter_return_movie_producer
   - action: utter_keep_asking

@@ -5,6 +5,7 @@ pipeline:
   - name: SpacyNLP
     model: en_core_web_md
   - name: SpacyTokenizer
+    intent_split_symbol: "+"
   - name: SpacyFeaturizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer

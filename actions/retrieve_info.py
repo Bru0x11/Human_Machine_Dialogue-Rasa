@@ -16,7 +16,7 @@ request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(
 raw = requests.get(request_url).json()
 mhd = []
 for crew_element in raw["crew"]:
-    if "Original Music Composer" == crew_element["job"]:
+    if "Producer" == crew_element["job"]:
         mhd.append(crew_element["name"])    
 
 print(mhd)

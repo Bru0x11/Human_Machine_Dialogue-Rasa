@@ -123,12 +123,12 @@ class ActionRetrieveComposer(Action):
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), "a3d485e7dbba8ea69c0d9041ab46207a")
         raw = requests.get(request_url).json()
-        composer = []
+        composer = ""
         for crew_element in raw["crew"]:
             if "Original Music Composer" == crew_element["job"]:
-                composer.append(crew_element["name"])   
+                composer += crew_element["name"]  
         
-        return []
+        return [SlotSet("composer_name", composer) if composer != "" else SlotSet("composer_name", "No rating listed")]
 
 class ActionRetrieveDirector(Action):
 
@@ -142,12 +142,12 @@ class ActionRetrieveDirector(Action):
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), "a3d485e7dbba8ea69c0d9041ab46207a")
         raw = requests.get(request_url).json()
-        director = []
+        director = ""
         for crew_element in raw["crew"]:
             if "Director" == crew_element["job"]:
-                director.append(crew_element["name"])   
+                director += crew_element["name"]   
         
-        return []
+        return [SlotSet("director_name", director) if director != "" else SlotSet("director_name", "No rating listed")]
     
 
 class ActionRetrieveProducer(Action):
@@ -162,9 +162,9 @@ class ActionRetrieveProducer(Action):
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), "a3d485e7dbba8ea69c0d9041ab46207a")
         raw = requests.get(request_url).json()
-        producer = []
+        producer = ""
         for crew_element in raw["crew"]:
             if "Producer" == crew_element["job"]:
-                producer.append(crew_element["name"])   
+                producer += crew_element["name"]  
         
-        return []
+        return [SlotSet("producer_name", producer) if producer != "" else SlotSet("producer_name", "No rating listed")]
