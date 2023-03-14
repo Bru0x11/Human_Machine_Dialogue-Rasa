@@ -82,6 +82,13 @@ rules:
   - action: utter_return_movie_producer
   - action: utter_keep_asking
 
+- rule: Movie cast retrieval
+  steps:
+  - intent: movie_cast
+  - action: action_retrieve_cast
+  - action: utter_return_movie_cast
+  - action: utter_keep_asking
+
 - rule: Movie genre and producer retrieval
   steps:
   - intent: movie_genre+movie_producer

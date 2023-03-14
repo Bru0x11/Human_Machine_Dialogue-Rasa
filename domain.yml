@@ -32,9 +32,11 @@ entities:
   - distributor
   - release_date
   - budget
+  - cast
   - runtime
   - revenue
   - rating
+  - number_of_actors
 
 slots:
   movie_name:
@@ -53,16 +55,15 @@ slots:
     type: text
   rating:
     type: float
-  # distributor:
-  #   type: text
-  #   mappings:
-  #   - type: from_entity
-  #     entity: distributor
   composer_name:
-    type: any
+    type: text
   director_name:
-    type: any
+    type: text
   producer_name:
+    type: text
+  number_of_actors:
+    type: any
+  cast:
     type: any
  
 responses:
@@ -127,8 +128,17 @@ responses:
   utter_return_movie_composer:
   - text: "The composer of {movie_name} is {composer_name}"
 
+  utter_return_movie_cast:
+  - text: "Here is the list of {number_of_actors} actors: {cast}"
+
   utter_finished_information:
   - text: "You asked all the information I know about {movie_name}"
+
+  utter_user_praise:
+  - text: "Thanks for using this tool!"
+
+  utter_ask_to_continue:
+  - text: "Would you like to do something else?"
 
   utter_still_to_implement:
   - text: "Still to implement!"
@@ -162,8 +172,7 @@ actions:
   - action_retrieve_rating
   - action_retrieve_composer
   - action_retrieve_producer
-
-
+  - action_retrieve_cast
 
 session_config:
   session_expiration_time: 60

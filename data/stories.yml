@@ -13,6 +13,8 @@ stories:
   steps:
   - intent: ask_movie_question
   - action: utter_ask_whatever
+  - intent: deny
+  - checkpoint: continue_using_bot
 
 # TASK #2
 - story: title_retrieval
@@ -25,3 +27,25 @@ stories:
   steps:
   - intent: ask_recommendation
   - action: utter_still_to_implement
+
+# DO YOU WANT TO CONTINUE?
+- story: continue_yes
+  steps:
+    - checkpoint: continue_using_bot
+    - action: utter_ask_to_continue
+    - intent: affirm
+    - action: utter_decision
+
+- story: continue_no
+  steps: 
+    - checkpoint: continue_using_bot
+    - action: utter_ask_to_continue
+    - intent: deny
+    - action: utter_user_praise
+    - checkpoint: ending
+
+# ENDING
+- story: chatbot_end
+  steps:
+    - checkpoint: ending
+    - action: utter_goodbye

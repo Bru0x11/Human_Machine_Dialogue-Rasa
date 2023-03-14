@@ -168,3 +168,35 @@ class ActionRetrieveProducer(Action):
                 producer += crew_element["name"]  
         
         return [SlotSet("producer_name", producer) if producer != "" else SlotSet("producer_name", "No rating listed")]
+    
+
+class ActionRetrieveCast(Action):
+
+    def name(self):
+        return 'action_retrieve_cast'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        movie_title = tracker.get_slot("movie_name")
+        actors_amount = tracker.get_slot("number_of_actors")
+
+        try:
+            number_of_actors = int(actors_amount)
+        except:
+            number_of_actors = actors_amount
+                
+        query = search.movie(query=movie_title)
+        movie_id = query.get("results")[0].get("id")
+
+        request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), "a3d485e7dbba8ea69c0d9041ab46207a")
+        raw = requests.get(request_url).json()
+        list_of_actors = []
+        for cast_element in raw["cast"]:
+            list_of_actors.append(cast_element["name"])    
+      
+        if type(number_of_actors) == int:
+            if number_of_actors == 0:
+                list_of_actors = list_of_actors[:10]
+            elif number_of_actors < len(list_of_actors):
+                list_of_actors = list_of_actors[:number_of_actors]
+        
+        return [SlotSet("cast", list_of_actors) if list_of_actors != "" else SlotSet("cast", "No rating listed")]
