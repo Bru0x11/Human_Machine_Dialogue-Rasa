@@ -7,7 +7,8 @@ from rasa_sdk.events import SlotSet
 import requests
 import tmdbsimple as tmdb
 
-tmdb.API_KEY = "a3d485e7dbba8ea69c0d9041ab46207a"
+api_key = "a3d485e7dbba8ea69c0d9041ab46207a"
+tmdb.API_KEY = api_key
 search = tmdb.Search()
 
 class ActionRetrieveGenre(Action):
@@ -121,7 +122,7 @@ class ActionRetrieveComposer(Action):
         query = search.movie(query=movie_title)
         movie_id = query.get("results")[0].get("id")
 
-        request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), "a3d485e7dbba8ea69c0d9041ab46207a")
+        request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
         composer = ""
         for crew_element in raw["crew"]:
@@ -140,7 +141,7 @@ class ActionRetrieveDirector(Action):
         query = search.movie(query=movie_title)
         movie_id = query.get("results")[0].get("id")
 
-        request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), "a3d485e7dbba8ea69c0d9041ab46207a")
+        request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
         director = ""
         for crew_element in raw["crew"]:
@@ -160,7 +161,7 @@ class ActionRetrieveProducer(Action):
         query = search.movie(query=movie_title)
         movie_id = query.get("results")[0].get("id")
 
-        request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), "a3d485e7dbba8ea69c0d9041ab46207a")
+        request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
         producer = ""
         for crew_element in raw["crew"]:
@@ -187,7 +188,7 @@ class ActionRetrieveCast(Action):
         query = search.movie(query=movie_title)
         movie_id = query.get("results")[0].get("id")
 
-        request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), "a3d485e7dbba8ea69c0d9041ab46207a")
+        request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
         list_of_actors = []
         for cast_element in raw["cast"]:
@@ -200,3 +201,29 @@ class ActionRetrieveCast(Action):
                 list_of_actors = list_of_actors[:number_of_actors]
         
         return [SlotSet("cast", list_of_actors) if list_of_actors != "" else SlotSet("cast", "No rating listed")]
+    
+class ActionRecommendationWithMovie(Action):
+
+    def name(self):
+        return 'action_recommendation_with_movie'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        movie_title = tracker.get_slot("movie_name")
+        copy_movie_title = tracker.get_slot("copy_of_movie_name")
+        index_already_watched = tracker.get_slot("index_already_watched")
+
+        if copy_movie_title != movie_title:
+            index_already_watched = 0
+
+        query = search.movie(query=movie_title)
+        movie_id = query.get("results")[0].get("id")
+
+        request_url = "https://api.themoviedb.org/3/movie/{}/similar?api_key={}&language=en-US&page=1".format(str(movie_id), api_key)
+        raw = requests.get(request_url).json()
+        response = raw.get("results")[index_already_watched]
+
+        title = response.get("original_title")
+        plot = response.get("overview")
+        release_date = response.get("release_date")
+
+        return[SlotSet("movie_name", title), SlotSet("plot", plot), SlotSet("release_date", release_date), SlotSet("index_already_watched", index_already_watched+1), SlotSet("copy_of_movie_name", movie_title)]

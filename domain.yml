@@ -7,8 +7,9 @@ intents:
   - deny
   - out_of_scope
   - ask_movie_question
-  - ask_movie_title
-  - ask_recommendation
+  - ask_recommendation_without_movie
+  - ask_recommendation_with_movie
+  - ask_similar_plot
   - movie_genre
   - movie_director
   - movie_composer
@@ -65,6 +66,16 @@ slots:
     type: any
   cast:
     type: any
+  is_already_watched:
+    type: bool
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+  index_already_watched:
+    type: float
+  copy_of_movie_name:
+    type: text
  
 responses:
   utter_greet:
@@ -77,14 +88,7 @@ responses:
   - text: "I'm here to be your ultimate guide to the world of cinema. Whether you're a die-hard film buff or just looking for a casual movie night suggestion, I'm here to assist you with all your movie-related needs. From classic blockbusters to indie gems, I've got recommendations to suit every taste. So let's dive in and explore the wonderful world of movies together!"
 
   utter_decision:
-  - text: "What would you like to do?"
-    buttons:
-      - title: "Ask movie-related questions"
-        payload: "/ask_movie_question"
-      - title: "Find out the title of a movie"
-        payload: "/ask_movie_title"
-      - title: "Recommend a movie"
-        payload: "/ask_recommendation"
+  - text: "What would you like to do?"    
 
   utter_ask_whatever:
   - text: "What would you like to know?"
@@ -134,6 +138,12 @@ responses:
   utter_finished_information:
   - text: "You asked all the information I know about {movie_name}"
 
+  utter_return_recommended_movie:
+  - text: "I recommend you the movie {movie_name} released on {release_date}. The plot is the following: {plot}"
+
+  utter_ask_is_already_watched:
+  - text: "Have you already watched this movie?"
+
   utter_user_praise:
   - text: "Thanks for using this tool!"
 
@@ -173,6 +183,12 @@ actions:
   - action_retrieve_composer
   - action_retrieve_producer
   - action_retrieve_cast
+  - action_recommendation_with_movie
+
+forms:
+  already_watched_form:
+    required_slots:
+      - is_already_watched
 
 session_config:
   session_expiration_time: 60

@@ -17,16 +17,18 @@ stories:
   - checkpoint: continue_using_bot
 
 # TASK #2
-- story: title_retrieval
-  steps:
-  - intent: ask_movie_title
-  - action: utter_still_to_implement
-
-# TASK #3
 - story: recommendation
   steps:
-  - intent: ask_recommendation
+  - intent: ask_recommendation_without_movie
   - action: utter_still_to_implement
+  - checkpoint: continue_usgin_bot
+
+- story: recommendation
+  steps:
+  - intent: ask_recommendation_with_movie
+  - action: action_recommendation_with_movie
+  - action: utter_return_recommended_movie
+  - checkpoint: continue_using_bot
 
 # DO YOU WANT TO CONTINUE?
 - story: continue_yes

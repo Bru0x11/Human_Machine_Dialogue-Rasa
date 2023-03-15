@@ -962,94 +962,8 @@ nlu:
     - Can you give me some details about the movie's distribution channels?
     - Can you provide information about the movie's international distribution?
 
-
 # TASK #2
-- intent: ask_movie_title
-  examples: |
-    - Can you help me find the name of a movie?
-    - I'm interested in discovering the title of a particular movie.
-    - I'm trying to remember the name of a movie and was wondering if you could help me out.
-    - I'd appreciate it if you could tell me the title of a certain movie.
-    - Could you provide me with the name of a specific movie?
-    - I'm searching for the title of a particular movie, can you assist me?
-    - I'm looking to find out the name of a movie, do you know it?
-    - Would you happen to know the title of a certain movie I'm thinking of?
-    - I'm curious about the title of a certain movie, can you tell me?
-    - I'd like to know the name of a certain movie, if you don't mind.
-    - Can you help me recall the title of a movie that's on the tip of my tongue?
-    - I need help identifying the title of a movie, can you assist me?
-    - I'm trying to find out the name of a movie that I saw a while back.
-    - Could you tell me the title of a particular movie that I'm thinking of?
-    - I'm looking for the name of a movie that I can't seem to remember.
-    - I'm interested in knowing the title of a specific movie, can you help me out?
-    - Can you provide me with the title of a certain movie that I'm thinking of?
-    - I'm curious to know the name of a certain movie that I saw part of.
-    - Would you be able to tell me the title of a certain movie that I'm trying to remember?
-    - I'd like to find out the name of a certain movie that's been on my mind lately.
-    - Can you help me figure out the title of a movie that I saw a while ago?
-    - I'm looking to identify the title of a certain movie that I remember liking.
-    - Could you assist me in finding the title of a movie that I saw a clip of?
-    - I'm searching for the name of a movie that I remember only a few details about.
-    - I'm trying to recall the name of a movie and would appreciate any help you can give.
-    - Can you tell me the name of a specific movie that I'm thinking of?
-    - I'm interested in discovering the title of a certain movie that I heard about.
-    - I'd like to know the name of a certain movie that I watched a long time ago.
-    - Can you help me find the title of a movie that I remember only parts of?
-    - I'm curious about the title of a certain movie that I heard good things about.
-
-
-# - What is the main theme of the movie?
-#     - Does the movie have [action](genre) scenes?
-#     - Is the movie based on a [true story](genre)?
-#     - Is the movie a [romance](genre)?
-#     - Does the movie have a lot of [comedy](genre)?
-#     - Does the movie have a lot of [drama](genre)?
-#     - Is the movie a [musical](genre)?
-#     - Is the movie a [horror](genre) film?
-#     - Is the movie [science fiction](genre)?
-#     - Is the movie [fantasy](genre)?
-#     - Is the movie a [thriller](genre)?
-#     - Does the movie have elements of [crime](genre) or [detective work](genre)?
-#     - Is the movie a [war](genre) movie?
-#     - Is the movie a [western](genre)?
-#     - Is the movie a [sports](genre) movie?
-#     - Is the movie a [documentary](genre)?
-#     - Does the movie have [supernatural](genre) elements?
-#     - Is the movie a [family](genre) film?
-#     - Is the movie an [adventure](genre) movie?
-#     - Is the movie an [animation](genre)?
-#     - Is the movie a [political drama](genre)?
-#     - Is the movie a [biopic](genre)?
-#     - Does the movie have a lot of [action](genre) sequences?
-#     - Is the movie a [heist](genre) film?
-#     - Does the movie have a lot of [suspense](genre)?
-#     - Is the movie a [mystery](genre)?
-#     - Is the movie a [martial arts](genre) film?
-#     - Is the movie a [disaster](genre) movie?
-#     - Is the movie a [romantic comedy](genre)?
-#     - Is the movie a [war drama](genre)?
-#     - Is the movie a [satire](genre)?
-#     - Is the movie a [musical comedy](genre)?
-#     - Is the movie an [epic](genre)?
-#     - Is the movie a [crime drama](genre)?
-#     - Is the movie a [psychological thriller](genre)?
-#     - Is the movie a [road](genre) movie?
-#     - Is the movie a [teen](genre) movie?
-#     - Is the movie a [dance](genre) movie?
-#     - Is the movie a [science fiction thriller](genre)?
-#     - Is the movie a [black](genre) comedy?
-#     - Is the movie a [superhero](genre) movie?
-#     - Is the movie a [cult classic](genre)?
-#     - Is the movie a [post-apocalyptic](genre) film?
-#     - Is the movie a [disaster](genre) film?
-#     - Is the movie a [legal drama](genre)?
-#     - Is the movie a [romantic drama](genre)?
-#     - Is the movie a [political thriller](genre)?
-
-
-
-# TASK #3
-- intent: ask_recommendation
+- intent: ask_recommendation_without_movie
   examples: |
     - Could you suggest a good movie to watch?
     - Do you have any recommendations for a movie to watch?
@@ -1066,18 +980,68 @@ nlu:
     - Can you recommend a movie that's suitable for kids?
     - I'm looking for a movie that's not too heavy, can you recommend one?
     - Could you recommend a classic movie to watch?
-    - Do you have a favorite comedy movie you'd recommend?
+    - Do you have a favorite [comedy](genre) movie you'd recommend?
     - Can you suggest a movie with a good plot?
-    - I'm in the mood for a thriller, could you recommend one?
+    - I'm in the mood for a [thriller](genre), could you recommend one?
     - Could you suggest a movie that's based on a true story?
-    - What's a good action movie you'd recommend?
+    - What's a good [action](genre) movie you'd recommend?
     - Can you recommend a movie with great cinematography?
-    - I'm looking for a romantic movie to watch, do you have any suggestions?
+    - I'm looking for a [romantic](genre) movie to watch, do you have any suggestions?
     - Could you recommend a movie that won an award?
     - What's a movie you'd recommend for a rainy day?
     - Can you suggest a movie that's suitable for the whole family?
     - I'm in the mood for a foreign movie, could you recommend one?
     - Could you recommend a movie that's set in a specific time period?
-    - What's a good science fiction movie you'd recommend?
+    - What's a good [science fiction](genre) movie you'd recommend?
     - Can you suggest a movie that's based on a book?
     - I'm looking for a feel-good movie, could you recommend one?
+
+- intent: ask_recommendation_with_movie
+  examples: |
+    - I just saw [The Matrix](movie_name), do you have any similar movie recommendations?
+    - After watching [The Godfather](movie_name), can you suggest a similar film to watch?
+    - [Inception](movie_name) was great, what other movies would you recommend that are similar?
+    - Do you know any movies that are similar to [Forrest Gump](movie_name)?
+    - I loved [The Shawshank Redemption](movie_name), can you recommend a similar movie?
+    - After watching [The Dark Knight](movie_name), what other movies would you suggest?
+    - Can you suggest any movies similar to [Goodfellas](movie_name)?
+    - I recently watched [Pulp Fiction](movie_name), do you know any movies that are similar?
+    - Are there any movies similar to [The Silence of the Lambs](movie_name) that you would recommend?
+    - After seeing [The Prestige](movie_name), can you suggest a similar movie to watch?
+    - Do you have any movie recommendations similar to [The Departed](movie_name)?
+    - What other movies would you suggest if I enjoyed watching [Fight Club](movie_name)?
+    - Can you recommend any movies similar to [The Green Mile](movie_name)?
+    - I really enjoyed [The Godfather: Part II](movie_name), what other movies would you recommend?
+    - After watching [Memento](movie_name), can you suggest a similar movie to watch?
+    - Can you suggest any movies similar to [The Usual Suspects](movie_name)?
+    - Are there any movies similar to [The Matrix Reloaded](movie_name) that you would recommend?
+    - I just watched [A Clockwork Orange](movie_name), do you know any movies that are similar?
+    - What other movies would you suggest if I liked [American History X](movie_name)?
+    - After seeing [The Shining](movie_name), can you recommend a similar movie to watch?
+    - Do you have any movie recommendations similar to [The Silence of the Lambs](movie_name)?
+    - Can you suggest any movies similar to [One Flew Over the Cuckoo's Nest](movie_name)?
+    - I recently watched [No Country for Old Men](movie_name), do you know any movies that are similar?
+    - After watching [The Big Lebowski](movie_name), what other movies would you suggest?
+    - What other movies would you suggest if I enjoyed watching [The Social Network](movie_name)?
+    - Can you recommend any movies similar to [The Deer Hunter](movie_name)?
+    - I really enjoyed [Heat](movie_name), can you suggest a similar movie to watch?
+    - After seeing [Se7en](movie_name), can you recommend a similar movie to watch?
+    - Do you have any movie recommendations similar to [Blade Runner](movie_name)?
+    - Can you suggest any movies similar to [Fargo](movie_name)?
+    - I just watched [Taxi Driver](movie_name), do you know any movies that are similar?
+    - What other movies would you suggest if I liked [A Beautiful Mind](movie_name)?
+    - After watching [Inglourious Basterds](movie_name), what other movies would you recommend?
+    - Can you recommend any movies similar to [Apocalypse Now](movie_name)?
+    - I really enjoyed [Full Metal Jacket](movie_name), can you suggest a similar movie to watch?
+    - After seeing [The Exorcist](movie_name), can you recommend a similar movie to watch?
+    - Do you have any movie recommendations similar to [The Terminator](movie_name)?
+    - Can you suggest any movies similar to [Alien](movie_name)?
+    - I just watched [The Thing](movie_name), do you know any movies that are similar?
+    - What other movies would you suggest if I liked [The Fly](movie_name)?
+    - After watching [The Ring](movie_name), what other movies would you recommend?
+    - Can you recommend any movies similar to [The Grudge](movie_name)?
+    - I really enjoyed [The Sixth Sense](movie_name), can you suggest a similar movie to watch
+
+- intent: ask_similar_plot
+  examples: |
+    - can you tell me a movie that has a similar plot?
