@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.1"
 
 stories:
 - story: greeting
@@ -21,9 +21,9 @@ stories:
   steps:
   - intent: ask_recommendation_without_movie
   - action: utter_still_to_implement
-  - checkpoint: continue_usgin_bot
+  - checkpoint: continue_using_bot
 
-- story: recommendation
+- story: recommendation_happy_path
   steps:
   - intent: ask_recommendation_with_movie
   - action: action_recommendation_with_movie
@@ -35,7 +35,7 @@ stories:
   steps:
     - checkpoint: continue_using_bot
     - action: utter_ask_to_continue
-    - intent: affirm
+    - intent: affirm #aggiungere storia dove invece di dire si qua, dico direttamente cosa voglio fare
     - action: utter_decision
 
 - story: continue_no

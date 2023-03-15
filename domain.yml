@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.1"
 
 intents:
   - greetings
@@ -42,40 +42,82 @@ entities:
 slots:
   movie_name:
     type: text
+    mappings:
+      - type: from_entity
+        entity: movie_name
   genre:
     type: text
+    mappings:
+      - type: from_entity
+        entity: genre
   release_date:
     type: text
+    mappings:
+      - type: from_entity
+        entity: release_date
   budget:
-    type: any
+    type: float
+    mappings:
+      - type: from_entity
+        entity: budget
   runtime:
-    type: any
+    type: float
+    mappings:
+      - type: from_entity
+        entity: runtime
   revenue:
-    type: any
+    type: float
+    mappings:
+      - type: from_entity
+        entity: revenue
   plot:
     type: text
+    mappings:
+      - type: custom
   rating:
     type: float
+    mappings:
+      - type: from_entity
+        entity: rating
   composer_name:
     type: text
+    mappings:
+      - type: from_entity
+        entity: composer_name
   director_name:
     type: text
+    mappings:
+      - type: from_entity
+        entity: director_name
   producer_name:
     type: text
+    mappings:
+      - type: from_entity
+        entity: producer_name
   number_of_actors:
     type: any
+    mappings:
+      - type: from_entity
+        entity: number_of_actors
   cast:
     type: any
+    mappings:
+      - type: from_entity
+        entity: cast
   is_already_watched:
     type: bool
     mappings:
-    - type: from_intent
+    - type: custom
       value: true
       intent: affirm
   index_already_watched:
     type: float
+    mappings:
+      - type: custom
   copy_of_movie_name:
     type: text
+    mappings:
+      - type: custom
  
 responses:
   utter_greet:
