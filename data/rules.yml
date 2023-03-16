@@ -13,6 +13,9 @@ rules:
   - action: utter_out_of_scope
 
 - rule: Movie genre retrieval
+  condition:
+    - slot_was_set:
+      - is_title_received: true #forse non serve più sta roba
   steps:
   - intent: movie_genre
   - action: action_retrieve_genre
@@ -97,3 +100,4 @@ rules:
   - action: action_retrieve_producer
   - action: utter_return_movie_producer
   - action: utter_keep_asking
+

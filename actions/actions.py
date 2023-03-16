@@ -227,3 +227,68 @@ class ActionRecommendationWithMovie(Action):
         release_date = response.get("release_date")
 
         return[SlotSet("movie_name", title), SlotSet("plot", plot), SlotSet("release_date", release_date), SlotSet("index_already_watched", index_already_watched+1), SlotSet("copy_of_movie_name", movie_title)]
+
+
+class ActionRecommendationWithoutMovie(Action):
+
+    def name(self):
+        return 'action_recommendation_without_movie'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        request_url = "https://api.themoviedb.org/3/discover/movie?api_key={}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate".format(api_key)
+
+        genre_dictionary = {
+            "action": "28", "adventure": "12", "animation": "16", "comedy": "35", "crime": "80", "documentary": "99", "drama": "18", "family": "10751", "fantasy": "14", "history": "36", "horror": "27",
+            "music": "10402", "mistery": "9648", "romance": "10749", "science fiction": "878", "tv movie": "10770", "thriller": "53", "war": "10752", "western": "37"
+        }
+
+        retrieve_year = tracker.get_slot("release_date")
+        retrieve_movie_time_period = tracker.get_slot("movie_time_period")
+        retrieve_vote = tracker.get_slot("rating")
+        retrieve_cast = tracker.get_slot("cast")
+        retrieve_genre = genre_dictionary.get(tracker.get_slot("genre"))
+        retrieve_runtime = tracker.get_slot("runtime")
+        retrieve_runtime_time_period = tracker.get_slot("runtime_time_period")
+
+        print(retrieve_genre, retrieve_vote)
+
+        if retrieve_year != None:
+            if retrieve_movie_time_period == "After":
+                add_year_gte = "&primary_release_date.gte={}".format(retrieve_year)
+                request_url += add_year_gte
+            elif retrieve_movie_time_period == "Before":
+                add_year_lte = "&primary_release_date.lte={}".format(retrieve_year)
+                request_url += add_year_lte
+            else: 
+                add_exact_year = "&primary_release_year={}".format(retrieve_year)
+                request_url += add_exact_year
+
+        if retrieve_vote!= None:
+            add_vote_average_gte = "&vote_average.gte={}".format(retrieve_vote)
+            request_url += add_vote_average_gte
+
+        if retrieve_cast != None:
+            add_cast = "&with_cast={}".format(retrieve_cast)
+            request_url += add_cast
+
+        if retrieve_genre != None:
+            add_genre = "&with_genres={}".format(retrieve_genre)
+            request_url += add_genre
+
+        if retrieve_runtime != None:
+            if retrieve_runtime_time_period == "Longer":
+                add_runtime_gte = "&with_runtime.gte={}".format(retrieve_runtime)
+                request_url += add_runtime_gte
+            else:
+                add_runtime_lte = "&with_runtime.lte={}".format(retrieve_runtime)
+                request_url += add_runtime_lte
+
+        print(request_url)
+        raw = requests.get(request_url).json()
+        response = raw.get("results")[0]
+
+        title = response.get("original_title")
+        plot = response.get("overview")
+        release_date = response.get("release_date")
+
+        return[SlotSet("movie_name", title), SlotSet("plot", plot), SlotSet("release_date", release_date)]

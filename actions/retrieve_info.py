@@ -13,19 +13,22 @@ query = search.movie(query=movie_title)
 movie_id = query.get("results")[0].get("id")
 request_url = "https://api.themoviedb.org/3/discover/movie?api_key={}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate".format("a3d485e7dbba8ea69c0d9041ab46207a")
 
-# prova = "https://api.themoviedb.org/3/genre/movie/list?api_key={}&language=en-US".format("a3d485e7dbba8ea69c0d9041ab46207a")
-# raw = requests.get(prova).json()
-# print(raw)
+genre_dictionary = {
+    "action": "28", "adventure": "12", "animation": "16", "comedy": "35", "crime": "80", "documentary": "99", "drama": "18", "family": "10751", "fantasy": "14", "history": "36", "horror": "27",
+    "music": "10402", "mistery": "9648", "romance": "10749", "science fiction": "878", "tv movie": "10770", "thriller": "53", "war": "10752", "western": "37"
+}
+
+retrieve_vote_lte = None
 
 retrieve_year_gte = None
-retrieve_year_lte = "2012"
-retrieve_exact_year = None
-retrieve_vote_gte = None
-retrieve_vote_lte = None
-retrieve_cast = None
-retrieve_genre = "27"
-retrieve_runtime_gte = "100"
+retrieve_year_lte = None
+retrieve_exact_year = "2012"
+retrieve_vote_gte = "10"
+retrieve_genre = genre_dictionary.get("horror")
+
+retrieve_runtime_gte = None
 retrieve_runtime_lte = None
+retrieve_cast = None
 
 if retrieve_year_gte != None:
     add_year_gte = "&primary_release_date.gte={}".format(retrieve_year_gte)
@@ -36,7 +39,7 @@ if retrieve_year_lte != None:
     request_url += add_year_lte
 
 if retrieve_exact_year != None:
-    add_exact_year = "&primary_release_yeaer={}".format(retrieve_exact_year)
+    add_exact_year = "&primary_release_year={}".format(retrieve_exact_year)
     request_url += add_exact_year
 
 if retrieve_vote_gte != None:
@@ -63,7 +66,6 @@ if retrieve_runtime_lte != None:
     add_runtime_lte = "&with_runtime.lte={}".format(retrieve_runtime_lte)
     request_url += add_runtime_lte
 
-
-
+                
 raw = requests.get(request_url).json()
 print(raw)

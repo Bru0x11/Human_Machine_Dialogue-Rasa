@@ -17,13 +17,19 @@ stories:
   - checkpoint: continue_using_bot
 
 # TASK #2
-- story: recommendation
+- story: recommendation_without_movie
   steps:
   - intent: ask_recommendation_without_movie
-  - action: utter_still_to_implement
-  - checkpoint: continue_using_bot
+  - action: retrieve_movie_information_form
+  - active_loop: retrieve_movie_information_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_recommendation_without_movie
+  - action: utter_return_recommended_movie
 
-- story: recommendation_happy_path
+
+- story: recommendation_with_movie
   steps:
   - intent: ask_recommendation_with_movie
   - action: action_recommendation_with_movie

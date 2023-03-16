@@ -23,6 +23,11 @@ intents:
   - movie_distributor
   - movie_producer
   - movie_genre+movie_producer
+  - just_genre
+  - just_cast
+  - just_rating
+  - just_year
+  - movie_time_period
 
 entities:
   - movie_name
@@ -38,6 +43,9 @@ entities:
   - revenue
   - rating
   - number_of_actors
+  - movie_time_period # tells me if previously, after or the exact year
+  - runtime_time_period #tells me if the lenght is longer or shorter than the one specified
+  
 
 slots:
   movie_name:
@@ -118,6 +126,23 @@ slots:
     type: text
     mappings:
       - type: custom
+  movie_time_period:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: movie_time_period
+  runtime_time_period:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: runtime_time_period
+  is_title_received:
+    type: bool
+    mappings:
+    - type: custom
+      value: true #diventa true quando vado in task 1, devo metterlo in false quando va in task 2
+      intent: ask_movie_question
+  
  
 responses:
   utter_greet:
@@ -186,6 +211,39 @@ responses:
   utter_ask_is_already_watched:
   - text: "Have you already watched this movie?"
 
+  utter_ask_genre:
+  - text: "What kind of genre would you like?"
+
+  utter_ask_cast:
+  - text: "Would you like a certain actor to be in the movie?"
+
+  utter_ask_runtime:
+  - text: "How long would should the movie last?"
+
+  utter_ask_rating:
+  - text: "What is the minimum rating that you want for the movie?"
+
+  utter_ask_release_date:
+  - text: "Can you tell me a release date for the movie?"
+
+  utter_ask_movie_time_period:
+  - text: "Would you like it to be before, after or exactly the year {release_date}?"
+    buttons:
+    - title: "Before"
+      payload: "/movie_time_period"
+    - title: "After"
+      payload: "/movie_time_period"
+    - title: "Exactly this year"
+      payload: "/movie_time_period"
+    
+  utter_ask_runtime_time_period:
+  - text: "Would you like it to be longer or shorter with respect to the runtime {runtime}?"
+    buttons:
+    - title: "Shorter"
+      payload: "/runtime_time_period"
+    - title: "Longer"
+      payload: "/runtime_time_period"
+
   utter_user_praise:
   - text: "Thanks for using this tool!"
 
@@ -226,11 +284,21 @@ actions:
   - action_retrieve_producer
   - action_retrieve_cast
   - action_recommendation_with_movie
+  - action_recommendation_without_movie
 
 forms:
   already_watched_form:
     required_slots:
       - is_already_watched
+  retrieve_movie_information_form:
+    required_slots:
+      - genre
+      #- cast
+      - rating
+      - release_date
+      - movie_time_period
+      # - runtime
+      # - runtime_time_period
 
 session_config:
   session_expiration_time: 60
