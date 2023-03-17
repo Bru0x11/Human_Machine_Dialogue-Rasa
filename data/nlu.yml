@@ -1132,11 +1132,20 @@ nlu:
     - [10](rating)
     - [ten](rating)
 
-- intent: movie_time_period
+- intent: just_movie_time_period
   examples: |
-    - [Before](movie_time_period)
-    - [After](movie_time_period)
-    - [Exactly this year](movie_time_period)
+    - Before
+    - Prior to the current year
+    - Preceding this year
+    - In the time leading up to this year
+    - Prior to the start of this year
+    - In the previous year
+    - Before the onset of this year
+    - Prior to this year's commencement
+    - In the year that came before this one
+    - Before the current calendar year
+    - Prior to the beginning of this year's cycle
+    - Earlier than the present year.
 
 - intent: just_year
   examples: |

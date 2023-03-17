@@ -243,7 +243,7 @@ class ActionRecommendationWithoutMovie(Action):
         }
 
         retrieve_year = tracker.get_slot("release_date")
-        retrieve_movie_time_period = tracker.get_slot("movie_time_period")
+        retrieve_movie_time_period = tracker.get_slot("is_before")
         retrieve_vote = tracker.get_slot("rating")
         retrieve_cast = tracker.get_slot("cast")
         retrieve_genre = genre_dictionary.get(tracker.get_slot("genre"))
@@ -253,16 +253,13 @@ class ActionRecommendationWithoutMovie(Action):
         print(retrieve_genre, retrieve_vote)
 
         if retrieve_year != None:
-            if retrieve_movie_time_period == "After":
-                add_year_gte = "&primary_release_date.gte={}".format(retrieve_year)
+            if retrieve_movie_time_period == "Before":
+                add_year_gte = "&primary_release_date.lte={}".format(retrieve_year)
                 request_url += add_year_gte
-            elif retrieve_movie_time_period == "Before":
-                add_year_lte = "&primary_release_date.lte={}".format(retrieve_year)
+            else:
+                add_year_lte = "&primary_release_date.gte={}".format(retrieve_year)
                 request_url += add_year_lte
-            else: 
-                add_exact_year = "&primary_release_year={}".format(retrieve_year)
-                request_url += add_exact_year
-
+            
         if retrieve_vote!= None:
             add_vote_average_gte = "&vote_average.gte={}".format(retrieve_vote)
             request_url += add_vote_average_gte

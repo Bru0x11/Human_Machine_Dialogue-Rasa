@@ -27,7 +27,7 @@ intents:
   - just_cast
   - just_rating
   - just_year
-  - movie_time_period
+  - just_movie_time_period
 
 entities:
   - movie_name
@@ -43,7 +43,6 @@ entities:
   - revenue
   - rating
   - number_of_actors
-  - movie_time_period # tells me if previously, after or the exact year
   - runtime_time_period #tells me if the lenght is longer or shorter than the one specified
   
 
@@ -126,11 +125,12 @@ slots:
     type: text
     mappings:
       - type: custom
-  movie_time_period:
+  is_before:
     type: text
     mappings:
-      - type: from_entity
-        entity: movie_time_period
+      - type: custom
+        value: "Before"
+        intent: just_movie_time_period
   runtime_time_period:
     type: text
     mappings:
@@ -226,15 +226,8 @@ responses:
   utter_ask_release_date:
   - text: "Can you tell me a release date for the movie?"
 
-  utter_ask_movie_time_period:
-  - text: "Would you like it to be before, after or exactly the year {release_date}?"
-    buttons:
-    - title: "Before"
-      payload: "/movie_time_period"
-    - title: "After"
-      payload: "/movie_time_period"
-    - title: "Exactly this year"
-      payload: "/movie_time_period"
+  utter_ask_is_before:
+  - text: "Would you like it to be before or after the year {release_date}?"
     
   utter_ask_runtime_time_period:
   - text: "Would you like it to be longer or shorter with respect to the runtime {runtime}?"
@@ -296,7 +289,7 @@ forms:
       #- cast
       - rating
       - release_date
-      - movie_time_period
+      - is_before
       # - runtime
       # - runtime_time_period
 
