@@ -250,8 +250,6 @@ class ActionRecommendationWithoutMovie(Action):
         retrieve_runtime = tracker.get_slot("runtime")
         retrieve_runtime_time_period = tracker.get_slot("runtime_time_period")
 
-        print(retrieve_genre, retrieve_vote)
-
         if retrieve_year != None:
             if retrieve_movie_time_period == "Before":
                 add_year_gte = "&primary_release_date.lte={}".format(retrieve_year)
@@ -289,3 +287,12 @@ class ActionRecommendationWithoutMovie(Action):
         release_date = response.get("release_date")
 
         return[SlotSet("movie_name", title), SlotSet("plot", plot), SlotSet("release_date", release_date)]
+
+
+class ActionResetSlots(Action):
+
+    def name(self):
+        return 'action_reset_slots'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+         return[SlotSet("plot", None), SlotSet("release_date", None), SlotSet("release_date", None), SlotSet("is_before", None)]

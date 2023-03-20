@@ -278,6 +278,7 @@ actions:
   - action_retrieve_cast
   - action_recommendation_with_movie
   - action_recommendation_without_movie
+  - action_reset_slots
 
 forms:
   already_watched_form:
@@ -286,12 +287,11 @@ forms:
   retrieve_movie_information_form:
     required_slots:
       - genre
+      #- director_name
       #- cast
       - rating
       - release_date
-      - is_before
-      # - runtime
-      # - runtime_time_period
+      #- is_before
 
 session_config:
   session_expiration_time: 60
