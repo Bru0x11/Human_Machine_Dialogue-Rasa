@@ -1194,7 +1194,67 @@ nlu:
     - [2022](release_date)
     - [2023](release_date)
 
-- intent: ask_similar_plot
+- intent: ask_movie_with_similar_plot
   examples: |
     - can you tell me a movie that has a similar plot?
     - is there a movie with similar plot?
+    - Can you help me find a movie with a similar plot if I tell you the story?
+    - Is it possible for me to describe a plot and you suggest a movie with a similar one?
+    - If I give you a plot, could you recommend a movie with a comparable story?
+    - Do you think you could identify a movie with a similar plot if I describe it to you?
+    - Could you assist me in locating a film with a plot similar to the one I'm describing?
+    - May I share a plot with you and you suggest a movie with a similar one?
+    - Is there a possibility that you could suggest a movie with a similar plot if I tell you the story?
+    - If I give you the plot, can you recommend a movie with a similar storyline?
+    - Can you help me find a movie with a plot that's similar to the one I'm describing?
+    - Would you be able to suggest a movie with a plot similar to the one I'm describing?
+    - Could you help me locate a movie with a plot similar to the one I'm describing?
+    - If I tell you the plot, could you suggest a movie with a similar storyline?
+    - Can I give you a plot and you find a movie that has a similar one?
+    - If I describe a plot, could you recommend a movie with a similar storyline?
+    - May I describe a plot and you find a movie with a similar one?
+    - Could you suggest a movie with a plot similar to the one I'm about to describe?
+    - Is it possible for me to tell you a plot and you suggest a movie with a similar one?
+    - Can you help me find a movie with a storyline that's similar to the plot I'm about to describe?
+    - If I share a plot, could you recommend a movie with a comparable storyline?
+    - Would you be able to identify a movie with a plot similar to the one I'm describing?
+    - Can I describe a plot and you help me find a movie with a similar one?
+    - Is there a chance you could suggest a movie with a plot similar to the one I'm describing?
+    - If I tell you the plot, can you recommend a movie with a similar plotline?
+    - Can you help me find a movie with a similar plot to the one I'm about to describe?
+    - If I describe a plot, could you suggest a movie with a similar plot?
+    - Would it be possible for me to tell you a plot and you find a movie with a similar storyline?
+    - Can you suggest a movie with a plot similar to the one I'm going to describe?
+    - If I give you a plot, can you help me find a movie with a similar one?
+    - May I tell you a plot and you suggest a movie with a similar storyline?
+    - Could you help me find a movie with a plot that's similar to the one I'm about to describe?
+    - Could you suggest a movie that discusses?
+    - I'm looking for a movie that explores the topic of?
+    - Do you know of any movies that cover the subject of?
+    - I'd appreciate it if you could recommend a movie that touches on
+    - Can you suggest a movie that delves into the theme of?
+    - Is there a movie that you would recommend that discusses?
+    - I'm interested in watching a movie that talks about. do you have any suggestions?
+    - Could you point me in the direction of a movie that addresses the topic of?
+    - What movie would you recommend that focuses on?
+    - Can you recommend a movie that explores the subject of?
+    - Could you suggest a movie based on a plot I provide?
+    - If I give you a plot, would you be able to recommend a movie?
+    - Would it be possible for you to recommend a movie based on a plot I give you?
+    - Can you give me a movie recommendation if I provide a plot?
+    - I have a plot in mind, could you suggest a movie that fits it?
+    - Are you able to recommend a movie if I tell you the plot?
+    - If I tell you the plot, could you suggest a good movie to watch?
+    - Could you suggest a movie that matches the plot I have in mind?
+    - If I give you a plot, can you recommend a movie that fits it well?
+    - I'm looking for a movie suggestion based on a plot I have, can you help?
+    - Would you be able to suggest a movie that fits a plot I provide?
+    - If I give you a plot, could you give me a movie recommendation?
+    - Can you recommend a movie that matches a plot I have in mind?
+    - If I provide a plot, could you suggest a movie for me to watch?
+    - Could you recommend a movie based on a plot I tell you?
+    - If I give you a plot, can you suggest a movie that would be a good fit?
+    - I'm looking for a movie recommendation that matches a plot I have, can you assist?
+    - Can you suggest a movie that fits the plot I have in mind?
+    - Would it be possible for you to recommend a movie based on a plot I have in mind?
+    - If I tell you the plot, could you recommend a movie that would be worth watching?

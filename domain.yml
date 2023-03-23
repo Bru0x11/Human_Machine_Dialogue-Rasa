@@ -9,7 +9,7 @@ intents:
   - ask_movie_question
   - ask_recommendation_without_movie
   - ask_recommendation_with_movie
-  - ask_similar_plot
+  - ask_movie_with_similar_plot
   - movie_genre
   - movie_director
   - movie_composer
@@ -45,7 +45,6 @@ entities:
   - number_of_actors
   - runtime_time_period #tells me if the lenght is longer or shorter than the one specified
   
-
 slots:
   movie_name:
     type: text
@@ -142,8 +141,18 @@ slots:
     - type: custom
       value: true #diventa true quando vado in task 1, devo metterlo in false quando va in task 2
       intent: ask_movie_question
-  
- 
+  is_plot_received:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: retrieve_plot_form
+  wiki_link:
+    type: text
+    mappings:
+      - type: custom
+
 responses:
   utter_greet:
   - text: "Hello! I'm Amadeus, your movie assistant. It's great to meet you! "
@@ -237,6 +246,12 @@ responses:
     - title: "Longer"
       payload: "/runtime_time_period"
 
+  utter_ask_is_plot_received:
+  - text: "Can you describe the plot, please?"
+
+  utter_return_similar_movie:
+  - text: "The request that has the closest resemblance to yours is {movie_name} directed by {director_name}. The plot is the following: {plot}. For more information check the link: {wiki_link}"
+
   utter_user_praise:
   - text: "Thanks for using this tool!"
 
@@ -279,6 +294,7 @@ actions:
   - action_recommendation_with_movie
   - action_recommendation_without_movie
   - action_reset_slots
+  - action_obtain_movie_from_plot
 
 forms:
   already_watched_form:
@@ -292,7 +308,10 @@ forms:
       - rating
       - release_date
       - is_before
-
+  retrieve_plot_form:
+    required_slots:
+      - is_plot_received
+  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

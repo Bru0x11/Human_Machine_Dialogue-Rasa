@@ -7,6 +7,15 @@ from rasa_sdk.events import SlotSet
 import requests
 import tmdbsimple as tmdb
 
+import pandas as pd
+import numpy as np
+import gensim
+from gensim.parsing.preprocessing import preprocess_documents
+from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+import pickle
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+
 api_key = "a3d485e7dbba8ea69c0d9041ab46207a"
 tmdb.API_KEY = api_key
 search = tmdb.Search()
@@ -296,3 +305,66 @@ class ActionResetSlots(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
          return[SlotSet("plot", None), SlotSet("release_date", None), SlotSet("release_date", None), SlotSet("is_before", None)]
+    
+class ActionFindMovieWithPlot(Action):
+
+    def name(self):
+        return 'action_obtain_movie_from_plot'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        input_plot = tracker.latest_message['text']
+        
+        movie_dataframe = pd.read_csv('databases/wiki_movie_plots_deduped.csv', sep=',')
+        #Filtering the data
+        movie_dataframe = movie_dataframe[movie_dataframe['Release Year'] >= 1980]
+        movie_dataframe = movie_dataframe[movie_dataframe['Origin/Ethnicity'] == 'American']
+        movie_dataframe = movie_dataframe.reset_index()
+        all_plots = movie_dataframe['Plot'].values
+
+        use_doc2vec_model = True
+
+        if use_doc2vec_model:
+
+            #processed_plots = preprocess_documents(all_plots)
+            #tagged_corpus = [TaggedDocument(d, [i]) for i, d in enumerate(processed_plots)]
+            #model = Doc2Vec(tagged_corpus, dm=0, vector_size=200, window=2, min_count=1, epochs=100, hs=1)
+            #pickle.dump(model, open('plot_models/doc2vec_model.pkl', 'wb'))
+
+            model = pickle.load(open('plot_models/doc2vec_model.pkl', 'rb'))
+            preprocessed_input = gensim.parsing.preprocessing.preprocess_string(input_plot)
+            input_vector = model.infer_vector(preprocessed_input)
+            similarities = model.docvecs.most_similar(positive = [input_vector])
+            
+            dispatcher.utter_message(text = "The movies that are similar to your plot are:")
+            for similarity in similarities:
+                dispatcher.utter_message(text = "{} with a similarity score of {}".format(movie_dataframe['Title'].iloc[similarity[0]], similarity[1]))
+
+            return[SlotSet("movie_name", movie_dataframe['Title'].iloc[similarities[0][0]]),
+                   SlotSet("director_name", movie_dataframe['Director'].iloc[similarities[0][0]]),
+                   SlotSet("plot", movie_dataframe['Plot'].iloc[similarities[0][0]]),
+                   SlotSet("wiki_link", movie_dataframe['Wiki Page'].iloc[similarities[0][0]])
+                   ]
+
+        else: #BERT
+            model = SentenceTransformer('bert-base-nli-mean-tokens')
+
+            #sentence_embeddings = model.encode(all_plots)
+            #pickle.dump(sentence_embeddings, open('plot_models/bert_model.pkl', 'wb'))
+            sentence_embeddings = pickle.load(open('plot_models/bert_model.pkl', 'rb'))
+
+            input_embedding = model.encode(input_plot)
+
+            result = cosine_similarity(
+                [input_embedding],
+                sentence_embeddings[0:]
+            )
+
+            movie_index = np.argmax(result)
+            print(movie_index)
+            print(movie_dataframe['Title'][movie_index])
+
+            return[SlotSet("movie_name", movie_dataframe['Title'][movie_index]),
+                   SlotSet("director_name", movie_dataframe['Director'][movie_index]),
+                   SlotSet("plot", movie_dataframe['Plot'][movie_index]),
+                   SlotSet("wiki_link", movie_dataframe['Wiki Page'][movie_index])
+                   ]
