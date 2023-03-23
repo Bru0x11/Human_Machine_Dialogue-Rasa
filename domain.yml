@@ -291,7 +291,7 @@ forms:
       #- cast
       - rating
       - release_date
-      #- is_before
+      - is_before
 
 session_config:
   session_expiration_time: 60

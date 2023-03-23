@@ -37,6 +37,9 @@ stories:
   - action: utter_return_recommended_movie
   - checkpoint: continue_using_bot
 
+# TASK #3
+
+
 # DO YOU WANT TO CONTINUE?
 - story: continue_yes
   steps:
