@@ -127,9 +127,10 @@ slots:
   is_before:
     type: text
     mappings:
-      - type: custom
-        value: "Before"
+      - type: from_text
         intent: just_movie_time_period
+        conditions: 
+          - active_loop: retrieve_movie_information_form
   runtime_time_period:
     type: text
     mappings:

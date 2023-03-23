@@ -1135,6 +1135,7 @@ nlu:
 - intent: just_movie_time_period
   examples: |
     - Before
+    - Before, if possible
     - Prior to the current year
     - Preceding this year
     - In the time leading up to this year

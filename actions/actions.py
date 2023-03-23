@@ -244,7 +244,7 @@ class ActionRecommendationWithoutMovie(Action):
         return 'action_recommendation_without_movie'
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
-        request_url = "https://api.themoviedb.org/3/discover/movie?api_key={}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate".format(api_key)
+        request_url = "https://api.themoviedb.org/3/discover/movie?api_key={}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&vote_count.gte=100".format(api_key)
 
         genre_dictionary = {
             "action": "28", "adventure": "12", "animation": "16", "comedy": "35", "crime": "80", "documentary": "99", "drama": "18", "family": "10751", "fantasy": "14", "history": "36", "horror": "27",
@@ -260,7 +260,7 @@ class ActionRecommendationWithoutMovie(Action):
         retrieve_runtime_time_period = tracker.get_slot("runtime_time_period")
 
         if retrieve_year != None:
-            if retrieve_movie_time_period == "Before":
+            if retrieve_movie_time_period != None:
                 add_year_gte = "&primary_release_date.lte={}".format(retrieve_year)
                 request_url += add_year_gte
             else:

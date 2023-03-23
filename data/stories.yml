@@ -22,12 +22,12 @@ stories:
   - intent: ask_recommendation_without_movie
   - action: retrieve_movie_information_form
   - active_loop: retrieve_movie_information_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
   - action: action_recommendation_without_movie
   - action: utter_return_recommended_movie
-  # - active_loop: null
-  # - slot_was_set:
-  #   - requested_slot: null
-  # #- action: action_reset_slots
+  # - action: action_reset_slots
   # - checkpoint: continue_using_bot
 
 - story: recommendation_with_movie
