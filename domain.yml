@@ -305,7 +305,7 @@ forms:
     required_slots:
       - genre
       #- director_name
-      #- cast
+      - cast
       - rating
       - release_date
       - is_before

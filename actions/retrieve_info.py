@@ -3,8 +3,11 @@ Use the API provided to obtain all the necessary information from the dataset.
 Use this API to query the KB.
 """
 
+import urllib.request
 import requests
+from bs4 import BeautifulSoup
 import tmdbsimple as tmdb
+import re
 
 tmdb.API_KEY = "a3d485e7dbba8ea69c0d9041ab46207a"
 search = tmdb.Search()
@@ -21,10 +24,10 @@ genre_dictionary = {
 retrieve_vote_lte = None
 
 retrieve_year_gte = None
-retrieve_year_lte = "2012"
+retrieve_year_lte = None
 retrieve_exact_year = None
-retrieve_vote_gte = "8"
-retrieve_genre = genre_dictionary.get("horror")
+retrieve_vote_gte = None
+retrieve_genre = None #genre_dictionary.get("horror")
 
 retrieve_runtime_gte = None
 retrieve_runtime_lte = None
@@ -51,12 +54,25 @@ if retrieve_vote_lte != None:
     request_url += add_vote_average_lte
 
 if retrieve_cast != None:
-    add_cast = "&with_cast={}".format(retrieve_cast)
+
+    actor = retrieve_cast.replace(" ", "+")
+
+    website = urllib.request.urlopen('https://www.imdb.com/search/name/?name={}'.format(actor))
+    soup = BeautifulSoup(website, 'html.parser')
+    actor_id = soup.find_all(href=re.compile("^/name/"))[0]['href'][6:]
+    original_id_request_url = "https://api.themoviedb.org/3/find/{}?api_key={}&language=en-US&external_source=imdb_id".format(actor_id, "a3d485e7dbba8ea69c0d9041ab46207a")
+    original_id = requests.get(original_id_request_url).json().get("person_results")[0].get('id')
+
+    add_cast = "&with_cast={}".format(original_id)
     request_url += add_cast
 
 if retrieve_genre != None:
     add_genre = "&with_genres={}".format(retrieve_genre)
     request_url += add_genre
-                
+
+
 raw = requests.get(request_url).json()
-print(raw)
+#print(raw)
+
+
+

@@ -16,6 +16,10 @@ import pickle
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from bs4 import BeautifulSoup
+import re
+import urllib.request
+
 api_key = "a3d485e7dbba8ea69c0d9041ab46207a"
 tmdb.API_KEY = api_key
 search = tmdb.Search()
@@ -272,7 +276,16 @@ class ActionRecommendationWithoutMovie(Action):
             request_url += add_vote_average_gte
 
         if retrieve_cast != None:
-            add_cast = "&with_cast={}".format(retrieve_cast)
+
+            actor = retrieve_cast.replace(" ", "+")
+
+            website = urllib.request.urlopen('https://www.imdb.com/search/name/?name={}'.format(actor))
+            soup = BeautifulSoup(website, 'html.parser')
+            actor_id = soup.find_all(href=re.compile("^/name/"))[0]['href'][6:]
+            original_id_request_url = "https://api.themoviedb.org/3/find/{}?api_key={}&language=en-US&external_source=imdb_id".format(actor_id, "a3d485e7dbba8ea69c0d9041ab46207a")
+            original_id = requests.get(original_id_request_url).json().get("person_results")[0].get('id')
+
+            add_cast = "&with_cast={}".format(original_id)
             request_url += add_cast
 
         if retrieve_genre != None:
