@@ -25,13 +25,14 @@ retrieve_vote_lte = None
 
 retrieve_year_gte = None
 retrieve_year_lte = None
-retrieve_exact_year = None
-retrieve_vote_gte = None
-retrieve_genre = None #genre_dictionary.get("horror")
+retrieve_exact_year = "2003"
+retrieve_vote_gte = "7"
+retrieve_genre = genre_dictionary.get("fantasy")
 
 retrieve_runtime_gte = None
 retrieve_runtime_lte = None
-retrieve_cast = None
+retrieve_cast = "Johnny Depp"
+retrieve_director = None
 
 if retrieve_year_gte != None:
     add_year_gte = "&primary_release_date.gte={}".format(retrieve_year_gte)
@@ -70,9 +71,21 @@ if retrieve_genre != None:
     add_genre = "&with_genres={}".format(retrieve_genre)
     request_url += add_genre
 
+if retrieve_director != None:
+    director = retrieve_director.replace(" ", "+")
+
+    website = urllib.request.urlopen('https://www.imdb.com/search/name/?name={}'.format(director))
+    soup = BeautifulSoup(website, 'html.parser')
+    director_id = soup.find_all(href=re.compile("^/name/"))[0]['href'][6:]
+    original_id_request_url = "https://api.themoviedb.org/3/find/{}?api_key={}&language=en-US&external_source=imdb_id".format(director_id, "a3d485e7dbba8ea69c0d9041ab46207a")
+    original_id = requests.get(original_id_request_url).json().get("person_results")[0].get('id')
+
+    add_crew = "&with_crew={}".format(original_id)
+    request_url += add_crew
+
 
 raw = requests.get(request_url).json()
-#print(raw)
+print(raw)
 
 
 

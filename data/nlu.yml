@@ -1115,7 +1115,37 @@ nlu:
     - [Lupita Nyong'o](cast)
     - [Zendaya](cast)
     - [Daniel Kaluuya](cast)
-    - [Anthony Hopkins](cast)
+    - [Anthony Hopkins](cast) 
+    - [Martin Scorsese](cast)
+    - [Steven Spielberg](cast)
+    - [Alfred Hitchcock](cast)
+    - [Quentin Tarantino](cast)
+    - [Francis Ford Coppola](cast)
+    - [Stanley Kubrick](cast)
+    - [Christopher Nolan](cast)
+    - [Ingmar Bergman](cast)
+    - [Akira Kurosawa](cast)
+    - [Woody Allen](cast)
+    - [Spike Lee](cast)
+    - [Clint Eastwood](cast)
+    - [David Lynch](cast)
+    - [Pedro Almodovar](cast)
+    - [Wes Anderson](cast)
+    - [Tim Burton](cast)
+    - [Coen Brothers](cast)
+    - [Ridley Scott](cast)
+    - [James Cameron](cast)
+    - [Greta Gerwig](cast)
+    - [Ava DuVernay](cast)
+    - [Barry Jenkins](cast)
+    - [Bong Joon-ho](cast)
+    - [Denis Villeneuve](cast)
+    - [Sofia Coppola](cast)
+    - [Kathryn Bigelow](cast)
+    - [Mira Nair](cast)
+    - [Guillermo del Toro](cast)
+    - [Jane Campion](cast)
+    - [Hayao Miyazaki](cast)
 
 - intent: just_rating
   examples: |
@@ -1132,21 +1162,83 @@ nlu:
     - [10](rating)
     - [ten](rating)
 
-- intent: just_movie_time_period
+- intent: is_before
   examples: |
-    - Before
-    - Before, if possible
-    - Prior to the current year
-    - Preceding this year
-    - In the time leading up to this year
-    - Prior to the start of this year
-    - In the previous year
-    - Before the onset of this year
-    - Prior to this year's commencement
-    - In the year that came before this one
-    - Before the current calendar year
-    - Prior to the beginning of this year's cycle
-    - Earlier than the present year.
+    - [Before](movie_period)
+    - [Before], if possible
+    - [Prior](movie_period) to the current year
+    - [Preceding](movie_period) this year
+    - In the time [leading up to](movie_period) this year
+    - [Prior](movie_period) to the start of this year
+    - In the [previous](movie_period) year
+    - [Before](movie_period) the onset of this year
+    - [Prior](movie_period) to this year's commencement
+    - In the year that came [before](movie_period) this one
+    - [Before](movie_period) the current calendar year
+    - [Prior](movie_period) to the beginning of this year's cycle
+    - [Earlier than](movie_period) the present year
+    - If achievable, [before](movie_period) this year
+    - Potentially [before](movie_period) this year
+    - If it can be done, [prior](movie_period) to this year
+    - If possible, [preceding](movie_period) this year
+    - [Before](movie_period) this year, if it's viable
+    - [Prior](movie_period) to the start of this year, if doable
+    - [Before](movie_period) this year begins, if feasible
+    - If it's possible, [before](movie_period) the onset of this year
+    - [Preceding](movie_period) the start of this year, if attainable
+
+- intent: is_after
+  examples: |
+    - [After](movie_period)
+    - [after](movie_period)
+    - [after](movie_period), if possible
+    - [after](movie_period), please
+    - [Following the end of the current year](movie_period)
+    - [In the next year](movie_period)
+    - [Beyond the current year](movie_period)
+    - [After the current year](movie_period) concludes
+    - [Following the current year](movie_period)
+    - [Beyond this year](movie_period)
+    - [In the year that follows](movie_period)
+    - [After this year's end](movie_period)
+    - [Following the end of the year's](movie_period) cycle.
+    - If feasible, [after this year](movie_period)
+    - Potentially [after this year](movie_period)
+    - If it can be done, [after this year](movie_period)
+    - If possible, [following this year](movie_period)
+    - [After this year](movie_period), if it's viable
+    - [Following this year's end](movie_period), if doable
+    - [After this year passes](movie_period), if feasible
+    - If it's possible, [after this year ends](movie_period)
+    - [Following the conclusion of this year](movie_period), if attainable
+
+- intent: is_exactly
+  examples: |
+    - [exactly](movie_period) this year
+    - [exactly](movie_period) 
+    - [exactly](movie_period) this year, please
+    - [exactly](movie_period) this year if possible
+    - Preferably [within this year](movie_period)
+    - If feasible, [within the current year](movie_period)
+    - If achievable, [in the present year](movie_period)
+    - Ideally [during this year](movie_period)
+    - If it can be managed, [this year](movie_period)
+    - If viable, [during this calendar year](movie_period)
+    - In [the current year](movie_period), if possible
+    - [Within the span of this year](movie_period), if feasible
+    - [Within the bounds of the current year](movie_period)
+    - If attainable, [during this year](movie_period)
+    - If doable, [in this year](movie_period)
+    - If within the realm of possibility, [this year](movie_period)
+    - If it is viable, [during the present year](movie_period)
+    - [During this year](movie_period), if it can be accomplished
+    - If it is within reach, [within this year](movie_period)
+    - If it is possible, [in the current year](movie_period)
+    - If it is realizable, [exactly this year](movie_period)
+    - If achievable, [precisely in this year](movie_period)
+    - [During the current year](movie_period), if it is doable
+    - [Within the confines of this year](movie_period), if possible
+
 
 - intent: just_year
   examples: |

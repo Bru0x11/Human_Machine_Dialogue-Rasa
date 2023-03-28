@@ -256,20 +256,26 @@ class ActionRecommendationWithoutMovie(Action):
         }
 
         retrieve_year = tracker.get_slot("release_date")
-        retrieve_movie_time_period = tracker.get_slot("is_before")
+        retrieve_is_before = tracker.get_slot("is_before")
+        retrieve_is_after = tracker.get_slot("is_after")
+        retrieve_is_exactly = tracker.get_slot("is_exactly")
         retrieve_vote = tracker.get_slot("rating")
         retrieve_cast = tracker.get_slot("cast")
+        #retrieve_director = tracker.get_slot("director_name")
         retrieve_genre = genre_dictionary.get(tracker.get_slot("genre"))
         retrieve_runtime = tracker.get_slot("runtime")
-        retrieve_runtime_time_period = tracker.get_slot("runtime_time_period")
+        
 
         if retrieve_year != None:
-            if retrieve_movie_time_period != None:
+            if retrieve_is_before != None:
                 add_year_gte = "&primary_release_date.lte={}".format(retrieve_year)
                 request_url += add_year_gte
-            else:
+            elif retrieve_is_after != None:
                 add_year_lte = "&primary_release_date.gte={}".format(retrieve_year)
                 request_url += add_year_lte
+            elif retrieve_is_exactly != None:
+                add_year_lte = "&primary_release_year={}".format(retrieve_year)
+                request_url += add_year_lte  
             
         if retrieve_vote!= None:
             add_vote_average_gte = "&vote_average.gte={}".format(retrieve_vote)
@@ -288,17 +294,21 @@ class ActionRecommendationWithoutMovie(Action):
             add_cast = "&with_cast={}".format(original_id)
             request_url += add_cast
 
+        # if retrieve_director != None:
+        #     director = retrieve_director.replace(" ", "+")
+
+        #     website = urllib.request.urlopen('https://www.imdb.com/search/name/?name={}'.format(director))
+        #     soup = BeautifulSoup(website, 'html.parser')
+        #     director_id = soup.find_all(href=re.compile("^/name/"))[0]['href'][6:]
+        #     original_id_request_url = "https://api.themoviedb.org/3/find/{}?api_key={}&language=en-US&external_source=imdb_id".format(director_id, "a3d485e7dbba8ea69c0d9041ab46207a")
+        #     original_id = requests.get(original_id_request_url).json().get("person_results")[0].get('id')
+
+        #     add_crew = "&with_crew={}".format(original_id)
+        #     request_url += add_crew
+
         if retrieve_genre != None:
             add_genre = "&with_genres={}".format(retrieve_genre)
             request_url += add_genre
-
-        if retrieve_runtime != None:
-            if retrieve_runtime_time_period == "Longer":
-                add_runtime_gte = "&with_runtime.gte={}".format(retrieve_runtime)
-                request_url += add_runtime_gte
-            else:
-                add_runtime_lte = "&with_runtime.lte={}".format(retrieve_runtime)
-                request_url += add_runtime_lte
 
         print(request_url)
         raw = requests.get(request_url).json()

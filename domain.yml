@@ -27,22 +27,26 @@ intents:
   - just_cast
   - just_rating
   - just_year
-  - just_movie_time_period
+  - is_before
+  - is_after
+  - is_exactly
 
 entities:
   - movie_name
   - genre
+  - person_name
   - composer_name
   - director_name
   - producer_name
+  - cast
   - distributor
   - release_date
   - budget
-  - cast
   - runtime
   - revenue
   - rating
   - number_of_actors
+  - movie_period
   - runtime_time_period #tells me if the lenght is longer or shorter than the one specified
   
 slots:
@@ -85,6 +89,11 @@ slots:
     mappings:
       - type: from_entity
         entity: rating
+  person_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: person_name
   composer_name:
     type: text
     mappings:
@@ -128,7 +137,29 @@ slots:
     type: text
     mappings:
       - type: from_text
-        intent: just_movie_time_period
+        intent: is_before
+        conditions: 
+          - active_loop: retrieve_movie_information_form
+  is_after:
+    type: text
+    mappings:
+      - type: from_text
+        intent: is_after
+        conditions: 
+          - active_loop: retrieve_movie_information_form
+  is_exactly:
+    type: text
+    mappings:
+      - type: from_text
+        intent: is_exactly
+        conditions: 
+          - active_loop: retrieve_movie_information_form
+  movie_period: # dummy slot
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: movie_period
         conditions: 
           - active_loop: retrieve_movie_information_form
   runtime_time_period:
@@ -227,6 +258,9 @@ responses:
   utter_ask_cast:
   - text: "Would you like a certain actor to be in the movie?"
 
+  utter_ask_director_name:
+  - text: "Would you like a certain director for the movie?"
+
   utter_ask_runtime:
   - text: "How long would should the movie last?"
 
@@ -236,8 +270,8 @@ responses:
   utter_ask_release_date:
   - text: "Can you tell me a release date for the movie?"
 
-  utter_ask_is_before:
-  - text: "Would you like it to be before or after the year {release_date}?"
+  utter_ask_movie_period:
+  - text: "Would you like it to be before, after or exactly the year {release_date}?"
     
   utter_ask_runtime_time_period:
   - text: "Would you like it to be longer or shorter with respect to the runtime {runtime}?"
@@ -308,7 +342,7 @@ forms:
       - cast
       - rating
       - release_date
-      - is_before
+      - movie_period
   retrieve_plot_form:
     required_slots:
       - is_plot_received
