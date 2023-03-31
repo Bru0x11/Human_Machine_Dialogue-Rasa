@@ -1,6 +1,6 @@
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
@@ -261,12 +261,15 @@ class ActionRecommendationWithoutMovie(Action):
         retrieve_is_exactly = tracker.get_slot("is_exactly")
         retrieve_vote = tracker.get_slot("rating")
         retrieve_cast = tracker.get_slot("cast")
-        #retrieve_director = tracker.get_slot("director_name")
-        retrieve_genre = genre_dictionary.get(tracker.get_slot("genre"))
-        retrieve_runtime = tracker.get_slot("runtime")
-        
+        retrieve_director = tracker.get_slot("director_name")
 
-        if retrieve_year != None:
+        genre_list = tracker.get_slot("genre")
+        retrieve_genre = ""
+        if genre_list != None:
+            for genre in genre_list:
+                retrieve_genre += "{},".format(genre_dictionary.get(genre))        
+
+        if retrieve_year != "Don't ask" and retrieve_year != None:
             if retrieve_is_before != None:
                 add_year_gte = "&primary_release_date.lte={}".format(retrieve_year)
                 request_url += add_year_gte
@@ -277,36 +280,41 @@ class ActionRecommendationWithoutMovie(Action):
                 add_year_lte = "&primary_release_year={}".format(retrieve_year)
                 request_url += add_year_lte  
             
-        if retrieve_vote!= None:
+        if retrieve_vote!= "Don't ask" and retrieve_vote != None:
             add_vote_average_gte = "&vote_average.gte={}".format(retrieve_vote)
             request_url += add_vote_average_gte
 
-        if retrieve_cast != None:
+        list_of_actors_id = ""
+        if retrieve_cast != "Don't ask" and retrieve_cast != None:
+            for actor in retrieve_cast:
+                actor = actor.replace(" ", "+")
 
-            actor = retrieve_cast.replace(" ", "+")
+                website = urllib.request.urlopen('https://www.imdb.com/search/name/?name={}'.format(actor))
+                soup = BeautifulSoup(website, 'html.parser')
+                actor_id = soup.find_all(href=re.compile("^/name/"))[0]['href'][6:]
+                original_id_request_url = "https://api.themoviedb.org/3/find/{}?api_key={}&language=en-US&external_source=imdb_id".format(actor_id, "a3d485e7dbba8ea69c0d9041ab46207a")
+                original_id = requests.get(original_id_request_url).json().get("person_results")[0].get('id')
+                list_of_actors_id += "{},".format(original_id)
 
-            website = urllib.request.urlopen('https://www.imdb.com/search/name/?name={}'.format(actor))
-            soup = BeautifulSoup(website, 'html.parser')
-            actor_id = soup.find_all(href=re.compile("^/name/"))[0]['href'][6:]
-            original_id_request_url = "https://api.themoviedb.org/3/find/{}?api_key={}&language=en-US&external_source=imdb_id".format(actor_id, "a3d485e7dbba8ea69c0d9041ab46207a")
-            original_id = requests.get(original_id_request_url).json().get("person_results")[0].get('id')
+        list_of_directors_id = ""
+        if retrieve_director != "Don't ask" and retrieve_director != None:
+            for director in retrieve_director:
+                director = director.replace(" ", "+")
 
-            add_cast = "&with_cast={}".format(original_id)
-            request_url += add_cast
+                website = urllib.request.urlopen('https://www.imdb.com/search/name/?name={}'.format(director))
+                soup = BeautifulSoup(website, 'html.parser')
+                director_id = soup.find_all(href=re.compile("^/name/"))[0]['href'][6:]
+                original_id_request_url = "https://api.themoviedb.org/3/find/{}?api_key={}&language=en-US&external_source=imdb_id".format(director_id, "a3d485e7dbba8ea69c0d9041ab46207a")
+                original_id = requests.get(original_id_request_url).json().get("person_results")[0].get('id')
+                list_of_directors_id += "{},".format(original_id)
 
-        # if retrieve_director != None:
-        #     director = retrieve_director.replace(" ", "+")
+        cast_and_director_ids = list_of_actors_id + list_of_directors_id
+        print(cast_and_director_ids)
+        if cast_and_director_ids != "":
+            add_cast_and_director = "&with_people={}".format(cast_and_director_ids)
+            request_url += add_cast_and_director 
 
-        #     website = urllib.request.urlopen('https://www.imdb.com/search/name/?name={}'.format(director))
-        #     soup = BeautifulSoup(website, 'html.parser')
-        #     director_id = soup.find_all(href=re.compile("^/name/"))[0]['href'][6:]
-        #     original_id_request_url = "https://api.themoviedb.org/3/find/{}?api_key={}&language=en-US&external_source=imdb_id".format(director_id, "a3d485e7dbba8ea69c0d9041ab46207a")
-        #     original_id = requests.get(original_id_request_url).json().get("person_results")[0].get('id')
-
-        #     add_crew = "&with_crew={}".format(original_id)
-        #     request_url += add_crew
-
-        if retrieve_genre != None:
+        if retrieve_genre != "Don't ask" and retrieve_genre != None:
             add_genre = "&with_genres={}".format(retrieve_genre)
             request_url += add_genre
 
@@ -391,3 +399,36 @@ class ActionFindMovieWithPlot(Action):
                    SlotSet("plot", movie_dataframe['Plot'][movie_index]),
                    SlotSet("wiki_link", movie_dataframe['Wiki Page'][movie_index])
                    ]
+        
+# class ValidateRetrieveMovieInformationForm(FormValidationAction):
+#     def name(self):
+#         return "validate_retrieve_movie_information_form"
+
+#     def validate_enable_genre(self, slot_value, dispatcher, tracker, domain):
+#             if slot_value == False:
+#                 return{"genre": "Don't ask", "enable_release_date": None, "release_date": None, "movie_period": None, "enable_rating": None, "rating": None, "enable_cast": None, "cast": None}
+#             else:
+#                 return{"enable_genre": slot_value, "enable_release_date": None, "release_date": None, "movie_period": None, "enable_rating": None, "rating": None, "enable_cast": None, "cast": None}
+            
+#     # def validate_genre(self, slot_value, dispatcher, tracker, domain):
+#     #     return{"genre": slot_value, "enable_release_date": None, "release_date": None, "movie_period": None, "enable_rating": None, "rating": None, "enable_cast": None, "cast": None}
+            
+#     def validate_enable_rating(self, slot_value, dispatcher, tracker, domain):
+#             if slot_value == False:
+#                 return{"rating": "Don't ask", "enable_cast": None, "cast": None, "enable_release_date": None, "release_date": None}
+#             else:
+#                 return{"enable_rating": slot_value, "enable_cast": None, "cast": None, "enable_release_date": None, "release_date": None}
+
+#     def validate_enable_cast(self, slot_value, dispatcher, tracker, domain):
+#             if slot_value == False:
+#                 return{"cast": "Don't ask", "enable_release_date": None, "release_date": None}
+#             else:
+#                 return{"enable_cast": slot_value, "enable_release_date": None, "release_date": None}
+            
+#     def validate_enable_release_date(self, slot_value, dispatcher, tracker, domain):
+#         if slot_value == False:
+#             return{"release_date": "Don't ask", "movie_period": "Don't ask"}
+#         else:
+#             return{"enable_release_date": slot_value}
+        
+

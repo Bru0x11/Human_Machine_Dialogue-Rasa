@@ -25,14 +25,14 @@ retrieve_vote_lte = None
 
 retrieve_year_gte = None
 retrieve_year_lte = None
-retrieve_exact_year = "2003"
-retrieve_vote_gte = "7"
-retrieve_genre = genre_dictionary.get("fantasy")
+retrieve_exact_year = None
+retrieve_vote_gte = None
+retrieve_genre = None #genre_dictionary.get("fantasy")
 
 retrieve_runtime_gte = None
 retrieve_runtime_lte = None
 retrieve_cast = "Johnny Depp"
-retrieve_director = None
+retrieve_director = "Tim Burton"
 
 if retrieve_year_gte != None:
     add_year_gte = "&primary_release_date.gte={}".format(retrieve_year_gte)
@@ -83,8 +83,8 @@ if retrieve_director != None:
     add_crew = "&with_crew={}".format(original_id)
     request_url += add_crew
 
-
-raw = requests.get(request_url).json()
+print(request_url)
+raw = requests.get("https://api.themoviedb.org/3/discover/movie?api_key=a3d485e7dbba8ea69c0d9041ab46207a&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&vote_count.gte=100&with_people=510,85,").json()
 print(raw)
 
 

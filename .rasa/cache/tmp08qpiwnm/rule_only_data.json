@@ -1,8 +1,0 @@
-{
-  "rule_only_slots": [
-    "is_title_received"
-  ],
-  "rule_only_loops": [
-    "retrieve_movie_information_form"
-  ]
-}
