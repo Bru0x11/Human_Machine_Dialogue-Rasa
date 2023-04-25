@@ -31,15 +31,36 @@ class ActionRetrieveGenre(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        print(movie_title)
+        if movie_title == None:
+            dispatcher.utter_message(text = 'We\'re sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+
         query = search.movie(query=movie_title)
+        print(query)
+
+
         movie_id = query.get("results")[0].get("id")
         response = tmdb.Movies(movie_id).info()
         all_movie_genres = response.get("genres")
-        result = ""
+        result = []
         for i in range(len(all_movie_genres)):
-           result += str(all_movie_genres[i].get("name")) + " "
+           result.append(str(all_movie_genres[i].get("name")))
 
         return [SlotSet("genre", result) if result != "" else SlotSet("genre", "No genre listed")]
+    
+class ShowList(Action):
+    def name(self):
+        return "action_showlist"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        genre_list = tracker.get_slot('genre')
+        movie_name = tracker.get_slot('movie_name')
+
+        dispatcher.utter_message(text = 'Sure thing! The genres of {} are:'.format(movie_name))
+        for genre in genre_list:
+            dispatcher.utter_message(text = '* {}'.format(genre))
 
 class ActionRetrieveReleaseDate(Action):
 

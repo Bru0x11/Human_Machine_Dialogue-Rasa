@@ -1,18 +1,18 @@
 version: "3.1"
 
+# Greetings + Introduction
 stories:
 - story: greeting
   steps:
   - intent: greetings
   - action: utter_greet
   - action: utter_self_introduction
-  - action: utter_decision
 
 # TASK #1
 - story: begin_asking_questions
   steps:
   - intent: ask_movie_question
-  - action: utter_ask_whatever
+  - action: utter_decision
   - intent: deny
   - checkpoint: continue_using_bot
 
