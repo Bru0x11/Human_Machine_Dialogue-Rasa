@@ -158,10 +158,10 @@ class ActionRetrieveComposer(Action):
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
-        composer = ""
+        composer = []
         for crew_element in raw["crew"]:
             if "Original Music Composer" == crew_element["job"]:
-                composer += crew_element["name"]  
+                composer.append(crew_element["name"])  
         
         return [SlotSet("composer_name", composer) if composer != "" else SlotSet("composer_name", "No rating listed")]
 
@@ -177,10 +177,10 @@ class ActionRetrieveDirector(Action):
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
-        director = ""
+        director = []
         for crew_element in raw["crew"]:
             if "Director" == crew_element["job"]:
-                director += crew_element["name"]   
+                director.append(crew_element["name"])   
         
         return [SlotSet("director_name", director) if director != "" else SlotSet("director_name", "No rating listed")]
     
@@ -197,10 +197,10 @@ class ActionRetrieveProducer(Action):
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
-        producer = ""
+        producer = []
         for crew_element in raw["crew"]:
             if "Producer" == crew_element["job"]:
-                producer += crew_element["name"]  
+                producer.append(crew_element["name"])  
         
         return [SlotSet("producer_name", producer) if producer != "" else SlotSet("producer_name", "No rating listed")]
     

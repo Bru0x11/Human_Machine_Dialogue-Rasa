@@ -13,8 +13,6 @@ stories:
   steps:
   - intent: ask_movie_question
   - action: utter_decision
-  - intent: deny
-  - checkpoint: continue_using_bot
 
 # TASK #2
 - story: recommendation_without_movie

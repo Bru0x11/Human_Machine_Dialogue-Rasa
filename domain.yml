@@ -95,7 +95,7 @@ slots:
       - type: from_entity
         entity: person_name
   composer_name:
-    type: text
+    type: list
     mappings:
       - type: from_entity
         entity: composer_name
@@ -105,7 +105,7 @@ slots:
       - type: from_entity
         entity: cast
   producer_name:
-    type: text
+    type: list
     mappings:
       - type: from_entity
         entity: producer_name
@@ -119,6 +119,15 @@ slots:
     mappings:
       - type: from_entity
         entity: cast
+  keep_asking:
+    type: bool
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+    - type: from_intent
+      value: false
+      intent: deny
   is_already_watched:
     type: bool
     mappings:
@@ -220,6 +229,7 @@ slots:
     type: text
     mappings:
       - type: custom
+  
 
 responses:
   utter_greet:
@@ -229,7 +239,7 @@ responses:
   - text: "Amadeus here, delighted to meet you and ready to assist you with anything related to movies!"
 
   utter_goodbye:
-  - text: "Goodbye! It was great chatting with you. Feel free to come back anytime if you have more questions or just want to chat about movies. Have a great day!"
+  - text: "It was great chatting with you. Feel free to come back anytime if you have more questions or just want to chat about movies. Have a great day!"
   - text: "It was wonderful talking to you! If you ever have more movie-related questions or just want to chat, feel free to come back anytime. Have a great day and take care!"
   - text: "Thank you for chatting with me! If you need any more movie recommendations or just want to talk, don't hesitate to come back. Wishing you a great day ahead!"
   - text: "I had a lovely time chatting with you! Please feel free to return if you have further questions or simply want to discuss movies. Have a fantastic day!"
@@ -247,10 +257,10 @@ responses:
   - text: "Are there any particular aspects of movies you'd like to delve into?"
 
   utter_keep_asking:
-  - condition:
-    - type: slot
-      name: movie_name
-      value: None
+  # - condition:
+  #   - type: slot
+  #     name: movie_name
+  #     value: None
   - text: "Do you want to know something else about {movie_name} or other films?"
   - text: "Are there any other questions you have about {movie_name} or other movies?"
   - text: "Is there anything else you'd like to know about {movie_name} or other films?"
