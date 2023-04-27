@@ -49,16 +49,16 @@ class ActionRetrieveGenre(Action):
 
         return [SlotSet("genre", result) if result != "" else SlotSet("genre", "No genre listed")]
     
-class ShowList(Action):
+class ShowGenre(Action):
     def name(self):
-        return "action_showlist"
+        return "action_show_genre"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
 
         genre_list = tracker.get_slot('genre')
         movie_name = tracker.get_slot('movie_name')
 
-        dispatcher.utter_message(text = 'Sure thing! The genres of {} are:'.format(movie_name))
+        dispatcher.utter_message(text = 'The genres of {} are:'.format(movie_name))
         for genre in genre_list:
             dispatcher.utter_message(text = '* {}'.format(genre))
 
@@ -164,6 +164,19 @@ class ActionRetrieveComposer(Action):
                 composer.append(crew_element["name"])  
         
         return [SlotSet("composer_name", composer) if composer != "" else SlotSet("composer_name", "No rating listed")]
+    
+class ShowComposer(Action):
+    def name(self):
+        return "action_show_composer"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        composer_list = tracker.get_slot('composer_name')
+        movie_name = tracker.get_slot('movie_name')
+
+        dispatcher.utter_message(text = 'The composers of {} are:'.format(movie_name))
+        for composer in composer_list:
+            dispatcher.utter_message(text = '* {}'.format(composer))
 
 class ActionRetrieveDirector(Action):
 
@@ -184,7 +197,19 @@ class ActionRetrieveDirector(Action):
         
         return [SlotSet("director_name", director) if director != "" else SlotSet("director_name", "No rating listed")]
     
+class ShowDirector(Action):
+    def name(self):
+        return "action_show_director"
 
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        directors_list = tracker.get_slot('director_name')
+        movie_name = tracker.get_slot('movie_name')
+
+        dispatcher.utter_message(text = 'The directors of {} are:'.format(movie_name))
+        for director in directors_list:
+            dispatcher.utter_message(text = '* {}'.format(director))
+    
 class ActionRetrieveProducer(Action):
 
     def name(self):
@@ -204,7 +229,19 @@ class ActionRetrieveProducer(Action):
         
         return [SlotSet("producer_name", producer) if producer != "" else SlotSet("producer_name", "No rating listed")]
     
+class ShowProducer(Action):
+    def name(self):
+        return "action_show_producer"
 
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        producers_list = tracker.get_slot('producer_name')
+        movie_name = tracker.get_slot('movie_name')
+
+        dispatcher.utter_message(text = 'The producers of {} are:'.format(movie_name))
+        for producer in producers_list:
+            dispatcher.utter_message(text = '* {}'.format(producer))
+    
 class ActionRetrieveCast(Action):
 
     def name(self):
@@ -235,6 +272,19 @@ class ActionRetrieveCast(Action):
                 list_of_actors = list_of_actors[:number_of_actors]
         
         return [SlotSet("cast", list_of_actors) if list_of_actors != "" else SlotSet("cast", "No rating listed")]
+    
+class ShowCast(Action):
+    def name(self):
+        return "action_show_cast"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        cast_list = tracker.get_slot('cast')
+        movie_name = tracker.get_slot('movie_name')
+
+        dispatcher.utter_message(text = 'The cast of {} are:'.format(movie_name))
+        for cast in cast_list:
+            dispatcher.utter_message(text = '* {}'.format(cast))
     
 class ActionRecommendationWithMovie(Action):
 

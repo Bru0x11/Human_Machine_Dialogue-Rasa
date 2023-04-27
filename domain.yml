@@ -39,7 +39,7 @@ intents:
   - movie_genre+movie_runtime
   - movie_genre+movie_revenue
   - movie_genre+movie_rating
-  - movie_genre+movie_distributor
+  - movie_genre+movie_distributor #?
   - movie_producer+movie_composer
   - movie_producer+movie_director
   - movie_producer+movie_cast
@@ -49,7 +49,7 @@ intents:
   - movie_producer+movie_runtime
   - movie_producer+movie_revenue
   - movie_producer+movie_rating
-  - movie_producer+movie_distributor
+  - movie_producer+movie_distributor #?
   - movie_director+movie_composer
   - movie_director+movie_cast
   - movie_director+movie_plot
@@ -58,7 +58,7 @@ intents:
   - movie_director+movie_runtime
   - movie_director+movie_revenue
   - movie_director+movie_rating
-  - movie_director+movie_distributor
+  - movie_director+movie_distributor #?
   - movie_composer+movie_cast
   - movie_composer+movie_plot
   - movie_composer+movie_release_date
@@ -66,35 +66,35 @@ intents:
   - movie_composer+movie_runtime
   - movie_composer+movie_revenue
   - movie_composer+movie_rating
-  - movie_composer+movie_distributor
+  - movie_composer+movie_distributor #?
   - movie_cast+movie_plot
   - movie_cast+movie_release_date
   - movie_cast+movie_budget
   - movie_cast+movie_runtime
   - movie_cast+movie_revenue
   - movie_cast+movie_rating
-  - movie_cast+movie_distibutor
+  - movie_cast+movie_distibutor #?
   - movie_plot+movie_release_date
   - movie_plot+movie_budget
   - movie_plot+movie_runtime
   - movie_plot+movie_revenue
   - movie_plot+movie_rating
-  - movie_plot+movie_distributor
+  - movie_plot+movie_distributor #?
   - movie_release_date+movie_budget
   - movie_release_date+movie_runtime
   - movie_release_date+movie_revenue
   - movie_release_date+movie_rating
-  - movie_release_date+movie_distributor
+  - movie_release_date+movie_distributor #?
   - movie_budget+movie_runtime
   - movie_budget+movie_revenue
   - movie_budget+movie_rating
-  - movie_budget+movie_distributor
+  - movie_budget+movie_distributor #?
   - movie_runtime+movie_revenue
   - movie_runtime+movie_rating
-  - movie_runtime+movie_distributor
+  - movie_runtime+movie_distributor #?
   - movie_revenue+movie_rating
-  - movie_revenue+movie_distributor
-  - movie_rating+movie_distributor
+  - movie_revenue+movie_distributor #?
+  - movie_rating+movie_distributor #?
 
 entities:
   - movie_name
@@ -321,6 +321,15 @@ responses:
   - text: "How can I assist you in expanding your knowledge of movies?"
   - text: "Are there any particular aspects of movies you'd like to delve into?"
 
+  utter_confirm:
+  - text: "Sure!"
+  - text: "Of course!"
+  - text: "OK!"
+  - text: "You got it!"
+  - text: "Certainly!"
+  - text: "Naturally!"
+  - text: "Absolutely!"
+
   utter_keep_asking:
   # - condition:
   #   - type: slot
@@ -338,12 +347,12 @@ responses:
   - text: "I apologize, but answering that question is not within my purview as a movie assistant. My primary objective is to aid you with anything related to movies, whether that be by providing recommendations, reviews, or trivia. If you have any questions about movies, I'm at your service!"
 
   utter_return_movie_name:
-  - text: "Sure! The name of the movie is {movie_name}."
-  - text: "Absolutely! The movie you're referring to is called {movie_name}."
-  - text: "Of course! The name of the movie you're asking about is {movie_name}."
-  - text: "Certainly! {movie_name} is the title of the film you're inquiring about."
+  - text: "The name of the movie is {movie_name}."
+  - text: "The movie you're referring to is called {movie_name}."
+  - text: "The name of the movie you're asking about is {movie_name}."
+  - text: "{movie_name} is the title of the film you're inquiring about."
   - text: "The movie you're talking about is named {movie_name}."
-  - text: "You got it! The name of the movie is {movie_name}."
+  - text: "The name of the movie is {movie_name}."
 
   utter_return_movie_genre:
   - text: "The genres of {movie_name} are {genre}."
@@ -353,7 +362,7 @@ responses:
 
   utter_return_movie_release_date:
   - text: "The release date of the movie {movie_name} is {release_date}."
-  - text: "Sure! {movie_name} premiered on {release_date}."
+  - text: "{movie_name} premiered on {release_date}."
   - text: "Of course! {movie_name} made its debut on {release_date}."
   - text: "{movie_name} was first shown to audiences on {release_date}."
 
@@ -525,6 +534,7 @@ actions:
   - utter_return_movie_composer
   - utter_return_movie_release_date
   - utter_return_movie_budget
+  - utter_confirm
   - utter_return_movie_runtime
   - utter_return_movie_revenue
   - utter_return_movie_plot
@@ -533,7 +543,11 @@ actions:
   - utter_out_of_scope
   - utter_prova
   - action_retrieve_genre
-  - action_showlist
+  - action_show_genre
+  - action_show_producer
+  - action_show_director
+  - action_show_composer
+  - action_show_cast
   - action_retrieve_director
   - action_retrieve_release_date
   - action_retrieve_budget
