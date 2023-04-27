@@ -373,10 +373,10 @@ responses:
   - text: "{budget} is the complete budget allocated for producing {movie_name}."
 
   utter_return_movie_runtime:
-  - text: "The {movie_name} lasts {runtime}"
-  - text: "The duration of {movie_name} is {runtime}."
-  - text: "{movie_name} has a runtime of {runtime}."
-  - text: "{runtime} is the length of {movie_name}."
+  - text: "The {movie_name} lasts {runtime} minutes"
+  - text: "The duration of {movie_name} is {runtime} minutes."
+  - text: "{movie_name} has a runtime of {runtime} minutes."
+  - text: "{runtime} minutes is the length of {movie_name}."
 
   utter_return_movie_revenue:
   - text: "The revenue of {movie_name} amounts to {revenue}."
