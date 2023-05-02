@@ -180,7 +180,7 @@ nlu:
     - What would you classify [Toy Story](movie_name) as?
     - Could you tell me the genre of [Star Wars: A New Hope](movie_name)?
     - How would you categorize [Jaws](movie_name) in terms of genre?
-    - Do you know the genre of [The Princess Bride](movie_name)?
+    - Do you know the gnere of [The Princess Bride](movie_name)?
     - Can you give me an idea of the genre of [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
     - What genre would you classify [Ghostbusters](movie_name) as?
     - Could you tell me the genre of [The Shawshank Redemption](movie_name)?
@@ -198,7 +198,7 @@ nlu:
     - What genre would you classify [Rocky](movie_name) as?
     - Would you classify [Gone with the Wind](movie_name) as a [drama](genre) or a [romance](genre) movie?
     - Can you tell me the genre of [The Lion King 2: Simba's Pride](movie_name)?
-    - I'm wondering, what genre does [The Avengers](movie_name) fall under?
+    - I'm wondering, what gnere does [The Avengers](movie_name) fall under?
     - How would you categorize [Black Panther](movie_name) in terms of genre?
     - Do you happen to know the genre of [The Hunger Games](movie_name)?
     - Can you inform me of the genre of [The Dark Knight Rises](movie_name)?
@@ -236,6 +236,12 @@ nlu:
     - Can you clarify the genre of the movie?
     - its genre
     - and what about the genre?
+    - Perfect. And what about its genre?
+    - ok! and what about its genre?
+    - Nice, thank you! can you tell me also about its genre?
+    - perfect and can you tell me the gerne of [Avatar](movie_name)?
+    - ok and can you tell me the genre of [Inception](movie_name)?
+    - can you tell me the genre of [Spongebob](movie_name)?
 
 - intent: movie_producer
   examples: |

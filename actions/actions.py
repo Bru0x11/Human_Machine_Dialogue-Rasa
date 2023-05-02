@@ -9,6 +9,7 @@ import tmdbsimple as tmdb
 
 import pandas as pd
 import numpy as np
+import random
 import gensim
 from gensim.parsing.preprocessing import preprocess_documents
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
@@ -24,6 +25,27 @@ api_key = "a3d485e7dbba8ea69c0d9041ab46207a"
 tmdb.API_KEY = api_key
 search = tmdb.Search()
 
+
+class ActionKeepAsking(Action):
+    
+    def name(self):
+        return 'action_keep_asking'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        movie_title = tracker.get_slot("movie_name")
+
+        # If no error has occured previously I can say to keep asking things related to the movies
+        if movie_title != None:
+            choose_question = random.randint(0, 3)
+            if choose_question == 0:
+                dispatcher.utter_message(text = 'Do you want to know something else about {} or other films?'.format(movie_title))
+            elif choose_question == 1:
+                dispatcher.utter_message(text = 'Are there any other questions you have about {} or other movies?'.format(movie_title))
+            elif choose_question == 2:
+                dispatcher.utter_message(text = 'Is there anything else you\'d like to know about {} or other films?'.format(movie_title))
+            elif choose_question == 3:
+                dispatcher.utter_message(text = 'Would you like me to provide additional information about {} or other movies?'.format(movie_title))
+
 class ActionRetrieveGenre(Action):
 
     def name(self):
@@ -31,14 +53,20 @@ class ActionRetrieveGenre(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
-        print(movie_title)
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
         if movie_title == None:
-            dispatcher.utter_message(text = 'We\'re sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
             return []
-
+        
         query = search.movie(query=movie_title)
-        print(query)
 
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
 
         movie_id = query.get("results")[0].get("id")
         response = tmdb.Movies(movie_id).info()
@@ -47,7 +75,7 @@ class ActionRetrieveGenre(Action):
         for i in range(len(all_movie_genres)):
            result.append(str(all_movie_genres[i].get("name")))
 
-        return [SlotSet("genre", result) if result != "" else SlotSet("genre", "No genre listed")]
+        return [SlotSet("genre", result)]
     
 class ShowGenre(Action):
     def name(self):
@@ -58,9 +86,14 @@ class ShowGenre(Action):
         genre_list = tracker.get_slot('genre')
         movie_name = tracker.get_slot('movie_name')
 
-        dispatcher.utter_message(text = 'The genres of {} are:'.format(movie_name))
-        for genre in genre_list:
-            dispatcher.utter_message(text = '* {}'.format(genre))
+        if genre_list != [] and movie_name != None:
+            dispatcher.utter_message(text = 'The genres of {} are:'.format(movie_name))
+            for genre in genre_list:
+                dispatcher.utter_message(text = '* {}'.format(genre))
+
+            # Reset the genre slot to []. This is helpful whenever we ask a question related to another movie and we have some errors with it.
+            # If we don't do so, the bot will print the genres of the previous movie.
+            return [SlotSet("genre", [])]
 
 class ActionRetrieveReleaseDate(Action):
 
@@ -69,12 +102,49 @@ class ActionRetrieveReleaseDate(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+               
         query = search.movie(query=movie_title)
+
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
         movie_id = query.get("results")[0].get("id")
+
         response = tmdb.Movies(movie_id).info()
         movie_release_date = response.get("release_date")
 
-        return [SlotSet("release_date", movie_release_date) if movie_release_date != None else SlotSet("release_date", "No release_date listed")]
+        return [SlotSet("release_date", movie_release_date)]
+    
+class ShowReleaseDate(Action):
+    def name(self):
+        return "action_show_release_date"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        release_date = tracker.get_slot('release_date')
+        movie_name = tracker.get_slot('movie_name')
+
+        if release_date != None and movie_name != None:
+            choose_message = random.randint(0, 3)
+            if choose_message == 0:
+                dispatcher.utter_message(text = 'The release date of the movie {} is {}.'.format(movie_name, release_date))
+            elif choose_message == 1:
+                dispatcher.utter_message(text = '{} premiered on {}.'.format(movie_name, release_date))
+            elif choose_message == 2:
+                dispatcher.utter_message(text = '{} made its debut on {}.'.format(movie_name, release_date))
+            elif choose_message == 3:
+                dispatcher.utter_message(text = '{} was first shown to audiences on {}.'.format(movie_name, release_date))
+
+            return [SlotSet("release_date", None)]
 
 class ActionRetrieveBudget(Action):
 
@@ -83,12 +153,49 @@ class ActionRetrieveBudget(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+               
         query = search.movie(query=movie_title)
+
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
         movie_id = query.get("results")[0].get("id")
+
         response = tmdb.Movies(movie_id).info()
         movie_budget = response.get("budget")
 
-        return [SlotSet("budget", movie_budget) if movie_budget != None else SlotSet("budget", "No release_date listed")]
+        return [SlotSet("budget", movie_budget)]
+    
+class ShowBudget(Action):
+    def name(self):
+        return "action_show_budget"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        budget = tracker.get_slot('budget')
+        movie_name = tracker.get_slot('movie_name')
+
+        if budget != None and movie_name != None:
+            choose_message = random.randint(0, 3)
+            if choose_message == 0:
+                dispatcher.utter_message(text = 'The total budget for {} is {}.'.format(movie_name, budget))
+            elif choose_message == 1:
+                dispatcher.utter_message(text = 'The overall budget for {} amounts to {}.'.format(movie_name, budget))
+            elif choose_message == 2:
+                dispatcher.utter_message(text = '{} has a budget of {} in total.'.format(movie_name, budget))
+            elif choose_message == 3:
+                dispatcher.utter_message(text = '{} is the complete budget allocated for producing {}.'.format(budget, movie_name))
+
+            return [SlotSet("budget", None)]
 
 class ActionRetrieveRuntime(Action):
 
@@ -97,12 +204,50 @@ class ActionRetrieveRuntime(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+               
         query = search.movie(query=movie_title)
+
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
         movie_id = query.get("results")[0].get("id")
+
         response = tmdb.Movies(movie_id).info()
         movie_runtime = response.get("runtime")
 
-        return [SlotSet("runtime", movie_runtime) if movie_runtime != None else SlotSet("runtime", "No runtime listed")]
+        return [SlotSet("runtime", movie_runtime)]
+    
+class ShowRuntime(Action):
+    def name(self):
+        return "action_show_runtime"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        runtime = tracker.get_slot('runtime')
+        movie_name = tracker.get_slot('movie_name')
+
+        if runtime != None and movie_name != None:
+            choose_message = random.randint(0, 3)
+            if choose_message == 0:
+                dispatcher.utter_message(text = 'The {} lasts {} minutes'.format(movie_name, runtime))
+            elif choose_message == 1:
+                dispatcher.utter_message(text = 'The duration of {} is {} minutes.'.format(movie_name, runtime))
+            elif choose_message == 2:
+                dispatcher.utter_message(text = '{} has a runtime of {} minutes.'.format(movie_name, runtime))
+            elif choose_message == 3:
+                dispatcher.utter_message(text = '{} minutes is the length of {}.'.format(runtime, movie_name))
+
+            return [SlotSet("runtime", None)]
+
 
 class ActionRetrieveRevenue(Action):
 
@@ -111,12 +256,49 @@ class ActionRetrieveRevenue(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+               
         query = search.movie(query=movie_title)
+
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
         movie_id = query.get("results")[0].get("id")
+
         response = tmdb.Movies(movie_id).info()
         movie_revenue = response.get("revenue")
 
-        return [SlotSet("revenue", movie_revenue) if movie_revenue != None else SlotSet("revenue", "No revenue listed")]
+        return [SlotSet("revenue", movie_revenue)]
+    
+class ShowRevenue(Action):
+    def name(self):
+        return "action_show_revenue"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        revenue = tracker.get_slot('revenue')
+        movie_name = tracker.get_slot('movie_name')
+
+        if revenue != None and movie_name != None:
+            choose_message = random.randint(0, 3)
+            if choose_message == 0:
+                dispatcher.utter_message(text = 'The revenue of {} amounts to {}.'.format(movie_name, revenue))
+            elif choose_message == 1:
+                dispatcher.utter_message(text = '{} earned {} in revenue.'.format(movie_name, revenue))
+            elif choose_message == 2:
+                dispatcher.utter_message(text = 'The total revenue generated by {} is {}.'.format(movie_name, revenue))
+            elif choose_message == 3:
+                dispatcher.utter_message(text = '{} is the amount of money {} made in revenue.'.format(revenue, movie_name))
+
+            return [SlotSet("revenue", None)]
 
 class ActionRetrievePlot(Action):
 
@@ -125,12 +307,47 @@ class ActionRetrievePlot(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+               
         query = search.movie(query=movie_title)
+
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
         movie_id = query.get("results")[0].get("id")
+
         response = tmdb.Movies(movie_id).info()
         movie_plot = response.get("overview")
 
-        return [SlotSet("plot", movie_plot) if movie_plot != None else SlotSet("plot", "No plot listed")]
+        return [SlotSet("plot", movie_plot)]
+    
+class ShowPlot(Action):
+    def name(self):
+        return "action_show_plot"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        plot = tracker.get_slot('plot')
+        movie_name = tracker.get_slot('movie_name')
+
+        if plot != None and movie_name != None:
+            choose_message = random.randint(0, 2)
+            if choose_message == 0:
+                dispatcher.utter_message(text = 'The plot of {} is the following: {}.'.format(movie_name, plot))
+            elif choose_message == 1:
+                dispatcher.utter_message(text = '{} can be summarized with the following plot: {}.'.format(movie_name, plot))
+            elif choose_message == 2:
+                dispatcher.utter_message(text = 'The storyline of {} is described as: {}.'.format(movie_name, plot))
+
+            return [SlotSet("plot", None)]
 
 class ActionRetrieveRating(Action):
 
@@ -139,12 +356,49 @@ class ActionRetrieveRating(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+               
         query = search.movie(query=movie_title)
+
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
         movie_id = query.get("results")[0].get("id")
+
         response = tmdb.Movies(movie_id).info()
         movie_rating = response.get("vote_average")
 
-        return [SlotSet("rating", movie_rating) if movie_rating != None else SlotSet("rating", "No rating listed")]
+        return [SlotSet("rating", movie_rating)]
+    
+class ShowRating(Action):
+    def name(self):
+        return "action_show_rating"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+
+        rating = tracker.get_slot('rating')
+        movie_name = tracker.get_slot('movie_name')
+
+        if rating != None and movie_name != None:
+            choose_message = random.randint(0, 3)
+            if choose_message == 0:
+                dispatcher.utter_message(text = 'The rating of {} is {}.'.format(movie_name, rating))
+            elif choose_message == 1:
+                dispatcher.utter_message(text = '{} has a rating of {}.'.format(movie_name, rating))
+            elif choose_message == 2:
+                dispatcher.utter_message(text = 'The assigned rating for {} is {}.'.format(movie_name, rating))
+            elif choose_message == 3:
+                dispatcher.utter_message(text = '{} is the rating given to {}.'.format(rating, movie_name))
+
+            return [SlotSet("rating", None)]
 
 class ActionRetrieveComposer(Action):
 
@@ -153,7 +407,21 @@ class ActionRetrieveComposer(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+        
         query = search.movie(query=movie_title)
+
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
         movie_id = query.get("results")[0].get("id")
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
@@ -163,7 +431,7 @@ class ActionRetrieveComposer(Action):
             if "Original Music Composer" == crew_element["job"]:
                 composer.append(crew_element["name"])  
         
-        return [SlotSet("composer_name", composer) if composer != "" else SlotSet("composer_name", "No rating listed")]
+        return [SlotSet("composer_name", composer)]
     
 class ShowComposer(Action):
     def name(self):
@@ -172,11 +440,18 @@ class ShowComposer(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
 
         composer_list = tracker.get_slot('composer_name')
+        number_of_composers = len(composer_list)
         movie_name = tracker.get_slot('movie_name')
 
-        dispatcher.utter_message(text = 'The composers of {} are:'.format(movie_name))
-        for composer in composer_list:
-            dispatcher.utter_message(text = '* {}'.format(composer))
+        if composer_list != [] and movie_name != None:
+            if number_of_composers > 1:
+                dispatcher.utter_message(text = 'The composers of {} are:'.format(movie_name))
+                for composer in composer_list:
+                    dispatcher.utter_message(text = '* {}'.format(composer))
+            else:
+                dispatcher.utter_message(text = 'The composer of {} is {}.'.format(movie_name, composer_list[0]))
+            
+            return [SlotSet("composer_name", [])]
 
 class ActionRetrieveDirector(Action):
 
@@ -185,7 +460,21 @@ class ActionRetrieveDirector(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+        
         query = search.movie(query=movie_title)
+
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
         movie_id = query.get("results")[0].get("id")
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
@@ -195,7 +484,7 @@ class ActionRetrieveDirector(Action):
             if "Director" == crew_element["job"]:
                 director.append(crew_element["name"])   
         
-        return [SlotSet("director_name", director) if director != "" else SlotSet("director_name", "No rating listed")]
+        return [SlotSet("director_name", director)]
     
 class ShowDirector(Action):
     def name(self):
@@ -204,11 +493,18 @@ class ShowDirector(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
 
         directors_list = tracker.get_slot('director_name')
+        number_of_directors = len(directors_list)
         movie_name = tracker.get_slot('movie_name')
 
-        dispatcher.utter_message(text = 'The directors of {} are:'.format(movie_name))
-        for director in directors_list:
-            dispatcher.utter_message(text = '* {}'.format(director))
+        if directors_list != [] and movie_name != None:
+            if number_of_directors > 1:
+                dispatcher.utter_message(text = 'The directors of {} are:'.format(movie_name))
+                for director in directors_list:
+                    dispatcher.utter_message(text = '* {}'.format(director))
+            else:
+                dispatcher.utter_message(text = 'The director of {} is {}.'.format(movie_name, directors_list[0]))
+
+            return [SlotSet("director_name", [])]
     
 class ActionRetrieveProducer(Action):
 
@@ -217,7 +513,21 @@ class ActionRetrieveProducer(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+        
         query = search.movie(query=movie_title)
+
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
         movie_id = query.get("results")[0].get("id")
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
@@ -227,7 +537,7 @@ class ActionRetrieveProducer(Action):
             if "Producer" == crew_element["job"]:
                 producer.append(crew_element["name"])  
         
-        return [SlotSet("producer_name", producer) if producer != "" else SlotSet("producer_name", "No rating listed")]
+        return [SlotSet("producer_name", producer)]
     
 class ShowProducer(Action):
     def name(self):
@@ -236,11 +546,18 @@ class ShowProducer(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
 
         producers_list = tracker.get_slot('producer_name')
+        number_of_producers = len(producers_list)
         movie_name = tracker.get_slot('movie_name')
 
-        dispatcher.utter_message(text = 'The producers of {} are:'.format(movie_name))
-        for producer in producers_list:
-            dispatcher.utter_message(text = '* {}'.format(producer))
+        if producers_list != [] and movie_name != None:
+            if number_of_producers > 1:
+                dispatcher.utter_message(text = 'The producers of {} are:'.format(movie_name))
+                for producer in producers_list:
+                    dispatcher.utter_message(text = '* {}'.format(producer))
+            else:
+                dispatcher.utter_message(text = 'The producer of {} is {}.'.format(movie_name, producers_list[0]))
+
+            return [SlotSet("producer_name", [])]
     
 class ActionRetrieveCast(Action):
 
@@ -249,14 +566,27 @@ class ActionRetrieveCast(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
-        actors_amount = tracker.get_slot("number_of_actors")
+        
+        # If you don't specify the name in the request, it raises an error and you have to make the request again.
+        if movie_title == None:
+            dispatcher.utter_message(text = 'I\'m sorry, but there\'s been an error. Could you please specify also the name of the movie in your request?')
+            return []
+        
+        query = search.movie(query=movie_title)
 
+        # Check if the movie exists or there is a type in the title
+        total_results = query.get("total_results")
+        if total_results == 0:
+            dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
+            # Reset slot movie_name to None
+            return [SlotSet("movie_name", None)]
+        
+        actors_amount = tracker.get_slot("number_of_actors")
         try:
             number_of_actors = int(actors_amount)
         except:
             number_of_actors = actors_amount
                 
-        query = search.movie(query=movie_title)
         movie_id = query.get("results")[0].get("id")
 
         request_url = "https://api.themoviedb.org/3/movie/{}/credits?api_key={}".format(str(movie_id), api_key)
@@ -271,7 +601,7 @@ class ActionRetrieveCast(Action):
             elif number_of_actors < len(list_of_actors):
                 list_of_actors = list_of_actors[:number_of_actors]
         
-        return [SlotSet("cast", list_of_actors) if list_of_actors != "" else SlotSet("cast", "No rating listed")]
+        return [SlotSet("cast", list_of_actors)]
     
 class ShowCast(Action):
     def name(self):
@@ -281,10 +611,25 @@ class ShowCast(Action):
 
         cast_list = tracker.get_slot('cast')
         movie_name = tracker.get_slot('movie_name')
+        number_of_actors = tracker.get_slot('number_of_actors')
+        try:
+            number_of_actors = int(number_of_actors)
+        except:
+            number_of_actors = number_of_actors
 
-        dispatcher.utter_message(text = 'The cast of {} are:'.format(movie_name))
-        for cast in cast_list:
-            dispatcher.utter_message(text = '* {}'.format(cast))
+        if cast_list != [] and movie_name != None:
+            if number_of_actors != None:
+                dispatcher.utter_message(text = 'Here is the list for the movie {} of {} actors:'.format(movie_name, number_of_actors))
+                for cast in cast_list:
+                    dispatcher.utter_message(text = '* {}'.format(cast))
+            else:
+                dispatcher.utter_message(text = 'Here is the list of actors for the movie {}:'.format(movie_name))
+                for cast in cast_list:
+                    dispatcher.utter_message(text = '* {}'.format(cast))
+            
+            return [SlotSet("cast", []), SlotSet("number_of_actors", None)]
+
+# TASK 2
     
 class ActionRecommendationWithMovie(Action):
 
@@ -407,6 +752,8 @@ class ActionResetSlots(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
          return[SlotSet("plot", None), SlotSet("release_date", None), SlotSet("release_date", None), SlotSet("is_before", None)]
+    
+# TASK 3
     
 class ActionFindMovieWithPlot(Action):
 
