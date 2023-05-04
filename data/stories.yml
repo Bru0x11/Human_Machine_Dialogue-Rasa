@@ -36,13 +36,21 @@ stories:
   - checkpoint: continue_using_bot
 
 # TASK #3
+# - story: movie with plot
+#   steps:
+#   - intent: ask_movie_with_similar_plot
+#   - action: retrieve_plot_form
+#   - active_loop: retrieve_plot_form
+#   - action: action_obtain_movie_from_plot
+#   - action: utter_return_similar_movie
+#   - checkpoint: continue_using_bot
+
 - story: movie with plot
   steps:
   - intent: ask_movie_with_similar_plot
   - action: retrieve_plot_form
   - active_loop: retrieve_plot_form
-  - action: action_obtain_movie_from_plot
-  - action: utter_return_similar_movie
+  - checkpoint: continue_using_bot
 
 # DO YOU WANT TO CONTINUE?
 - story: continue_yes

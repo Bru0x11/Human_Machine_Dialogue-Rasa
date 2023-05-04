@@ -2,12 +2,28 @@
 # Use the API provided to obtain all the necessary information from the dataset.
 # Use this API to query the KB.
 # """
+from typing import Any, Text, Dict, List
 
-# import urllib.request
-# import requests
-# from bs4 import BeautifulSoup
-# import tmdbsimple as tmdb
-# import re
+from rasa_sdk import Action, Tracker, FormValidationAction
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
+
+import requests
+import tmdbsimple as tmdb
+
+import pandas as pd
+import numpy as np
+import random
+import gensim
+from gensim.parsing.preprocessing import preprocess_documents
+from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+import pickle
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+
+from bs4 import BeautifulSoup
+import re
+import urllib.request
 
 # tmdb.API_KEY = "a3d485e7dbba8ea69c0d9041ab46207a"
 # search = tmdb.Search()
@@ -86,6 +102,69 @@
 # print(request_url)
 # raw = requests.get("https://api.themoviedb.org/3/discover/movie?api_key=a3d485e7dbba8ea69c0d9041ab46207a&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&vote_count.gte=100&with_people=510,85,").json()
 # print(raw)
+
+
+
+
+
+# movie_dataframe = pd.read_csv('databases/movies_metadata.csv', sep=',')
+# #Filtering the data
+# all_plots = movie_dataframe['overview'].values
+# for i in range(0, len(all_plots)):
+#     all_plots[i] = str(all_plots[i])
+
+# input_plot = "toys named Buz and Woody belonging to a young boy named Andy."
+
+# use_doc2vec_model = False
+# if use_doc2vec_model:
+#     # print("INSIDE")
+#     # processed_plots = preprocess_documents(all_plots)
+#     # tagged_corpus = [TaggedDocument(d, [i]) for i, d in enumerate(processed_plots)]
+#     # print("TRAINING")
+#     # model = Doc2Vec(tagged_corpus, dm=0, vector_size=200, window=2, min_count=1, epochs=100, hs=1)
+#     # print("SAVING MODEL")
+#     # pickle.dump(model, open('plot_models/prova_d2v_model.pkl', 'wb'))
+#     # print("DONE")
+
+#     model = pickle.load(open('plot_models/prova_d2v_model.pkl', 'rb'))
+#     preprocessed_input = gensim.parsing.preprocessing.preprocess_string(input_plot)
+#     input_vector = model.infer_vector(preprocessed_input)
+#     similarities = model.docvecs.most_similar(positive = [input_vector])
+    
+#     #dispatcher.utter_message(text = "The movies that are similar to your plot are:")
+#     for similarity in similarities:
+#         #dispatcher.utter_message(text = "{} with a similarity score of {}".format(movie_dataframe['Title'].iloc[similarity[0]], similarity[1]))
+#         print("{} with a similarity score of {}".format(movie_dataframe['original_title'].iloc[similarity[0]], similarity[1]))
+
+#     # return[SlotSet("movie_name", movie_dataframe['Title'].iloc[similarities[0][0]]),
+#     #         SlotSet("director_name", movie_dataframe['Director'].iloc[similarities[0][0]]),
+#     #         SlotSet("plot", movie_dataframe['Plot'].iloc[similarities[0][0]]),
+#     #         SlotSet("wiki_link", movie_dataframe['Wiki Page'].iloc[similarities[0][0]])
+#     #         ]
+
+# else: #BERT
+#     model = SentenceTransformer('bert-base-nli-mean-tokens')
+
+#     sentence_embeddings = model.encode(all_plots)
+#     pickle.dump(sentence_embeddings, open('plot_models/prova_bert_model.pkl', 'wb'))
+#     sentence_embeddings = pickle.load(open('plot_models/prova_bert_model.pkl', 'rb'))
+
+#     input_embedding = model.encode(input_plot)
+
+#     result = cosine_similarity(
+#         [input_embedding],
+#         sentence_embeddings[0:]
+#     )
+
+#     movie_index = np.argmax(result)
+#     print(movie_index)
+#     print(movie_dataframe['original_title'][movie_index])
+
+#     # return[SlotSet("movie_name", movie_dataframe['Title'][movie_index]),
+#     #         SlotSet("director_name", movie_dataframe['Director'][movie_index]),
+#     #         SlotSet("plot", movie_dataframe['Plot'][movie_index]),
+#     #         SlotSet("wiki_link", movie_dataframe['Wiki Page'][movie_index])
+#     #         ]
 
 
 

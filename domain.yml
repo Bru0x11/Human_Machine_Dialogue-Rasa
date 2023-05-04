@@ -248,6 +248,20 @@ slots:
       - type: from_text
         conditions:
         - active_loop: retrieve_plot_form
+  iterate_plot: #only put false when the intent deny is seen. This means that I don't want to iterate throgh the task #3 anymore
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+      conditions:
+        - active_loop: retrieve_plot_form
+    - type: from_intent
+      value: false
+      intent: deny
+      conditions:
+        - active_loop: retrieve_plot_form
   enable_genre:
     type: bool
     mappings:
@@ -441,6 +455,9 @@ responses:
   - text: "Could you elucidate the plot for me, please?"
   - text: "May I request a brief overview of the storyline?"
 
+  utter_ask_iterate_plot:
+  - text: "Do you want to check another plot?"
+
   utter_return_similar_movie:
   - text: "The request that has the closest resemblance to yours is {movie_name} directed by {director_name}. The plot is the following: {plot}. For more information check the link: {wiki_link}"
   - text: "The movie that most closely matches your request is {movie_name}, directed by {director_name}. Here's a synopsis of the plot: {plot}. For additional details, please refer to this link: {wiki_link}."
@@ -453,6 +470,8 @@ responses:
 
   utter_prova:
   - text: "Sono nel posto giusto"
+
+  
 
 actions:
   - utter_greet
@@ -489,6 +508,7 @@ actions:
   - action_reset_slots
   - action_obtain_movie_from_plot
   #- validate_retrieve_movie_information_form
+  - validate_retrieve_plot_form
 
 forms:
   already_watched_form:
@@ -509,6 +529,7 @@ forms:
   retrieve_plot_form:
     required_slots:
       - is_plot_received
+      - iterate_plot
   
 session_config:
   session_expiration_time: 60
