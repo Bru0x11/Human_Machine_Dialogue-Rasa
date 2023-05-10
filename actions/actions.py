@@ -46,6 +46,14 @@ class ActionKeepAsking(Action):
             elif choose_question == 3:
                 dispatcher.utter_message(text = 'Would you like me to provide additional information about {} or other movies?'.format(movie_title))
 
+class ActionResetIsInsideRules(Action):
+    
+    def name(self):
+        return 'action_reset_is_inside_rules'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        return[SlotSet('is_inside_rules', None), SlotSet('keep_asking', None)]
+
 class ActionRetrieveGenre(Action):
 
     def name(self):
@@ -75,7 +83,7 @@ class ActionRetrieveGenre(Action):
         for i in range(len(all_movie_genres)):
            result.append(str(all_movie_genres[i].get("name")))
 
-        return [SlotSet("genre", result)]
+        return [SlotSet("genre", result), SlotSet("is_inside_rules", True)]
     
 class ShowGenre(Action):
     def name(self):
@@ -753,36 +761,40 @@ class ActionResetSlots(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
          return[SlotSet("plot", None), SlotSet("release_date", None), SlotSet("release_date", None), SlotSet("is_before", None)]
     
-# class ValidateRetrieveMovieInformationForm(FormValidationAction):
-#     def name(self):
-#         return "validate_retrieve_movie_information_form"
+    
+class ValidateRetrieveMovieInformationForm(FormValidationAction):
+    def name(self):
+        return "validate_retrieve_movie_information_form"
+    
+    # staticmethod
+    # async  def required_slots(domain_slots, dispatcher, tracker, domain):
+    #     return ["enable_genre", "genre"]
 
-#     def validate_enable_genre(self, slot_value, dispatcher, tracker, domain):
-#             if slot_value == False:
-#                 return{"genre": "Don't ask", "enable_release_date": None, "release_date": None, "movie_period": None, "enable_rating": None, "rating": None, "enable_cast": None, "cast": None}
-#             else:
-#                 return{"enable_genre": slot_value, "enable_release_date": None, "release_date": None, "movie_period": None, "enable_rating": None, "rating": None, "enable_cast": None, "cast": None}
+    def validate_enable_genre(self, slot_value, dispatcher, tracker, domain):
+        reversed_events = list(reversed(tracker.events))
+        print(reversed_events)
+        print(tracker.latest_message['entities'])
+        print(tracker.latest_message['entities'][0]['value'])
+        return {}
+        
             
-#     # def validate_genre(self, slot_value, dispatcher, tracker, domain):
-#     #     return{"genre": slot_value, "enable_release_date": None, "release_date": None, "movie_period": None, "enable_rating": None, "rating": None, "enable_cast": None, "cast": None}
+    def validate_genre(self, slot_value, dispatcher, tracker, domain):
+        return {}
             
-#     def validate_enable_rating(self, slot_value, dispatcher, tracker, domain):
-#             if slot_value == False:
-#                 return{"rating": "Don't ask", "enable_cast": None, "cast": None, "enable_release_date": None, "release_date": None}
-#             else:
-#                 return{"enable_rating": slot_value, "enable_cast": None, "cast": None, "enable_release_date": None, "release_date": None}
+    # def validate_enable_rating(self, slot_value, dispatcher, tracker, domain):
+        
+            
+    # def validate_rating(self, slot_value, dispatcher, tracker, domain):
+        
 
-#     def validate_enable_cast(self, slot_value, dispatcher, tracker, domain):
-#             if slot_value == False:
-#                 return{"cast": "Don't ask", "enable_release_date": None, "release_date": None}
-#             else:
-#                 return{"enable_cast": slot_value, "enable_release_date": None, "release_date": None}
+    # def validate_enable_cast(self, slot_value, dispatcher, tracker, domain):
+        
             
-#     def validate_enable_release_date(self, slot_value, dispatcher, tracker, domain):
-#         if slot_value == False:
-#             return{"release_date": "Don't ask", "movie_period": "Don't ask"}
-#         else:
-#             return{"enable_release_date": slot_value}
+    # def validate_enable_release_date(self, slot_value, dispatcher, tracker, domain):
+        
+        
+    # def validate_enable_director_name(self, slot_value, dispatcher, tracker, domain):
+        
         
     
 # TASK 3

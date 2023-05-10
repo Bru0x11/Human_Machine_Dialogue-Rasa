@@ -15,18 +15,39 @@ stories:
   - action: utter_decision
 
 # TASK #2
+# - story: recommendation_without_movie
+#   steps:
+#   - intent: ask_recommendation_without_movie
+#   - action: retrieve_movie_information_form
+#   - active_loop: retrieve_movie_information_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_recommendation_without_movie
+#   - action: utter_return_recommended_movie
+  # - action: action_reset_slots
+  # - checkpoint: continue_using_bot
+
 - story: recommendation_without_movie
   steps:
   - intent: ask_recommendation_without_movie
-  - action: retrieve_movie_information_form
-  - active_loop: retrieve_movie_information_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
+  #- action: action_reset_slots I HAVE TO MODIFY THIS FUNCTION
+  - action: utter_ask_enable_genre
+  - intent: affirm 
+  - action: utter_query_genre
+  - intent: just_genre
   - action: action_recommendation_without_movie
   - action: utter_return_recommended_movie
-  # - action: action_reset_slots
-  # - checkpoint: continue_using_bot
+
+- story: recommendation_without_movie
+  steps:
+  - intent: ask_recommendation_without_movie
+  #- action: action_reset_slots I HAVE TO MODIFY THIS FUNCTION
+  - action: utter_ask_enable_genre
+  - intent: deny 
+  - action: action_recommendation_without_movie
+  - action: utter_return_recommended_movie
+
 
 - story: recommendation_with_movie
   steps:

@@ -16,7 +16,7 @@ rules:
   steps:
   - intent: movie_genre
   - action: utter_confirm
-  - action: action_retrieve_genre
+  - action: action_retrieve_genre #set here is_inside_rules to True
   - action: action_show_genre
   - action: action_keep_asking
 
@@ -655,16 +655,20 @@ rules:
 - rule: Keep asking affirmative
   condition:
   - slot_was_set:
+    - is_inside_rules: true
     - keep_asking: true
   steps:
   - intent: affirm
   - action: utter_decision
+  - action: action_reset_is_inside_rules #reset is_inside_rules
 
 - rule: Keep asking negative
   condition:
   - slot_was_set:
+    - is_inside_rules: true
     - keep_asking: false
   steps:
   - intent: deny
   - action: utter_user_praise
   - action: utter_goodbye
+  - action: action_reset_is_inside_rules #reset is_inside_rules

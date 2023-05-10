@@ -178,12 +178,16 @@ slots:
     mappings:
       - type: from_entity
         entity: cast
+  is_inside_rules: # this conditions is useful because when I say either "yes" or "no" in order instances outside the first task, it triggers action_keep_asking. So thanks to this I only trigger it when I'm using all the related rules. Notice that we reset every single time this slot so that we don't have a permanent value on it
+    type: bool
+    mappings:
+      - type: custom
   keep_asking:
     type: bool
     mappings:
     - type: from_intent
       value: true
-      intent: affirm
+      intent: affirm 
     - type: from_intent
       value: false
       intent: deny
@@ -263,41 +267,36 @@ slots:
       conditions:
         - active_loop: retrieve_plot_form
   enable_genre:
-    type: bool
+    type: text
+    influence_conversation: false
     mappings:
-    - type: from_intent
-      value: true
-      intent: affirm
-    - type: from_intent
-      value: false
-      intent: deny
-  enable_cast:
-    type: bool
-    mappings:
-    - type: from_intent
-      value: true
-      intent: affirm
-    - type: from_intent
-      value: false
-      intent: deny
+    - type: from_text
+      conditions:
+        - active_loop: retrieve_movie_information_form
   enable_rating:
     type: bool
     mappings:
-    - type: from_intent
-      value: true
-      intent: affirm
-    - type: from_intent
-      value: false
-      intent: deny
+    - type: custom
+      conditions:
+        - active_loop: retrieve_movie_information_form
+  enable_cast:
+    type: bool
+    mappings:
+    - type: custom
+      conditions:
+        - active_loop: retrieve_movie_information_form
   enable_release_date:
     type: bool
     mappings:
-    - type: from_intent
-      value: true
-      intent: affirm
-    - type: from_intent
-      value: false
-      intent: deny
+    - type: custom
+      conditions:
+        - active_loop: retrieve_movie_information_form
+  enable_director_name:
+    type: bool
+    mappings:
+    - type: custom
+      conditions:
+        - active_loop: retrieve_movie_information_form
   wiki_link:
     type: text
     mappings:
@@ -390,7 +389,7 @@ responses:
   - text: "Do you have a preference for a particular genre?"
   - text: "Are you looking for a movie in a particular genre?"
 
-  utter_ask_genre:
+  utter_query_genre:
   - text: "Perfect! What kind of genre would you like?"
   - text: "Great! What specific genre are you interested in?"
   - text: "Perfect! What genre are you in the mood for?"
@@ -403,11 +402,14 @@ responses:
   - text: "Are you interested in a movie with a specific actor or actress in it?"
 
   utter_ask_cast:
-  - text: "Sure! Which actor would you like to see in the movie?"
+  - text: "Perfect! Which actor would you like to see in the movie?"
   - text: "Great! Who would you like to have in the cast of the movie?"
   - text: "Sounds good! Which actor would you like to be featured in the movie?"
 
-  utter_ask_director_name: #NEED ENABLE director_name
+  utter_ask_enable_director_name:
+  - text: "Would you like a certain director for the movie?"
+
+  utter_ask_director_name:
   - text: "Would you like a certain director for the movie?"
   - text: "Would you prefer a particular director for the movie?"
   - text: "Do you have a specific director in mind for the movie?"
@@ -480,6 +482,7 @@ actions:
   - utter_confirm
   - utter_out_of_scope
   - utter_prova
+  - action_reset_is_inside_rules
   - action_keep_asking
   - action_retrieve_genre
   - action_show_revenue
@@ -516,16 +519,17 @@ forms:
       - is_already_watched
   retrieve_movie_information_form:
     required_slots:
-      #- enable_genre
-      #- genre
+      - enable_genre
+      - genre
       #- enable_rating
       #- rating
       #- enable_cast
-      - cast
+      #- cast
       #- enable_release_date
       #- release_date
       #- movie_period
-      - director_name
+      #- enable_director_name
+      #- director_name
   retrieve_plot_form:
     required_slots:
       - is_plot_received
