@@ -109,7 +109,7 @@ stories:
   - action: utter_return_recommended_movie
   - action: action_reset_slots
   - checkpoint: continue_using_bot
-
+  
 
 - story: recommendation_with_movie
   steps:

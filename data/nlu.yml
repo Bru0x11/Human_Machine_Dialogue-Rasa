@@ -920,66 +920,6 @@ nlu:
     - What was the impact of the movie's rating on its overall success or reception?
     - and what about the rating?
 
-- intent: movie_distributor
-  examples: |
-    - Who is the distributor for [The Dark Knight](movie_name)?
-    - Do you know which company distributed [Frozen](movie_name)?
-    - Can you tell me who distributed [The Shawshank Redemption](movie_name)?
-    - I'm curious, which company distributed [The Godfather](movie_name)?
-    - Who was the distributor for [Jaws](movie_name)?
-    - Do you know who distributed [Pulp Fiction](movie_name)?
-    - Which company was responsible for distributing [Forrest Gump](movie_name)?
-    - Can you tell me who distributed [Jurassic Park](movie_name)?
-    - Who was the distributor for [The Lion King](movie_name)?
-    - Do you know which company distributed [Star Wars: A New Hope](movie_name)?
-    - Which company was responsible for distributing [The Matrix](movie_name)?
-    - Can you tell me who distributed [Avatar](movie_name)?
-    - Who was the distributor for [The Avengers](movie_name)?
-    - Do you know which company distributed [Back to the Future](movie_name)?
-    - Can you tell me who distributed [Titanic](movie_name)?
-    - Who was the distributor for [The Silence of the Lambs](movie_name)?
-    - Which company was responsible for distributing [Rocky](movie_name)?
-    - Do you know who distributed [The Terminator](movie_name)?
-    - Can you tell me who distributed [E.T. the Extra-Terrestrial](movie_name)?
-    - Who was the distributor for [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
-    - Which company was responsible for distributing [The Exorcist](movie_name)?
-    - Who is distributing [The Godfather](movie_name)?
-    - Can you tell me which company is handling distribution for [Avengers: Endgame](movie_name)?
-    - Do you know the distributor of [Jurassic Park](movie_name)?
-    - I'm curious, who's distributing [Forrest Gump](movie_name)?
-    - Which studio is handling distribution for [The Dark Knight](movie_name)?
-    - Can you inform me of the distributor for [Star Wars: Episode IV - A New Hope](movie_name)?
-    - Who's distributing [The Lion King](movie_name)?
-    - What company is responsible for distributing [Titanic](movie_name)?
-    - Can you tell me which studio is handling distribution for [The Shawshank Redemption](movie_name)?
-    - Do you know who's distributing [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
-    - I'm trying to find out which company is handling distribution for [Pulp Fiction](movie_name), can you help?
-    - Who's distributing [The Matrix](movie_name)?
-    - Can you tell me who's handling distribution for [E.T. the Extra-Terrestrial](movie_name)?
-    - What company is responsible for distributing [The Lord of the Rings: The Fellowship of the Ring](movie_name)?
-    - I'm curious, who's distributing [Avatar](movie_name)?
-    - Which studio is handling distribution for [Gone with the Wind](movie_name)?
-    - Do you know the distributor of [Back to the Future](movie_name)?
-    - I'm trying to find out who's distributing [Inception](movie_name), can you help?
-    - Who's distributing [Jaws](movie_name)?
-    - Can you tell me which company is handling distribution for [Fight Club](movie_name)?
-    - Do you know who's distributing [The Silence of the Lambs](movie_name)?
-    - What company is responsible for distributing [Goodfellas](movie_name)?
-    - I'm curious, who's distributing [Schindler's List](movie_name)?
-    - Which studio is handling distribution for [Terminator 2: Judgment Day](movie_name)?
-    - Can you tell me the distributor of [Braveheart](movie_name)?
-    - I'm trying to find out who's handling distribution for [The Green Mile](movie_name), can you help?
-    - its distributor
-    - Who distributed the movie?
-    - Can you tell me about the film's distributor?
-    - How was the movie distributed?
-    - What company distributed the movie?
-    - Could you provide more information about the movie's distribution?
-    - What is the name of the movie's distributor?
-    - Can you give me some details about the movie's distribution channels?
-    - Can you provide information about the movie's international distribution?
-    - and what about the distributor?
-
 - intent: movie_genre+movie_director
   examples: |
     - Could you tell me the genre and director of [Inception]?
@@ -1033,12 +973,6 @@ nlu:
     - Could you tell me the genre and rating of [Inception]?
     - What is the genre and rating of [The Dark Knight]?
     - Can you give me some information about the genre and rating of [The Lion King]?
-
-- intent: movie_genre+movie_distributor
-  examples: |
-    - Could you tell me the genre and distributor of [Inception]?
-    - What is the genre and distributor of [The Dark Knight]?
-    - Can you give me some information about the genre and distributor of [The Lion King]?
 
 - intent: movie_producer+movie_composer
   examples: |
@@ -1094,12 +1028,6 @@ nlu:
     - Who is the producer and what is the rating of [The Dark Knight]?
     - Can you give me some information about the producer and rating of [The Lion King]?
 
-- intent: movie_producer+movie_distributor
-  examples: |
-    - Could you tell me the producer and distributor of [Inception]?
-    - Who is the producer distributor of [The Dark Knight]?
-    - Can you give me some information about the producer and distributor of [The Lion King]?
-
 - intent: movie_director+movie_composer
   examples: |
     - Could you tell me the director and composer of [Inception]?
@@ -1148,12 +1076,6 @@ nlu:
     - Who is the director and what is the rating of [The Dark Knight]?
     - Can you give me some information about the director and rating of [The Lion King]?
 
-- intent: movie_director+movie_distributor
-  examples: |
-    - Could you tell me the director and distributor of [Inception]?
-    - Who is the director and what is the distributor of [The Dark Knight]?
-    - Can you give me some information about the director and distributor of [The Lion King]?
-
 - intent: movie_composer+movie_cast
   examples: |
     - Could you tell me the composer and cast of [Inception]?
@@ -1196,12 +1118,6 @@ nlu:
     - Who is the composer and what is the rating of [The Dark Knight]?
     - Can you give me some information about the composer and rating of [The Lion King]?
 
-- intent: movie_composer+movie_distributor
-  examples: |
-    - Could you tell me the composer and distributor of [Inception]?
-    - Who is the composer distributor of [The Dark Knight]?
-    - Can you give me some information about the composer and distributor of [The Lion King]?
-
 - intent: movie_cast+movie_plot
   examples: |
     - Could you tell me the cast and plot of [Inception]?
@@ -1238,12 +1154,6 @@ nlu:
     - Who is the cast and what is the rating of [The Dark Knight]?
     - Can you give me some information about the cast and rating of [The Lion King]?
 
-- intent: movie_cast+movie_distibutor
-  examples: |
-    - Could you tell me the cast and distributor of [Inception]?
-    - Who is the cast distributor of [The Dark Knight]?
-    - Can you give me some information about the cast and distributor of [The Lion King]?
-
 - intent: movie_plot+movie_release_date
   examples: |
     - Could you tell me the plot and release date of [Inception]?
@@ -1274,12 +1184,6 @@ nlu:
     - What is the plot and rating of [The Dark Knight]?
     - Can you give me some information about the plot and rating of [The Lion King]?
 
-- intent: movie_plot+movie_distributor
-  examples: |
-    - Could you tell me the plot and distributor of [Inception]?
-    - What is the plot and distributor of [The Dark Knight]?
-    - Can you give me some information about the plot and distributor of [The Lion King]?
-
 - intent: movie_release_date+movie_budget
   examples: |
     - Could you tell me the release date and budget of [Inception]?
@@ -1304,12 +1208,6 @@ nlu:
     - What is the release date and rating of [The Dark Knight]?
     - Can you give me some information about the release date and rating of [The Lion King]?
 
-- intent: movie_release_date+movie_distributor
-  examples: |
-    - Could you tell me the release date and distributor of [Inception]?
-    - What is the release date and who is the distributor of [The Dark Knight]?
-    - Can you give me some information about the release date and distributor of [The Lion King]?
-
 - intent: movie_budget+movie_runtime
   examples: |
     - Could you tell me the budget and runtime of [Inception]?
@@ -1328,12 +1226,6 @@ nlu:
     - What is the budget and rating of [The Dark Knight]?
     - Can you give me some information about the budget and rating of [The Lion King]?
 
-- intent: movie_budget+movie_distributor
-  examples: |
-    - Could you tell me the budget and distributor of [Inception]?
-    - What is the budget and who is the distributor of [The Dark Knight]?
-    - Can you give me some information about the budget and distributor of [The Lion King]?
-
 - intent: movie_runtime+movie_revenue
   examples: |
     - Could you tell me the runtime and revenue of [Inception]?
@@ -1346,29 +1238,11 @@ nlu:
     - What is the runtime and rating of [The Dark Knight]?
     - Can you give me some information about the runtime and rating of [The Lion King]?
 
-- intent: movie_runtime+movie_distributor
-  examples: |
-    - Could you tell me the runtime and distributor of [Inception]?
-    - What is the runtime and who is the distributor of [The Dark Knight]?
-    - Can you give me some information about the runtime and distributor of [The Lion King]?
-
 - intent: movie_revenue+movie_rating
   examples: |
     - Could you tell me the revenue and rating of [Inception]?
     - What is the revenue and rating of [The Dark Knight]?
     - Can you give me some information about the revenue and rating of [The Lion King]?
-
-- intent: movie_revenue+movie_distributor
-  examples: |
-    - Could you tell me the revenue and distributor of [Inception]?
-    - What is the revenue and who is the distributor of [The Dark Knight]?
-    - Can you give me some information about the revenue and distributor of [The Lion King]?
-
-- intent: movie_rating+movie_distributor
-  examples: |
-    - Could you tell me the rating and distributor of [Inception]?
-    - What is the rating and who is the distributor of [The Dark Knight]?
-    - Can you give me some information about the rating and distributor of [The Lion King]?
 
 # TASK #2
 - intent: ask_recommendation_without_movie
