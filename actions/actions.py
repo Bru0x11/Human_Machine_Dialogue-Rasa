@@ -130,7 +130,7 @@ class ActionRetrieveReleaseDate(Action):
         response = tmdb.Movies(movie_id).info()
         movie_release_date = response.get("release_date")
 
-        return [SlotSet("release_date", movie_release_date)]
+        return [SlotSet("release_date", movie_release_date), SlotSet("is_inside_rules", True)]
     
 class ShowReleaseDate(Action):
     def name(self):
@@ -181,7 +181,7 @@ class ActionRetrieveBudget(Action):
         response = tmdb.Movies(movie_id).info()
         movie_budget = response.get("budget")
 
-        return [SlotSet("budget", movie_budget)]
+        return [SlotSet("budget", movie_budget), SlotSet("is_inside_rules", True)]
     
 class ShowBudget(Action):
     def name(self):
@@ -232,7 +232,7 @@ class ActionRetrieveRuntime(Action):
         response = tmdb.Movies(movie_id).info()
         movie_runtime = response.get("runtime")
 
-        return [SlotSet("runtime", movie_runtime)]
+        return [SlotSet("runtime", movie_runtime), SlotSet("is_inside_rules", True)]
     
 class ShowRuntime(Action):
     def name(self):
@@ -284,7 +284,7 @@ class ActionRetrieveRevenue(Action):
         response = tmdb.Movies(movie_id).info()
         movie_revenue = response.get("revenue")
 
-        return [SlotSet("revenue", movie_revenue)]
+        return [SlotSet("revenue", movie_revenue), SlotSet("is_inside_rules", True)]
     
 class ShowRevenue(Action):
     def name(self):
@@ -335,7 +335,7 @@ class ActionRetrievePlot(Action):
         response = tmdb.Movies(movie_id).info()
         movie_plot = response.get("overview")
 
-        return [SlotSet("plot", movie_plot)]
+        return [SlotSet("plot", movie_plot), SlotSet("is_inside_rules", True)]
     
 class ShowPlot(Action):
     def name(self):
@@ -384,7 +384,7 @@ class ActionRetrieveRating(Action):
         response = tmdb.Movies(movie_id).info()
         movie_rating = response.get("vote_average")
 
-        return [SlotSet("rating", movie_rating)]
+        return [SlotSet("rating", movie_rating), SlotSet("is_inside_rules", True)]
     
 class ShowRating(Action):
     def name(self):
@@ -439,7 +439,7 @@ class ActionRetrieveComposer(Action):
             if "Original Music Composer" == crew_element["job"]:
                 composer.append(crew_element["name"])  
         
-        return [SlotSet("composer_name", composer)]
+        return [SlotSet("composer_name", composer), SlotSet("is_inside_rules", True)]
     
 class ShowComposer(Action):
     def name(self):
@@ -492,7 +492,7 @@ class ActionRetrieveDirector(Action):
             if "Director" == crew_element["job"]:
                 director.append(crew_element["name"])   
         
-        return [SlotSet("director_name", director)]
+        return [SlotSet("director_name", director), SlotSet("is_inside_rules", True)]
     
 class ShowDirector(Action):
     def name(self):
@@ -545,7 +545,7 @@ class ActionRetrieveProducer(Action):
             if "Producer" == crew_element["job"]:
                 producer.append(crew_element["name"])  
         
-        return [SlotSet("producer_name", producer)]
+        return [SlotSet("producer_name", producer), SlotSet("is_inside_rules", True)]
     
 class ShowProducer(Action):
     def name(self):
@@ -609,7 +609,7 @@ class ActionRetrieveCast(Action):
             elif number_of_actors < len(list_of_actors):
                 list_of_actors = list_of_actors[:number_of_actors]
         
-        return [SlotSet("cast", list_of_actors)]
+        return [SlotSet("cast", list_of_actors), SlotSet("is_inside_rules", True)]
     
 class ShowCast(Action):
     def name(self):
@@ -759,7 +759,8 @@ class ActionResetSlots(Action):
         return 'action_reset_slots'
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
-         return[SlotSet("plot", None), SlotSet("release_date", None), SlotSet("release_date", None), SlotSet("is_before", None)]
+         
+         return[SlotSet("is_inside_rules", None), SlotSet("keep_asking", None)]
     
     
 class ValidateRetrieveMovieInformationForm(FormValidationAction):

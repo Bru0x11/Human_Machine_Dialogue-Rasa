@@ -31,7 +31,7 @@ stories:
 - story: recommendation_without_movie
   steps:
   - intent: ask_recommendation_without_movie
-  #- action: action_reset_slots I HAVE TO MODIFY THIS FUNCTION
+  - action: action_reset_slots
   - action: utter_ask_enable_genre
   - intent: affirm 
   - action: utter_query_genre
@@ -42,7 +42,7 @@ stories:
 - story: recommendation_without_movie
   steps:
   - intent: ask_recommendation_without_movie
-  #- action: action_reset_slots I HAVE TO MODIFY THIS FUNCTION
+  - action: action_reset_slots 
   - action: utter_ask_enable_genre
   - intent: deny 
   - action: action_recommendation_without_movie

@@ -1,0 +1,7 @@
+{
+  "rule_only_slots": [
+    "is_inside_rules",
+    "keep_asking"
+  ],
+  "rule_only_loops": []
+}
