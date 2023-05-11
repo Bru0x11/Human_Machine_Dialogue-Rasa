@@ -15,38 +15,100 @@ stories:
   - action: utter_decision
 
 # TASK #2
-# - story: recommendation_without_movie
-#   steps:
-#   - intent: ask_recommendation_without_movie
-#   - action: retrieve_movie_information_form
-#   - active_loop: retrieve_movie_information_form
-#   - active_loop: null
-#   - slot_was_set:
-#     - requested_slot: null
-#   - action: action_recommendation_without_movie
-#   - action: utter_return_recommended_movie
-  # - action: action_reset_slots
-  # - checkpoint: continue_using_bot
-
-- story: recommendation_without_movie
+- story: begin recommendation_without_movie + genre
   steps:
   - intent: ask_recommendation_without_movie
   - action: action_reset_slots
   - action: utter_ask_enable_genre
   - intent: affirm 
-  - action: utter_query_genre
+  - action: utter_ask_genre
   - intent: just_genre
-  - action: action_recommendation_without_movie
-  - action: utter_return_recommended_movie
+  - checkpoint: genre_done
 
-- story: recommendation_without_movie
+- story: begin recommendation_without_movie no genre
   steps:
   - intent: ask_recommendation_without_movie
   - action: action_reset_slots 
   - action: utter_ask_enable_genre
   - intent: deny 
+  - checkpoint: genre_done
+
+- story: recommendation_without_movie + rating
+  steps:
+  - checkpoint: genre_done
+  - action: utter_ask_enable_rating
+  - intent: affirm
+  - action: utter_ask_rating
+  - intent: just_rating
+  - checkpoint: rating_done
+
+- story: recommendation_without_movie no rating
+  steps:
+  - checkpoint: genre_done
+  - action: utter_ask_enable_rating
+  - intent: deny
+  - checkpoint: rating_done
+
+- story: recommendation_without_movie + cast
+  steps:
+  - checkpoint: rating_done
+  - action: utter_ask_enable_cast
+  - intent: affirm
+  - action: utter_ask_cast
+  - intent: just_cast
+  - checkpoint: cast_done
+
+- story: recommendation_without_movie no cast
+  steps:
+  - checkpoint: rating_done
+  - action: utter_ask_enable_cast
+  - intent: deny
+  - checkpoint: cast_done
+
+- story: recommendation_without_movie + release_date
+  steps:
+  - checkpoint: cast_done
+  - action: utter_ask_enable_release_date
+  - intent: affirm
+  - action: utter_ask_release_date
+  - intent: just_year
+  - action: utter_ask_movie_period
+  - or:
+    - intent: is_before
+    - intent: is_after
+    - intent: is_exactly
+  - checkpoint: release_date_done
+
+- story: recommendation_without_movie no release_date
+  steps:
+  - checkpoint: cast_done
+  - action: utter_ask_enable_release_date
+  - intent: deny
+  - checkpoint: release_date_done
+
+- story: recommendation_without_movie + director_name
+  steps:
+  - checkpoint: release_date_done
+  - action: utter_ask_enable_director_name
+  - intent: affirm
+  - action: utter_ask_director_name
+  - intent: just_cast
+  - checkpoint: director_name_done
+
+- story: recommendation_without_movie no director_name
+  steps:
+  - checkpoint: release_date_done
+  - action: utter_ask_enable_director_name
+  - intent: deny
+  - checkpoint: director_name_done
+
+- story: recommendation_without_movie
+  steps:
+  - checkpoint: director_name_done
   - action: action_recommendation_without_movie
   - action: utter_return_recommended_movie
+  - action: action_reset_slots
+  - checkpoint: continue_using_bot
 
 
 - story: recommendation_with_movie

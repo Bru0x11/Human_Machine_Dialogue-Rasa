@@ -761,40 +761,6 @@ class ActionResetSlots(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
          
          return[SlotSet("is_inside_rules", None), SlotSet("keep_asking", None)]
-    
-    
-class ValidateRetrieveMovieInformationForm(FormValidationAction):
-    def name(self):
-        return "validate_retrieve_movie_information_form"
-    
-    # staticmethod
-    # async  def required_slots(domain_slots, dispatcher, tracker, domain):
-    #     return ["enable_genre", "genre"]
-
-    def validate_enable_genre(self, slot_value, dispatcher, tracker, domain):
-        reversed_events = list(reversed(tracker.events))
-        print(reversed_events)
-        print(tracker.latest_message['entities'])
-        print(tracker.latest_message['entities'][0]['value'])
-        return {}
-        
-            
-    def validate_genre(self, slot_value, dispatcher, tracker, domain):
-        return {}
-            
-    # def validate_enable_rating(self, slot_value, dispatcher, tracker, domain):
-        
-            
-    # def validate_rating(self, slot_value, dispatcher, tracker, domain):
-        
-
-    # def validate_enable_cast(self, slot_value, dispatcher, tracker, domain):
-        
-            
-    # def validate_enable_release_date(self, slot_value, dispatcher, tracker, domain):
-        
-        
-    # def validate_enable_director_name(self, slot_value, dispatcher, tracker, domain):
         
         
     

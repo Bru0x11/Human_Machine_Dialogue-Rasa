@@ -121,50 +121,60 @@ slots:
         entity: movie_name
   genre:
     type: list
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: genre
   release_date:
     type: text
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: release_date
   budget:
     type: float
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: budget
   runtime:
     type: float
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: runtime
   revenue:
     type: float
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: revenue
   plot:
     type: text
+    influence_conversation: false
     mappings:
       - type: custom
   rating:
     type: any
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: rating
   composer_name:
     type: list
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: composer_name
   director_name:
     type: list
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: cast
   producer_name:
     type: list
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: producer_name
@@ -175,6 +185,7 @@ slots:
         entity: number_of_actors
   cast:
     type: list
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: cast
@@ -266,37 +277,6 @@ slots:
       intent: deny
       conditions:
         - active_loop: retrieve_plot_form
-  enable_genre:
-    type: text
-    influence_conversation: false
-    mappings:
-    - type: from_text
-      conditions:
-        - active_loop: retrieve_movie_information_form
-  enable_rating:
-    type: bool
-    mappings:
-    - type: custom
-      conditions:
-        - active_loop: retrieve_movie_information_form
-  enable_cast:
-    type: bool
-    mappings:
-    - type: custom
-      conditions:
-        - active_loop: retrieve_movie_information_form
-  enable_release_date:
-    type: bool
-    mappings:
-    - type: custom
-      conditions:
-        - active_loop: retrieve_movie_information_form
-  enable_director_name:
-    type: bool
-    mappings:
-    - type: custom
-      conditions:
-        - active_loop: retrieve_movie_information_form
   wiki_link:
     type: text
     mappings:
@@ -308,10 +288,10 @@ responses:
   # MISCELANEOUS
 
   utter_greet:
-  - text: "Hello! I'm Amadeus, your movie assistant. It's great to meet you!"
-  - text: "Nice to meet you! I'm Amadeus, your movie assistant!"
-  - text: "Greetings! Your movie assistant, Amadeus, at your service."
-  - text: "Amadeus here, delighted to meet you and ready to assist you with anything related to movies!"
+  - text: "Hello! I'm Popcorn, your movie assistant. It's great to meet you!"
+  - text: "Nice to meet you! I'm Popcorn, your movie assistant!"
+  - text: "Greetings! Your movie assistant, Popcorn, at your service."
+  - text: "Popcorn here, delighted to meet you and ready to assist you with anything related to movies!"
 
   utter_goodbye:
   - text: "It was great chatting with you. Feel free to come back anytime if you have more questions or just want to chat about movies. Have a great day!"
@@ -389,7 +369,7 @@ responses:
   - text: "Do you have a preference for a particular genre?"
   - text: "Are you looking for a movie in a particular genre?"
 
-  utter_query_genre:
+  utter_ask_genre:
   - text: "Perfect! What kind of genre would you like?"
   - text: "Great! What specific genre are you interested in?"
   - text: "Perfect! What genre are you in the mood for?"
@@ -473,8 +453,6 @@ responses:
   utter_prova:
   - text: "Sono nel posto giusto"
 
-  
-
 actions:
   - utter_greet
   - utter_goodbye
@@ -510,31 +488,17 @@ actions:
   - action_recommendation_without_movie
   - action_reset_slots
   - action_obtain_movie_from_plot
-  #- validate_retrieve_movie_information_form
   - validate_retrieve_plot_form
 
 forms:
   already_watched_form:
     required_slots:
       - is_already_watched
-  retrieve_movie_information_form:
-    required_slots:
-      - enable_genre
-      - genre
-      #- enable_rating
-      #- rating
-      #- enable_cast
-      #- cast
-      #- enable_release_date
-      #- release_date
-      #- movie_period
-      #- enable_director_name
-      #- director_name
   retrieve_plot_form:
     required_slots:
       - is_plot_received
       - iterate_plot
-  
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

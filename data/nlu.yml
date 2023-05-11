@@ -1465,6 +1465,11 @@ nlu:
     - [fantasy](genre)
     - [history](genre)
     - [horror](genre)
+    - [horror](genre) please
+    - [horror](genre), if possible
+    - I would like a [horror](genre) movie
+    - can I have a [horror](genre) movie
+    - [horror](genre) would be great
     - [music](genre)
     - [mistery](genre)
     - [romance](genre)

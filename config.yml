@@ -29,10 +29,13 @@ policies:
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
   - name: AugmentedMemoizationPolicy
+    max_history: 4
   - name: RulePolicy
   - name: UnexpecTEDIntentPolicy
-    max_history: 5
-    epochs: 100
+    epochs: 20
+    nlu_threshold: 0.2
+    ambiguity_threshold: 0.1
+    core_threshold: 0.2
   - name: TEDPolicy
     max_history: 5
     epochs: 100
