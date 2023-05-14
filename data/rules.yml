@@ -672,3 +672,8 @@ rules:
   - action: utter_user_praise
   - action: utter_goodbye
   - action: action_reset_is_inside_rules #reset is_inside_rules
+
+- rule: Ask the user to rephrase in case of low NLU confidence #FallbackClassifier
+  steps:
+  - intent: nlu_fallback
+  - action: utter_out_of_scope

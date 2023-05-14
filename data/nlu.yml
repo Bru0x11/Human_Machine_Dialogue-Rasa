@@ -1,9 +1,5 @@
 version: "3.1"
-
 nlu:
-
-# General intents
-
 - intent: greetings
   examples: |
     - hey
@@ -26,7 +22,6 @@ nlu:
     - howdy
     - Howdy
     - long time no see
-
 - intent: goodbye
   examples: |
     - cu
@@ -72,7 +67,6 @@ nlu:
     - Got it, see you later.
     - That's fine, goodbye for now.
     - I comprehend, talk to you later.
-
 - intent: affirm
   examples: |
     - yes
@@ -91,7 +85,6 @@ nlu:
     - that's right
     - Yes
     - Yeah
-
 - intent: deny
   examples: |
     - no
@@ -110,9 +103,7 @@ nlu:
     - I'm good, thanks
     - No no, it's ok
     - No, I'm fine like this
-    - not really
     - I'm done
-
 - intent: out_of_scope
   examples: |
     - What's the meaning of life?
@@ -130,10 +121,6 @@ nlu:
     - How do I make a homemade cake?
     - Can you recommend a good gym?
     - What's the meaning of a particular dream I had?
-
-# Task specific intents
-
-# TASK #1
 - intent: ask_movie_question
   examples: |
     - I have some questions about movies that I'd like to ask.
@@ -153,7 +140,7 @@ nlu:
     - I'd like to ask some questions about films.
     - Can I ask some questions related to movies?
     - I want to ask a few questions about movies, if that's alright.
-    -- I'm hoping to discuss some movie-related questions.
+    - - I'm hoping to discuss some movie-related questions.
     - I have some movie-related questions that I'd like to ask.
     - Could I trouble you with some questions about movies?
     - I'm curious and would like to ask some questions about movies.
@@ -166,8 +153,6 @@ nlu:
     - I'm keen to discuss some questions related to movies.
     - I have some burning questions about movies that I'd like to ask.
     - I want to pick your brain about movies by asking some questions.
-
-
 - intent: movie_genre
   examples: |
     - What genre would you classify [The Shawshank Redemption](movie_name) as?
@@ -186,7 +171,6 @@ nlu:
     - Could you tell me the genre of [The Shawshank Redemption](movie_name)?
     - How would you categorize [Jurassic Park](movie_name) in terms of genre?
     - Do you happen to know the genre of [The Matrix](movie_name)?
-    - Can you inform me of the genre of [The Silence of the Lambs](movie_name)?
     - What genre would you classify [Harry Potter and the Philosopher's Stone](movie_name) as?
     - Would you classify [The Terminator](movie_name) as a [sci-fi](genre) or an [action](genre) movie?
     - What genre does [The Sound of Music](movie_name) fall under?
@@ -242,7 +226,6 @@ nlu:
     - perfect and can you tell me the gerne of [Avatar](movie_name)?
     - ok and can you tell me the genre of [Inception](movie_name)?
     - can you tell me the genre of [Spongebob](movie_name)?
-
 - intent: movie_producer
   examples: |
     - Who produced [The Social Network](movie_name)?
@@ -280,16 +263,12 @@ nlu:
     - I'm curious, who produced [Platoon](movie_name)?
     - Do you know who produced [The Godfather Part III](movie_name)?
     - Who was the producer of [The Elephant Man](movie_name)?
-    - Can you find out who produced [The Silence of the Lambs](movie_name)?
     - Who produced [Apocalypse Now](movie_name)?
-    - Can you tell me who produced [The Truman Show](movie_name)?
-    - I'm curious, who produced [Schindler's List](movie_name)?
     - Do you know who produced [The Lion King](movie_name)?
     - Who was the producer of [The French Connection](movie_name)?
     - Can you find out who produced [The Shining](movie_name)?
     - Who produced [A Clockwork Orange] (movie_name)?
     - Can you tell me who produced [The Great Gatsby](movie_name)?
-    - I'm curious, who produced [The Elephant Man](movie_name)?
     - Do you know who produced [The Graduate](movie_name)?
     - Who was the producer of [The Godfather](movie_name)?
     - Can you find out who produced [The King's Speech](movie_name)?
@@ -316,7 +295,6 @@ nlu:
     - Who is credited as the producer for the movie?
     - Who put together the movie's production team?
     - and what about the producer?
-
 - intent: movie_genre+movie_producer
   examples: |
     - Could you tell me the genre and producer of [Inception]?
@@ -339,7 +317,6 @@ nlu:
     - What is the genre and producer of [Jurassic Park]? I'd appreciate it if you could tell me.
     - Do you have any information about the genre and producer of [Saw IV] that you could share with me?
     - If you don't mind, could you provide me with the genre and producer of [Saw V]?
-
 - intent: movie_director
   examples: |
     - [Jurassic Park](movie_name), who directed this film?
@@ -414,7 +391,6 @@ nlu:
     - Who put together the movie's creative team, including the director?
     - Who had creative control over the movie's direction?
     - and what about the director?
-
 - intent: movie_composer
   examples: |
     - Who composed the music for [The Lion King](movie_name)?
@@ -444,9 +420,9 @@ nlu:
     - Who composed the music for [The Sound of Music](movie_name)?
     - Can you tell me who is the composer of [The Last of the Mohicans](movie_name)?
     - Who was the composer of [Blade Runner](movie_name)?
-    - [Amélie](movie_name), who composed the music for this film? 
+    - [Amélie](movie_name), who composed the music for this film?
     - Who is the composer of [The Revenant](movie_name)?
-    - [2001: A Space Odyssey](movie_name), who composed the music for this film? 
+    - [2001: A Space Odyssey](movie_name), who composed the music for this film?
     - Who was the composer of [Back to the Future](movie_name)?
     - Can you tell me who is the composer of [The Avengers](movie_name)?
     - Who composed the music for [The Exorcist](movie_name)?
@@ -454,7 +430,7 @@ nlu:
     - Who is the composer of [Schindler's List](movie_name)?
     - [Scream](movie_name), who composed the music for this film?
     - Who composed the music for [The Hateful Eight](movie_name)?
-    - [Ghostbusters](movie_name), who was the composer of this film? 
+    - [Ghostbusters](movie_name), who was the composer of this film?
     - Who is the composer of [The Grand Budapest Hotel](movie_name)?
     - [Doctor Zhivago](movie_name), who composed the music for this movie?
     - its composer
@@ -479,7 +455,6 @@ nlu:
     - Who had creative control over the movie's music?
     - Can you give me some information about the music created specifically for the movie?
     - and what about the composer?
-
 - intent: movie_cast
   examples: |
     - Who is in the cast of [The Shawshank Redemption](movie_name)?
@@ -573,8 +548,6 @@ nlu:
     - May I know the names of [each](number_of_actors) actor who starred in the movie?
     - Can you list [all](number_of_actors) the possible actors from the movie?
     - and what about the cast?
-
-
 - intent: movie_plot
   examples: |
     - What is [The Shawshank Redemption](movie_name) about?
@@ -604,7 +577,6 @@ nlu:
     - [The Terminator](movie_name), what is the plot of this movie?
     - What is [The Silence of the Lambs](movie_name) about?
     - [The Shining](movie_name), can you describe the plot of this movie?
-    - What is [Schindler's List](movie_name) about?
     - Can you tell me the plot of [The Prestige](movie_name)?
     - [The Godfather: Part III](movie_name), what is the storyline of this movie?
     - What is [The Big Lebowski](movie_name) about?
@@ -612,7 +584,6 @@ nlu:
     - What is [The Dark Knight Rises](movie_name) about?
     - Can you tell me the plot of [The Breakfast Club](movie_name)?
     - [The Exorcist](movie_name), what is the storyline of this movie?
-    - What is [Fight Club](movie_name) about?
     - [Star Wars: Episode V - The Empire Strikes Back](movie_name), can you describe the plot of this movie?
     - What is [Good Will Hunting](movie_name) about?
     - Can you tell me the storyline of [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
@@ -649,7 +620,6 @@ nlu:
     - What are the major plot points of the movie?
     - Can you give me a rundown of the movie's plot?
     - and what about the plot?
-
 - intent: movie_release_date
   examples: |
     - When was [The Godfather](movie_name) released?
@@ -723,7 +693,6 @@ nlu:
     - Can you provide information about any delays in the movie's release?
     - When did the movie's promotional campaign begin in anticipation of its release?
     - and what about the release date?
-
 - intent: movie_budget
   examples: |
     - What was the budget for [Avatar](movie_name)?
@@ -784,7 +753,6 @@ nlu:
     - Can you tell me about any significant financial decisions made during the movie's production?
     - What were the economic factors that affected the movie's budget?
     - and what about the budget?
-
 - intent: movie_runtime
   examples: |
     - How long is [The Godfather](movie_name)?
@@ -829,7 +797,6 @@ nlu:
     - Can you tell me about any notable scenes or moments in the movie's runtime?
     - How did the runtime compare to the movie's source material or genre standards?
     - and what about the runtime?
-
 - intent: movie_revenue
   examples: |
     - What was the box office revenue for [Avatar](movie_name)?
@@ -874,7 +841,6 @@ nlu:
     - Can you tell me about any long-term revenue streams related to the movie, such as home video sales or merchandise?
     - What was the audience and critical reception of the movie's revenue performance?
     - and what about the revenue?
-
 - intent: movie_rating
   examples: |
     - What's the overall rating of [The Godfather](movie_name)?
@@ -919,332 +885,276 @@ nlu:
     - Can you provide information about any alternative ratings or classifications for the movie?
     - What was the impact of the movie's rating on its overall success or reception?
     - and what about the rating?
-
 - intent: movie_genre+movie_director
   examples: |
     - Could you tell me the genre and director of [Inception]?
     - What is the genre and who is the director of [The Dark Knight]?
     - Can you give me some information about the genre and director of [The Lion King]?
-
 - intent: movie_genre+movie_composer
   examples: |
     - Could you tell me the genre and composer of [Inception]?
     - What is the genre and who is the composer of [The Dark Knight]?
     - Can you give me some information about the genre and composer of [The Lion King]?
-
 - intent: movie_genre+movie_cast
   examples: |
     - Could you tell me the genre and cast of [Inception]?
     - What is the genre and cast of [The Dark Knight]?
     - Can you give me some information about the genre and cast of [The Lion King]?
-
 - intent: movie_genre+movie_plot
   examples: |
     - Could you tell me the genre and plot of [Inception]?
     - What is the genre and plot of [The Dark Knight]?
     - Can you give me some information about the genre and plot of [The Lion King]?
-
 - intent: movie_genre+movie_release_date
   examples: |
     - Could you tell me the genre and release date of [Inception]?
     - What is the genre and release date of [The Dark Knight]?
     - Can you give me some information about the genre and release date of [The Lion King]?
-
 - intent: movie_genre+movie_budget
   examples: |
     - Could you tell me the genre and budget of [Inception]?
     - What is the genre and budget of [The Dark Knight]?
     - Can you give me some information about the genre and budget of [The Lion King]?
-
 - intent: movie_genre+movie_runtime
   examples: |
     - Could you tell me the genre and runtime of [Inception]?
     - What is the genre and runtime of [The Dark Knight]?
     - Can you give me some information about the genre and runtime of [The Lion King]?
-
 - intent: movie_genre+movie_revenue
   examples: |
     - Could you tell me the genre and revenue of [Inception]?
     - What is the genre and revenue of [The Dark Knight]?
     - Can you give me some information about the genre and revenue of [The Lion King]?
-
 - intent: movie_genre+movie_rating
   examples: |
     - Could you tell me the genre and rating of [Inception]?
     - What is the genre and rating of [The Dark Knight]?
     - Can you give me some information about the genre and rating of [The Lion King]?
-
 - intent: movie_producer+movie_composer
   examples: |
     - Could you tell me the producer and composer of [Inception]?
     - Who is the producer and composer of [The Dark Knight]?
     - Can you give me some information about the producer and composer of [The Lion King]?
-
 - intent: movie_producer+movie_director
   examples: |
     - Could you tell me the producer and director of [Inception]?
     - Who is the producer and director of [The Dark Knight]?
     - Can you give me some information about the producer and director of [The Lion King]?
-
 - intent: movie_producer+movie_cast
   examples: |
     - Could you tell me the producer and cast of [Inception]?
     - Who is the producer and cast of [The Dark Knight]?
     - Can you give me some information about the producer and cast of [The Lion King]?
-
 - intent: movie_producer+movie_plot
   examples: |
     - Could you tell me the producer and plot of [Inception]?
     - Who is the producer and what is the plot of [The Dark Knight]?
     - Can you give me some information about the producer and plot of [The Lion King]?
-
 - intent: movie_producer+movie_release_date
   examples: |
     - Could you tell me the producer and release date of [Inception]?
     - Who is the producer and what is the release date of [The Dark Knight]?
     - Can you give me some information about the producer and release date of [The Lion King]?
-
 - intent: movie_producer+movie_budget
   examples: |
     - Could you tell me the producer and budget of [Inception]?
     - Who is the producer and what is the budget of [The Dark Knight]?
     - Can you give me some information about the producer and budget of [The Lion King]?
-
 - intent: movie_producer+movie_runtime
   examples: |
     - Could you tell me the producer and runtime of [Inception]?
     - Who is the producer and what is the runtime of [The Dark Knight]?
     - Can you give me some information about the producer and runtime of [The Lion King]?
-
 - intent: movie_producer+movie_revenue
   examples: |
     - Could you tell me the producer and revenue of [Inception]?
     - Who is the producer and what is the revenue of [The Dark Knight]?
     - Can you give me some information about the producer and revenue of [The Lion King]?
-
 - intent: movie_producer+movie_rating
   examples: |
     - Could you tell me the producer and rating of [Inception]?
     - Who is the producer and what is the rating of [The Dark Knight]?
     - Can you give me some information about the producer and rating of [The Lion King]?
-
 - intent: movie_director+movie_composer
   examples: |
     - Could you tell me the director and composer of [Inception]?
     - Who is the director and composer of [The Dark Knight]?
     - Can you give me some information about the director and composer of [The Lion King]?
-
 - intent: movie_director+movie_cast
   examples: |
     - Could you tell me the director and cast of [Inception]?
     - Who is the director and cast of [The Dark Knight]?
     - Can you give me some information about the director and cast of [The Lion King]?
-
 - intent: movie_director+movie_plot
   examples: |
     - Could you tell me the director and plot of [Inception]?
     - Who is the director and what is the plot of [The Dark Knight]?
     - Can you give me some information about the director and plot of [The Lion King]?
-
 - intent: movie_director+movie_release_date
   examples: |
     - Could you tell me the director and release date of [Inception]?
     - Who is the director and what is the release date of [The Dark Knight]?
     - Can you give me some information about the director and release date of [The Lion King]?
-
 - intent: movie_director+movie_budget
   examples: |
     - Could you tell me the director and budget of [Inception]?
     - Who is the director and what is the budget of [The Dark Knight]?
     - Can you give me some information about the director and budget of [The Lion King]?
-
 - intent: movie_director+movie_runtime
   examples: |
     - Could you tell me the director and runtime of [Inception]?
     - Who is the director and what is the runtime of [The Dark Knight]?
     - Can you give me some information about the director and runtime of [The Lion King]?
-
 - intent: movie_director+movie_revenue
   examples: |
     - Could you tell me the director and revenue of [Inception]?
     - Who is the director and what is the revenue of [The Dark Knight]?
     - Can you give me some information about the director and revenue of [The Lion King]?
-
 - intent: movie_director+movie_rating
   examples: |
     - Could you tell me the director and rating of [Inception]?
     - Who is the director and what is the rating of [The Dark Knight]?
     - Can you give me some information about the director and rating of [The Lion King]?
-
 - intent: movie_composer+movie_cast
   examples: |
     - Could you tell me the composer and cast of [Inception]?
     - Who is the composer and cast of [The Dark Knight]?
     - Can you give me some information about the composer and cast of [The Lion King]?
-
 - intent: movie_composer+movie_plot
   examples: |
     - Could you tell me the composer and plot of [Inception]?
     - Who is the composer and what is the plot of [The Dark Knight]?
     - Can you give me some information about the composer and plot of [The Lion King]?
-
 - intent: movie_composer+movie_release_date
   examples: |
     - Could you tell me the composer and release date of [Inception]?
     - Who is the composer and what is the release date of [The Dark Knight]?
     - Can you give me some information about the composer and release date of [The Lion King]?
-
 - intent: movie_composer+movie_budget
   examples: |
     - Could you tell me the composer and budget of [Inception]?
     - Who is the composer and what is the budget of [The Dark Knight]?
     - Can you give me some information about the composer and budget of [The Lion King]?
-
 - intent: movie_composer+movie_runtime
   examples: |
     - Could you tell me the composer and runtime of [Inception]?
     - Who is the composer and what is the runtime of [The Dark Knight]?
     - Can you give me some information about the composer and runtime of [The Lion King]?
-
 - intent: movie_composer+movie_revenue
   examples: |
     - Could you tell me the composer and revenue of [Inception]?
     - Who is the composer and what is the revenue of [The Dark Knight]?
     - Can you give me some information about the composer and revenue of [The Lion King]?
-
 - intent: movie_composer+movie_rating
   examples: |
     - Could you tell me the composer and rating of [Inception]?
     - Who is the composer and what is the rating of [The Dark Knight]?
     - Can you give me some information about the composer and rating of [The Lion King]?
-
 - intent: movie_cast+movie_plot
   examples: |
     - Could you tell me the cast and plot of [Inception]?
     - Who is the cast and what is the plot of [The Dark Knight]?
     - Can you give me some information about the cast and plot of [The Lion King]?
-
 - intent: movie_cast+movie_release_date
   examples: |
     - Could you tell me the cast and release date of [Inception]?
     - Who is the cast and what is the release date of [The Dark Knight]?
     - Can you give me some information about the cast and release date of [The Lion King]?
-
 - intent: movie_cast+movie_budget
   examples: |
     - Could you tell me the cast and budget of [Inception]?
     - Who is the cast and what is the budget of [The Dark Knight]?
     - Can you give me some information about the cast and budget of [The Lion King]?
-
 - intent: movie_cast+movie_runtime
   examples: |
     - Could you tell me the cast and runtime of [Inception]?
     - Who is the cast and what is the runtime of [The Dark Knight]?
     - Can you give me some information about the cast and runtime of [The Lion King]?
-    
 - intent: movie_cast+movie_revenue
   examples: |
     - Could you tell me the cast and revenue of [Inception]?
     - Who is the cast and what is the revenue of [The Dark Knight]?
     - Can you give me some information about the cast and revenue of [The Lion King]?
-
 - intent: movie_cast+movie_rating
   examples: |
     - Could you tell me the cast and rating of [Inception]?
     - Who is the cast and what is the rating of [The Dark Knight]?
     - Can you give me some information about the cast and rating of [The Lion King]?
-
 - intent: movie_plot+movie_release_date
   examples: |
     - Could you tell me the plot and release date of [Inception]?
     - What is the plot and release date of [The Dark Knight]?
     - Can you give me some information about the plot and release date of [The Lion King]?
-
 - intent: movie_plot+movie_budget
   examples: |
     - Could you tell me the plot and budget of [Inception]?
     - What is the plot and budget of [The Dark Knight]?
     - Can you give me some information about the plot and budget of [The Lion King]?
-
 - intent: movie_plot+movie_runtime
   examples: |
     - Could you tell me the plot and runtime of [Inception]?
     - What is the plot and runtime of [The Dark Knight]?
     - Can you give me some information about the plot and runtime of [The Lion King]?
-
 - intent: movie_plot+movie_revenue
   examples: |
     - Could you tell me the plot and revenue of [Inception]?
     - What is the plot and revenue of [The Dark Knight]?
     - Can you give me some information about the plot and revenue of [The Lion King]?
-
 - intent: movie_plot+movie_rating
   examples: |
     - Could you tell me the plot and rating of [Inception]?
     - What is the plot and rating of [The Dark Knight]?
     - Can you give me some information about the plot and rating of [The Lion King]?
-
 - intent: movie_release_date+movie_budget
   examples: |
     - Could you tell me the release date and budget of [Inception]?
     - What is the release date and budget of [The Dark Knight]?
     - Can you give me some information about the release date and budget of [The Lion King]?
-
 - intent: movie_release_date+movie_runtime
   examples: |
     - Could you tell me the release date and runtime of [Inception]?
     - What is the release date and runtime of [The Dark Knight]?
     - Can you give me some information about the release date and runtime of [The Lion King]?
-
 - intent: movie_release_date+movie_revenue
   examples: |
     - Could you tell me the release date and revenue of [Inception]?
     - What is the release date and revenue of [The Dark Knight]?
     - Can you give me some information about the release date and revenue of [The Lion King]?
-
 - intent: movie_release_date+movie_rating
   examples: |
     - Could you tell me the release date and rating of [Inception]?
     - What is the release date and rating of [The Dark Knight]?
     - Can you give me some information about the release date and rating of [The Lion King]?
-
 - intent: movie_budget+movie_runtime
   examples: |
     - Could you tell me the budget and runtime of [Inception]?
     - What is the budget and runtime of [The Dark Knight]?
     - Can you give me some information about the budget and runtime of [The Lion King]?
-
 - intent: movie_budget+movie_revenue
   examples: |
     - Could you tell me the budget and revenue of [Inception]?
     - What is the budget and revenue of [The Dark Knight]?
     - Can you give me some information about the budget and revenue of [The Lion King]?
-
 - intent: movie_budget+movie_rating
   examples: |
     - Could you tell me the budget and rating of [Inception]?
     - What is the budget and rating of [The Dark Knight]?
     - Can you give me some information about the budget and rating of [The Lion King]?
-
 - intent: movie_runtime+movie_revenue
   examples: |
     - Could you tell me the runtime and revenue of [Inception]?
     - What is the runtime and revenue of [The Dark Knight]?
     - Can you give me some information about the runtime and revenue of [The Lion King]?
-
 - intent: movie_runtime+movie_rating
   examples: |
     - Could you tell me the runtime and rating of [Inception]?
     - What is the runtime and rating of [The Dark Knight]?
     - Can you give me some information about the runtime and rating of [The Lion King]?
-
 - intent: movie_revenue+movie_rating
   examples: |
     - Could you tell me the revenue and rating of [Inception]?
     - What is the revenue and rating of [The Dark Knight]?
     - Can you give me some information about the revenue and rating of [The Lion King]?
-
-# TASK #2
 - intent: ask_recommendation_without_movie
   examples: |
     - suggest a movie
@@ -1279,7 +1189,7 @@ nlu:
     - What's a good [science fiction](genre) movie you'd recommend?
     - Can you suggest a movie that's based on a book?
     - I'm looking for a feel-good movie, could you recommend one?
-
+    - can you recommend me a movie?
 - intent: ask_recommendation_with_movie
   examples: |
     - I just saw [The Matrix](movie_name), do you have any similar movie recommendations?
@@ -1325,7 +1235,6 @@ nlu:
     - After watching [The Ring](movie_name), what other movies would you recommend?
     - Can you recommend any movies similar to [The Grudge](movie_name)?
     - I really enjoyed [The Sixth Sense](movie_name), can you suggest a similar movie to watch
-
 - intent: just_genre
   examples: |
     - [action](genre)
@@ -1371,7 +1280,7 @@ nlu:
     - [Western](genre) [Drama](genre)
     - [Fantasy](genre) with some elements of [Adventure](genre)
     - [Noir](genre) with some [Mystery](genre) and [Thriller](genre) elements
-
+    - [horror](genre)
 - intent: just_cast
   examples: |
     - [Tom Hanks](cast)
@@ -1423,7 +1332,7 @@ nlu:
     - [Lupita Nyong'o](cast)
     - [Zendaya](cast)
     - [Daniel Kaluuya](cast)
-    - [Anthony Hopkins](cast) 
+    - [Anthony Hopkins](cast)
     - [Martin Scorsese](cast)
     - [Steven Spielberg](cast)
     - [Alfred Hitchcock](cast)
@@ -1480,7 +1389,6 @@ nlu:
     - [Christopher Nolan](cast) [Michael Caine](cast) and [Christian Bale](cast)
     - [Robert Rodriguez](cast), [Antonio Banderas](cast), [Salma Hayek](cast)
     - [Francis Ford Coppola](cast), [Al Pacino](cast) and [Marlon Brando](cast)
-
 - intent: just_rating
   examples: |
     - [0](rating)
@@ -1495,7 +1403,7 @@ nlu:
     - [9](rating)
     - [10](rating)
     - [ten](rating)
-
+    - [7](rating)
 - intent: is_before
   examples: |
     - [Before](movie_period)
@@ -1520,7 +1428,6 @@ nlu:
     - [Before](movie_period) this year begins, if feasible
     - If it's possible, [before](movie_period) the onset of this year
     - [Preceding](movie_period) the start of this year, if attainable
-
 - intent: is_after
   examples: |
     - [After](movie_period)
@@ -1545,11 +1452,10 @@ nlu:
     - [After this year passes](movie_period), if feasible
     - If it's possible, [after this year ends](movie_period)
     - [Following the conclusion of this year](movie_period), if attainable
-
 - intent: is_exactly
   examples: |
     - [exactly](movie_period) this year
-    - [exactly](movie_period) 
+    - [exactly](movie_period)
     - [exactly](movie_period) this year, please
     - [exactly](movie_period) this year if possible
     - Preferably [within this year](movie_period)
@@ -1572,8 +1478,6 @@ nlu:
     - If achievable, [precisely in this year](movie_period)
     - [During the current year](movie_period), if it is doable
     - [Within the confines of this year](movie_period), if possible
-
-
 - intent: just_year
   examples: |
     - [1980](release_date)
@@ -1620,7 +1524,6 @@ nlu:
     - [2021](release_date)
     - [2022](release_date)
     - [2023](release_date)
-
 - intent: ask_movie_with_similar_plot
   examples: |
     - can you tell me a movie that has a similar plot?

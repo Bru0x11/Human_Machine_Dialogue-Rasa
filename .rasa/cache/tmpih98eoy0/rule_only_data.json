@@ -1,0 +1,6 @@
+{
+  "rule_only_slots": [
+    "is_inside_rules"
+  ],
+  "rule_only_loops": []
+}

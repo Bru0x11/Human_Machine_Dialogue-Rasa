@@ -15,20 +15,30 @@ stories:
   - action: utter_decision
 
 # TASK #2
-- story: begin recommendation_without_movie + genre
+- story: begin recommendation_without_movie
   steps:
   - intent: ask_recommendation_without_movie
   - action: action_reset_slots
+  - slot_was_set:
+      - is_inside_rules: null
+  - slot_was_set:
+      - keep_asking: null
+  - checkpoint: begin_rwm
+
+- story: recommendation_without_movie + genre
+  steps:
+  - checkpoint: begin_rwm
   - action: utter_ask_enable_genre
-  - intent: affirm 
+  - intent: affirm
   - action: utter_ask_genre
   - intent: just_genre
+    entities:
+      - genre
   - checkpoint: genre_done
 
 - story: begin recommendation_without_movie no genre
   steps:
-  - intent: ask_recommendation_without_movie
-  - action: action_reset_slots 
+  - checkpoint: begin_rwm
   - action: utter_ask_enable_genre
   - intent: deny 
   - checkpoint: genre_done
@@ -40,6 +50,8 @@ stories:
   - intent: affirm
   - action: utter_ask_rating
   - intent: just_rating
+    entities:
+    - rating
   - checkpoint: rating_done
 
 - story: recommendation_without_movie no rating
@@ -56,6 +68,8 @@ stories:
   - intent: affirm
   - action: utter_ask_cast
   - intent: just_cast
+    entities:
+    - cast
   - checkpoint: cast_done
 
 - story: recommendation_without_movie no cast
@@ -72,11 +86,19 @@ stories:
   - intent: affirm
   - action: utter_ask_release_date
   - intent: just_year
+    entities:
+      - release_date
   - action: utter_ask_movie_period
   - or:
     - intent: is_before
+      entities:
+      - movie_period
     - intent: is_after
+      entities:
+      - movie_period
     - intent: is_exactly
+      entities:
+      - movie_period
   - checkpoint: release_date_done
 
 - story: recommendation_without_movie no release_date
@@ -93,6 +115,8 @@ stories:
   - intent: affirm
   - action: utter_ask_director_name
   - intent: just_cast
+    entities:
+      - director_name
   - checkpoint: director_name_done
 
 - story: recommendation_without_movie no director_name
@@ -105,9 +129,20 @@ stories:
 - story: recommendation_without_movie
   steps:
   - checkpoint: director_name_done
+  - action: utter_summary_request
   - action: action_recommendation_without_movie
+  - slot_was_set:
+      - movie_name
+  - slot_was_set:
+      - plot
+  - slot_was_set:
+      - release_date
   - action: utter_return_recommended_movie
   - action: action_reset_slots
+  - slot_was_set:
+      - is_inside_rules: null
+  - slot_was_set:
+      - keep_asking: null
   - checkpoint: continue_using_bot
   
 
@@ -119,15 +154,6 @@ stories:
   - checkpoint: continue_using_bot
 
 # TASK #3
-# - story: movie with plot
-#   steps:
-#   - intent: ask_movie_with_similar_plot
-#   - action: retrieve_plot_form
-#   - active_loop: retrieve_plot_form
-#   - action: action_obtain_movie_from_plot
-#   - action: utter_return_similar_movie
-#   - checkpoint: continue_using_bot
-
 - story: movie with plot
   steps:
   - intent: ask_movie_with_similar_plot
@@ -156,3 +182,40 @@ stories:
   steps:
     - checkpoint: ending
     - action: utter_goodbye
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: ask_recommendation_without_movie
+#   - action: action_reset_slots
+#   - slot_was_set:
+#     - is_inside_rules: null
+#   - slot_was_set:
+#     - keep_asking: null
+#   - action: utter_ask_enable_genre
+#   - intent: affirm
+#   - slot_was_set:
+#     - keep_asking: true
+#   - action: utter_ask_genre
+#   - intent: just_genre
+#     entities:
+#     - genre: horror
+#   - slot_was_set:
+#     - genre:
+#       - horror
+#   - action: utter_ask_enable_rating
+#   - intent: affirm
+#   - action: utter_ask_rating
+#   - intent: just_rating
+#     entities:
+#     - rating: '7'
+#   - slot_was_set:
+#     - rating: '7'
+#   - action: utter_summary_request
+#   - action: action_recommendation_without_movie
+#   - slot_was_set:
+#     - movie_name: Psycho
+#   - slot_was_set:
+#     - plot: When larcenous real estate clerk Marion Crane goes on the lam with a wad of cash and hopes of starting a new life, she ends up at the notorious Bates Motel, where manager Norman Bates cares for his housebound mother.
+#   - slot_was_set:
+#     - release_date: '1960-06-22'
+#   - action: utter_return_recommended_movie
