@@ -15,6 +15,8 @@ intents:
 - just_genre
 - just_rating
 - just_year
+- just_rating+just_cast
+- just_genre+just_cast+just_year
 - movie_budget
 - movie_budget+movie_rating
 - movie_budget+movie_revenue
@@ -376,8 +378,6 @@ responses:
   - text: Would you mind providing a summary of the plot?
   - text: Could you elucidate the plot for me, please?
   - text: May I request a brief overview of the storyline?
-  utter_summary_request:
-  - text: "Nice, I'm done asking your preferences! This are all the requirements that you defined: {genre}, {rating}"
   utter_ask_iterate_plot:
   - text: Do you want to check another plot?
   utter_return_similar_movie:
@@ -391,6 +391,7 @@ responses:
   - text: Sono nel posto giusto
 actions:
 - action_keep_asking
+- action_summary_request
 - action_obtain_movie_from_plot
 - action_recommendation_with_movie
 - action_recommendation_without_movie
@@ -429,7 +430,6 @@ actions:
 - utter_prova
 - utter_return_recommended_movie
 - utter_self_introduction
-- utter_summary_request
 - validate_retrieve_plot_form
 forms:
   already_watched_form:

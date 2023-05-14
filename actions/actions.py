@@ -686,8 +686,8 @@ class ActionRecommendationWithoutMovie(Action):
         retrieve_vote = tracker.get_slot("rating")
         retrieve_cast = tracker.get_slot("cast")
         retrieve_director = tracker.get_slot("director_name")
-
         genre_list = tracker.get_slot("genre")
+
         retrieve_genre = ""
         if genre_list != None:
             for genre in genre_list:
@@ -751,6 +751,52 @@ class ActionRecommendationWithoutMovie(Action):
         release_date = response.get("release_date")
 
         return[SlotSet("movie_name", title), SlotSet("plot", plot), SlotSet("release_date", release_date)]
+    
+
+class ActionResetSlots(Action):
+
+    def name(self):
+        return 'action_summary_request'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        genre_list = tracker.get_slot("genre")
+        retrieve_year = tracker.get_slot("release_date")
+        retrieve_is_before = tracker.get_slot("is_before")
+        retrieve_is_after = tracker.get_slot("is_after")
+        retrieve_is_exactly = tracker.get_slot("is_exactly")
+        retrieve_vote = tracker.get_slot("rating")
+        retrieve_cast = tracker.get_slot("cast")
+        retrieve_director = tracker.get_slot("director_name")
+
+        dispatcher.utter_message(text = "Great! You've provided all the essential elements for me to find a movie. Let's review the choices you've made so far: ")
+        if genre_list != None:
+            dispatcher.utter_message(text = 'The genres that you chose are:')
+            for genre in genre_list:
+                dispatcher.utter_message(text = '* {}'.format(genre))
+
+        if retrieve_vote != None:
+            dispatcher.utter_message(text = 'After that, the rating chosen is {}.'.format(retrieve_vote))
+
+        if retrieve_year != None:
+            if retrieve_is_before != None:
+                dispatcher.utter_message(text = "Moreover, you want to check all the films prior the year {}".format(retrieve_year))
+            elif retrieve_is_after != None:
+                dispatcher.utter_message(text = "Moreover, you want to check all the films after the year {}".format(retrieve_year))
+            elif retrieve_is_exactly != None:
+                dispatcher.utter_message(text = "Moreover, you have indicated your desire to browse films specifically for the year.{}".format(retrieve_year))
+
+        if retrieve_cast != None:
+            dispatcher.utter_message(text = 'Also, here is the list of actors that you asked for:')
+            for cast in retrieve_cast:
+                dispatcher.utter_message(text = '* {}'.format(cast))
+
+        if retrieve_director != None and retrieve_director != retrieve_cast:
+            dispatcher.utter_message(text = 'Finally, the directors chosen by you are:')
+            for director in retrieve_director:
+                dispatcher.utter_message(text = '* {}'.format(director))
+        
+
+        return []
 
 
 class ActionResetSlots(Action):

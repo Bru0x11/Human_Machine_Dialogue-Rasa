@@ -71,6 +71,7 @@ nlu:
   examples: |
     - yes
     - y
+    - yes, please
     - indeed
     - of course
     - that sounds good
@@ -85,10 +86,31 @@ nlu:
     - that's right
     - Yes
     - Yeah
+    -Absolutely!
+    -Certainly!
+    -Sure thing!
+    -Without a doubt!
+    -Of course!
+    -Yes, please!
+    -Most definitely!
+    -Affirmative!
+    -You bet!
+    -Definitely!
+    -Yes, absolutely!
+    -By all means!
+    -Indeed!
+    -I would love to!
+    -Absolutely, yes!
+    -Count me in!
+    -That would be great!
+    -I'm all for it!
+    -Yes, I'm interested!
+    -That sounds perfect!
 - intent: deny
   examples: |
     - no
     - n
+    - no thanks
     - never
     - I don't think so
     - don't like that
@@ -297,26 +319,26 @@ nlu:
     - and what about the producer?
 - intent: movie_genre+movie_producer
   examples: |
-    - Could you tell me the genre and producer of [Inception]?
-    - What is the genre and who produced [The Dark Knight]?
-    - Can you give me some information about the genre and producer of [The Lion King]?
-    - I'm curious about [Saving private Ryan]. Can you tell me its genre and producer?
-    - Do you know who produced and what genre [The Departed] belongs to?
-    - I'm interested in [The Prestige]. Can you provide me with its genre and producer?
-    - Would you mind sharing the genre and producer of [The Terminator] with me?
-    - I'm not sure about the genre and producer of [Scream]. Could you help me out?
-    - What can you tell me about the genre and producer of [Toy Story]?
-    - Could you inform me of the genre and producer of [Lord of the Rings]?
-    - Can you give me some insight into the genre and producer of [Saw I]?
-    - I'm looking for some information on [Saw II]'s genre and producer. Can you assist me?
-    - What do you know about the genre and producer of [Dunkirk]?
-    - Can you provide me with the genre and producer of [Gravity], please?
-    - I'm curious to know the genre and producer of [Interstellar]. Can you help me with that?
-    - Would you happen to know the genre and producer of [The Martian]?
-    - Can you tell me the genre and producer of [The Great Gatsby]? I'm interested in it.
-    - What is the genre and producer of [Jurassic Park]? I'd appreciate it if you could tell me.
-    - Do you have any information about the genre and producer of [Saw IV] that you could share with me?
-    - If you don't mind, could you provide me with the genre and producer of [Saw V]?
+    - Could you tell me the genre and producer of [Inception](movie_name)?
+    - What is the genre and who produced [The Dark Knight](movie_name)?
+    - Can you give me some information about the genre and producer of [The Lion King](movie_name)?
+    - I'm curious about [Saving private Ryan](movie_name). Can you tell me its genre and producer?
+    - Do you know who produced and what genre [The Departed](movie_name) belongs to?
+    - I'm interested in [The Prestige](movie_name). Can you provide me with its genre and producer?
+    - Would you mind sharing the genre and producer of [The Terminator](movie_name) with me?
+    - I'm not sure about the genre and producer of [Scream](movie_name). Could you help me out?
+    - What can you tell me about the genre and producer of [Toy Story](movie_name)?
+    - Could you inform me of the genre and producer of [Lord of the Rings](movie_name)?
+    - Can you give me some insight into the genre and producer of [Saw I](movie_name)?
+    - I'm looking for some information on [Saw II](movie_name)'s genre and producer. Can you assist me?
+    - What do you know about the genre and producer of [Dunkirk](movie_name)?
+    - Can you provide me with the genre and producer of [Gravity](movie_name), please?
+    - I'm curious to know the genre and producer of [Interstellar](movie_name). Can you help me with that?
+    - Would you happen to know the genre and producer of [The Martian](movie_name)?
+    - Can you tell me the genre and producer of [The Great Gatsby](movie_name)? I'm interested in it.
+    - What is the genre and producer of [Jurassic Park](movie_name)? I'd appreciate it if you could tell me.
+    - Do you have any information about the genre and producer of [Saw IV](movie_name) that you could share with me?
+    - If you don't mind, could you provide me with the genre and producer of [Saw V](movie_name)?
 - intent: movie_director
   examples: |
     - [Jurassic Park](movie_name), who directed this film?
@@ -1385,7 +1407,7 @@ nlu:
     - [Leonardo DiCaprio](cast), [Martin Scorsese](cast) and [Robert De Niro](cast)
     - [Quentin Tarantino](cast) also [Uma Thurman](cast) and [Harvey Keitel](cast)
     - [Wes Anderson](cast) with [Bill Murray](cast) with [Owen Wilson](cast)
-    - [Clint Eastwood](cast) with also [Morgan Freeman](cast) and [Gene Hackman](cast)
+    - [Keith David](cast) with also [Morgan Freeman](cast) and [Gene Hackman](cast)
     - [Christopher Nolan](cast) [Michael Caine](cast) and [Christian Bale](cast)
     - [Robert Rodriguez](cast), [Antonio Banderas](cast), [Salma Hayek](cast)
     - [Francis Ford Coppola](cast), [Al Pacino](cast) and [Marlon Brando](cast)
@@ -1524,6 +1546,70 @@ nlu:
     - [2021](release_date)
     - [2022](release_date)
     - [2023](release_date)
+- intent: just_genre+just_cast+just_year
+  examples: |
+    - [horror](genre). I would also like to have [Brad Pitt](cast) as an actor and I would like to have the movie released in [2012](release_date)
+    - [Romantic comedy](genre). I would also like to have [Jennifer Lawrence](cast) as an actress, and I would like the movie to be released in [2005](release_date).
+    - [Sci-fi](genre). I would also like to have [Tom Hanks](cast) as an actor, and I would like the movie to be released in [2021](release_date).
+    - [Action](genre). I would also like to have [Scarlett Johansson](cast) as an actress, and I would like the movie to be released in [2008](release_date).
+    - [Thriller](genre). I would also like to have [Leonardo DiCaprio](cast) as an actor, and I would like the movie to be released in [2019](release_date).
+    - [Comedy](genre). I would also like to have [Sandra Bullock](cast) as an actress, and I would like the movie to be released in [1997](release_date).
+    - [Drama](genre). I would also like to have [Ryan Gosling](cast) as an actor, and I would like the movie to be released in [2015](release_date).
+    - [Mystery](genre). I would also like to have [Emma Stone](cast) as an actress, and I would like the movie to be released in [2010](release_date).
+    - [Fantasy](genre). I would also like to have [Chris Pratt](cast) as an actor, and I would like the movie to be released in [2003](release_date).
+    - [Animation](genre). I would also like to have [Will Smith](cast) as an actor, and I would like the movie to be released in [2018](release_date).
+    - [Crime](genre). I would also like to have [Robert Downey Jr](cast). as an actor, and I would like the movie to be released in [2002](release_date).
+    - [Romance](genre). I would also like to have [Natalie Portman](cast) as an actress, and I would like the movie to be released in [2017](release_date).
+    - [Adventure](genre). I would also like to have [Chris Hemsworth](cast) as an actor, and I would like the movie to be released in [2014](release_date).
+    - [Family](genre). I would also like to have [Julia Roberts](cast) as an actress, and I would like the movie to be released in [2009](release_date).
+    - [Historical](genre). I would also like to have [Denzel Washington](cast) as an actor, and I would like the movie to be released in [2007](release_date).
+    - [Science fiction](genre). I would also like to have [Anne Hathaway](cast) as an actress, and I would like the movie to be released in [2013](release_date).
+    - [Supernatural](genre). I would also like to have [Johnny Depp](cast) as an actor, and I would like the movie to be released in [2006](release_date).
+    - [War](genre), if possible. I would also like to have [Matt Damon](cast) as an actor, and I would like the movie to be released in [2016](release_date).
+    - [Musical](genre). I would also like to have [Meryl Streep](cast) as an actress, and I would like the movie to be released in [2020](release_date).
+    - [Romantic comedy](genre). I would also love to see [Jennifer Lawrence](cast) starring in it, and I prefer the movie to be released in [2005](release_date).
+    - [Sci-fi thriller](genre). It would be great if [Tom Hanks](cast) is part of the cast, and I prefer the movie to be released in [2021](release_date).
+    - [Action](genre)-packed. Having [Scarlett Johansson](cast) as the lead actor would be fantastic, and I prefer the movie to be released in [2008](release_date).
+    - [Psychological thriller](genre). I'm a fan of [Leonardo DiCaprio](cast), and I prefer the movie to be released in [2019](release_date).
+    - [Comedy-horror](genre). It would be hilarious to see [Sandra Bullock](cast) in the movie, and I prefer the movie to be released in [1997](release_date).
+    - [Drama](genre). [Ryan Gosling](cast) would also be perfect for a dramatic role, and I prefer the movie to be released in [2015](release_date).
+    - [Mystery](genre) suspense. I would love to see [Emma Stone](cast) in a mysterious role, and I prefer the movie to be released in [2010](release_date).
+    - [Fantasy](genre) adventure with also [Chris Pratt](cast) would bring excitement to the movie, and I prefer the movie to be released in [2003](release_date).
+    - [Crime drama](genre). I also think that [Robert Downey Jr](cast). would add depth to the movie, and I prefer the movie to be released in [2002](release_date).
+    - If available, I prefer a [horror](genre) film. Is it possible to have [Brad Pitt](cast) as the actor? Additionally, I'd like the movie to be released in [2020](release_date).
+    - I have a preference for [horror](genre) movies, if you can find one. It would be great if [Brad Pitt](cast) could be included as the actor. Also, can the movie be released in [2020](release_date)?
+    - If feasible, I'd like to watch a [horror](genre) movie. Could you please consider including [Brad Pitt](cast) in the cast? Moreover, I prefer the movie to be released in [2020](release_date).
+    - I'm in the mood for a [horror](genre) film, if it's possible to find one. It would be fantastic to have [Brad Pitt](cast) as the actor. Additionally, can the movie be released in [2020](release_date)?
+    - If available, I'd like to watch a [horror](genre) movie. Is it feasible to have [Brad Pitt](cast) as the actor? Furthermore, I'd prefer the movie to be released in [2020](release_date).
+    - If it's an option, I'd prefer a [horror](genre) movie. It would be amazing if [Brad Pitt](cast) could be part of the cast. Also, can the movie be released in [2020](release_date)?
+    - I have a preference for [horror](genre) films, if you can find one. Including [Brad Pitt](cast) as the actor would be terrific. Moreover, I'd like the movie to be released in [2020](release_date).
+    - If possible, I would like to watch a [horror](genre) movie. Can you please consider casting [Brad Pitt](cast)? Additionally, I'd prefer the movie to be released in [2020](release_date).
+    - I'm specifically interested in [horror](genre) movies, if there are any available. It would be fantastic to have [Brad Pitt](cast) as the actor. Furthermore, can the movie be released in [2020](release_date)?
+    - If there's a choice, I would like to watch a [horror](genre) movie. It would be great if [Brad Pitt](cast) could be included as the actor. Also, can the movie be released in [2020](release_date)?
+- intent: just_rating+just_cast #director_name
+  examples: |
+    - [8](rating), also can I have  as director in it?
+    - [one](rating), In addition to that, can I have [Christopher Nolan](cast) as the director for it?
+    - [two](rating), Furthermore, can I request [Martin Scorsese](cast) as the director for it?
+    - [three](rating), Moreover, can we have [James Cameron](cast) as the director for it?
+    - [four](rating), Additionally, can I have [Denis Villeneuve](cast) as the director for it?
+    - [five](rating), Furthermore, can I request [Wes Anderson](cast) as the director for it?
+    - [six](rating), Also, can I have [Taika Waititi](cast) as the director for it?
+    - [seven](rating), In addition to that, can I request [Jordan Peele](cast) as the director for it?
+    - [eight](rating), Also, can I have [Bong Joon-ho](cast) as the director for it?
+    - [nine](rating), Moreover, can I request [David Fincher](cast) as the director for it?
+    - [ten](rating), Also, can I have [Spike Lee](cast) as the director for it?
+    - [1](rating), Additionally, can I request [Yorgos Lanthimos](cast) as the director for it?
+    - [2](rating), Additionally, may I inquire about the possibility of having [Martin Scorsese](cast) as the director for it?
+    - [3](rating), Moreover, would it be acceptable if I put forward a request for [Martin Scorsese](cast) to direct it?
+    - [4](rating), Furthermore, could I ask if it's feasible to have [Martin Scorsese](cast) helm the project?
+    - [5](rating), Moreover, is it within the realm of possibility for me to suggest [Martin Scorsese](cast) as the director?
+    - [6](rating), Furthermore, might I propose [Martin Scorsese](cast) as the preferred choice for directing it?
+    - [7](rating), Moreover, can I express my desire for [Martin Scorsese](cast) to take on the role of director?
+    - [8](rating), Furthermore, would it be appropriate for me to request [Martin Scorsese](cast)'s directorial involvement?
+    - [9](rating), Moreover, may I raise the question of considering [Martin Scorsese](cast) as the director for it?
+    - [10](rating), Furthermore, is there a chance that I could recommend [Martin Scorsese](cast) to direct it?
+    - [5](rating), Moreover, am I allowed to make a plea for [Martin Scorsese](cast) to be appointed as the director?
 - intent: ask_movie_with_similar_plot
   examples: |
     - can you tell me a movie that has a similar plot?
