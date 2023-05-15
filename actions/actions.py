@@ -753,7 +753,7 @@ class ActionRecommendationWithoutMovie(Action):
         return[SlotSet("movie_name", title), SlotSet("plot", plot), SlotSet("release_date", release_date)]
     
 
-class ActionResetSlots(Action):
+class ActionSummaryRequests(Action):
 
     def name(self):
         return 'action_summary_request'

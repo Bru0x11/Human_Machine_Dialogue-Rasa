@@ -411,7 +411,6 @@ responses:
   - text: Sono nel posto giusto
 actions:
 - action_keep_asking
-- action_summary_request
 - action_obtain_movie_from_plot
 - action_recommendation_with_movie
 - action_recommendation_without_movie
@@ -444,6 +443,7 @@ actions:
 - action_show_release_date
 - action_show_revenue
 - action_show_runtime
+- action_summary_request
 - utter_ask_enable_genre
 - utter_ask_enable_rating
 - utter_ask_genre
