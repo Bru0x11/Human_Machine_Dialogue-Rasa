@@ -17,6 +17,11 @@ intents:
 - just_year
 - just_rating+just_cast
 - just_genre+just_cast+just_year
+- dummy_genre #for the buttons
+- dummy_cast
+- dummy_rating
+- dummy_release_date
+- dummy_director_name
 - movie_budget
 - movie_budget+movie_rating
 - movie_budget+movie_revenue
@@ -339,8 +344,7 @@ responses:
   utter_ask_enable_director_name:
   - text: Would you like a certain director for the movie?
   utter_ask_director_name:
-  - text: Would you like a certain director for the movie?
-  - text: Would you prefer a particular director for the movie?
+  - text: Who would you like as director for the movie?
   - text: Do you have a specific director in mind for the movie?
   - text: Are you interested in a movie directed by a certain person?
   utter_ask_enable_rating:
@@ -373,6 +377,22 @@ responses:
       payload: /runtime_time_period
     - title: Longer
       payload: /runtime_time_period
+  utter_ask_changes:
+  - text: Ok, I got you! What do you want to change?
+    buttons:
+      - title: genre
+        payload: /dummy_genre
+      - title: rating
+        payload: /dummy_rating
+      - title: cast
+        payload: /dummy_cast
+      - title: release_date
+        payload: /dummy_release_date
+      - title: director_name
+        payload: /dummy_director_name
+  utter_ask_if_ok:
+  - text: Do you want to confirm?
+  - text: Would you like to confirm?
   utter_ask_is_plot_received:
   - text: Can you describe the plot, please?
   - text: Would you mind providing a summary of the plot?
@@ -408,6 +428,11 @@ actions:
 - action_retrieve_release_date
 - action_retrieve_revenue
 - action_retrieve_runtime
+- action_reset_genre
+- action_reset_rating
+- action_reset_cast
+- action_reset_release_date
+- action_reset_director_name
 - action_show_budget
 - action_show_cast
 - action_show_composer
@@ -427,6 +452,7 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_out_of_scope
+- utter_ask_if_ok
 - utter_prova
 - utter_return_recommended_movie
 - utter_self_introduction

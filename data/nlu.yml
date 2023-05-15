@@ -110,6 +110,8 @@ nlu:
   examples: |
     - no
     - n
+    - no i'm fine
+    - no, I'm fine
     - no thanks
     - never
     - I don't think so
@@ -1269,7 +1271,7 @@ nlu:
     - [family](genre)
     - [fantasy](genre)
     - [history](genre)
-    - [horror](genre)
+    - [thriller](genre)
     - [horror](genre) please
     - [horror](genre), if possible
     - I would like a [horror](genre) movie
@@ -1284,24 +1286,24 @@ nlu:
     - [war](genre)
     - [western](genre)
     - [Action](genre) and [Comedy](genre)
-    - [Horror](genre), [Thriller](genre)
+    - [family](genre), [Thriller](genre)
     - [Drama](genre), [Romance](genre)
     - [Sci-Fi](genre) and [Fantasy](genre)
     - [Crime](genre) together with [Drama](genre)
     - [Historical](genre) and [Drama](genre)
     - [Adventure](genre) [Comedy](genre)
-    - [Mystery](genre) [Thriller](genre)
-    - [War](genre) and also [Drama](genre)
+    - [Mystery](genre) [thriller](genre)
+    - [War](genre) and also [science fiction](genre)
     - [Romantic](genre) and [Comedy](genre)
     - [Superhero](genre) with [Action](genre)
     - [Biopic](genre) with [Drama](genre) elements
     - [Sports](genre) with also [Drama](genre)
     - [Musical](genre) as well as [Comedy](genre)
     - [Documentary](genre) together with [Crime](genre)
-    - [Zombie](genre), [Horror](genre) and also [Comedy](genre)
+    - [tv movie](genre), [Horror](genre) and also [Comedy](genre)
     - [Western](genre) [Drama](genre)
     - [Fantasy](genre) with some elements of [Adventure](genre)
-    - [Noir](genre) with some [Mystery](genre) and [Thriller](genre) elements
+    - [music](genre) with some [Mystery](genre) and [Thriller](genre) elements
     - [horror](genre)
 - intent: just_cast
   examples: |
@@ -1588,28 +1590,28 @@ nlu:
     - If there's a choice, I would like to watch a [horror](genre) movie. It would be great if [Brad Pitt](cast) could be included as the actor. Also, can the movie be released in [2020](release_date)?
 - intent: just_rating+just_cast #director_name
   examples: |
-    - [8](rating), also can I have  as director in it?
-    - [one](rating), In addition to that, can I have [Christopher Nolan](cast) as the director for it?
-    - [two](rating), Furthermore, can I request [Martin Scorsese](cast) as the director for it?
-    - [three](rating), Moreover, can we have [James Cameron](cast) as the director for it?
-    - [four](rating), Additionally, can I have [Denis Villeneuve](cast) as the director for it?
-    - [five](rating), Furthermore, can I request [Wes Anderson](cast) as the director for it?
-    - [six](rating), Also, can I have [Taika Waititi](cast) as the director for it?
-    - [seven](rating), In addition to that, can I request [Jordan Peele](cast) as the director for it?
-    - [eight](rating), Also, can I have [Bong Joon-ho](cast) as the director for it?
-    - [nine](rating), Moreover, can I request [David Fincher](cast) as the director for it?
-    - [ten](rating), Also, can I have [Spike Lee](cast) as the director for it?
-    - [1](rating), Additionally, can I request [Yorgos Lanthimos](cast) as the director for it?
-    - [2](rating), Additionally, may I inquire about the possibility of having [Martin Scorsese](cast) as the director for it?
-    - [3](rating), Moreover, would it be acceptable if I put forward a request for [Martin Scorsese](cast) to direct it?
-    - [4](rating), Furthermore, could I ask if it's feasible to have [Martin Scorsese](cast) helm the project?
-    - [5](rating), Moreover, is it within the realm of possibility for me to suggest [Martin Scorsese](cast) as the director?
-    - [6](rating), Furthermore, might I propose [Martin Scorsese](cast) as the preferred choice for directing it?
-    - [7](rating), Moreover, can I express my desire for [Martin Scorsese](cast) to take on the role of director?
-    - [8](rating), Furthermore, would it be appropriate for me to request [Martin Scorsese](cast)'s directorial involvement?
-    - [9](rating), Moreover, may I raise the question of considering [Martin Scorsese](cast) as the director for it?
-    - [10](rating), Furthermore, is there a chance that I could recommend [Martin Scorsese](cast) to direct it?
-    - [5](rating), Moreover, am I allowed to make a plea for [Martin Scorsese](cast) to be appointed as the director?
+    - [7](rating). I also would like to have [Dario Argento](cast) as director.
+    - [8](rating). Also can I have [Dario Argento](cast) as director in it?
+    - [one](rating) if possible. In addition to that, can I have [Christopher Nolan](cast) as the director for it?
+    - [two](rating) is enough. Furthermore, can I request [Martin Scorsese](cast) as the director for it?
+    - [three](rating) and can I have [James Cameron](cast) as the director for it?
+    - [four](rating) seems about enough. Additionally, can I have [Denis Villeneuve](cast) as the director for it?
+    - [five](rating) or so. And can I request [Wes Anderson](cast) as the director for it?
+    - [six](rating). Also, can I have [Taika Waititi](cast) as the director for it?
+    - [seven](rating). In addition to that, can I request [Jordan Peele](cast) as the director for it?
+    - [eight](rating). Is it a problem to have [Bong Joon-ho](cast) as the director for it?
+    - [nine](rating). Moreover, is it possible to have [David Fincher](cast) as the director for it?
+    - [ten](rating) and [Spike Lee](cast) as the director.
+    - [1](rating) and [Yorgos Lanthimos](cast) if possible.
+    - rated [2](rating) and directed by [Martin Scorsese](cast).
+    - [3](rating) preferably directed by [Martin Scorsese](cast).
+    - [4](rating). Furthermore, could I ask if it's feasible to have [Martin Scorsese](cast) helm the project?
+    - [5](rating) if you can. Moreover, is it within the realm of possibility for me to suggest [Martin Scorsese](cast) as the director?
+    - [6](rating). Furthermore, might I propose [Martin Scorsese](cast) as the preferred choice for directing it?
+    - [7](rating). Moreover, can I express my desire for [Martin Scorsese](cast) to take on the role of director?
+    - [8](rating). Furthermore, would it be appropriate for me to request [Martin Scorsese](cast)'s directorial involvement?
+    - [9](rating). Moreover, may I raise the question of considering [Martin Scorsese](cast) as the director for it?
+    - [10](rating). Furthermore, is there a chance that I could recommend [Martin Scorsese](cast) to direct it?
 - intent: ask_movie_with_similar_plot
   examples: |
     - can you tell me a movie that has a similar plot?
@@ -1674,3 +1676,61 @@ nlu:
     - Can you suggest a movie that fits the plot I have in mind?
     - Would it be possible for you to recommend a movie based on a plot I have in mind?
     - If I tell you the plot, could you recommend a movie that would be worth watching?
+
+- synonym: '1'
+  examples: |
+    - one
+    - One
+
+- synonym: '2'
+  examples: |
+    - two
+    - Two
+
+- synonym: '3'
+  examples: |
+    - three
+    - Three
+
+- synonym: '4'
+  examples: |
+    - four
+    - Four
+
+- synonym: '5'
+  examples: |
+    - five
+    - Five
+
+- synonym: '6'
+  examples: |
+    - six
+    - Six
+
+- synonym: '7'
+  examples: |
+    - seven
+    - Seven
+
+- synonym: '8'
+  examples: |
+    - eight
+    - Eight
+
+- synonym: '9'
+  examples: |
+    - nine
+    - Nine
+
+- synonym: '10'
+  examples: |
+    - ten
+    - Ten
+
+- synonym: 'horror'
+  examples: |
+    - scary
+
+- synonym: 'comedy'
+  examples: |
+    - funny

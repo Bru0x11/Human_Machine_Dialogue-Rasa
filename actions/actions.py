@@ -795,7 +795,6 @@ class ActionResetSlots(Action):
             for director in retrieve_director:
                 dispatcher.utter_message(text = '* {}'.format(director))
         
-
         return []
 
 
@@ -807,6 +806,46 @@ class ActionResetSlots(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
          
          return[SlotSet("is_inside_rules", None), SlotSet("keep_asking", None)]
+    
+class ActionResetGenre(Action):
+
+    def name(self):
+        return 'action_reset_genre'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        return[SlotSet("genre", None)]
+
+class ActionResetRating(Action):
+
+    def name(self):
+        return 'action_reset_rating'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        return[SlotSet("rating", None)]
+
+class ActionResetCast(Action):
+
+    def name(self):
+        return 'action_reset_cast'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        return[SlotSet("cast", None)]
+
+class ActionResetReleaseDate(Action):
+
+    def name(self):
+        return 'action_reset_release_date'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        return[SlotSet("release_date", None), SlotSet("is_before", None), SlotSet("is_after", None), SlotSet("is_exactly", None)]
+
+class ActionResetDirectorName(Action):
+
+    def name(self):
+        return 'action_reset_director_name'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        return[SlotSet("director_name", None)]
         
         
     

@@ -90,6 +90,7 @@ stories:
   - intent: just_cast
     entities:
     - cast
+    - director_name
   - checkpoint: cast_done
 
 - story: recommendation_without_movie + cast without affirm
@@ -99,6 +100,7 @@ stories:
   - intent: just_cast
     entities:
     - cast
+    - director_name
   - checkpoint: cast_done
 
 - story: recommendation_without_movie no cast
@@ -165,6 +167,7 @@ stories:
   - action: utter_ask_director_name
   - intent: just_cast
     entities:
+      - cast
       - director_name
   - checkpoint: director_name_done
 
@@ -174,6 +177,7 @@ stories:
   - action: utter_ask_enable_director_name
   - intent: just_cast
     entities:
+      - cast
       - director_name
   - checkpoint: director_name_done
 
@@ -201,6 +205,7 @@ stories:
     entities:
       - genre
       - cast
+      - director_name
       - release_date
   - action: utter_confirm
   - action: utter_ask_movie_period
@@ -225,29 +230,30 @@ stories:
   - intent: just_rating
     entities:
     - rating
-  - checkpoint: rating_done
+  - checkpoint: genre_actor_release_date_rating_done
 
 - story: recommendation_without_movie mixed no rating
   steps:
   - checkpoint: genre_actor_release_date_done
   - action: utter_ask_enable_rating
   - intent: deny
-  - checkpoint: rating_done
+  - checkpoint: genre_actor_release_date_rating_done
 
 - story: recommendation_without_movie mixed + director_name
   steps:
-  - checkpoint: rating_done
+  - checkpoint: genre_actor_release_date_rating_done
   - action: utter_ask_enable_director_name
   - intent: affirm
   - action: utter_ask_director_name
   - intent: just_cast
     entities:
+      - cast
       - director_name
   - checkpoint: director_name_done
 
 - story: recommendation_without_movie mixed no director_name
   steps:
-  - checkpoint: rating_done
+  - checkpoint: genre_actor_release_date_rating_done
   - action: utter_ask_enable_director_name
   - intent: deny
   - checkpoint: director_name_done
@@ -261,7 +267,9 @@ stories:
   - intent: just_rating+just_cast
     entities:
     - rating
+    - cast #even if i don't specify it, but the name is saved on both of them. I will filter them in the custom actions
     - director_name
+  - action: utter_confirm
   - checkpoint: rating_director_done
 
 - story: recommendation_without_movie mixed -> rating + director for cast
@@ -273,6 +281,7 @@ stories:
   - intent: just_cast
     entities:
     - cast
+    - director_name
   - checkpoint: rating_director_cast_done
 
 - story: recommendation_without_movie mixed-> rating + director no cast
@@ -312,11 +321,111 @@ stories:
   - checkpoint: director_name_done
 
   
-# end iteration
-- story: recommendation_without_movie
+# verify if everything is ok, otherwise make changes
+- story: recommendation_without_movie no changes
   steps:
   - checkpoint: director_name_done
   - action: action_summary_request
+  - action: utter_ask_if_ok
+  - intent: affirm
+  - checkpoint: end_recommendation
+
+- story: recommendation_without_movie modify
+  steps:
+  - checkpoint: director_name_done
+  - action: action_summary_request
+  - action: utter_ask_if_ok
+  - intent: deny
+  - action: utter_ask_changes #depending on what button the user choses, we will have different stories to modify the value
+
+- story: change genre
+  steps:
+  - intent: dummy_genre
+  - action: utter_confirm
+  - action: action_reset_genre
+  - slot_was_set:
+      - genre: null
+  - action: utter_ask_genre
+  - intent: just_genre
+    entities: 
+    - genre
+  - checkpoint: end_recommendation
+  
+- story: change rating
+  steps:
+  - intent: dummy_rating
+  - action: utter_confirm
+  - action: action_reset_rating
+  - slot_was_set:
+      - rating: null
+  - action: utter_ask_rating
+  - intent: just_rating
+    entities:
+    - rating
+  - checkpoint: end_recommendation
+
+- story: change cast
+  steps:
+  - intent: dummy_cast
+  - action: utter_confirm
+  - action: action_reset_cast
+  - slot_was_set:
+      - cast: null
+  - action: utter_ask_cast
+  - intent: just_cast
+    entities:
+    - cast
+    - director_name
+  - checkpoint: end_recommendation
+
+- story: change release_date
+  steps:
+  - intent: dummy_release_date
+  - action: utter_confirm
+  - action: action_reset_release_date
+  - slot_was_set:
+      - release_date: null
+  - slot_was_set:
+      - is_before: null
+  - slot_was_set:
+      - is_after: null
+  - slot_was_set:
+      - is_exactly: null
+  - action: utter_ask_release_date
+  - intent: just_year
+    entities:
+      - release_date
+  - action: utter_ask_movie_period
+  - or:
+    - intent: is_before
+      entities:
+      - movie_period
+    - intent: is_after
+      entities:
+      - movie_period
+    - intent: is_exactly
+      entities:
+      - movie_period
+  - checkpoint: end_recommendation
+
+- story: change director name
+  steps:
+  - intent: dummy_director_name
+  - action: utter_confirm
+  - action: action_reset_director_name
+  - slot_was_set:
+      - director_name: null
+  - action: utter_ask_director_name
+  - intent: just_cast
+    entities:
+    - cast
+    - director_name
+  - checkpoint: end_recommendation
+
+# end iteration
+- story: end recommendation_without_movie
+  steps:
+  - checkpoint: end_recommendation
   - action: action_recommendation_without_movie
   - slot_was_set:
       - movie_name
