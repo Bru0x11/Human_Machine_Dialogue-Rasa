@@ -1431,7 +1431,7 @@ nlu:
 - intent: is_before
   examples: |
     - [Before](movie_period)
-    - [Before], if possible
+    - [Before](movie_period), if possible
     - [Prior](movie_period) to the current year
     - [Preceding](movie_period) this year
     - In the time [leading up to](movie_period) this year

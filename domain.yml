@@ -201,30 +201,22 @@ slots:
     mappings:
     - type: from_text
       intent: is_before
-      conditions:
-      - active_loop: retrieve_movie_information_form
   is_after:
     type: text
     mappings:
     - type: from_text
       intent: is_after
-      conditions:
-      - active_loop: retrieve_movie_information_form
   is_exactly:
     type: text
     mappings:
     - type: from_text
       intent: is_exactly
-      conditions:
-      - active_loop: retrieve_movie_information_form
   movie_period:
     type: text
     influence_conversation: false
     mappings:
     - type: from_entity
       entity: movie_period
-      conditions:
-      - active_loop: retrieve_movie_information_form
   runtime_time_period:
     type: text
     mappings:
