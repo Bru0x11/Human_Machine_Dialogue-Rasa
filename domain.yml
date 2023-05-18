@@ -1,13 +1,32 @@
 version: '3.1'
+
 intents:
-- affirm
-- ask_movie_question
-- ask_movie_with_similar_plot
-- ask_recommendation_with_movie
-- ask_recommendation_without_movie
-- deny
-- goodbye
+# GENERAL INTENTS
 - greetings
+- goodbye
+- affirm
+- deny
+- out_of_scope
+
+# INTRODUCTION INTENTS
+- ask_movie_question
+
+# TASK #1 INTENTS
+- movie_genre
+- movie_cast
+- movie_budget
+- movie_rating
+- movie_release_date
+- movie_composer
+- movie_director
+- movie_plot
+- movie_producer
+- movie_runtime
+- movie_revenue
+
+# TASK #2 INTENTS
+# 2.1 recommendation without specifying a movie
+- ask_recommendation_without_movie
 - is_after
 - is_before
 - is_exactly
@@ -17,23 +36,20 @@ intents:
 - just_year
 - just_rating+just_cast
 - just_genre+just_cast+just_year
-- dummy_genre #for the buttons
+- dummy_genre
 - dummy_cast
 - dummy_rating
 - dummy_release_date
 - dummy_director_name
-- movie_budget
 - movie_budget+movie_rating
 - movie_budget+movie_revenue
 - movie_budget+movie_runtime
-- movie_cast
 - movie_cast+movie_budget
 - movie_cast+movie_plot
 - movie_cast+movie_rating
 - movie_cast+movie_release_date
 - movie_cast+movie_revenue
 - movie_cast+movie_runtime
-- movie_composer
 - movie_composer+movie_budget
 - movie_composer+movie_cast
 - movie_composer+movie_plot
@@ -41,7 +57,6 @@ intents:
 - movie_composer+movie_release_date
 - movie_composer+movie_revenue
 - movie_composer+movie_runtime
-- movie_director
 - movie_director+movie_budget
 - movie_director+movie_cast
 - movie_director+movie_composer
@@ -50,7 +65,6 @@ intents:
 - movie_director+movie_release_date
 - movie_director+movie_revenue
 - movie_director+movie_runtime
-- movie_genre
 - movie_genre+movie_budget
 - movie_genre+movie_cast
 - movie_genre+movie_composer
@@ -61,13 +75,11 @@ intents:
 - movie_genre+movie_release_date
 - movie_genre+movie_revenue
 - movie_genre+movie_runtime
-- movie_plot
 - movie_plot+movie_budget
 - movie_plot+movie_rating
 - movie_plot+movie_release_date
 - movie_plot+movie_revenue
 - movie_plot+movie_runtime
-- movie_producer
 - movie_producer+movie_budget
 - movie_producer+movie_cast
 - movie_producer+movie_composer
@@ -77,22 +89,24 @@ intents:
 - movie_producer+movie_release_date
 - movie_producer+movie_revenue
 - movie_producer+movie_runtime
-- movie_rating
-- movie_release_date
 - movie_release_date+movie_budget
 - movie_release_date+movie_rating
 - movie_release_date+movie_revenue
 - movie_release_date+movie_runtime
-- movie_revenue
 - movie_revenue+movie_rating
-- movie_runtime
 - movie_runtime+movie_rating
 - movie_runtime+movie_revenue
-- out_of_scope
+
+# 2.2 recommendation given a similar movie
+- ask_recommendation_with_movie
+
+# TASK #3 INTENTS
+- ask_movie_with_similar_plot
+
 entities:
-- rating
-- genre
 - movie_name
+- genre
+- rating
 - composer_name
 - director_name
 - producer_name
@@ -103,7 +117,7 @@ entities:
 - revenue
 - number_of_actors
 - movie_period
-- runtime_time_period
+
 slots:
   movie_name:
     type: text
@@ -217,11 +231,6 @@ slots:
     mappings:
     - type: from_entity
       entity: movie_period
-  runtime_time_period:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: runtime_time_period
   is_title_received:
     type: bool
     mappings:
@@ -253,27 +262,29 @@ slots:
     type: text
     mappings:
     - type: custom
+
 responses:
+  # GENERAL UTTERANCES
   utter_greet:
   - text: Hello! I'm Popcorn, your movie assistant. It's great to meet you!
   - text: Nice to meet you! I'm Popcorn, your movie assistant!
   - text: Greetings! Your movie assistant, Popcorn, at your service.
   - text: Popcorn here, delighted to meet you and ready to assist you with anything related to movies!
+   utter_self_introduction:
+  - text: I'm here to be your ultimate guide to the world of cinema. Whether you're a die-hard film buff or just looking for a casual movie night suggestion, I'm here to assist you with all your movie-related needs. From classic blockbusters to indie gems, I've got recommendations to suit every taste. So let's dive in and explore the wonderful world of movies together!
+  - text: Looking for a cinematic adventure? Look no further! I'm your ultimate guide to the world of movies, catering to both die-hard film buffs and casual viewers alike. Whether you're in the mood for a classic blockbuster or a hidden indie gem, I have recommendations to satisfy every palate. Let's embark on this cinematic journey together!
+  - text: Welcome to the world of movies! As your personal guide, I'm here to assist you with all your movie-related needs, no matter how big or small. From beloved blockbusters to overlooked indie treasures, I have recommendations that will pique your interest. Join me as we explore the fascinating world of cinema together!
+  - text: Are you ready to discover the magic of movies? Look no further! I'm here to be your ultimate guide, offering recommendations that cater to every movie lover's taste. Whether you're a seasoned film buff or just looking for a fun movie night suggestion, I'm here to help. So let's dive in and explore the wonderful world of cinema together!
   utter_goodbye:
   - text: It was great chatting with you. Feel free to come back anytime if you have more questions or just want to chat about movies. Have a great day!
   - text: It was wonderful talking to you! If you ever have more movie-related questions or just want to chat, feel free to come back anytime. Have a great day and take care!
   - text: Thank you for chatting with me! If you need any more movie recommendations or just want to talk, don't hesitate to come back. Wishing you a great day ahead!
   - text: I had a lovely time chatting with you! Please feel free to return if you have further questions or simply want to discuss movies. Have a fantastic day!
-  utter_self_introduction:
-  - text: I'm here to be your ultimate guide to the world of cinema. Whether you're a die-hard film buff or just looking for a casual movie night suggestion, I'm here to assist you with all your movie-related needs. From classic blockbusters to indie gems, I've got recommendations to suit every taste. So let's dive in and explore the wonderful world of movies together!
-  - text: Looking for a cinematic adventure? Look no further! I'm your ultimate guide to the world of movies, catering to both die-hard film buffs and casual viewers alike. Whether you're in the mood for a classic blockbuster or a hidden indie gem, I have recommendations to satisfy every palate. Let's embark on this cinematic journey together!
-  - text: Welcome to the world of movies! As your personal guide, I'm here to assist you with all your movie-related needs, no matter how big or small. From beloved blockbusters to overlooked indie treasures, I have recommendations that will pique your interest. Join me as we explore the fascinating world of cinema together!
-  - text: Are you ready to discover the magic of movies? Look no further! I'm here to be your ultimate guide, offering recommendations that cater to every movie lover's taste. Whether you're a seasoned film buff or just looking for a fun movie night suggestion, I'm here to help. So let's dive in and explore the wonderful world of cinema together!
-  utter_decision:
-  - text: What would you like to know?
-  - text: Is there anything specific you're interested in learning about movies?
-  - text: How can I assist you in expanding your knowledge of movies?
-  - text: Are there any particular aspects of movies you'd like to delve into?
+  utter_out_of_scope:
+  - text: I'm sorry, but that question is out of my scope as a movie assistant. My purpose is to help you with anything related to movies, such as providing recommendations, movie reviews, trivia, and other related information. If you have any movie-related questions, I'd be happy to help you out!
+  - text: I'm afraid I cannot answer your question since it's beyond the scope of my expertise as a movie assistant. My primary goal is to assist you with anything related to movies, including recommendations, reviews, trivia, and other movie-related information. If you have any movie-related queries, I'd be more than happy to help you out!
+  - text: Unfortunately, I am not equipped to answer that question as a movie assistant. My role is to provide assistance with all things movie-related, such as offering recommendations, reviews, and trivia, among other things. If you have any questions about movies, I'm here to help you in any way I can.
+  - text: I apologize, but answering that question is not within my purview as a movie assistant. My primary objective is to aid you with anything related to movies, whether that be by providing recommendations, reviews, or trivia. If you have any questions about movies, I'm at your service!
   utter_confirm:
   - text: Sure!
   - text: Of course!
@@ -282,21 +293,19 @@ responses:
   - text: Certainly!
   - text: Naturally!
   - text: Absolutely!
-  utter_out_of_scope:
-  - text: I'm sorry, but that question is out of my scope as a movie assistant. My purpose is to help you with anything related to movies, such as providing recommendations, movie reviews, trivia, and other related information. If you have any movie-related questions, I'd be happy to help you out!
-  - text: I'm afraid I cannot answer your question since it's beyond the scope of my expertise as a movie assistant. My primary goal is to assist you with anything related to movies, including recommendations, reviews, trivia, and other movie-related information. If you have any movie-related queries, I'd be more than happy to help you out!
-  - text: Unfortunately, I am not equipped to answer that question as a movie assistant. My role is to provide assistance with all things movie-related, such as offering recommendations, reviews, and trivia, among other things. If you have any questions about movies, I'm here to help you in any way I can.
-  - text: I apologize, but answering that question is not within my purview as a movie assistant. My primary objective is to aid you with anything related to movies, whether that be by providing recommendations, reviews, or trivia. If you have any questions about movies, I'm at your service!
   utter_user_praise:
   - text: Thanks for using this tool!
   - text: I appreciate you utilizing this tool and allowing me to assist you!
   - text: It was my pleasure to assist you with this tool!
   - text: Thank you for choosing this tool and giving me the opportunity to be of service!
-  utter_ask_to_continue:
-  - text: Would you like to do something else?
-  - text: Is there anything else you would like me to help you with?
-  - text: Do you have any other requests or questions?
-  - text: Is there something else I can assist you with?
+  # INTRODUCTION OF FUNCTIONALITIES
+  utter_decision:
+  - text: What would you like to know?
+  - text: Is there anything specific you're interested in learning about movies?
+  - text: How can I assist you in expanding your knowledge of movies?
+  - text: Are there any particular aspects of movies you'd like to delve into?
+
+
   utter_return_movie_name:
   - text: The name of the movie is {movie_name}.
   - text: The movie you're referring to is called {movie_name}.
@@ -362,13 +371,6 @@ responses:
   - text: Would you like it to be before, after or exactly the year {release_date}?
   - text: Do you have a preference for the movie's release date being before, after, or in the year {release_date}?
   - text: Okay! Are you looking for a movie released before, after, or in the year {release_date}?
-  utter_ask_runtime_time_period:
-  - text: Would you like it to be longer or shorter with respect to the runtime {runtime}?
-    buttons:
-    - title: Shorter
-      payload: /runtime_time_period
-    - title: Longer
-      payload: /runtime_time_period
   utter_ask_changes:
   - text: Ok, I got you! What do you want to change?
     buttons:
@@ -382,9 +384,12 @@ responses:
         payload: /dummy_release_date
       - title: director_name
         payload: /dummy_director_name
+
   utter_ask_if_ok:
   - text: Do you want to confirm?
   - text: Would you like to confirm?
+
+  # TASK #3 UTTERANCES
   utter_ask_is_plot_received:
   - text: Can you describe the plot, please?
   - text: Would you mind providing a summary of the plot?
@@ -397,10 +402,7 @@ responses:
   - text: "The movie that most closely matches your request is {movie_name}, directed by {director_name}. Here's a synopsis of the plot: {plot}. For additional details, please refer to this link: {wiki_link}."
   - text: 'The movie that best fits your request is {movie_name}, directed by {director_name}. The plot can be summarized as follows: {plot}. To learn more, please visit the following link: {wiki_link}.'
   - text: "{movie_name}, directed by {director_name}, is the movie that closely resembles your request. Here's a brief summary of the plot: {plot}. For further information, kindly click on this link: {wiki_link}."
-  utter_still_to_implement:
-  - text: Still to implement!
-  utter_prova:
-  - text: Sono nel posto giusto
+
 actions:
 - action_keep_asking
 - action_obtain_movie_from_plot
@@ -449,6 +451,7 @@ actions:
 - utter_return_recommended_movie
 - utter_self_introduction
 - validate_retrieve_plot_form
+
 forms:
   already_watched_form:
     required_slots:
@@ -457,6 +460,7 @@ forms:
     required_slots:
     - is_plot_received
     - iterate_plot
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

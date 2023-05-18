@@ -1,6 +1,6 @@
 version: "3.1"
 
-# Greetings + Introduction
+# GREETINGS + INTRODUCTION OF CHATBOT
 stories:
 - story: greeting
   steps:
@@ -8,7 +8,7 @@ stories:
   - action: utter_greet
   - action: utter_self_introduction
 
-# TASK #1
+# INTRODUCTION OF FUNCTIONALITIES
 - story: begin_asking_questions
   steps:
   - intent: ask_movie_question
@@ -321,7 +321,7 @@ stories:
   - checkpoint: director_name_done
 
   
-# verify if everything is ok, otherwise make changes
+# print a summary of all the things asked and ask if everything is ok or not.
 - story: recommendation_without_movie no changes
   steps:
   - checkpoint: director_name_done
@@ -336,7 +336,7 @@ stories:
   - action: action_summary_request
   - action: utter_ask_if_ok
   - intent: deny
-  - action: utter_ask_changes #depending on what button the user choses, we will have different stories to modify the value
+  - action: utter_ask_changes #depending on what button the user chooses, we will have different stories to modify the requested value. I will use dummy intents to jump to the right story that allows us to modify the slots
 
 - story: change genre
   steps:
@@ -422,7 +422,7 @@ stories:
     - director_name
   - checkpoint: end_recommendation
 
-# end iteration
+# ending iteration for TASK #2
 - story: end recommendation_without_movie
   steps:
   - checkpoint: end_recommendation
@@ -441,7 +441,7 @@ stories:
       - keep_asking: null
   - checkpoint: continue_using_bot
   
- #2.2 asking movie recommendation by specifiyng a similar movie
+# 2.2 asking movie recommendation by specifying a similar movie
 - story: recommendation_with_movie
   steps:
   - intent: ask_recommendation_with_movie
