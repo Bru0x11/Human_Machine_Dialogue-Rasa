@@ -21,6 +21,9 @@ from bs4 import BeautifulSoup
 import re
 import urllib.request
 
+from pprint import pprint
+import time
+
 api_key = "a3d485e7dbba8ea69c0d9041ab46207a"
 tmdb.API_KEY = api_key
 search = tmdb.Search()
@@ -926,6 +929,13 @@ class ActionFindMovieWithPlot(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         input_plot = tracker.latest_message['text']
+        model = SentenceTransformer('task3_tools/fine_tuned_model')
+        index = 'C:/Users/Matteo/Desktop/Università/secondo anno/HMD/rasa_project/task3_tools/fine_tuned_encoding.index'
+        results=search(input_plot, top_k=5, index=index, model=model)
+        print("\n")
+        for result in results:
+            print('\t',result)
+
 
 
 class ValidateRetrievePlotForm(FormValidationAction):
@@ -939,8 +949,13 @@ class ValidateRetrievePlotForm(FormValidationAction):
     def validate_is_plot_received(self, slot_value, dispatcher, tracker, domain):
         reversed_events = list(reversed(tracker.events))
         if reversed_events[0].get('name') != 'iterate_plot':
-            print("ESEGUO IL CODICE PER TROVATE IL FILM PIù SIMILE...")
-            dispatcher.utter_message(text = "The movies that are similar to your plot are: ...")
+            input_plot = tracker.latest_message['text']
+            model = SentenceTransformer('task3_tools/fine_tuned_model')
+            index = 'C:/Users/Matteo/Desktop/Università/secondo anno/HMD/rasa_project/task3_tools/fine_tuned_encoding.index'
+            results=search(input_plot, top_k=5, index=index, model=model)
+            print("\n")
+            for result in results:
+                print('\t',result)
             return{"is_plot_received": True, "iterate_plot": None}
 
     def validate_iterate_plot(self, slot_value, dispatcher, tracker, domain):
@@ -948,3 +963,19 @@ class ValidateRetrievePlotForm(FormValidationAction):
             return{"is_plot_received": None, "iterate_plot": True} #re-call the form
         elif slot_value == False:
             return{"iterate_plot": False}
+        
+    def fetch_movie_info(dataframe_idx):
+        info = df.iloc[dataframe_idx]
+        meta_dict = {}
+        meta_dict['Title'] = info['Title']
+        return meta_dict
+        
+    def search(query, top_k, index, model):
+        t=time.time()
+        query_vector = model.encode([query])
+        top_k = index.search(query_vector, top_k)
+        print('>>>> Results in Total Time: {}'.format(time.time()-t))
+        top_k_ids = top_k[1].tolist()[0]
+        top_k_ids = list(np.unique(top_k_ids))
+        results =  [fetch_movie_info(idx) for idx in top_k_ids]
+        return results
