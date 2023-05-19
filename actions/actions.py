@@ -646,24 +646,19 @@ class ActionRecommendationWithMovie(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
-        copy_movie_title = tracker.get_slot("copy_of_movie_name")
-        index_already_watched = tracker.get_slot("index_already_watched")
-
-        if copy_movie_title != movie_title:
-            index_already_watched = 0
 
         query = search.movie(query=movie_title)
         movie_id = query.get("results")[0].get("id")
 
         request_url = "https://api.themoviedb.org/3/movie/{}/similar?api_key={}&language=en-US&page=1".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
-        response = raw.get("results")[index_already_watched]
+        response = raw.get("results")
 
         title = response.get("original_title")
         plot = response.get("overview")
         release_date = response.get("release_date")
 
-        return[SlotSet("movie_name", title), SlotSet("plot", plot), SlotSet("release_date", release_date), SlotSet("index_already_watched", index_already_watched+1), SlotSet("copy_of_movie_name", movie_title)]
+        return[SlotSet("movie_name", title), SlotSet("plot", plot), SlotSet("release_date", release_date)]
 
 
 class ActionRecommendationWithoutMovie(Action):
@@ -922,6 +917,15 @@ class ActionResetDirectorName(Action):
 #     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
 
 #          return[SlotSet("is_plot_received", None), SlotSet("plot", None)]
+
+
+class ActionFindMovieWithPlot(Action):
+
+    def name(self):
+        return 'action_obtain_movie_from_plot'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        input_plot = tracker.latest_message['text']
 
 
 class ValidateRetrievePlotForm(FormValidationAction):

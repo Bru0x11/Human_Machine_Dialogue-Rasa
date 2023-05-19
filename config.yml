@@ -18,9 +18,9 @@ pipeline:
     epochs: 50
     constrain_similarities: yes
   - name: EntitySynonymMapper
-  - name: DucklingEntityExtractor
-    dimensions: ["credit-card-number", "time", "number"]
-    url: "http://localhost:8000"  #docker run -p 8000:8000 rasa/duckling
+  # - name: DucklingEntityExtractor
+  #   dimensions: ["credit-card-number", "time", "number"]
+  #   url: "http://localhost:8000"  #docker run -p 8000:8000 rasa/duckling
   - name: ResponseSelector
     epochs: 50
   - name: FallbackClassifier

@@ -446,6 +446,12 @@ stories:
   steps:
   - intent: ask_recommendation_with_movie
   - action: action_recommendation_with_movie
+  - slot_was_set:
+      - movie_name
+  - slot_was_set:
+      - plot
+  - slot_was_set:
+      - release_date
   - action: utter_return_recommended_movie
   - checkpoint: continue_using_bot
 
