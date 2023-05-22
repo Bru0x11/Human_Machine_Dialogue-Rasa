@@ -24,6 +24,34 @@ from sklearn.metrics.pairwise import cosine_similarity
 from bs4 import BeautifulSoup
 import re
 import urllib.request
+import faiss
+import gc
+
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Action, Tracker, FormValidationAction
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
+
+import requests
+import tmdbsimple as tmdb
+
+import pandas as pd
+import numpy as np
+import random
+import gensim
+from gensim.parsing.preprocessing import preprocess_documents
+from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+import pickle
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+
+from bs4 import BeautifulSoup
+import re
+import urllib.request
+
+from pprint import pprint
+import time
 
 # tmdb.API_KEY = "a3d485e7dbba8ea69c0d9041ab46207a"
 # search = tmdb.Search()
@@ -166,5 +194,44 @@ import urllib.request
 #     #         SlotSet("wiki_link", movie_dataframe['Wiki Page'][movie_index])
 #     #         ]
 
+
+
+# class prova():
+
+#     def validate_is_plot_received(self):
+#             input_plot = "In the arcade night the videogame characters leave their games. The protagonist is a girl from a candy racing game who glitches"
+#             data = pd.read_csv('databases/wiki_movie_plots_deduped.csv', memory_map=True)
+#             data.info() 
+#             df = data[['Title','Plot']]
+#             del data
+#             gc.collect()
+#             df.dropna(inplace=True)
+#             df.drop_duplicates(subset=['Plot'],inplace=True)
+#             model = SentenceTransformer('task3_tools/fine_tuned_model')
+#             index = faiss.read_index('task3_tools/fine_tuned_encoding.index')
+#             results = self.search(input_plot, top_k=5, index=index, model=model, movie_dataframe=df)
+#             print("\n")
+#             for result in results:
+#                 print('\t',result)
+#             return 
+        
+#     def fetch_movie_info(self, dataframe_idx, movie_dataframe):
+#         info = movie_dataframe.iloc[dataframe_idx]
+#         meta_dict = {}
+#         meta_dict['Title'] = info['Title']
+#         return meta_dict
+        
+#     def search(self, query, top_k, index, model, movie_dataframe):
+#         t=time.time()
+#         query_vector = model.encode([query])
+#         top_k = index.search(query_vector, top_k)
+#         print('>>>> Results in Total Time: {}'.format(time.time()-t))
+#         top_k_ids = top_k[1].tolist()[0]
+#         top_k_ids = list(np.unique(top_k_ids))
+#         results =  [self.fetch_movie_info(idx, movie_dataframe) for idx in top_k_ids]
+#         return results
+
+# item = prova()
+# item.validate_is_plot_received()
 
 

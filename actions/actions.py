@@ -11,6 +11,8 @@ import pandas as pd
 import numpy as np
 import random
 import gensim
+import faiss
+import gc
 from gensim.parsing.preprocessing import preprocess_documents
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 import pickle
@@ -24,13 +26,23 @@ import urllib.request
 from pprint import pprint
 import time
 
+# DEFINING THE API-KEY NEEDED TO QUERY THE TMDB DATABASE
 api_key = "a3d485e7dbba8ea69c0d9041ab46207a"
 tmdb.API_KEY = api_key
 search = tmdb.Search()
 
+# LOADING AND MODIFYING THE MOVIE DATASET
+movie_database = pd.read_csv('databases/wiki_movie_plots_deduped.csv', memory_map=True)
+dataframe = movie_database[['Title','Plot']]
+del movie_database
+gc.collect()
+dataframe.dropna(inplace=True)
+dataframe.drop_duplicates(subset=['Plot'],inplace=True)
 
+# CUSTOM ACTIONS
+
+# TASK 1
 class ActionKeepAsking(Action):
-    
     def name(self):
         return 'action_keep_asking'
     
@@ -50,7 +62,6 @@ class ActionKeepAsking(Action):
                 dispatcher.utter_message(text = 'Would you like me to provide additional information about {} or other movies?'.format(movie_title))
 
 class ActionResetIsInsideRules(Action):
-    
     def name(self):
         return 'action_reset_is_inside_rules'
     
@@ -58,7 +69,6 @@ class ActionResetIsInsideRules(Action):
         return[SlotSet('is_inside_rules', None), SlotSet('keep_asking', None)]
 
 class ActionRetrieveGenre(Action):
-
     def name(self):
         return 'action_retrieve_genre'
     
@@ -107,7 +117,6 @@ class ShowGenre(Action):
             return [SlotSet("genre", [])]
 
 class ActionRetrieveReleaseDate(Action):
-
     def name(self):
         return 'action_retrieve_release_date'
     
@@ -158,7 +167,6 @@ class ShowReleaseDate(Action):
             return [SlotSet("release_date", None)]
 
 class ActionRetrieveBudget(Action):
-
     def name(self):
         return 'action_retrieve_budget'
     
@@ -209,7 +217,6 @@ class ShowBudget(Action):
             return [SlotSet("budget", None)]
 
 class ActionRetrieveRuntime(Action):
-
     def name(self):
         return 'action_retrieve_runtime'
     
@@ -261,7 +268,6 @@ class ShowRuntime(Action):
 
 
 class ActionRetrieveRevenue(Action):
-
     def name(self):
         return 'action_retrieve_revenue'
     
@@ -312,7 +318,6 @@ class ShowRevenue(Action):
             return [SlotSet("revenue", None)]
 
 class ActionRetrievePlot(Action):
-
     def name(self):
         return 'action_retrieve_plot'
     
@@ -361,7 +366,6 @@ class ShowPlot(Action):
             return [SlotSet("plot", None)]
 
 class ActionRetrieveRating(Action):
-
     def name(self):
         return 'action_retrieve_rating'
     
@@ -412,7 +416,6 @@ class ShowRating(Action):
             return [SlotSet("rating", None)]
 
 class ActionRetrieveComposer(Action):
-
     def name(self):
         return 'action_retrieve_composer'
     
@@ -465,7 +468,6 @@ class ShowComposer(Action):
             return [SlotSet("composer_name", [])]
 
 class ActionRetrieveDirector(Action):
-
     def name(self):
         return 'action_retrieve_director'
     
@@ -518,7 +520,6 @@ class ShowDirector(Action):
             return [SlotSet("director_name", [])]
     
 class ActionRetrieveProducer(Action):
-
     def name(self):
         return 'action_retrieve_producer'
     
@@ -571,7 +572,6 @@ class ShowProducer(Action):
             return [SlotSet("producer_name", [])]
     
 class ActionRetrieveCast(Action):
-
     def name(self):
         return 'action_retrieve_cast'
     
@@ -643,7 +643,6 @@ class ShowCast(Action):
 # TASK 2
     
 class ActionRecommendationWithMovie(Action):
-
     def name(self):
         return 'action_recommendation_with_movie'
     
@@ -665,7 +664,6 @@ class ActionRecommendationWithMovie(Action):
 
 
 class ActionRecommendationWithoutMovie(Action):
-
     def name(self):
         return 'action_recommendation_without_movie'
     
@@ -752,7 +750,6 @@ class ActionRecommendationWithoutMovie(Action):
     
 
 class ActionSummaryRequests(Action):
-
     def name(self):
         return 'action_summary_request'
     
@@ -795,9 +792,7 @@ class ActionSummaryRequests(Action):
         
         return []
 
-
 class ActionResetSlots(Action):
-
     def name(self):
         return 'action_reset_slots'
     
@@ -806,7 +801,6 @@ class ActionResetSlots(Action):
          return[SlotSet("is_inside_rules", None), SlotSet("keep_asking", None)]
     
 class ActionResetGenre(Action):
-
     def name(self):
         return 'action_reset_genre'
     
@@ -814,7 +808,6 @@ class ActionResetGenre(Action):
         return[SlotSet("genre", None)]
 
 class ActionResetRating(Action):
-
     def name(self):
         return 'action_reset_rating'
     
@@ -822,7 +815,6 @@ class ActionResetRating(Action):
         return[SlotSet("rating", None)]
 
 class ActionResetCast(Action):
-
     def name(self):
         return 'action_reset_cast'
     
@@ -830,7 +822,6 @@ class ActionResetCast(Action):
         return[SlotSet("cast", None)]
 
 class ActionResetReleaseDate(Action):
-
     def name(self):
         return 'action_reset_release_date'
     
@@ -838,7 +829,6 @@ class ActionResetReleaseDate(Action):
         return[SlotSet("release_date", None), SlotSet("is_before", None), SlotSet("is_after", None), SlotSet("is_exactly", None)]
 
 class ActionResetDirectorName(Action):
-
     def name(self):
         return 'action_reset_director_name'
     
@@ -846,84 +836,8 @@ class ActionResetDirectorName(Action):
         return[SlotSet("director_name", None)]
         
         
-    
 # TASK 3
-    
-# class ActionFindMovieWithPlot(Action):
-
-#     def name(self):
-#         return 'action_obtain_movie_from_plot'
-    
-#     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
-#         input_plot = tracker.latest_message['text']
-        
-#         movie_dataframe = pd.read_csv('databases/wiki_movie_plots_deduped.csv', sep=',')
-#         #Filtering the data
-#         movie_dataframe = movie_dataframe[movie_dataframe['Release Year'] >= 1980]
-#         movie_dataframe = movie_dataframe[movie_dataframe['Origin/Ethnicity'] == 'American']
-#         movie_dataframe = movie_dataframe.reset_index()
-#         all_plots = movie_dataframe['Plot'].values
-
-#         use_doc2vec_model = True
-
-#         if use_doc2vec_model:
-
-#             #processed_plots = preprocess_documents(all_plots)
-#             #tagged_corpus = [TaggedDocument(d, [i]) for i, d in enumerate(processed_plots)]
-#             #model = Doc2Vec(tagged_corpus, dm=0, vector_size=200, window=2, min_count=1, epochs=100, hs=1)
-#             #pickle.dump(model, open('plot_models/doc2vec_model.pkl', 'wb'))
-
-#             model = pickle.load(open('plot_models/doc2vec_model.pkl', 'rb'))
-#             preprocessed_input = gensim.parsing.preprocessing.preprocess_string(input_plot)
-#             input_vector = model.infer_vector(preprocessed_input)
-#             similarities = model.docvecs.most_similar(positive = [input_vector])
-            
-#             dispatcher.utter_message(text = "The movies that are similar to your plot are:")
-#             for similarity in similarities:
-#                 dispatcher.utter_message(text = "{} with a similarity score of {}".format(movie_dataframe['Title'].iloc[similarity[0]], similarity[1]))
-
-#             return[SlotSet("movie_name", movie_dataframe['Title'].iloc[similarities[0][0]]),
-#                    SlotSet("director_name", movie_dataframe['Director'].iloc[similarities[0][0]]),
-#                    SlotSet("plot", movie_dataframe['Plot'].iloc[similarities[0][0]]),
-#                    SlotSet("wiki_link", movie_dataframe['Wiki Page'].iloc[similarities[0][0]])
-#                    ]
-
-#         else: #BERT
-#             model = SentenceTransformer('bert-base-nli-mean-tokens')
-
-#             #sentence_embeddings = model.encode(all_plots)
-#             #pickle.dump(sentence_embeddings, open('plot_models/bert_model.pkl', 'wb'))
-#             sentence_embeddings = pickle.load(open('plot_models/bert_model.pkl', 'rb'))
-
-#             input_embedding = model.encode(input_plot)
-
-#             result = cosine_similarity(
-#                 [input_embedding],
-#                 sentence_embeddings[0:]
-#             )
-
-#             movie_index = np.argmax(result)
-#             print(movie_index)
-#             print(movie_dataframe['Title'][movie_index])
-
-#             return[SlotSet("movie_name", movie_dataframe['Title'][movie_index]),
-#                    SlotSet("director_name", movie_dataframe['Director'][movie_index]),
-#                    SlotSet("plot", movie_dataframe['Plot'][movie_index]),
-#                    SlotSet("wiki_link", movie_dataframe['Wiki Page'][movie_index])
-#                    ]
-
-# class ActionLoopPlot(Action):
-
-#     def name(self):
-#         return 'action_loop_plot'
-    
-#     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
-
-#          return[SlotSet("is_plot_received", None), SlotSet("plot", None)]
-
-
 class ActionFindMovieWithPlot(Action):
-
     def name(self):
         return 'action_obtain_movie_from_plot'
     
@@ -935,8 +849,6 @@ class ActionFindMovieWithPlot(Action):
         print("\n")
         for result in results:
             print('\t',result)
-
-
 
 class ValidateRetrievePlotForm(FormValidationAction):
     def name(self):
@@ -951,11 +863,13 @@ class ValidateRetrievePlotForm(FormValidationAction):
         if reversed_events[0].get('name') != 'iterate_plot':
             input_plot = tracker.latest_message['text']
             model = SentenceTransformer('task3_tools/fine_tuned_model')
-            index = 'C:/Users/Matteo/Desktop/Università/secondo anno/HMD/rasa_project/task3_tools/fine_tuned_encoding.index'
-            results=search(input_plot, top_k=5, index=index, model=model)
-            print("\n")
+            index = faiss.read_index('task3_tools/fine_tuned_encoding.index')
+            results = self.search(input_plot, top_k=5, index=index, model=model, movie_dataframe=dataframe)
+            dispatcher.utter_message(text = 'Great! Here is a list of movies that bear some resemblance to the one you inquired about:')
             for result in results:
-                print('\t',result)
+                dispatcher.utter_message(text = '* {}'.format(result.get('Title')))
+            dispatcher.utter_message(text = "If you want to know something more about them, feel free to ask!")
+
             return{"is_plot_received": True, "iterate_plot": None}
 
     def validate_iterate_plot(self, slot_value, dispatcher, tracker, domain):
@@ -964,18 +878,16 @@ class ValidateRetrievePlotForm(FormValidationAction):
         elif slot_value == False:
             return{"iterate_plot": False}
         
-    def fetch_movie_info(dataframe_idx):
-        info = df.iloc[dataframe_idx]
+    def fetch_movie_info(self, dataframe_idx, movie_dataframe):
+        info = movie_dataframe.iloc[dataframe_idx]
         meta_dict = {}
         meta_dict['Title'] = info['Title']
         return meta_dict
         
-    def search(query, top_k, index, model):
-        t=time.time()
+    def search(self, query, top_k, index, model, movie_dataframe):
         query_vector = model.encode([query])
         top_k = index.search(query_vector, top_k)
-        print('>>>> Results in Total Time: {}'.format(time.time()-t))
         top_k_ids = top_k[1].tolist()[0]
         top_k_ids = list(np.unique(top_k_ids))
-        results =  [fetch_movie_info(idx) for idx in top_k_ids]
+        results =  [self.fetch_movie_info(idx, movie_dataframe) for idx in top_k_ids]
         return results
