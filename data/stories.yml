@@ -90,7 +90,7 @@ stories:
   - intent: just_cast
     entities:
     - cast
-    - director_name
+    #- director_name
   - checkpoint: cast_done
 
 - story: recommendation_without_movie + cast without affirm
@@ -100,7 +100,7 @@ stories:
   - intent: just_cast
     entities:
     - cast
-    - director_name
+    #- director_name
   - checkpoint: cast_done
 
 - story: recommendation_without_movie no cast
@@ -165,9 +165,8 @@ stories:
   - action: utter_ask_enable_director_name
   - intent: affirm
   - action: utter_ask_director_name
-  - intent: just_cast
+  - intent: just_director
     entities:
-      - cast
       - director_name
   - checkpoint: director_name_done
 
@@ -175,9 +174,8 @@ stories:
   steps:
   - checkpoint: release_date_done
   - action: utter_ask_enable_director_name
-  - intent: just_cast
+  - intent: just_director
     entities:
-      - cast
       - director_name
   - checkpoint: director_name_done
 
@@ -446,13 +444,31 @@ stories:
   steps:
   - intent: ask_recommendation_with_movie
   - action: action_recommendation_with_movie
-  - slot_was_set:
+  - slot_was_set: #reset all the elements for a second possible iteration
       - movie_name
   - slot_was_set:
       - plot
   - slot_was_set:
       - release_date
   - action: utter_return_recommended_movie
+  - action: action_reset_genre
+  - slot_was_set:
+      - genre
+  - action: action_reset_rating
+  - slot_was_set:
+      - rating
+  - action: action_reset_release_date
+  - slot_was_set:
+      - release_date
+      - is_before
+      - is_after
+      - is_exactly
+  - action: action_reset_cast
+  - slot_was_set:
+    - cast
+  - action: action_reset_director_name
+  - slot_was_set:
+    - director_name
   - checkpoint: continue_using_bot
 
 # TASK #3
@@ -468,7 +484,7 @@ stories:
   steps:
     - checkpoint: continue_using_bot
     - action: utter_ask_to_continue
-    - intent: affirm #aggiungere storia dove invece di dire si qua, dico direttamente cosa voglio fare
+    - intent: affirm
     - action: utter_decision
 
 - story: continue_no

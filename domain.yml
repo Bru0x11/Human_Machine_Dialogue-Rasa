@@ -31,6 +31,7 @@ intents:
 - is_before
 - is_exactly
 - just_cast
+- just_director
 - just_genre
 - just_rating
 - just_year
@@ -167,7 +168,7 @@ slots:
     type: list
     mappings:
     - type: from_entity
-      entity: cast
+      entity: director_name
   producer_name:
     type: list
     mappings:

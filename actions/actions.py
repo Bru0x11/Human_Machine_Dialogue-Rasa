@@ -49,7 +49,6 @@ class ActionKeepAsking(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
 
-        # If no error has occured previously I can say to keep asking things related to the movies
         if movie_title != None:
             choose_question = random.randint(0, 3)
             if choose_question == 0:
@@ -82,7 +81,7 @@ class ActionRetrieveGenre(Action):
         
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -130,7 +129,7 @@ class ActionRetrieveReleaseDate(Action):
                
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -180,7 +179,7 @@ class ActionRetrieveBudget(Action):
                
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -230,7 +229,7 @@ class ActionRetrieveRuntime(Action):
                
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -281,7 +280,7 @@ class ActionRetrieveRevenue(Action):
                
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -331,7 +330,7 @@ class ActionRetrievePlot(Action):
                
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -379,7 +378,7 @@ class ActionRetrieveRating(Action):
                
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -429,7 +428,7 @@ class ActionRetrieveComposer(Action):
         
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -481,7 +480,7 @@ class ActionRetrieveDirector(Action):
         
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -533,7 +532,7 @@ class ActionRetrieveProducer(Action):
         
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')
@@ -585,7 +584,7 @@ class ActionRetrieveCast(Action):
         
         query = search.movie(query=movie_title)
 
-        # Check if the movie exists or there is a type in the title
+        # Check if the movie exists or there is a typo in the title
         total_results = query.get("total_results")
         if total_results == 0:
             dispatcher.utter_message(text = 'I apologize, but it seems that the film you\'re looking for either doesn\'t exist or there might have been a typo. Could you please provide the title again?')

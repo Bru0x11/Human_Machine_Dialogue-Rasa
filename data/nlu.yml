@@ -1400,6 +1400,7 @@ nlu:
     - [Keanu Reeves](cast)
     - [Michelle Pfeiffer](cast)
     - [Tom Cruise](cast)
+    - [Chris Evans](cast)
     - [John Travolta](cast)
     - [Halle Berry](cast)
     - [Oprah Winfrey](cast)
@@ -1412,62 +1413,90 @@ nlu:
     - [Zendaya](cast)
     - [Daniel Kaluuya](cast)
     - [Anthony Hopkins](cast)
-    - [Martin Scorsese](cast)
-    - [Steven Spielberg](cast)
-    - [Alfred Hitchcock](cast)
-    - [Quentin Tarantino](cast)
-    - [Francis Ford Coppola](cast)
-    - [Stanley Kubrick](cast)
-    - [Christopher Nolan](cast)
-    - [Ingmar Bergman](cast)
-    - [Akira Kurosawa](cast)
-    - [Woody Allen](cast)
-    - [Spike Lee](cast)
-    - [Clint Eastwood](cast)
-    - [David Lynch](cast)
-    - [Pedro Almodovar](cast)
-    - [Wes Anderson](cast)
-    - [Tim Burton](cast)
-    - [Coen Brothers](cast)
-    - [Ridley Scott](cast)
-    - [James Cameron](cast)
-    - [Greta Gerwig](cast)
-    - [Ava DuVernay](cast)
-    - [Barry Jenkins](cast)
-    - [Bong Joon-ho](cast)
-    - [Denis Villeneuve](cast)
-    - [Sofia Coppola](cast)
-    - [Kathryn Bigelow](cast)
     - why don't you put [Mira Nair](cast)?
-    - [Guillermo del Toro](cast)
-    - [Jane Campion](cast)
-    - [Hayao Miyazaki](cast)
-    - [Martin Scorsese](cast) and [Robert De Niro](cast)
-    - [Steven Spielberg](cast) and [Tom Hanks](cast)
-    - [Quentin Tarantino](cast) and [Samuel L. Jackson](cast)
-    - [Christopher Nolan](cast) and [Christian Bale](cast)
-    - [Tim Burton](cast) and [Johnny Depp](cast)
+    - [Meryl Streep](cast) and [Johnny Depp](cast)
     - [Francis Ford Coppola](cast) and [Al Pacino](cast)
-    - [Wes Anderson](cast) and [Bill Murray](cast)
+    - [Charlize Theron](cast) and [Bill Murray](cast)
     - [James Cameron](cast) and [Arnold Schwarzenegger](cast)
-    - [Spike Lee](cast) and [Denzel Washington](cast)
-    - It would be awesome to have [Ridley Scott](cast) with also [Russell Crowe](cast)
-    - [Steven Soderbergh](cast), [Matt Damon](cast)
-    - If you can find something with [David Fincher](cast) together with [Brad Pitt](cast)
-    - [Woody Allen] and possibly [Diane Keaton](cast)
-    - [Clint Eastwood](cast) as well as [Morgan Freeman](cast)
-    - [Robert Zemeckis](cast) [Tom Hanks](cast)
-    - [Kathryn Bigelow](cast), [Jeremy Renner](cast)
-    - Try to find something with [Darren Aronofsky](cast) and [Natalie Portman](cast)
-    - [Sofia Coppola](cast) and [Bill Murray](cast)
-    - Is it a problem if I ask you [Stanley Kubrick](cast) and also [Jack Nicholson](cast)?
-    - [Leonardo DiCaprio](cast), [Martin Scorsese](cast) and [Robert De Niro](cast)
-    - [Quentin Tarantino](cast) also [Uma Thurman](cast) and [Harvey Keitel](cast)
-    - [Wes Anderson](cast) with [Bill Murray](cast) with [Owen Wilson](cast)
-    - [Keith David](cast) with also [Morgan Freeman](cast) and [Gene Hackman](cast)
-    - [Christopher Nolan](cast) [Michael Caine](cast) and [Christian Bale](cast)
-    - [Robert Rodriguez](cast), [Antonio Banderas](cast), [Salma Hayek](cast)
-    - [Francis Ford Coppola](cast), [Al Pacino](cast) and [Marlon Brando](cast)
+    - [Charlize Theron](cast) and [Denzel Washington](cast)
+    - It would be awesome to have [Charlize Theron](cast) with also [Russell Crowe](cast)
+    - [Charlize Theron](cast), [Matt Damon](cast)
+    - If you can find something with [Natalie Portman](cast) together with [Brad Pitt](cast)
+    - [Natalie Portman] and possibly [Diane Keaton](cast)
+    - [Natalie Portman](cast) as well as [Morgan Freeman](cast)
+    - Is it a problem if I ask you [Natalie Portman](cast) and also [Jack Nicholson](cast)?
+    - [Leonardo DiCaprio](cast), [Natalie Portman](cast) and [Natalie Portman](cast)
+- intent: just_director
+  examples: |
+    - [Steven Spielberg](director_name)
+    - [Martin Scorsese](director_name)
+    - [Quentin Tarantino](director_name)
+    - [Alfred Hitchcock](director_name)
+    - [Christopher Nolan](director_name)
+    - [Stanley Kubrick](director_name)
+    - [Francis Ford Coppola](director_name)
+    - [Pedro Almodóvar](director_name)
+    - [Wes Anderson](director_name)
+    - [Ridley Scott](director_name)
+    - [James Cameron](director_name)
+    - [David Fincher](director_name)
+    - [Sofia Coppola](director_name)
+    - [Coen Brothers](director_name)
+    - [Joel Coen](director_name) and [Ethan Coen](director_name)
+    - [Woody Allen](director_name)
+    - [Tim Burton](director_name)
+    - [Darren Aronofsky](director_name)
+    - [Akira Kurosawa](director_name)
+    - [Clint Eastwood](director_name)
+    - [Ang Lee](director_name) if possible
+    - [Spike Lee](director_name)
+    - [Robert Zemeckis](director_name)
+    - [Michael Bay](director_name) please
+    - [Paul Thomas Anderson](director_name)
+    - [Hayao Miyazaki](director_name)
+    - [Alejandro González Iñárritu](director_name)
+    - [Steven Soderbergh](director_name)
+    - [Danny Boyle](director_name)
+    - [Richard Linklater](director_name)
+    - [Denis Villeneuve](director_name)
+    - [Bong Joon-ho](director_name)
+    - [François Truffaut](director_name)
+    - [John Ford](director_name), please
+    - [Orson Welles](director_name) please
+    - [Bernardo Bertolucci](director_name)
+    - [Jean-Luc Godard](director_name)
+    - [Sergio Leone](director_name)
+    - [Oliver Stone](director_name)
+    - [Roman Polanski](director_name)
+    - [Billy Wilder](director_name)
+    - [Fritz Lang](director_name)
+    - I would like [Wong Kar-wai](director_name)
+    - [Joel Schumacher](director_name)
+    - Why don't you put [Jean-Pierre Jeunet](director_name)
+    - [Baz Luhrmann](director_name)
+    - [Kathryn Bigelow](director_name)
+    - [Joel Coen](director_name), if you can
+    - I prefer [Ethan Coen](director_name), if possible
+    - [Lars von Trier](director_name)
+    - [Guy Ritchie](director_name)
+    - Can I choose [Terry Gilliam](director_name)?
+    - [Kenneth Branagh](director_name)
+    - Is it possible to have [James Wan](director_name)
+    - Can you include [Timur Bekmambetov](director_name)
+    - [George Lucas](director_name)
+    - [J.J. Abrams](director_name)
+    - [David Lynch](director_name)
+    - [Gus Van Sant](director_name)
+    - [Mel Brooks](director_name)
+    - [Anthony Russo](director_name)
+    - [Joe Russo](director_name)
+    - [Guillermo del Toro](director_name)
+    - [Jane Campion](director_name)
+    - [Hayao Miyazaki](director_name)
+    - [Martin Scorsese](director_name) and [Robert De Niro](director_name)
+    - [Lilly Wachowski](director_name) and [Lana Wachowski](director_name)
+    - [Quentin Tarantino](director_name) and [Samuel L. Jackson](director_name)
+    - [Terry Gilliam](director_name) and [Christian Bale](director_name)
 - intent: just_rating
   examples: |
     - [0](rating)
@@ -1648,30 +1677,30 @@ nlu:
     - If possible, I would like to watch a [horror](genre) movie. Can you please consider casting [Brad Pitt](cast)? Additionally, I'd prefer the movie to be released in [2020](release_date).
     - I'm specifically interested in [horror](genre) movies, if there are any available. It would be fantastic to have [Brad Pitt](cast) as the actor. Furthermore, can the movie be released in [2020](release_date)?
     - If there's a choice, I would like to watch a [horror](genre) movie. It would be great if [Brad Pitt](cast) could be included as the actor. Also, can the movie be released in [2020](release_date)?
-- intent: just_rating+just_cast #for mixed initiative (director name)
+- intent: just_rating+just_director #for mixed initiative
   examples: |
-    - [7](rating). I also would like to have [Dario Argento](cast) as director.
-    - [8](rating). Also can I have [Dario Argento](cast) as director in it?
-    - [one](rating) if possible. In addition to that, can I have [Christopher Nolan](cast) as the director for it?
-    - [two](rating) is enough. Furthermore, can I request [Martin Scorsese](cast) as the director for it?
-    - [three](rating) and can I have [James Cameron](cast) as the director for it?
-    - [four](rating) seems about enough. Additionally, can I have [Denis Villeneuve](cast) as the director for it?
-    - [five](rating) or so. And can I request [Wes Anderson](cast) as the director for it?
-    - [six](rating). Also, can I have [Taika Waititi](cast) as the director for it?
-    - [seven](rating). In addition to that, can I request [Jordan Peele](cast) as the director for it?
-    - [eight](rating). Is it a problem to have [Bong Joon-ho](cast) as the director for it?
-    - [nine](rating). Moreover, is it possible to have [David Fincher](cast) as the director for it?
-    - [ten](rating) and [Spike Lee](cast) as the director.
-    - [1](rating) and [Yorgos Lanthimos](cast) if possible.
-    - rated [2](rating) and directed by [Martin Scorsese](cast).
-    - [3](rating) preferably directed by [Martin Scorsese](cast).
-    - [4](rating). Furthermore, could I ask if it's feasible to have [Martin Scorsese](cast) helm the project?
-    - [5](rating) if you can. Moreover, is it within the realm of possibility for me to suggest [Martin Scorsese](cast) as the director?
-    - [6](rating). Furthermore, might I propose [Martin Scorsese](cast) as the preferred choice for directing it?
-    - [7](rating). Moreover, can I express my desire for [Martin Scorsese](cast) to take on the role of director?
-    - [8](rating). Furthermore, would it be appropriate for me to request [Martin Scorsese](cast)'s directorial involvement?
-    - [9](rating). Moreover, may I raise the question of considering [Martin Scorsese](cast) as the director for it?
-    - [10](rating). Furthermore, is there a chance that I could recommend [Martin Scorsese](cast) to direct it?
+    - [7](rating). I also would like to have [Dario Argento](director_name) as director.
+    - [8](rating). Also can I have [Dario Argento](director_name) as director in it?
+    - [one](rating) if possible. In addition to that, can I have [Christopher Nolan](director_name) as the director for it?
+    - [two](rating) is enough. Furthermore, can I request [Martin Scorsese](director_name) as the director for it?
+    - [three](rating) and can I have [James Cameron](director_name) as the director for it?
+    - [four](rating) seems about enough. Additionally, can I have [Denis Villeneuve](director_name) as the director for it?
+    - [five](rating) or so. And can I request [Wes Anderson](director_name) as the director for it?
+    - [six](rating). Also, can I have [Taika Waititi](director_name) as the director for it?
+    - [seven](rating). In addition to that, can I request [Jordan Peele](director_name) as the director for it?
+    - [eight](rating). Is it a problem to have [Bong Joon-ho](director_name) as the director for it?
+    - [nine](rating). Moreover, is it possible to have [David Fincher](director_name) as the director for it?
+    - [ten](rating) and [Spike Lee](director_name) as the director.
+    - [1](rating) and [Yorgos Lanthimos](director_name) if possible.
+    - rated [2](rating) and directed by [Martin Scorsese](director_name).
+    - [3](rating) preferably directed by [Martin Scorsese](director_name).
+    - [4](rating). Furthermore, could I ask if it's feasible to have [Martin Scorsese](director_name) helm the project?
+    - [5](rating) if you can. Moreover, is it within the realm of possibility for me to suggest [Martin Scorsese](director_name) as the director?
+    - [6](rating). Furthermore, might I propose [Martin Scorsese](director_name) as the preferred choice for directing it?
+    - [7](rating). Moreover, can I express my desire for [Martin Scorsese](director_name) to take on the role of director?
+    - [8](rating). Furthermore, would it be appropriate for me to request [Martin Scorsese](director_name)'s directorial involvement?
+    - [9](rating). Moreover, may I raise the question of considering [Martin Scorsese](director_name) as the director for it?
+    - [10](rating). Furthermore, is there a chance that I could recommend [Martin Scorsese](director_name) to direct it?
 
 # TASK #3 INTENTS
 - intent: ask_movie_with_similar_plot
