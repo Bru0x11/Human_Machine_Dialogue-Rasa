@@ -25,6 +25,8 @@ stories:
       - is_inside_rules: null
   - slot_was_set:
       - keep_asking: null
+  - slot_was_set:
+      - movie_name: null
   - checkpoint: begin_rwm
 
 - story: recommendation_without_movie + genre
@@ -90,7 +92,6 @@ stories:
   - intent: just_cast
     entities:
     - cast
-    #- director_name
   - checkpoint: cast_done
 
 - story: recommendation_without_movie + cast without affirm
@@ -100,7 +101,6 @@ stories:
   - intent: just_cast
     entities:
     - cast
-    #- director_name
   - checkpoint: cast_done
 
 - story: recommendation_without_movie no cast
@@ -196,6 +196,8 @@ stories:
       - is_inside_rules: null
   - slot_was_set:
       - keep_asking: null
+  - slot_was_set:
+      - movie_name: null
   - action: utter_ask_enable_genre
   - intent: affirm
   - action: utter_ask_genre
@@ -203,7 +205,6 @@ stories:
     entities:
       - genre
       - cast
-      - director_name
       - release_date
   - action: utter_confirm
   - action: utter_ask_movie_period
@@ -245,7 +246,6 @@ stories:
   - action: utter_ask_director_name
   - intent: just_cast
     entities:
-      - cast
       - director_name
   - checkpoint: director_name_done
 
@@ -265,7 +265,6 @@ stories:
   - intent: just_rating+just_cast
     entities:
     - rating
-    - cast #even if i don't specify it, but the name is saved on both of them. I will filter them in the custom actions
     - director_name
   - action: utter_confirm
   - checkpoint: rating_director_done
@@ -279,7 +278,6 @@ stories:
   - intent: just_cast
     entities:
     - cast
-    - director_name
   - checkpoint: rating_director_cast_done
 
 - story: recommendation_without_movie mixed-> rating + director no cast
@@ -373,7 +371,6 @@ stories:
   - intent: just_cast
     entities:
     - cast
-    - director_name
   - checkpoint: end_recommendation
 
 - story: change release_date
@@ -416,7 +413,6 @@ stories:
   - action: utter_ask_director_name
   - intent: just_cast
     entities:
-    - cast
     - director_name
   - checkpoint: end_recommendation
 
@@ -432,43 +428,47 @@ stories:
   - slot_was_set:
       - release_date
   - action: utter_return_recommended_movie
-  - action: action_reset_slots
-  - slot_was_set:
-      - is_inside_rules: null
-  - slot_was_set:
-      - keep_asking: null
-  - checkpoint: continue_using_bot
+  - checkpoint: reset_phase
   
 # 2.2 asking movie recommendation by specifying a similar movie
 - story: recommendation_with_movie
   steps:
   - intent: ask_recommendation_with_movie
   - action: action_recommendation_with_movie
-  - slot_was_set: #reset all the elements for a second possible iteration
+  - slot_was_set: 
       - movie_name
   - slot_was_set:
       - plot
   - slot_was_set:
       - release_date
   - action: utter_return_recommended_movie
+  - checkpoint: reset_phase
+
+# Reset all the things (except the movie_name so that I can ask other information with TASK #1) we saved so that, if an error occurs for the next iteration, we don't have the previous things pop up in the result
+- story: reset recommendation
+  steps:
+  - checkpoint: reset_phase
   - action: action_reset_genre
   - slot_was_set:
-      - genre
+      - genre: null
   - action: action_reset_rating
   - slot_was_set:
-      - rating
+      - rating: null
   - action: action_reset_release_date
   - slot_was_set:
-      - release_date
-      - is_before
-      - is_after
-      - is_exactly
+      - release_date: null
+      - is_before: null
+      - is_after: null
+      - is_exactly: null
   - action: action_reset_cast
   - slot_was_set:
-    - cast
+      - cast: null
   - action: action_reset_director_name
   - slot_was_set:
-    - director_name
+      - director_name: null
+  - action: action_reset_plot
+  - slot_was_set:
+      - plot: null
   - checkpoint: continue_using_bot
 
 # TASK #3

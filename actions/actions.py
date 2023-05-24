@@ -797,7 +797,7 @@ class ActionResetSlots(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
          
-         return[SlotSet("is_inside_rules", None), SlotSet("keep_asking", None)]
+         return[SlotSet("is_inside_rules", None), SlotSet("keep_asking", None), SlotSet("movie_name", None)]
     
 class ActionResetGenre(Action):
     def name(self):
@@ -819,6 +819,13 @@ class ActionResetCast(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         return[SlotSet("cast", None)]
+    
+class ActionResetPlot(Action):
+    def name(self):
+        return 'action_reset_plot'
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        return[SlotSet("plot", None)]
 
 class ActionResetReleaseDate(Action):
     def name(self):

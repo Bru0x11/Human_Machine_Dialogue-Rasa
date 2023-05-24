@@ -239,10 +239,6 @@ slots:
       intent: deny
       conditions:
       - active_loop: retrieve_plot_form
-  wiki_link:
-    type: text
-    mappings:
-    - type: custom
 
 responses:
   # GENERAL UTTERANCES
@@ -380,12 +376,7 @@ responses:
   - text: May I request a brief overview of the storyline?
   utter_ask_iterate_plot:
   - text: Do you want to check another plot?
-  utter_return_similar_movie:
-  - text: 'The request that has the closest resemblance to yours is {movie_name} directed by {director_name}. The plot is the following: {plot}. For more information check the link: {wiki_link}'
-  - text: "The movie that most closely matches your request is {movie_name}, directed by {director_name}. Here's a synopsis of the plot: {plot}. For additional details, please refer to this link: {wiki_link}."
-  - text: 'The movie that best fits your request is {movie_name}, directed by {director_name}. The plot can be summarized as follows: {plot}. To learn more, please visit the following link: {wiki_link}.'
-  - text: "{movie_name}, directed by {director_name}, is the movie that closely resembles your request. Here's a brief summary of the plot: {plot}. For further information, kindly click on this link: {wiki_link}."
-
+ 
 actions:
 - action_keep_asking
 - action_obtain_movie_from_plot
@@ -407,6 +398,7 @@ actions:
 - action_reset_genre
 - action_reset_rating
 - action_reset_cast
+- action_reset_plot
 - action_reset_release_date
 - action_reset_director_name
 - action_show_budget
