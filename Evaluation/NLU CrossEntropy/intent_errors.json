@@ -1,0 +1,1146 @@
+[
+  {
+    "text": "long time no see",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5162339806556702
+    }
+  },
+  {
+    "text": "No problem, bye for now.",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.49226123094558716
+    }
+  },
+  {
+    "text": "Can you give me fashion advice?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_rating",
+      "confidence": 0.2437106966972351
+    }
+  },
+  {
+    "text": "Can you recommend a good book to read?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.8772053122520447
+    }
+  },
+  {
+    "text": "Can you give me some details about the movie's financing?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.8153923153877258
+    }
+  },
+  {
+    "text": "What was the movie's funding source?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.3849508762359619
+    }
+  },
+  {
+    "text": "How did the revenue compare to other movies of the same genre or release period?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_release_date",
+      "confidence": 0.334868460893631
+    }
+  },
+  {
+    "text": "Can you suggest a movie with a good plot?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.9727638959884644
+    }
+  },
+  {
+    "text": "music",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.6332240104675293
+    }
+  },
+  {
+    "text": "mistery",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.5470704436302185
+    }
+  },
+  {
+    "text": "science_fiction",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.39730390906333923
+    }
+  },
+  {
+    "text": "Tom Hanks",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3407176434993744
+    }
+  },
+  {
+    "text": "Will Smith",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.24746230244636536
+    }
+  },
+  {
+    "text": "I would like to see Jack Nicholson starring in it",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.27155500650405884
+    }
+  },
+  {
+    "text": "Sandra Bullock",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.7564638257026672
+    }
+  },
+  {
+    "text": "Lupita Nyong'o",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.8626197576522827
+    }
+  },
+  {
+    "text": "Anthony Hopkins",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.9472230076789856
+    }
+  },
+  {
+    "text": "why don't you put Mira Nair?",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "movie_release_date",
+      "confidence": 0.17834678292274475
+    }
+  },
+  {
+    "text": "James Cameron",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.8831939697265625
+    }
+  },
+  {
+    "text": "John Ford, please",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.7345635890960693
+    }
+  },
+  {
+    "text": "Oliver Stone",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.8399558663368225
+    }
+  },
+  {
+    "text": "Lars von Trier",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.49492689967155457
+    }
+  },
+  {
+    "text": "Guy Ritchie",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.2920105755329132
+    }
+  },
+  {
+    "text": "Kenneth Branagh",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.419638067483902
+    }
+  },
+  {
+    "text": "George Lucas",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.6776145100593567
+    }
+  },
+  {
+    "text": "J.J. Abrams",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.5602704882621765
+    }
+  },
+  {
+    "text": "Jane Campion",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.4393044114112854
+    }
+  },
+  {
+    "text": "In the previous year",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.5690921545028687
+    }
+  },
+  {
+    "text": "exactly",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.2020706832408905
+    }
+  },
+  {
+    "text": "If doable, in this year",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.4256385564804077
+    }
+  },
+  {
+    "text": "Do you know of any movies that cover the subject of?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.16360048949718475
+    }
+  },
+  {
+    "text": "I'm interested in watching a movie that talks about. do you have any suggestions?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.6268876194953918
+    }
+  },
+  {
+    "text": "Can you recommend a movie that explores the subject of?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.5461254119873047
+    }
+  },
+  {
+    "text": "let's go",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.15735453367233276
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.13955329358577728
+    }
+  },
+  {
+    "text": "nope",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.5938942432403564
+    }
+  },
+  {
+    "text": "Nope",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.5938942432403564
+    }
+  },
+  {
+    "text": "Noo",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.27533140778541565
+    }
+  },
+  {
+    "text": "Who won the Super Bowl last year?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.25705692172050476
+    }
+  },
+  {
+    "text": "Can you teach me how to play the guitar?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.17242011427879333
+    }
+  },
+  {
+    "text": "What's the population of Tokyo?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.16182935237884521
+    }
+  },
+  {
+    "text": "Can you give me tips on public speaking?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_release_date",
+      "confidence": 0.242399662733078
+    }
+  },
+  {
+    "text": "What is the movie's theme?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.6650129556655884
+    }
+  },
+  {
+    "text": "What is the name of the person who portrayed the main character?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.7402172088623047
+    }
+  },
+  {
+    "text": "Who are the people behind the movie's performances?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.8417609930038452
+    }
+  },
+  {
+    "text": "Can you tell me what happens in the movie?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.4949348270893097
+    }
+  },
+  {
+    "text": "What was the return on investment for the movie?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.9621435403823853
+    }
+  },
+  {
+    "text": "I'm wondering, how much money did The Dark Knight bring in?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.5078088641166687
+    }
+  },
+  {
+    "text": "Do you know what people think of The Dark Knight?",
+    "intent": "movie_rating",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.22326083481311798
+    }
+  },
+  {
+    "text": "Could you suggest a movie that's similar to one I liked?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.6059256792068481
+    }
+  },
+  {
+    "text": "If possible, Julia Roberts",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.6039665341377258
+    }
+  },
+  {
+    "text": "Do you mind including Robert De Niro?",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.29286476969718933
+    }
+  },
+  {
+    "text": "Kate Winslet",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.6892314553260803
+    }
+  },
+  {
+    "text": "Cameron Diaz",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.955178439617157
+    }
+  },
+  {
+    "text": "Kevin Spacey",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.25633782148361206
+    }
+  },
+  {
+    "text": "Oprah Winfrey",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.28360143303871155
+    }
+  },
+  {
+    "text": "Stanley Kubrick",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.5993975400924683
+    }
+  },
+  {
+    "text": "Woody Allen",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.526648759841919
+    }
+  },
+  {
+    "text": "Darren Aronofsky",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.32019609212875366
+    }
+  },
+  {
+    "text": "Hayao Miyazaki",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.8478919267654419
+    }
+  },
+  {
+    "text": "Bong Joon-ho",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.7035741209983826
+    }
+  },
+  {
+    "text": "Kathryn Bigelow",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.26980599761009216
+    }
+  },
+  {
+    "text": "Gus Van Sant",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.8804771900177002
+    }
+  },
+  {
+    "text": "Quentin Tarantino and Samuel L. Jackson",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.9090689420700073
+    }
+  },
+  {
+    "text": "Terry Gilliam and Christian Bale",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.877089262008667
+    }
+  },
+  {
+    "text": "0",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.697723388671875
+    }
+  },
+  {
+    "text": "eight. Is it a problem to have Bong Joon-ho as the director for it?",
+    "intent": "just_rating+just_director",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.3269769847393036
+    }
+  },
+  {
+    "text": "Can you suggest a movie that delves into the theme of?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.605543851852417
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.2864055931568146
+    }
+  },
+  {
+    "text": "What's the best pizza place in town?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.4543816149234772
+    }
+  },
+  {
+    "text": "What is the nature of the movie?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.39094939827919006
+    }
+  },
+  {
+    "text": "Who was in charge of the movie's creative vision?",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.6598901748657227
+    }
+  },
+  {
+    "text": "Can you provide information about the profitability of the movie?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.6306018829345703
+    }
+  },
+  {
+    "text": "What was the movie's return on investment?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.9886988997459412
+    }
+  },
+  {
+    "text": "How much revenue did the movie generate compared to its budget?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.8504411578178406
+    }
+  },
+  {
+    "text": "crime",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.3929648697376251
+    }
+  },
+  {
+    "text": "Angelina Jolie",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.5330911874771118
+    }
+  },
+  {
+    "text": "George Clooney",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.9821180105209351
+    }
+  },
+  {
+    "text": "Samuel L. Jackson",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.9956232905387878
+    }
+  },
+  {
+    "text": "Christian Bale",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.7867282629013062
+    }
+  },
+  {
+    "text": "Mark Wahlberg",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.16842570900917053
+    }
+  },
+  {
+    "text": "Ben Affleck",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.8313523530960083
+    }
+  },
+  {
+    "text": "James Cameron and Arnold Schwarzenegger",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.97199946641922
+    }
+  },
+  {
+    "text": "Francis Ford Coppola",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.920017659664154
+    }
+  },
+  {
+    "text": "Akira Kurosawa",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.965345025062561
+    }
+  },
+  {
+    "text": "François Truffaut",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.6520317792892456
+    }
+  },
+  {
+    "text": "Roman Polanski",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.3924751281738281
+    }
+  },
+  {
+    "text": "Is it possible to have James Wan",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.4342383146286011
+    }
+  },
+  {
+    "text": "If it can be managed, this year",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.38594767451286316
+    }
+  },
+  {
+    "text": "Could you point me in the direction of a movie that addresses the topic of?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.9105066657066345
+    }
+  },
+  {
+    "text": "What movie would you recommend that focuses on?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.46657413244247437
+    }
+  },
+  {
+    "text": "moin",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.3095099627971649
+    }
+  },
+  {
+    "text": "goodevening",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.6298458576202393
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.26295703649520874
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.16670483350753784
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "just_rating+just_director",
+      "confidence": 0.24924038350582123
+    }
+  },
+  {
+    "text": "Can you recommend a good dentist?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.914291501045227
+    }
+  },
+  {
+    "text": "Can you recommend a good gym?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.8398013114929199
+    }
+  },
+  {
+    "text": "Can you recommend a good restaurant nearby?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.8760159015655518
+    }
+  },
+  {
+    "text": "Tell me a joke.",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.24722903966903687
+    }
+  },
+  {
+    "text": "Can you recommend a good workout routine?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.9011713862419128
+    }
+  },
+  {
+    "text": "What is the name of the person who created the movie's score?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.4769020676612854
+    }
+  },
+  {
+    "text": "Can you provide more details about the person behind the movie's music?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.3446664810180664
+    }
+  },
+  {
+    "text": "How much did the movie's cast and crew get paid?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.6557639837265015
+    }
+  },
+  {
+    "text": "What is the movie's classification or certification?",
+    "intent": "movie_rating",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.9817912578582764
+    }
+  },
+  {
+    "text": "Could you recommend a movie that's set in a specific time period?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.6214584112167358
+    }
+  },
+  {
+    "text": "Cate Blanchett",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "ask_movie_question",
+      "confidence": 0.4219324588775635
+    }
+  },
+  {
+    "text": "Emma Stone",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.5323934555053711
+    }
+  },
+  {
+    "text": "John Travolta",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.7222967743873596
+    }
+  },
+  {
+    "text": "Saoirse Ronan",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.5591905117034912
+    }
+  },
+  {
+    "text": "Daniel Kaluuya",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.8137171864509583
+    }
+  },
+  {
+    "text": "Francis Ford Coppola and Al Pacino",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.6783806681632996
+    }
+  },
+  {
+    "text": "Orson Welles please",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.26275691390037537
+    }
+  },
+  {
+    "text": "Bernardo Bertolucci",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.7499287128448486
+    }
+  },
+  {
+    "text": "I would like Wong Kar-wai",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "ask_movie_question",
+      "confidence": 0.25278231501579285
+    }
+  },
+  {
+    "text": "Baz Luhrmann",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_rating+just_director",
+      "confidence": 0.2406671643257141
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.6789879202842712
+    }
+  },
+  {
+    "text": "yep",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.568731963634491
+    }
+  },
+  {
+    "text": "that's right",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.2277241200208664
+    }
+  },
+  {
+    "text": "What's the meaning of life?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.46146759390830994
+    }
+  },
+  {
+    "text": "What is the movie's style?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.5620322823524475
+    }
+  },
+  {
+    "text": "How much money was spent on the movie?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.9611846208572388
+    }
+  },
+  {
+    "text": "How much was spent on the movie's special effects?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.8544527888298035
+    }
+  },
+  {
+    "text": "Can you tell me about any significant financial decisions made during the movie's production?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.6776279807090759
+    }
+  },
+  {
+    "text": "western",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.19991222023963928
+    }
+  },
+  {
+    "text": "Musical as well as Comedy",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.22656169533729553
+    }
+  },
+  {
+    "text": "I would like to have Leonardo DiCaprio in it",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.29945310950279236
+    }
+  },
+  {
+    "text": "Anne Hathaway",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.45041853189468384
+    }
+  },
+  {
+    "text": "Matt Damon",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.6563253402709961
+    }
+  },
+  {
+    "text": "Halle Berry",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.33582717180252075
+    }
+  },
+  {
+    "text": "Viola Davis",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.9800940155982971
+    }
+  },
+  {
+    "text": "Zendaya",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.37440022826194763
+    }
+  },
+  {
+    "text": "Coen Brothers",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_genre",
+      "confidence": 0.36752283573150635
+    }
+  },
+  {
+    "text": "Danny Boyle",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.840429961681366
+    }
+  },
+  {
+    "text": "Billy Wilder",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_genre",
+      "confidence": 0.2176201194524765
+    }
+  },
+  {
+    "text": "Why don't you put Jean-Pierre Jeunet",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.9078184366226196
+    }
+  },
+  {
+    "text": "Can you include Timur Bekmambetov",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.27051854133605957
+    }
+  },
+  {
+    "text": "at least seven",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.3346989154815674
+    }
+  },
+  {
+    "text": "try to find a movie with eight of rating",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "movie_rating",
+      "confidence": 0.45956116914749146
+    }
+  },
+  {
+    "text": "if possible six",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.32496118545532227
+    }
+  },
+  {
+    "text": "In the next year",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.3767833411693573
+    }
+  },
+  {
+    "text": "Could you suggest a movie that discusses?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.8936905264854431
+    }
+  },
+  {
+    "text": "Is there a movie that you would recommend that discusses?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.5213453769683838
+    }
+  }
+]

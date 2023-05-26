@@ -262,7 +262,7 @@ stories:
   - action: utter_ask_enable_rating
   - intent: affirm
   - action: utter_ask_rating
-  - intent: just_rating+just_cast
+  - intent: just_rating+just_director
     entities:
     - rating
     - director_name

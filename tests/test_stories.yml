@@ -1,92 +1,63 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
-"""
+version: "3.1"
+
 stories:
-- story: happy path 1
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
 
-- story: happy path 2
+# TASK #1 TEST STORIES
+- story: only questions with TASK 1
   steps:
   - user: |
-      hello there!
-    intent: greet
+      Hi!
+    intent: greetings
   - action: utter_greet
+  - action: utter_self_introduction
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      Can you tell me the genre of [Avatar]{"entity": "movie_name"}?
+    intent: movie_genre
+  - action: utter_confirm  
+  - action: action_retrieve_genre
+  - slot_was_set:
+    - genre: #AGGIUNGO RISULTATO
+    - is_inside_rules: true
+  - action: action_show_genre
+  - slot_was_set:
+    - genre: null
+  - action: action_keep_asking
   - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
+      yes, sure
     intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
+  - slot_was_set:
+    - keep_asking: true
+  - action: utter_decision
+  - action: action_reset_is_inside_rules
+  - slot_was_set:
+    - is_inside_rules: null
+    - keep_asking: null
+  - user:
+      And what about its budget?
+    intent: movie_budget
+  - action: utter_confirm
+  - action: action_retrieve_budget
+  - slot_was_set:
+    - budget: #AGGIUNGO RISULTATO
+    - is_inside_rules: true
+  - action: action_show_budget
+  - slot_was_set:
+    - budget: null
+  - action: action_keep_asking
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
+      No, thanks
     intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_user_praise
   - action: utter_goodbye
+  - action: action_reset_is_inside_rules
+  - slot_was_set:
+    - is_inside_rules: null
+    - keep_asking: null
 
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
 
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
 
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
-"""
+# TASK #2 TEST STORIES
+
+    

@@ -35,7 +35,7 @@ intents:
 - just_genre
 - just_rating
 - just_year
-- just_rating+just_cast
+- just_rating+just_director
 - just_genre+just_cast+just_year
 - dummy_genre
 - dummy_cast

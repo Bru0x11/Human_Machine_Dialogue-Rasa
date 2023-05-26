@@ -111,9 +111,9 @@ class ShowGenre(Action):
             for genre in genre_list:
                 dispatcher.utter_message(text = '* {}'.format(genre))
 
-            # Reset the genre slot to []. This is helpful whenever we ask a question related to another movie and we have some errors with it.
+            # Reset the genre slot to None. This is helpful whenever we ask a question related to another movie and we have some errors with it.
             # If we don't do so, the bot will print the genres of the previous movie.
-            return [SlotSet("genre", [])]
+            return [SlotSet("genre", None)]
 
 class ActionRetrieveReleaseDate(Action):
     def name(self):
@@ -464,7 +464,7 @@ class ShowComposer(Action):
             else:
                 dispatcher.utter_message(text = 'The composer of {} is {}.'.format(movie_name, composer_list[0]))
             
-            return [SlotSet("composer_name", [])]
+            return [SlotSet("composer_name", None)]
 
 class ActionRetrieveDirector(Action):
     def name(self):
@@ -516,7 +516,7 @@ class ShowDirector(Action):
             else:
                 dispatcher.utter_message(text = 'The director of {} is {}.'.format(movie_name, directors_list[0]))
 
-            return [SlotSet("director_name", [])]
+            return [SlotSet("director_name", None)]
     
 class ActionRetrieveProducer(Action):
     def name(self):
@@ -568,7 +568,7 @@ class ShowProducer(Action):
             else:
                 dispatcher.utter_message(text = 'The producer of {} is {}.'.format(movie_name, producers_list[0]))
 
-            return [SlotSet("producer_name", [])]
+            return [SlotSet("producer_name", None)]
     
 class ActionRetrieveCast(Action):
     def name(self):
@@ -637,7 +637,7 @@ class ShowCast(Action):
                 for cast in cast_list:
                     dispatcher.utter_message(text = '* {}'.format(cast))
             
-            return [SlotSet("cast", []), SlotSet("number_of_actors", None)]
+            return [SlotSet("cast", None), SlotSet("number_of_actors", None)]
 
 # TASK 2
     
