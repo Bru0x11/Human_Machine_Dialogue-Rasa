@@ -1,5 +1,19 @@
 version: "3.1"
 
+# GREETINGS + INTRODUCTION OF CHATBOT
+stories:
+- story: greeting
+  steps:
+  - intent: greetings
+  - action: utter_greet
+  - action: utter_self_introduction
+
+# INTRODUCTION OF FUNCTIONALITIES
+- story: begin_asking_questions
+  steps:
+  - intent: ask_movie_question
+  - action: utter_decision
+
 # TASK #2
 
 # 2.1 asking movie recommendation without specifiyng a similar movie

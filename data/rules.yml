@@ -1,13 +1,7 @@
 version: "3.1"
 
 rules:
-# GENERAL RULES
-- rule: greeting
-  steps:
-  - intent: greetings
-  - action: utter_greet
-  - action: utter_self_introduction
-
+# # GENERAL RULES
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -17,12 +11,6 @@ rules:
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
-
-# INTRODUCTION OF FUNCTIONALITIES
-- rule: begin_asking_questions
-  steps:
-  - intent: ask_movie_question
-  - action: utter_decision
 
 # RULES TO HANDLE TASK #1 REQUESTS
 - rule: Movie genre retrieval
