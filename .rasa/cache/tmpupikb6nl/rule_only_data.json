@@ -1,0 +1,12 @@
+{
+  "rule_only_slots": [
+    "is_inside_rules",
+    "producer_name",
+    "revenue",
+    "composer_name",
+    "keep_asking",
+    "runtime",
+    "budget"
+  ],
+  "rule_only_loops": []
+}

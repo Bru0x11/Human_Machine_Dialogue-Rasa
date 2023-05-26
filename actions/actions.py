@@ -653,8 +653,8 @@ class ActionRecommendationWithMovie(Action):
 
         request_url = "https://api.themoviedb.org/3/movie/{}/similar?api_key={}&language=en-US&page=1".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
-        response = raw.get("results")
-
+        response = raw.get("results")[0]
+        print(response)
         title = response.get("original_title")
         plot = response.get("overview")
         release_date = response.get("release_date")

@@ -415,7 +415,7 @@ stories:
     - director_name
   - checkpoint: end_recommendation
 
-# ending iteration for TASK #2
+# ending iteration for TASK #2.1
 - story: end recommendation_without_movie
   steps:
   - checkpoint: end_recommendation
