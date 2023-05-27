@@ -196,7 +196,6 @@ stories:
 
 # task 2.1
 
-stories:
 - story: ask movie 1
   steps:
   - user: |
@@ -390,6 +389,7 @@ stories:
   - action: utter_goodbye
 
 - story: ask movie mixed initiative
+  steps:
   - user: |
       can you recommend me a movie please?
     intent: ask_recommendation_without_movie
@@ -521,7 +521,7 @@ stories:
   - slot_was_set:
     - cast: null
   - action: utter_ask_cast
-   - user: |
+  - user: |
       only [Johnny Depp]{"entity": "cast"}
     intent: just_cast
   - action: action_recommendation_without_movie
@@ -566,6 +566,7 @@ stories:
   steps:
   - user: |
       can you recommend me a movie?
+    intent: ask_recommendation_without_movie
   - action: action_reset_slots
   - slot_was_set:
     - is_inside_rules: null
