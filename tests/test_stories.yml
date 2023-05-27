@@ -3,7 +3,7 @@ version: "3.1"
 stories:
 
 # TASK #1 TEST STORIES
-- story: only questions with TASK 1
+- story: only questions single intent
   steps:
   - user: |
       Hi
@@ -16,7 +16,11 @@ stories:
   - action: utter_confirm  
   - action: action_retrieve_genre
   - slot_was_set:
-    - genre: "[Action, Adventure, Fantasy, Science Fiction]"
+    - genre:
+      - Action
+      - Adventure
+      - Fantasy
+      - Science Fiction
     - is_inside_rules: true
   - action: action_show_genre
   - slot_was_set:
@@ -38,7 +42,7 @@ stories:
   - action: utter_confirm
   - action: action_retrieve_budget
   - slot_was_set:
-    - budget: "237000000"
+    - budget: 237000000
     - is_inside_rules: true
   - action: action_show_budget
   - slot_was_set:
@@ -56,10 +60,605 @@ stories:
     - is_inside_rules: null
     - keep_asking: null
 
+- story: only questions with multiple intents
+  steps:
+  - user: |
+      Could you tell me the producer and runtime of [Inception]{"entity": "movie_name"}?
+    intent: movie_producer+movie_runtime
+  - action: utter_confirm
+  - action: action_retrieve_producer
+  - slot_was_set:
+    - producer_name:
+      - Christopher Nolan
+      - Emma Thomas
+      - Kanjirô Sakura
+      - Yoshikuni Taki
+  - slot_was_set:
+    - is_inside_rules: true
+  - action: action_show_producer
+  - slot_was_set:
+    - producer_name: null
+  - action: action_retrieve_runtime
+  - slot_was_set:
+    - runtime: 148
+  - slot_was_set:
+    - is_inside_rules: true
+  - action: action_show_runtime
+  - slot_was_set:
+    - runtime: null
+  - action: action_keep_asking
+  - user: |
+      no, I'm fine
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_user_praise
+  - action: utter_goodbye
+  - action: action_reset_is_inside_rules
+  - slot_was_set:
+    - is_inside_rules: null
+  - slot_was_set:
+    - keep_asking: null
+
+- story: only question both single and multiple intent
+  steps:
+  - user: |
+      Can you tell me the composer and director of [Avatar]{"entity": "movie_name"}?
+    intent: movie_director+movie_composer
+  - action: utter_confirm
+  - action: action_retrieve_director
+  - slot_was_set:
+    - director_name:
+      - James Cameron
+  - slot_was_set:
+    - is_inside_rules: true
+  - action: action_show_director
+  - slot_was_set:
+    - director_name: null
+  - action: action_retrieve_composer
+  - slot_was_set:
+    - composer_name:
+      - James Horner
+  - slot_was_set:
+    - is_inside_rules: true
+  - action: action_show_composer
+  - slot_was_set:
+    - composer_name: null
+  - action: action_keep_asking
+  - user: |
+      Who starred in the movie?
+    intent: movie_cast
+  - action: utter_confirm
+  - action: action_retrieve_cast
+  - slot_was_set:
+    - cast:
+      - Sam Worthington
+      - Zoe Saldaña
+      - Stephen Lang
+      - Michelle Rodriguez
+      - Sigourney Weaver
+      - Giovanni Ribisi
+      - Joel David Moore
+      - CCH Pounder
+      - Wes Studi
+      - Laz Alonso
+      - Dileep Rao
+      - Matt Gerald
+      - Sean Anthony Moran
+      - Jason Whyte
+      - Scott Lawrence
+      - Kelly Kilgour
+      - James Patrick Pitt
+      - Sean Patrick Murphy
+      - Peter Dillon
+      - Kevin Dorman
+      - Kelson Henderson
+      - David Van Horn
+      - Jacob Tomuri
+      - Michael Blain-Rozgay
+      - Jon Curry
+      - Julene Renee
+      - Luke Hawker
+      - Woody Schultz
+      - Peter Mensah
+      - Sonia Yee
+      - Jahnel Curfman
+      - Ilram Choi
+      - Kyla Warren
+      - Alicia Vela-Bailey
+      - Kyle Dryberg
+      - Larry Rew
+      - Dina Morrone
+      - Rodney Cook
+  - slot_was_set:
+    - is_inside_rules: true
+  - action: action_show_cast
+  - slot_was_set:
+    - cast: null
+  - slot_was_set:
+    - number_of_actors: null
+  - action: action_keep_asking
+  - user: |
+      no, I'm fine
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_user_praise
+  - action: utter_goodbye
+  - action: action_reset_is_inside_rules
+  - slot_was_set:
+    - is_inside_rules: null
+  - slot_was_set:
+    - keep_asking: null
 
 
 # TASK #2 TEST STORIES
 
+# task 2.1
+
+stories:
+- story: ask movie 1
+  steps:
+  - user: |
+      can you recommend me a movie?
+    intent: ask_recommendation_without_movie
+  - action: action_reset_slots
+  - slot_was_set:
+    - is_inside_rules: null
+  - slot_was_set:
+    - keep_asking: null
+  - slot_was_set:
+    - movie_name: null
+  - action: utter_ask_enable_genre
+  - user: |
+      yes please
+    intent: affirm
+  - slot_was_set:
+    - keep_asking: true
+  - action: utter_ask_genre
+  - user: |
+      [horror]{"entity": "genre"}, if possible
+    intent: just_genre
+  - action: utter_ask_enable_rating
+  - user: |
+      no thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_ask_enable_cast
+  - user: |
+      no, I'm fine
+    intent: deny
+  - action: utter_ask_enable_release_date
+  - user: |
+      yes please
+    intent: affirm
+  - slot_was_set:
+    - keep_asking: true
+  - action: utter_ask_release_date
+  - user: |
+      [2020]{"entity": "release_date"}
+    intent: just_year
+  - action: utter_ask_movie_period
+  - user: |
+      [exactly]{"entity": "movie_period"} this year
+    intent: is_exactly
+  - slot_was_set:
+    - is_exactly: exactly
+  - action: utter_ask_enable_director_name
+  - user: |
+      no thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: action_summary_request
+  - action: utter_ask_if_ok
+  - user: |
+      yes
+    intent: affirm
+  - slot_was_set:
+    - keep_asking: true
+  - action: action_recommendation_without_movie
+  - slot_was_set:
+    - movie_name: Run
+  - slot_was_set:
+    - plot: Chloe, a teenager who is confined to a wheelchair, is homeschooled by her mother, Diane. Chloe soon becomes suspicious of her mother and begins to suspect that she may be harboring a dark secret.
+  - slot_was_set:
+    - release_date: '2020-11-20'
+  - action: utter_return_recommended_movie
+  - action: action_reset_genre
+  - slot_was_set:
+    - genre: null
+  - action: action_reset_rating
+  - slot_was_set:
+    - rating: null
+  - action: action_reset_release_date
+  - slot_was_set:
+    - release_date: null
+  - slot_was_set:
+    - is_before: null
+  - slot_was_set:
+    - is_after: null
+  - slot_was_set:
+    - is_exactly: null
+  - action: action_reset_cast
+  - slot_was_set:
+    - cast: null
+  - action: action_reset_director_name
+  - slot_was_set:
+    - director_name: null
+  - action: action_reset_plot
+  - slot_was_set:
+    - plot: null
+  - action: utter_ask_to_continue
+  - user: |
+      no, thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_user_praise
+  - action: utter_goodbye
+
+- story: ask movie 2
+  steps:
+  - user: |
+      can you recommend me a movie?
+    intent: ask_recommendation_without_movie
+  - action: action_reset_slots
+  - slot_was_set:
+    - is_inside_rules: null
+  - slot_was_set:
+    - keep_asking: null
+  - slot_was_set:
+    - movie_name: null
+  - action: utter_ask_enable_genre
+  - user: |
+      no thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_ask_enable_rating
+  - user: |
+      [7]{"entity": "rating"}
+    intent: just_rating
+  - action: utter_ask_enable_cast
+  - user: |
+      yes please
+    intent: affirm
+  - slot_was_set:
+    - keep_asking: true
+  - action: utter_ask_cast
+  - user: |
+      [Robert Downey Jr]{"entity": "cast"} and [Chris Evans]{"entity": "cast"}
+    intent: just_cast
+  - action: utter_ask_enable_release_date
+  - user: |
+      no thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_ask_enable_director_name
+  - user: |
+      [Joe Russo]{"entity": "director_name"}
+    intent: just_director
+  - action: action_summary_request
+  - action: utter_ask_if_ok
+  - user: |
+      yes, thanks
+    intent: affirm
+  - slot_was_set:
+    - keep_asking: true
+  - action: action_recommendation_without_movie
+  - slot_was_set:
+    - movie_name: 'Avengers: Endgame'
+  - slot_was_set:
+    - plot: "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store."
+  - slot_was_set:
+    - release_date: '2019-04-24'
+  - action: utter_return_recommended_movie
+  - action: action_reset_genre
+  - slot_was_set:
+    - genre: null
+  - action: action_reset_rating
+  - slot_was_set:
+    - rating: null
+  - action: action_reset_release_date
+  - slot_was_set:
+    - release_date: null
+  - slot_was_set:
+    - is_before: null
+  - slot_was_set:
+    - is_after: null
+  - slot_was_set:
+    - is_exactly: null
+  - action: action_reset_cast
+  - slot_was_set:
+    - cast: null
+  - action: action_reset_director_name
+  - slot_was_set:
+    - director_name: null
+  - action: action_reset_plot
+  - slot_was_set:
+    - plot: null
+  - action: utter_ask_to_continue
+  - user: |
+      no thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_user_praise
+  - action: utter_goodbye
+
+- story: ask movie mixed initiative
+  - user: |
+      can you recommend me a movie please?
+    intent: ask_recommendation_without_movie
+  - action: action_reset_slots
+  - slot_was_set:
+    - is_inside_rules: null
+  - slot_was_set:
+    - keep_asking: null
+  - slot_was_set:
+    - movie_name: null
+  - action: utter_ask_enable_genre
+  - user: |
+      yes please
+    intent: affirm
+  - slot_was_set:
+    - keep_asking: true
+  - action: utter_ask_genre
+  - user: |
+      [Fantasy]{"entity": "genre"}. Is it also possible to have [Chris Evans]{"entity": "cast"} in it and to be released in [2015]{"entity": "release_date"}?
+    intent: just_genre+just_cast+just_year
+  - action: utter_confirm
+  - action: utter_ask_movie_period
+  - user: |
+      [after this year]{"entity": "movie_period"}
+    intent: is_after
+  - slot_was_set:
+    - is_after: after this year
+  - action: utter_ask_enable_rating
+  - user: |
+      no thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_ask_enable_director_name
+  - user: |
+      no
+    intent: deny
+  - action: action_summary_request
+  - action: utter_ask_if_ok
+  - user: |
+      yes, it is
+    intent: affirm
+  - slot_was_set:
+    - keep_asking: true
+  - action: action_recommendation_without_movie
+  - slot_was_set:
+    - movie_name: 'Avengers: Endgame'
+  - slot_was_set:
+    - plot: "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store."
+  - slot_was_set:
+    - release_date: '2019-04-24'
+  - action: utter_return_recommended_movie
+  - action: action_reset_genre
+  - slot_was_set:
+    - genre: null
+  - action: action_reset_rating
+  - slot_was_set:
+    - rating: null
+  - action: action_reset_release_date
+  - slot_was_set:
+    - release_date: null
+  - slot_was_set:
+    - is_before: null
+  - slot_was_set:
+    - is_after: null
+  - slot_was_set:
+    - is_exactly: null
+  - action: action_reset_cast
+  - slot_was_set:
+    - cast: null
+  - action: action_reset_director_name
+  - slot_was_set:
+    - director_name: null
+  - action: action_reset_plot
+  - slot_was_set:
+    - plot: null
+  - action: utter_ask_to_continue
+  - user: |
+      no thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_user_praise
+  - action: utter_goodbye
+
+- story: ask movie with changes
+  steps:
+  - user: |
+      can you recommend me a movie?
+    intent: ask_recommendation_without_movie
+  - action: action_reset_slots
+  - slot_was_set:
+    - is_inside_rules: null
+  - slot_was_set:
+    - keep_asking: null
+  - slot_was_set:
+    - movie_name: null
+  - action: utter_ask_enable_genre
+  - user: |
+      no
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_ask_enable_rating
+  - user: |
+      [7]{"entity": "rating", "value": "7"}, if you can
+    intent: just_rating
+  - action: utter_ask_enable_cast
+  - user: |
+      I would like to have [Brad Pitt]{"entity": "cast"} and [Johnny Depp]{"entity": "cast"}
+    intent: just_cast
+  - action: utter_ask_enable_release_date
+  - user: |
+      no
+    intent: deny
+  - action: utter_ask_enable_director_name
+  - user: |
+      no
+    intent: deny
+  - action: action_summary_request
+  - action: utter_ask_if_ok
+  - user: |
+      no, sorry
+    intent: deny
+  - action: utter_ask_changes
+  - intent: dummy_cast
+  - action: utter_confirm
+  - action: action_reset_cast
+  - slot_was_set:
+    - cast: null
+  - action: utter_ask_cast
+   - user: |
+      only [Johnny Depp]{"entity": "cast"}
+    intent: just_cast
+  - action: action_recommendation_without_movie
+  - slot_was_set:
+    - movie_name: 'Never Sleep Again: The Elm Street Legacy'
+  - slot_was_set:
+    - plot: For decades, Freddy Krueger has slashed his way through the dreams of countless youngsters, scaring up over half a billion dollars at the box office across eight terrifying, spectacular films.
+  - slot_was_set:
+    - release_date: '2010-05-04'
+  - action: utter_return_recommended_movie
+  - action: action_reset_genre
+  - slot_was_set:
+    - genre: null
+  - action: action_reset_rating
+  - slot_was_set:
+    - rating: null
+  - action: action_reset_release_date
+  - slot_was_set:
+    - release_date: null
+  - slot_was_set:
+    - is_before: null
+  - slot_was_set:
+    - is_after: null
+  - slot_was_set:
+    - is_exactly: null
+  - action: action_reset_cast
+  - slot_was_set:
+    - cast: null
+  - action: action_reset_director_name
+  - slot_was_set:
+    - director_name: null
+  - action: action_reset_plot
+  - slot_was_set:
+    - plot: null
+  - action: utter_ask_to_continue
+  - user: |
+      bye
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: ask movie + ask question with task 1
+  steps:
+  - user: |
+      can you recommend me a movie?
+  - action: action_reset_slots
+  - slot_was_set:
+    - is_inside_rules: null
+  - slot_was_set:
+    - keep_asking: null
+  - slot_was_set:
+    - movie_name: null
+  - action: utter_ask_enable_genre
+  - user: |
+      [horror]{"entity": "genre"}, if possible
+    intent: just_genre
+  - action: utter_ask_enable_rating
+  - user: |
+      no
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_ask_enable_cast
+  - user: |
+      no
+    intent: deny
+  - action: utter_ask_enable_release_date
+  - user: |
+      no
+    intent: deny
+  - action: utter_ask_enable_director_name
+  - user: |
+      no
+    intent: deny
+  - action: action_summary_request
+  - action: utter_ask_if_ok
+  - user: |
+      yes please
+    intent: affirm
+  - slot_was_set:
+    - keep_asking: true
+  - action: action_recommendation_without_movie
+  - slot_was_set:
+    - movie_name: Psycho
+  - slot_was_set:
+    - plot: When larcenous real estate clerk Marion Crane goes on the lam with a wad of cash and hopes of starting a new life, she ends up at the notorious Bates Motel, where manager Norman Bates cares for his housebound mother.
+  - slot_was_set:
+    - release_date: '1960-06-22'
+  - action: utter_return_recommended_movie
+  - action: action_reset_genre
+  - slot_was_set:
+    - genre: null
+  - action: action_reset_rating
+  - slot_was_set:
+    - rating: null
+  - action: action_reset_release_date
+  - slot_was_set:
+    - release_date: null
+  - slot_was_set:
+    - is_before: null
+  - slot_was_set:
+    - is_after: null
+  - slot_was_set:
+    - is_exactly: null
+  - action: action_reset_cast
+  - slot_was_set:
+    - cast: null
+  - action: action_reset_director_name
+  - slot_was_set:
+    - director_name: null
+  - action: action_reset_plot
+  - slot_was_set:
+    - plot: null
+  - action: utter_ask_to_continue
+  - user: |
+      yes please
+    intent: affirm
+  - action: utter_decision
+  - user: |
+      Can you tell me who directed it?
+    intent: movie_director
+  - action: utter_confirm
+  - action: action_retrieve_director
+  - slot_was_set:
+    - director_name:
+      - Alfred Hitchcock
+  - slot_was_set:
+    - is_inside_rules: true
+  - action: action_show_director
+  - slot_was_set:
+    - director_name: null
+  - action: action_keep_asking
+  - user: |
+      bye
+    intent: goodbye
+  - action: utter_goodbye
+
+# task 2.1
 - story: ask recommendation by giving a movie
   steps:
   - user: |
@@ -67,11 +666,11 @@ stories:
     intent: ask_recommendation_with_movie
   - action: action_recommendation_with_movie
   - slot_was_set: 
-      - movie_name: #AGGIUNGO RISULTATO
+      - movie_name: "Le destin de Juliette"
   - slot_was_set:
-      - plot: #AGGIUNGO RISULTATO
+      - plot: "Juliette is a young woman who has grown up on a farm that is now under economic siege. In order to save her farm and her family, Juliette is forced into a marriage of convenience with Marcel , a morose and laconic railway worker whom she does not even know. Now that her own life is permanently changed, her sacrifice does not ultimately help her family and with that sorrow added to her lonely existence, she is trapped into remaining married because of social pressures and soon enough, the birth of a child. There must surely be a way out for her at some point, but when and how that will happen seems completely up to fate alone."
   - slot_was_set:
-      - release_date: #AGGIUNGO RISULTATO
+      - release_date: "1983-09-21"
   - action: utter_return_recommended_movie
   - action: action_reset_genre
   - slot_was_set:
@@ -99,38 +698,63 @@ stories:
   - action: utter_user_praise
   - action: utter_goodbye
 
-# - story: ask recommendation by giving a movie + ask other informations for that movie
-#   steps:
-#   - user: |
-#       Can you suggest me a movie that is similar to [The Matrix]{"entity": "movie_name"}?
-#     intent: ask_recommendation_with_movie
-#   - action: action_recommendation_with_movie
-#   - slot_was_set: 
-#       - movie_name: #AGGIUNGO RISULTATO
-#   - slot_was_set:
-#       - plot: #AGGIUNGO RISULTATO
-#   - slot_was_set:
-#       - release_date: #AGGIUNGO RISULTATO
-#   - action: utter_return_recommended_movie
-#   - action: action_reset_genre
-#   - slot_was_set:
-#       - genre: null
-#   - action: action_reset_rating
-#   - slot_was_set:
-#       - rating: null
-#   - action: action_reset_release_date
-#   - slot_was_set:
-#       - release_date: null
-#       - is_before: null
-#       - is_after: null
-#       - is_exactly: null
-#   - action: action_reset_cast
-#   - slot_was_set:
-#       - cast: null
-#   - action: action_reset_director_name
-#   - slot_was_set:
-#       - director_name: null
-#   - action: action_reset_plot
-#   - slot_was_set:
-#       - plot: null
-#   - action: utter_ask_to_continue
+- story: ask recommendation by giving a movie + ask other informations for that movie
+  steps:
+  - user: |
+      Can you suggest me a movie that is similar to [The Matrix]{"entity": "movie_name"}?
+    intent: ask_recommendation_with_movie
+  - action: action_recommendation_with_movie
+  - slot_was_set: 
+      - movie_name: "Le destin de Juliette"
+  - slot_was_set:
+      - plot: "Juliette is a young woman who has grown up on a farm that is now under economic siege. In order to save her farm and her family, Juliette is forced into a marriage of convenience with Marcel , a morose and laconic railway worker whom she does not even know. Now that her own life is permanently changed, her sacrifice does not ultimately help her family and with that sorrow added to her lonely existence, she is trapped into remaining married because of social pressures and soon enough, the birth of a child. There must surely be a way out for her at some point, but when and how that will happen seems completely up to fate alone."
+  - slot_was_set:
+      - release_date: "1983-09-21"
+  - action: utter_return_recommended_movie
+  - action: action_reset_genre
+  - slot_was_set:
+      - genre: null
+  - action: action_reset_rating
+  - slot_was_set:
+      - rating: null
+  - action: action_reset_release_date
+  - slot_was_set:
+      - release_date: null
+      - is_before: null
+      - is_after: null
+      - is_exactly: null
+  - action: action_reset_cast
+  - slot_was_set:
+      - cast: null
+  - action: action_reset_director_name
+  - slot_was_set:
+      - director_name: null
+  - action: action_reset_plot
+  - slot_was_set:
+      - plot: null
+  - action: utter_ask_to_continue
+  - intent: affirm
+  - action: utter_decision
+  - user: |
+      Can you tell me its runtime?
+    intent: movie_runtime
+  - action: utter_confirm
+  - action: action_retrieve_runtime
+  - slot_was_set:
+    - runtime: 109
+    - is_inside_rules: true
+  - action: action_show_runtime
+  - slot_was_set:
+    - runtime: null
+  - action: action_keep_asking
+  - user: |
+      No, thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_user_praise
+  - action: utter_goodbye
+  - action: action_reset_is_inside_rules
+  - slot_was_set:
+    - is_inside_rules: null
+    - keep_asking: null

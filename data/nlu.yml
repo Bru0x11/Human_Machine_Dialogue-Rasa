@@ -574,12 +574,12 @@ nlu:
     - Who put together the movie's cast?
     - Who had creative control over the movie's casting choices?
     - Can you provide some information about the chemistry between the actors in the movie?
-    - can you tell me [1] actor for this movie?
-    - list me [2] actors for the aforementioned movie
-    - how about you tell me [6] actors for this movie.
-    - can you tell me [7] actor for this movie?
-    - can you tell me [8] actor for this movie?
-    - can you tell me [9] actor for this movie?
+    - can you tell me [1](number_of_actors) actor for this movie?
+    - list me [2](number_of_actors) actors for the aforementioned movie
+    - how about you tell me [6](number_of_actors) actors for this movie.
+    - can you tell me [7](number_of_actors) actor for this movie?
+    - can you tell me [8](number_of_actors) actor for this movie?
+    - can you tell me [9](number_of_actors) actor for this movie?
     - Can you tell me [10](number_of_actors) actors in the movie?
     - Could you give me a list of [ten](number_of_actors) actors who star in the movie?
     - Would you be able to name [5](number_of_actors) actors that appear in the movie?
