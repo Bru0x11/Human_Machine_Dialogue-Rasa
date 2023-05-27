@@ -647,14 +647,16 @@ class ActionRecommendationWithMovie(Action):
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
         movie_title = tracker.get_slot("movie_name")
-
         query = search.movie(query=movie_title)
+
         movie_id = query.get("results")[0].get("id")
 
-        request_url = "https://api.themoviedb.org/3/movie/{}/similar?api_key={}&language=en-US&page=1".format(str(movie_id), api_key)
+        request_url = "https://api.themoviedb.org/3/movie/{}/similar?api_key={}&language=en-US&page=1&sort_by=vote_average.desc&vote_average.gte=7&vote_count.gte=100".format(str(movie_id), api_key)
         raw = requests.get(request_url).json()
+    
         response = raw.get("results")[0]
-        print(response)
+
+
         title = response.get("original_title")
         plot = response.get("overview")
         release_date = response.get("release_date")

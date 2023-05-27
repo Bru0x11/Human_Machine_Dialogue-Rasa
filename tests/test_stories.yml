@@ -1,66 +1,105 @@
-# version: "3.1"
+version: "3.1"
 
-# stories:
+stories:
 
-# # TASK #1 TEST STORIES
-# - story: only questions with TASK 1
-#   steps:
-#   - user: |
-#       Hi
-#     intent: greetings
-#   - action: utter_greet
-#   - action: utter_self_introduction
-#   - user: |
-#       Can you tell me the genre of [Avatar]{"entity": "movie_name"}?
-#     intent: movie_genre
-#   - action: utter_confirm  
-#   - action: action_retrieve_genre
-#   - slot_was_set:
-#     - genre: "[Action, Adventure, Fantasy, Science Fiction]"
-#     - is_inside_rules: true
-#   - action: action_show_genre
-#   - slot_was_set:
-#     - genre: null
-#   - action: action_keep_asking
-#   - user: |
-#       yes, sure
-#     intent: affirm
-#   - slot_was_set:
-#     - keep_asking: true
-#   - action: utter_decision
-#   - action: action_reset_is_inside_rules
-#   - slot_was_set:
-#     - is_inside_rules: null
-#     - keep_asking: null
-#   - user:
-#       What was the movie's budget?
-#     intent: movie_budget
-#   - action: utter_confirm
-#   - action: action_retrieve_budget
-#   - slot_was_set:
-#     - budget: "237000000"
-#     - is_inside_rules: true
-#   - action: action_show_budget
-#   - slot_was_set:
-#     - budget: null
-#   - action: action_keep_asking
-#   - user: |
-#       No, thanks
-#     intent: deny
-#   - slot_was_set:
-#     - keep_asking: false
-#   - action: utter_user_praise
-#   - action: utter_goodbye
-#   - action: action_reset_is_inside_rules
-#   - slot_was_set:
-#     - is_inside_rules: null
-#     - keep_asking: null
+# TASK #1 TEST STORIES
+- story: only questions with TASK 1
+  steps:
+  - user: |
+      Hi
+    intent: greetings
+  - action: utter_greet
+  - action: utter_self_introduction
+  - user: |
+      Can you tell me the genre of [Avatar]{"entity": "movie_name"}?
+    intent: movie_genre
+  - action: utter_confirm  
+  - action: action_retrieve_genre
+  - slot_was_set:
+    - genre: "[Action, Adventure, Fantasy, Science Fiction]"
+    - is_inside_rules: true
+  - action: action_show_genre
+  - slot_was_set:
+    - genre: null
+  - action: action_keep_asking
+  - user: |
+      yes, sure
+    intent: affirm
+  - slot_was_set:
+    - keep_asking: true
+  - action: utter_decision
+  - action: action_reset_is_inside_rules
+  - slot_was_set:
+    - is_inside_rules: null
+    - keep_asking: null
+  - user:
+      What was the movie's budget?
+    intent: movie_budget
+  - action: utter_confirm
+  - action: action_retrieve_budget
+  - slot_was_set:
+    - budget: "237000000"
+    - is_inside_rules: true
+  - action: action_show_budget
+  - slot_was_set:
+    - budget: null
+  - action: action_keep_asking
+  - user: |
+      No, thanks
+    intent: deny
+  - slot_was_set:
+    - keep_asking: false
+  - action: utter_user_praise
+  - action: utter_goodbye
+  - action: action_reset_is_inside_rules
+  - slot_was_set:
+    - is_inside_rules: null
+    - keep_asking: null
 
 
 
-# # TASK #2 TEST STORIES
+# TASK #2 TEST STORIES
 
-# - story: ask recommendation by giving a movie
+- story: ask recommendation by giving a movie
+  steps:
+  - user: |
+      Can you suggest me a movie that is similar to [The Matrix]{"entity": "movie_name"}?
+    intent: ask_recommendation_with_movie
+  - action: action_recommendation_with_movie
+  - slot_was_set: 
+      - movie_name: #AGGIUNGO RISULTATO
+  - slot_was_set:
+      - plot: #AGGIUNGO RISULTATO
+  - slot_was_set:
+      - release_date: #AGGIUNGO RISULTATO
+  - action: utter_return_recommended_movie
+  - action: action_reset_genre
+  - slot_was_set:
+      - genre: null
+  - action: action_reset_rating
+  - slot_was_set:
+      - rating: null
+  - action: action_reset_release_date
+  - slot_was_set:
+      - release_date: null
+      - is_before: null
+      - is_after: null
+      - is_exactly: null
+  - action: action_reset_cast
+  - slot_was_set:
+      - cast: null
+  - action: action_reset_director_name
+  - slot_was_set:
+      - director_name: null
+  - action: action_reset_plot
+  - slot_was_set:
+      - plot: null
+  - action: utter_ask_to_continue
+  - intent: deny
+  - action: utter_user_praise
+  - action: utter_goodbye
+
+# - story: ask recommendation by giving a movie + ask other informations for that movie
 #   steps:
 #   - user: |
 #       Can you suggest me a movie that is similar to [The Matrix]{"entity": "movie_name"}?
@@ -95,42 +134,3 @@
 #   - slot_was_set:
 #       - plot: null
 #   - action: utter_ask_to_continue
-#   - intent: deny
-#   - action: utter_user_praise
-#   - action: utter_goodbye
-
-# # - story: ask recommendation by giving a movie + ask other informations for that movie
-# #   steps:
-# #   - user: |
-# #       Can you suggest me a movie that is similar to [The Matrix]{"entity": "movie_name"}?
-# #     intent: ask_recommendation_with_movie
-# #   - action: action_recommendation_with_movie
-# #   - slot_was_set: 
-# #       - movie_name: #AGGIUNGO RISULTATO
-# #   - slot_was_set:
-# #       - plot: #AGGIUNGO RISULTATO
-# #   - slot_was_set:
-# #       - release_date: #AGGIUNGO RISULTATO
-# #   - action: utter_return_recommended_movie
-# #   - action: action_reset_genre
-# #   - slot_was_set:
-# #       - genre: null
-# #   - action: action_reset_rating
-# #   - slot_was_set:
-# #       - rating: null
-# #   - action: action_reset_release_date
-# #   - slot_was_set:
-# #       - release_date: null
-# #       - is_before: null
-# #       - is_after: null
-# #       - is_exactly: null
-# #   - action: action_reset_cast
-# #   - slot_was_set:
-# #       - cast: null
-# #   - action: action_reset_director_name
-# #   - slot_was_set:
-# #       - director_name: null
-# #   - action: action_reset_plot
-# #   - slot_was_set:
-# #       - plot: null
-# #   - action: utter_ask_to_continue

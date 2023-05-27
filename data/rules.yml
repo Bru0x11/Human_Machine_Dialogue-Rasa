@@ -1,5 +1,6 @@
 version: "3.1"
 rules:
+
 # GENERAL RULES
 - rule: Say goodbye anytime the user says goodbye
   steps:
@@ -9,6 +10,7 @@ rules:
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
+
 # RULES TO HANDLE TASK #1 REQUESTS
 - rule: Movie genre retrieval
   steps:
@@ -87,6 +89,7 @@ rules:
   - action: action_retrieve_cast
   - action: action_show_cast
   - action: action_keep_asking
+
 # Multiple intents requests
 - rule: Movie genre and producer retrieval
   steps:
@@ -583,6 +586,7 @@ rules:
   - action: action_retrieve_rating
   - action: action_show_rating
   - action: action_keep_asking
+
 # RULES TO ASK IF YOU WANT TO KNOW MORE ABOUT OTHER MOVIES (it's a formal and smooth way of transitioning from TASK #1 to the others)
 - rule: Keep asking affirmative
   condition:
@@ -593,6 +597,9 @@ rules:
   - intent: affirm
   - action: utter_decision
   - action: action_reset_is_inside_rules
+  - slot_was_set:
+    - is_inside_rules: null
+    - keep_asking: null
 - rule: Keep asking negative
   condition:
   - slot_was_set:
@@ -603,6 +610,10 @@ rules:
   - action: utter_user_praise
   - action: utter_goodbye
   - action: action_reset_is_inside_rules
+  - slot_was_set:
+    - is_inside_rules: null
+    - keep_asking: null
+
 # RULE FOR THE FALLBACK CLASSIFIER
 - rule: Ask the user to rephrase in case of low NLU confidence 
   steps:

@@ -433,6 +433,10 @@ stories:
 - story: recommendation_with_movie
   steps:
   - intent: ask_recommendation_with_movie
+    entities:
+      - movie_name
+  - slot_was_set:
+      - movie_name
   - action: action_recommendation_with_movie
   - slot_was_set: 
       - movie_name
@@ -499,3 +503,4 @@ stories:
   steps:
     - checkpoint: ending
     - action: utter_goodbye
+
