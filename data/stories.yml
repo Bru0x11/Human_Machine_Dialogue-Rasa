@@ -316,6 +316,35 @@ stories:
   - intent: deny
   - checkpoint: director_name_done
 
+# user over-informative from the very first interaction
+- story: recommendation_without_movie user over-informative in the first iteration
+  steps:
+  - intent: recommendation_without_movie_over_informative
+    entities:
+    - genre
+    - cast
+    - release_date 
+  - action: action_reset_slots
+  - slot_was_set:
+      - is_inside_rules: null
+  - slot_was_set:
+      - keep_asking: null
+  - slot_was_set:
+      - movie_name: null
+  - action: utter_confirm
+  - action: utter_ask_movie_period
+  - or:
+    - intent: is_before
+      entities:
+      - movie_period
+    - intent: is_after
+      entities:
+      - movie_period
+    - intent: is_exactly
+      entities:
+      - movie_period
+  - checkpoint: genre_actor_release_date_done
+
 # print a summary of all the things asked and ask if everything is ok or not.
 - story: recommendation_without_movie no changes
   steps:

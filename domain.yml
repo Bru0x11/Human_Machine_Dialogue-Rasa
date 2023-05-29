@@ -27,6 +27,7 @@ intents:
 # TASK #2 INTENTS
 # 2.1 recommendation without specifying a movie
 - ask_recommendation_without_movie
+- recommendation_without_movie_over_informative
 - is_after
 - is_before
 - is_exactly

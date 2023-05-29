@@ -1269,6 +1269,27 @@ nlu:
     - Can you suggest a movie that's based on a book?
     - I'm looking for a feel-good movie, could you recommend one?
     - can you recommend me a movie?
+- intent: recommendation_without_movie_over_informative
+  examples: |
+    - can you recommend me a movie? I would like it to be an [horror](genre) movie with [Johnny Depp](cast) as an actor. I would like also to be released in [2020](release_date).
+    - Could you suggest a movie for me? I'm in the mood for a [horror](genre) film featuring [Johnny Depp](cast) as one of the actors. It would be great if it was released in [2020](release_date).
+    - I'm looking for a movie recommendation. Specifically, I'd love a [horror](genre) flick with [Johnny Depp](cast) in the cast. It should have been released in [2020](release_date).
+    - Do you have any movie suggestions? I'm interested in watching a [horror](genre) movie, and it would be awesome if [Johnny Depp](cast) starred in it. Also, I prefer movies released in 2020.
+    - I'm seeking a movie recommendation. An ideal choice would be a [horror](genre) film with [Johnny Depp](cast) in it. If it was released in [2020](release_date), that would be perfect.
+    - Can you recommend a movie to me? I'm in the mood for a [horror](genre) movie and would love to see [Johnny Depp](cast) in it. It should have been released in [2020](release_date).
+    - I'd like a movie recommendation, please. Specifically, I'm looking for a [horror](genre) film with [Johnny Depp](cast) as one of the actors. If it was released in [2020](release_date), even better.
+    - Do you have any movie suggestions? I'm interested in [horror](genre) movies, particularly ones with [Johnny Depp](cast) in the cast. It would be great if they were released in [2020](release_date).
+    - Could you suggest a movie? I'm in the mood for a [horror](genre) flick and would like [Johnny Depp](cast) to be one of the actors. It should have been released in [2020](release_date).
+    - I'm looking for a movie recommendation. I have a preference for [horror](genre) films, especially those featuring [Johnny Depp](cast). If it was released in [2020](release_date), that would be fantastic.
+    - Can you suggest a movie for me? I'm specifically interested in [horror](genre) movies with [Johnny Depp](cast) in the cast. If it was released in [2020](release_date), that's even better.
+    - I'm seeking a movie recommendation. A [horror](genre) movie with [Johnny Depp](cast) as an actor would be great. If it was released in [2020](release_date), I'd be thrilled.
+    - Do you have any movie suggestions? I'm in the mood for a [horror](genre) film and would like [Johnny Depp](cast) to be part of the cast. It would be ideal if it was released in [2020](release_date).
+    - I'd like a movie recommendation, please. Something in the [horror](genre) genre with [Johnny Depp](cast) as one of the actors. If it was released in [2020](release_date), that's what I'm looking for.
+    - Could you recommend a movie? I'm specifically looking for a [horror](genre) movie with [Johnny Depp](cast) in it. It should have been released in [2020](release_date).
+    - I'm looking for a movie recommendation. [horror](genre) movies are my preference, especially ones with [Johnny Depp](cast) in the cast. If it was released in [2020](release_date), that would be perfect.
+    - Can you suggest a movie for me? I'm in the mood for a [horror](genre) film and would love to see [Johnny Depp](cast) as one of the actors. It would be great if it was released in [2020](release_date).
+    - I'm seeking a movie recommendation. Specifically, I'd like a [horror](genre) flick with [Johnny Depp](cast) in the cast. If it was released in [2020](release_date), even better.
+    - Do you have any movie suggestions? I'm interested in watching a [horror](genre) movie, and it would be awesome if [Johnny Depp](cast) starred in it. Also, I prefer movies released in [2020](release_date).
 - intent: ask_recommendation_with_movie
   examples: |
     - I just saw [The Matrix](movie_name), do you have any similar movie recommendations?
@@ -1360,7 +1381,7 @@ nlu:
     - [Fantasy](genre) with some elements of [Adventure](genre)
     - [music](genre) with some [Mystery](genre) and [Thriller](genre) elements
     - [horror](genre)
-- intent: just_cast #we include both actors/actresses and directors
+- intent: just_cast #we include both actors/actresses
   examples: |
     - [Tom Hanks](cast)
     - [Meryl Streep](cast)
