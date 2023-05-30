@@ -61,15 +61,6 @@ pipeline:
     # Name of dense featurizers to use.
     # If list is empty all available dense features are used.
     "featurizers": []
-  - name: RegexEntityExtractor
-    # text will be processed with case insensitive as default
-    case_sensitive: False
-    # use lookup tables to extract entities
-    use_lookup_tables: True
-    # use regexes to extract entities
-    use_regexes: True
-    # use match word boundaries for lookup table
-    use_word_boundaries: True
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 50

@@ -1,0 +1,90 @@
+{
+  "director_name": {
+    "precision": 0.6961325966850829,
+    "recall": 0.6028708133971292,
+    "f1-score": 0.6461538461538462,
+    "support": 209,
+    "confused_with": {
+      "cast": 55
+    }
+  },
+  "movie_name": {
+    "precision": 0.8982412060301508,
+    "recall": 0.9231762427372499,
+    "f1-score": 0.9105380452085324,
+    "support": 1549,
+    "confused_with": {
+      "rating": 11
+    }
+  },
+  "cast": {
+    "precision": 0.7748091603053435,
+    "recall": 0.7463235294117647,
+    "f1-score": 0.7602996254681648,
+    "support": 272,
+    "confused_with": {
+      "director_name": 48
+    }
+  },
+  "number_of_actors": {
+    "precision": 0.6153846153846154,
+    "recall": 0.24242424242424243,
+    "f1-score": 0.34782608695652173,
+    "support": 33,
+    "confused_with": {
+      "rating": 15
+    }
+  },
+  "genre": {
+    "precision": 0.922077922077922,
+    "recall": 0.8987341772151899,
+    "f1-score": 0.9102564102564102,
+    "support": 158,
+    "confused_with": {
+      "movie_name": 5
+    }
+  },
+  "release_date": {
+    "precision": 0.9523809523809523,
+    "recall": 1.0,
+    "f1-score": 0.975609756097561,
+    "support": 100,
+    "confused_with": {}
+  },
+  "rating": {
+    "precision": 0.5409836065573771,
+    "recall": 0.8461538461538461,
+    "f1-score": 0.66,
+    "support": 39,
+    "confused_with": {
+      "movie_name": 3,
+      "number_of_actors": 2
+    }
+  },
+  "movie_period": {
+    "precision": 0.8645833333333334,
+    "recall": 0.8972972972972973,
+    "f1-score": 0.8806366047745359,
+    "support": 185,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.8625,
+    "recall": 0.8675834970530452,
+    "f1-score": 0.8650342801175319,
+    "support": 2545
+  },
+  "macro avg": {
+    "precision": 0.7830741740943472,
+    "recall": 0.76962251857959,
+    "f1-score": 0.7614150468644465,
+    "support": 2545
+  },
+  "weighted avg": {
+    "precision": 0.8604698660147123,
+    "recall": 0.8675834970530452,
+    "f1-score": 0.8619994519389527,
+    "support": 2545
+  },
+  "accuracy": 0.9630584192439863
+}

@@ -509,6 +509,11 @@ stories:
   - intent: ask_movie_with_similar_plot
   - action: retrieve_plot_form
   - active_loop: retrieve_plot_form
+  - slot_was_set:
+    - is_plot_received: filled
+  - slot_was_set:
+    - iterate_plot: null
+  - active_loop: null
   - checkpoint: continue_using_bot
 
 # DO YOU WANT TO CONTINUE?
