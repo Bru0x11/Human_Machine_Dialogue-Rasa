@@ -695,8 +695,7 @@ class ShowCast(Action):
                     actors_message = 'Here is the list for the movie {} of {} actors:\n{}'.format(movie_name, len(cast_list), '\n'.join('* {}'.format(cast) for cast in cast_list))
             else:
                 actors_message = 'Here is the list of actors for the movie {}:'.format(movie_name)
-            dispatcher.utter_message(text=actors_message)
-            message = 'Sure! {} {}'.format(actors_message, question)
+            message = 'Sure! {}.{}'.format(actors_message, question)
             dispatcher.utter_message(text=message)
             
             return [SlotSet("cast", None), SlotSet("number_of_actors", None)]
@@ -829,27 +828,27 @@ class ActionSummaryRequests(Action):
         message = "Great! You've provided all the essential elements for me to find a movie. Let's review the choices you've made so far:"
 
         if genre_list != None:
-            message += '\n\nThe genres that you chose are:\n{}'.format('\n'.join('* {}'.format(genre) for genre in genre_list))
+            message += '\nThe genres that you chose are:\n{}'.format('\n'.join('* {}'.format(genre) for genre in genre_list))
 
         if retrieve_vote != None:
-            message += '\n\nAfter that, the chosen rating is {}.'.format(retrieve_vote)
+            message += '\nAfter that, the chosen rating is {}.'.format(retrieve_vote)
 
         if retrieve_year != None:
             if retrieve_is_before:
-                message += '\n\nMoreover, you want to check all the films prior to the year {}.'.format(retrieve_year)
+                message += '\nMoreover, you want to check all the films prior to the year {}.'.format(retrieve_year)
             elif retrieve_is_after:
-                message += '\n\nMoreover, you want to check all the films after the year {}.'.format(retrieve_year)
+                message += '\nMoreover, you want to check all the films after the year {}.'.format(retrieve_year)
             elif retrieve_is_exactly:
-                message += '\n\nMoreover, you have indicated your desire to browse films specifically for the year {}.'.format(retrieve_year)
+                message += '\nMoreover, you have indicated your desire to browse films specifically for the year {}.'.format(retrieve_year)
 
         if retrieve_cast != None:
-            message += '\n\nAlso, here is the list of actors that you asked for:\n{}'.format('\n'.join('* {}'.format(cast) for cast in retrieve_cast))
+            message += '\nAlso, here is the list of actors that you asked for:\n{}'.format('\n'.join('* {}'.format(cast) for cast in retrieve_cast))
 
         if retrieve_director != None and retrieve_director != retrieve_cast:
-            message += '\n\nFinally, the directors chosen by you are:\n{}'.format('\n'.join('* {}'.format(director) for director in retrieve_director))
+            message += '\nFinally, the directors chosen by you are:{}'.format('\n'.join('* {}'.format(director) for director in retrieve_director))
 
         message += "\nWould you like to confirm?"
-
+        
         dispatcher.utter_message(text=message)
         
         return []
