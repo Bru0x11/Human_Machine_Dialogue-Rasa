@@ -1,93 +1,91 @@
 {
-  "rating": {
-    "precision": 0.7619047619047619,
-    "recall": 0.8205128205128205,
-    "f1-score": 0.7901234567901233,
-    "support": 39,
-    "confused_with": {
-      "number_of_actors": 4
-    }
-  },
   "genre": {
-    "precision": 0.874251497005988,
-    "recall": 0.9240506329113924,
-    "f1-score": 0.8984615384615384,
+    "precision": 0.9207317073170732,
+    "recall": 0.9556962025316456,
+    "f1-score": 0.937888198757764,
     "support": 158,
     "confused_with": {
-      "movie_name": 3
+      "movie_name": 1
     }
   },
   "movie_name": {
-    "precision": 0.9427083333333334,
-    "recall": 0.9347966429954809,
-    "f1-score": 0.9387358184764991,
+    "precision": 0.9427652733118971,
+    "recall": 0.9464170432537121,
+    "f1-score": 0.9445876288659794,
     "support": 1549,
     "confused_with": {
-      "genre": 6
-    }
-  },
-  "cast": {
-    "precision": 0.7228070175438597,
-    "recall": 0.7573529411764706,
-    "f1-score": 0.7396768402154398,
-    "support": 272,
-    "confused_with": {
-      "director_name": 41
-    }
-  },
-  "director_name": {
-    "precision": 0.7168674698795181,
-    "recall": 0.569377990430622,
-    "f1-score": 0.6346666666666667,
-    "support": 209,
-    "confused_with": {
-      "cast": 66
+      "genre": 3
     }
   },
   "number_of_actors": {
-    "precision": 0.6285714285714286,
-    "recall": 0.6666666666666666,
-    "f1-score": 0.6470588235294118,
+    "precision": 0.8275862068965517,
+    "recall": 0.7272727272727273,
+    "f1-score": 0.7741935483870968,
     "support": 33,
     "confused_with": {
       "rating": 4
     }
   },
+  "director_name": {
+    "precision": 0.6942675159235668,
+    "recall": 0.5215311004784688,
+    "f1-score": 0.5956284153005464,
+    "support": 209,
+    "confused_with": {
+      "cast": 67
+    }
+  },
+  "cast": {
+    "precision": 0.7247386759581882,
+    "recall": 0.7647058823529411,
+    "f1-score": 0.7441860465116279,
+    "support": 272,
+    "confused_with": {
+      "director_name": 42
+    }
+  },
   "movie_period": {
-    "precision": 0.7935483870967742,
-    "recall": 0.6648648648648648,
-    "f1-score": 0.7235294117647059,
+    "precision": 0.9044585987261147,
+    "recall": 0.7675675675675676,
+    "f1-score": 0.8304093567251463,
     "support": 185,
     "confused_with": {
-      "movie_name": 2
+      "movie_name": 6
     }
   },
   "release_date": {
-    "precision": 0.9705882352941176,
-    "recall": 0.99,
-    "f1-score": 0.9801980198019802,
+    "precision": 0.9803921568627451,
+    "recall": 1.0,
+    "f1-score": 0.99009900990099,
     "support": 100,
+    "confused_with": {}
+  },
+  "rating": {
+    "precision": 0.7954545454545454,
+    "recall": 0.8974358974358975,
+    "f1-score": 0.8433734939759037,
+    "support": 39,
     "confused_with": {
       "movie_name": 1
     }
   },
   "micro avg": {
-    "precision": 0.8822347266881029,
-    "recall": 0.862475442043222,
-    "f1-score": 0.8722431949135705,
+    "precision": 0.8957915831663327,
+    "recall": 0.8781925343811395,
+    "f1-score": 0.886904761904762,
     "support": 2545
   },
   "macro avg": {
-    "precision": 0.8014058913287228,
-    "recall": 0.7909528199447897,
-    "f1-score": 0.7940563219632957,
+    "precision": 0.8487993350563353,
+    "recall": 0.82257830261162,
+    "f1-score": 0.8325457123031318,
     "support": 2545
   },
   "weighted avg": {
-    "precision": 0.8798185354956726,
-    "recall": 0.862475442043222,
-    "f1-score": 0.8699161646038928,
+    "precision": 0.8926314252871504,
+    "recall": 0.8781925343811395,
+    "f1-score": 0.8838244013014503,
     "support": 2545
   },
-  "accuracy": 0.9656357388316151
+  "accuracy": 0.9712659828579457
 }

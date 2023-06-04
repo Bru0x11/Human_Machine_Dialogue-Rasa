@@ -244,17 +244,12 @@ slots:
 responses:
   # GENERAL UTTERANCES
   utter_greet:
-  - text: Hello! I'm Popcorn, your movie assistant. It's great to meet you!
-  - text: Nice to meet you! I'm Popcorn, your movie assistant!
-  - text: Greetings! Your movie assistant, Popcorn, at your service.
-  - text: Popcorn here, delighted to meet you and ready to assist you with anything related to movies!
-  utter_self_introduction:
-  - text: I'm here to be your ultimate guide to the world of cinema. Whether you're a die-hard film buff or just looking for a casual movie night suggestion, I'm here to assist you with all your movie-related needs. From classic blockbusters to indie gems, I've got recommendations to suit every taste. So let's dive in and explore the wonderful world of movies together!
-  - text: Looking for a cinematic adventure? Look no further! I'm your ultimate guide to the world of movies, catering to both die-hard film buffs and casual viewers alike. Whether you're in the mood for a classic blockbuster or a hidden indie gem, I have recommendations to satisfy every palate. Let's embark on this cinematic journey together!
-  - text: Welcome to the world of movies! As your personal guide, I'm here to assist you with all your movie-related needs, no matter how big or small. From beloved blockbusters to overlooked indie treasures, I have recommendations that will pique your interest. Join me as we explore the fascinating world of cinema together!
-  - text: Are you ready to discover the magic of movies? Look no further! I'm here to be your ultimate guide, offering recommendations that cater to every movie lover's taste. Whether you're a seasoned film buff or just looking for a fun movie night suggestion, I'm here to help. So let's dive in and explore the wonderful world of cinema together!
+  - text: Hello! I'm Popcorn, your movie assistant. It's great to meet you! I'm here to be your ultimate guide to the world of cinema. Whether you're a die-hard film buff or just looking for a casual movie night suggestion, I'm here to assist you with all your movie-related needs. From classic blockbusters to indie gems, I've got recommendations to suit every taste. So let's dive in and explore the wonderful world of movies together!
+  - text: Nice to meet you! I'm Popcorn, your movie assistant! Looking for a cinematic adventure? Look no further! I'm your ultimate guide to the world of movies, catering to both die-hard film buffs and casual viewers alike. Whether you're in the mood for a classic blockbuster or a hidden indie gem, I have recommendations to satisfy every palate. Let's embark on this cinematic journey together!
+  - text: Greetings! Your movie assistant, Popcorn, at your service. Welcome to the world of movies! As your personal guide, I'm here to assist you with all your movie-related needs, no matter how big or small. From beloved blockbusters to overlooked indie treasures, I have recommendations that will pique your interest. Join me as we explore the fascinating world of cinema together!
+  - text: Popcorn here, delighted to meet you and ready to assist you with anything related to movies! Are you ready to discover the magic of movies? Look no further! I'm here to be your ultimate guide, offering recommendations that cater to every movie lover's taste. Whether you're a seasoned film buff or just looking for a fun movie night suggestion, I'm here to help. So let's dive in and explore the wonderful world of cinema together!
   utter_goodbye:
-  - text: It was great chatting with you. Feel free to come back anytime if you have more questions or just want to chat about movies. Have a great day!
+  - text: Thanks for using this tool! Feel free to come back anytime if you have more questions or just want to chat about movies. Have a great day!
   - text: It was wonderful talking to you! If you ever have more movie-related questions or just want to chat, feel free to come back anytime. Have a great day and take care!
   - text: Thank you for chatting with me! If you need any more movie recommendations or just want to talk, don't hesitate to come back. Wishing you a great day ahead!
   - text: I had a lovely time chatting with you! Please feel free to return if you have further questions or simply want to discuss movies. Have a fantastic day!
@@ -263,41 +258,21 @@ responses:
   - text: I'm afraid I cannot answer your question since it's beyond the scope of my expertise as a movie assistant. My primary goal is to assist you with anything related to movies, including recommendations, reviews, trivia, and other movie-related information. If you have any movie-related queries, I'd be more than happy to help you out!
   - text: Unfortunately, I am not equipped to answer that question as a movie assistant. My role is to provide assistance with all things movie-related, such as offering recommendations, reviews, and trivia, among other things. If you have any questions about movies, I'm here to help you in any way I can.
   - text: I apologize, but answering that question is not within my purview as a movie assistant. My primary objective is to aid you with anything related to movies, whether that be by providing recommendations, reviews, or trivia. If you have any questions about movies, I'm at your service!
-  utter_confirm:
-  - text: Sure!
-  - text: Of course!
-  - text: OK!
-  - text: You got it!
-  - text: Certainly!
-  - text: Naturally!
-  - text: Absolutely!
-  utter_user_praise:
-  - text: Thanks for using this tool!
-  - text: I appreciate you utilizing this tool and allowing me to assist you!
-  - text: It was my pleasure to assist you with this tool!
-  - text: Thank you for choosing this tool and giving me the opportunity to be of service!
 
   # INTRODUCTION OF FUNCTIONALITIES
   utter_decision:
-  - text: What would you like to know?
-  - text: Is there anything specific you're interested in learning about movies?
-  - text: How can I assist you in expanding your knowledge of movies?
-  - text: Are there any particular aspects of movies you'd like to delve into?
+  - text: Great! And what would you like to know?
+  - text: Gotcha! What would you like to do?
   utter_ask_to_continue:
   - text: Would you like to do something else?
   - text: Is there anything else you would like me to help you with?
   - text: Do you have any other requests or questions?
   - text: Is there something else I can assist you with?
-
-  # TASK #1 UTTERANCES
-  utter_return_movie_name:
-  - text: The name of the movie is {movie_name}.
-  - text: The movie you're referring to is called {movie_name}.
-  - text: The name of the movie you're asking about is {movie_name}.
-  - text: "{movie_name} is the title of the film you're inquiring about."
-  - text: The movie you're talking about is named {movie_name}.
-  - text: The name of the movie is {movie_name}.
-
+  utter_tell_functionalities:
+  - text: Feel free to ask me anything about movies, including recommendations based on your preferences or even if you have a specific plot idea in mind.
+  - text: I'm here to answer all your movie-related questions and offer personalized recommendations based on your tastes or movie-plot idea.
+  - text: If you have any inquiries about movies or need recommendations tailored to your preferences, don't hesitate to ask. I can also assist you in finding movies with similar plots that align with your preferences.
+ 
   # TASK #2 UTTERANCES
   utter_return_recommended_movie:
   - text: 'I recommend you the movie {movie_name} released on {release_date}. The plot is the following: {plot}'
@@ -315,34 +290,34 @@ responses:
   - text: Perfect! What genre are you in the mood for?
   - text: Sounds good! What kind of movie genre would you like to watch?
   utter_ask_enable_cast:
-  - text: Do you want to specify a particular actor or actress?
-  - text: Would you like to specify a particular actor or actress?
-  - text: Do you have someone in mind to look for in the cast?
-  - text: Are you interested in a movie with a specific actor or actress in it?
+  - text: And, do you want to specify a particular actor or actress?
+  - text: And, would you like to specify a particular actor or actress?
+  - text: And, do you have someone in mind to look for in the cast?
+  - text: And, are you interested in a movie with a specific actor or actress in it?
   utter_ask_cast:
   - text: Perfect! Which actor would you like to see in the movie?
   - text: Great! Who would you like to have in the cast of the movie?
   - text: Sounds good! Which actor would you like to be featured in the movie?
   utter_ask_enable_director_name:
-  - text: Would you like a certain director for the movie?
+  - text: And, would you like a certain director for the movie?
   utter_ask_director_name:
-  - text: Who would you like as director for the movie?
-  - text: Do you have a specific director in mind for the movie?
+  - text: Perfect! Who would you like as director for the movie?
+  - text: Great! Do you have a specific director in mind for the movie?
   - text: Are you interested in a movie directed by a certain person?
   utter_ask_enable_rating:
-  - text: Would you like the movie to have a specific rating?
-  - text: Are you looking for a movie with a specific rating?
-  - text: Would you like to specify a particular rating for the movie?
+  - text: And, would you like the movie to have a specific rating?
+  - text: And, are you looking for a movie with a specific rating?
+  - text: And, would you like to specify a particular rating for the movie?
   utter_ask_rating:
   - text: Nice! What is the minimum rating that you want for the movie?
   - text: Great! What is the minimum rating you would like the movie to have?
   - text: Sure! What is the lowest rating you are interested in for the movie?
   - text: Okay! What is the minimum rating you are looking for in the movie?
   utter_ask_enable_release_date:
-  - text: Would you like to specify a release date for the movie?
-  - text: Are you interested in a movie released in a specific year or time frame?
-  - text: Would you like to narrow down the movie options by specifying a release date?
-  - text: Do you have a preference for the movie's release date?
+  - text: Ok, now would you like to specify a release date for the movie?
+  - text: Ok, now are you interested in a movie released in a specific year or time frame?
+  - text: Ok, now would you like to narrow down the movie options by specifying a release date?
+  - text: And, do you have a preference for the movie's release date?
   utter_ask_release_date:
   - text: OK! Can you tell me a release date for the movie?
   - text: Sure! Do you have a specific release date in mind for the movie?
@@ -365,21 +340,17 @@ responses:
         payload: /dummy_release_date
       - title: director_name
         payload: /dummy_director_name
-  utter_ask_if_ok:
-  - text: Do you want to confirm?
-  - text: Would you like to confirm?
 
   # TASK #3 UTTERANCES
   utter_ask_is_plot_received:
-  - text: Can you describe the plot, please?
-  - text: Would you mind providing a summary of the plot?
-  - text: Could you elucidate the plot for me, please?
-  - text: May I request a brief overview of the storyline?
+  - text: Of course! Can you describe the plot, please?
+  - text: Naturally! Would you mind providing a summary of the plot?
+  - text: Of course! Could you elucidate the plot for me, please?
+  - text: Absolutely! May I request a brief overview of the storyline?
   utter_ask_iterate_plot:
   - text: Do you want to check another plot?
  
 actions:
-- action_keep_asking
 - action_obtain_movie_from_plot
 - action_recommendation_with_movie
 - action_recommendation_without_movie

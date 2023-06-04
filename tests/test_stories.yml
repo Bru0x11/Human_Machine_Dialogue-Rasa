@@ -9,11 +9,9 @@ stories:
       Hi
     intent: greetings
   - action: utter_greet
-  - action: utter_self_introduction
   - user: |
       Can you tell me the genre of [Avatar]{"entity": "movie_name"}?
     intent: movie_genre
-  - action: utter_confirm  
   - action: action_retrieve_genre
   - slot_was_set:
     - genre:
@@ -25,7 +23,6 @@ stories:
   - action: action_show_genre
   - slot_was_set:
     - genre: null
-  - action: action_keep_asking
   - user: |
       yes, sure
     intent: affirm
@@ -39,7 +36,6 @@ stories:
   - user:
       What was the movie's budget?
     intent: movie_budget
-  - action: utter_confirm
   - action: action_retrieve_budget
   - slot_was_set:
     - budget: 237000000
@@ -47,13 +43,11 @@ stories:
   - action: action_show_budget
   - slot_was_set:
     - budget: null
-  - action: action_keep_asking
   - user: |
       No, thanks
     intent: deny
   - slot_was_set:
     - keep_asking: false
-  - action: utter_user_praise
   - action: utter_goodbye
   - action: action_reset_is_inside_rules
   - slot_was_set:
@@ -65,7 +59,6 @@ stories:
   - user: |
       Could you tell me the producer and runtime of [Inception]{"entity": "movie_name"}?
     intent: movie_producer+movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_producer
   - slot_was_set:
     - producer_name:
@@ -86,13 +79,11 @@ stories:
   - action: action_show_runtime
   - slot_was_set:
     - runtime: null
-  - action: action_keep_asking
   - user: |
       no, I'm fine
     intent: deny
   - slot_was_set:
     - keep_asking: false
-  - action: utter_user_praise
   - action: utter_goodbye
   - action: action_reset_is_inside_rules
   - slot_was_set:
@@ -105,7 +96,6 @@ stories:
   - user: |
       Can you tell me the composer and director of [Avatar]{"entity": "movie_name"}?
     intent: movie_director+movie_composer
-  - action: utter_confirm
   - action: action_retrieve_director
   - slot_was_set:
     - director_name:
@@ -124,11 +114,9 @@ stories:
   - action: action_show_composer
   - slot_was_set:
     - composer_name: null
-  - action: action_keep_asking
   - user: |
       Who starred in the movie?
     intent: movie_cast
-  - action: utter_confirm
   - action: action_retrieve_cast
   - slot_was_set:
     - cast:
@@ -177,13 +165,11 @@ stories:
     - cast: null
   - slot_was_set:
     - number_of_actors: null
-  - action: action_keep_asking
   - user: |
       no, I'm fine
     intent: deny
   - slot_was_set:
     - keep_asking: false
-  - action: utter_user_praise
   - action: utter_goodbye
   - action: action_reset_is_inside_rules
   - slot_was_set:
@@ -251,7 +237,6 @@ stories:
   - slot_was_set:
     - keep_asking: false
   - action: action_summary_request
-  - action: utter_ask_if_ok
   - user: |
       yes
     intent: affirm
@@ -295,7 +280,6 @@ stories:
     intent: deny
   - slot_was_set:
     - keep_asking: false
-  - action: utter_user_praise
   - action: utter_goodbye
 
 - story: ask movie 2
@@ -341,7 +325,6 @@ stories:
       [Joe Russo]{"entity": "director_name"}
     intent: just_director
   - action: action_summary_request
-  - action: utter_ask_if_ok
   - user: |
       yes, thanks
     intent: affirm
@@ -385,7 +368,6 @@ stories:
     intent: deny
   - slot_was_set:
     - keep_asking: false
-  - action: utter_user_praise
   - action: utter_goodbye
 
 - story: ask movie mixed initiative
@@ -410,7 +392,6 @@ stories:
   - user: |
       [Fantasy]{"entity": "genre"}. Is it also possible to have [Chris Evans]{"entity": "cast"} in it and to be released in [2015]{"entity": "release_date"}?
     intent: just_genre+just_cast+just_year
-  - action: utter_confirm
   - action: utter_ask_movie_period
   - user: |
       [after this year]{"entity": "movie_period"}
@@ -428,7 +409,6 @@ stories:
       no
     intent: deny
   - action: action_summary_request
-  - action: utter_ask_if_ok
   - user: |
       yes, it is
     intent: affirm
@@ -472,7 +452,6 @@ stories:
     intent: deny
   - slot_was_set:
     - keep_asking: false
-  - action: utter_user_praise
   - action: utter_goodbye
 
 - story: ask movie with changes
@@ -510,13 +489,11 @@ stories:
       no
     intent: deny
   - action: action_summary_request
-  - action: utter_ask_if_ok
   - user: |
       no, sorry
     intent: deny
   - action: utter_ask_changes
   - intent: dummy_cast
-  - action: utter_confirm
   - action: action_reset_cast
   - slot_was_set:
     - cast: null
@@ -597,7 +574,6 @@ stories:
       no
     intent: deny
   - action: action_summary_request
-  - action: utter_ask_if_ok
   - user: |
       yes please
     intent: affirm
@@ -643,7 +619,6 @@ stories:
   - user: |
       Can you tell me who directed it?
     intent: movie_director
-  - action: utter_confirm
   - action: action_retrieve_director
   - slot_was_set:
     - director_name:
@@ -653,7 +628,6 @@ stories:
   - action: action_show_director
   - slot_was_set:
     - director_name: null
-  - action: action_keep_asking
   - user: |
       bye
     intent: goodbye
@@ -696,7 +670,6 @@ stories:
       - plot: null
   - action: utter_ask_to_continue
   - intent: deny
-  - action: utter_user_praise
   - action: utter_goodbye
 
 - story: ask recommendation by giving a movie + ask other informations for that movie
@@ -739,7 +712,6 @@ stories:
   - user: |
       Can you tell me its runtime?
     intent: movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_runtime
   - slot_was_set:
     - runtime: 109
@@ -747,13 +719,11 @@ stories:
   - action: action_show_runtime
   - slot_was_set:
     - runtime: null
-  - action: action_keep_asking
   - user: |
       No, thanks
     intent: deny
   - slot_was_set:
     - keep_asking: false
-  - action: utter_user_praise
   - action: utter_goodbye
   - action: action_reset_is_inside_rules
   - slot_was_set:

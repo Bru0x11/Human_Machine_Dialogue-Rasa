@@ -1,40 +1,4 @@
 {
-  "action_reset_rating": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1248
-  },
-  "utter_confirm": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 158
-  },
-  "retrieve_plot_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "action_reset_plot": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1246
-  },
-  "action_reset_slots": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1845
-  },
-  "action_reset_release_date": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1252
-  },
   "action_recommendation_without_movie": {
     "precision": 1.0,
     "recall": 1.0,
@@ -47,41 +11,29 @@
     "f1-score": 1.0,
     "support": 605
   },
-  "utter_decision": {
+  "utter_return_recommended_movie": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 625
+    "support": 1246
   },
-  "action_reset_director_name": {
+  "utter_ask_to_continue": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1248
   },
-  "utter_ask_rating": {
+  "action_reset_cast": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 677
+    "support": 1248
   },
-  "utter_ask_movie_period": {
+  "utter_ask_enable_rating": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 1590
-  },
-  "utter_ask_changes": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 615
-  },
-  "utter_greet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
+    "support": 1845
   },
   "utter_ask_genre": {
     "precision": 1.0,
@@ -89,7 +41,85 @@
     "f1-score": 1.0,
     "support": 629
   },
-  "utter_ask_if_ok": {
+  "utter_ask_movie_period": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1590
+  },
+  "utter_decision": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 624
+  },
+  "action_reset_release_date": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1252
+  },
+  "utter_ask_cast": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 605
+  },
+  "action_reset_plot": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1246
+  },
+  "utter_tell_functionalities": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "action_listen": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 18826
+  },
+  "utter_ask_release_date": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 789
+  },
+  "utter_greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_goodbye": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 624
+  },
+  "action_reset_genre": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1248
+  },
+  "utter_ask_changes": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 615
+  },
+  "utter_ask_rating": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 677
+  },
+  "action_summary_request": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -107,65 +137,11 @@
     "f1-score": 1.0,
     "support": 1773
   },
-  "utter_user_praise": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 624
-  },
-  "action_reset_cast": {
+  "action_reset_director_name": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1248
-  },
-  "action_reset_genre": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1248
-  },
-  "utter_ask_release_date": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 789
-  },
-  "utter_ask_enable_rating": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1845
-  },
-  "action_listen": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 18826
-  },
-  "utter_goodbye": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 624
-  },
-  "utter_ask_to_continue": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1248
-  },
-  "utter_ask_enable_genre": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1809
-  },
-  "utter_ask_enable_cast": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1773
   },
   "action_recommendation_with_movie": {
     "precision": 1.0,
@@ -173,48 +149,54 @@
     "f1-score": 1.0,
     "support": 2
   },
-  "utter_return_recommended_movie": {
+  "utter_ask_enable_genre": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 1246
+    "support": 1809
   },
-  "utter_self_introduction": {
+  "action_reset_rating": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 1
+    "support": 1248
   },
-  "action_summary_request": {
+  "utter_ask_enable_cast": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1773
+  },
+  "retrieve_plot_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "action_reset_slots": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1845
-  },
-  "utter_ask_cast": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 605
   },
   "accuracy": 1.0,
   "macro avg": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 52109
+    "support": 49481
   },
   "weighted avg": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 52109
+    "support": 49481
   },
   "micro avg": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 52109
+    "support": 49481
   },
   "conversation_accuracy": {
     "accuracy": 1.0,

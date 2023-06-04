@@ -6,13 +6,12 @@ stories:
   steps:
   - intent: greetings
   - action: utter_greet
-  - action: utter_self_introduction
 
 # INTRODUCTION OF FUNCTIONALITIES
 - story: begin_asking_questions
   steps:
   - intent: ask_movie_question
-  - action: utter_decision
+  - action: utter_tell_functionalities
 
 # TASK #2
 
@@ -206,7 +205,6 @@ stories:
       - genre
       - cast
       - release_date
-  - action: utter_confirm
   - action: utter_ask_movie_period
   - or:
     - intent: is_before
@@ -266,7 +264,6 @@ stories:
     entities:
     - rating
     - director_name
-  - action: utter_confirm
   - checkpoint: rating_director_done
 
 - story: recommendation_without_movie mixed -> rating + director for cast
@@ -331,7 +328,6 @@ stories:
       - keep_asking: null
   - slot_was_set:
       - movie_name: null
-  - action: utter_confirm
   - action: utter_ask_movie_period
   - or:
     - intent: is_before
@@ -350,7 +346,6 @@ stories:
   steps:
   - checkpoint: director_name_done
   - action: action_summary_request
-  - action: utter_ask_if_ok
   - intent: affirm
   - checkpoint: end_recommendation
 
@@ -358,14 +353,12 @@ stories:
   steps:
   - checkpoint: director_name_done
   - action: action_summary_request
-  - action: utter_ask_if_ok
   - intent: deny
   - action: utter_ask_changes #depending on what button the user chooses, we will have different stories to modify the requested value. I will use dummy intents to jump to the right story that allows us to modify the slots
 
 - story: change genre
   steps:
   - intent: dummy_genre
-  - action: utter_confirm
   - action: action_reset_genre
   - slot_was_set:
       - genre: null
@@ -378,7 +371,6 @@ stories:
 - story: change rating
   steps:
   - intent: dummy_rating
-  - action: utter_confirm
   - action: action_reset_rating
   - slot_was_set:
       - rating: null
@@ -391,7 +383,6 @@ stories:
 - story: change cast
   steps:
   - intent: dummy_cast
-  - action: utter_confirm
   - action: action_reset_cast
   - slot_was_set:
       - cast: null
@@ -404,7 +395,6 @@ stories:
 - story: change release_date
   steps:
   - intent: dummy_release_date
-  - action: utter_confirm
   - action: action_reset_release_date
   - slot_was_set:
       - release_date: null
@@ -434,7 +424,6 @@ stories:
 - story: change director name
   steps:
   - intent: dummy_director_name
-  - action: utter_confirm
   - action: action_reset_director_name
   - slot_was_set:
       - director_name: null
@@ -516,7 +505,7 @@ stories:
   - active_loop: null
   - checkpoint: continue_using_bot
 
-# DO YOU WANT TO CONTINUE?
+# DO YOU WANT TO CONTINUE? + ENDING
 - story: continue_yes
   steps:
     - checkpoint: continue_using_bot
@@ -529,12 +518,6 @@ stories:
     - checkpoint: continue_using_bot
     - action: utter_ask_to_continue
     - intent: deny
-    - action: utter_user_praise
-    - checkpoint: ending
-
-# ENDING
-- story: chatbot_end
-  steps:
-    - checkpoint: ending
     - action: utter_goodbye
+
 

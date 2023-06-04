@@ -9,6 +9,7 @@ nlu:
     - Hello
     - hi
     - Hi
+    - Hi!
     - hello there
     - Hello there
     - good morning
@@ -222,6 +223,30 @@ nlu:
     - I'm keen to discuss some questions related to movies.
     - I have some burning questions about movies that I'd like to ask.
     - I want to pick your brain about movies by asking some questions.
+    - What can I do with this chatbot?
+    - What can I do with you?
+    - What are you capable of'
+    - What kind of things can you do?
+    - Which types of questions am I allowed to ask?
+    - What are the acceptable question formats?
+    - What sorts of inquiries can I pose?
+    - Are there any specific question categories I should adhere to?
+    - What types of queries are appropriate?
+    - Can you provide guidance on the types of questions I can raise?
+    - What are the permissible question types?
+    - Are there any restrictions on the nature of questions I can ask?
+    - I would like to know the range of questions I can inquire about.
+    - Could you clarify the kinds of questions that are acceptable?
+    - What is the scope of questions that I can present?
+    - Are there any limitations on the subject matter of the questions?
+    - I'm curious about the variety of questions I can pose.
+    - Could you provide examples of suitable question topics?
+    - What parameters define the questions I can ask?
+    - Can you specify the types of questions within the allowed scope?
+    - I'd appreciate some guidance on the kinds of questions that are appropriate.
+    - What categories of questions fall within the permissible range?
+    - Are there any guidelines on the nature of questions I can inquire about?
+    - I'd like to understand the boundaries of question types that I can explore.
     
 # TASK #1 INTENTS
 - intent: movie_genre
@@ -1788,6 +1813,7 @@ nlu:
     - Can you suggest a movie that fits the plot I have in mind?
     - Would it be possible for you to recommend a movie based on a plot I have in mind?
     - If I tell you the plot, could you recommend a movie that would be worth watching?
+    - i have a plot in mind can you recommend me a movie with a similar one
 
 # SYNONYMS
 - synonym: '1'

@@ -6,586 +6,527 @@ rules:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+
 - rule: Handle out of scope questions
   steps:
   - intent: out_of_scope
+  - action: utter_out_of_scope
+
+# RULE FOR THE FALLBACK CLASSIFIER
+- rule: Ask the user to rephrase in case of low NLU confidence 
+  steps:
+  - intent: nlu_fallback
   - action: utter_out_of_scope
 
 # RULES TO HANDLE TASK #1 REQUESTS
 - rule: Movie genre retrieval
   steps:
   - intent: movie_genre
-  - action: utter_confirm
   - action: action_retrieve_genre #set here is_inside_rules to True
   - action: action_show_genre
-  - action: action_keep_asking
+
 - rule: Movie director retrieval
   steps:
   - intent: movie_director
-  - action: utter_confirm
   - action: action_retrieve_director
   - action: action_show_director
-  - action: action_keep_asking
+
 - rule: Movie release date retrieval
   steps:
   - intent: movie_release_date
-  - action: utter_confirm
   - action: action_retrieve_release_date
   - action: action_show_release_date
-  - action: action_keep_asking
+
 - rule: Movie budget retrieval
   steps:
   - intent: movie_budget
-  - action: utter_confirm
   - action: action_retrieve_budget
   - action: action_show_budget
-  - action: action_keep_asking
+
 - rule: Movie runtime retrieval
   steps:
   - intent: movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_runtime
   - action: action_show_runtime
-  - action: action_keep_asking
+
 - rule: Movie revenue retrieval
   steps:
   - intent: movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie plot retrieval
   steps:
   - intent: movie_plot
-  - action: utter_confirm
   - action: action_retrieve_plot
   - action: action_show_plot
-  - action: action_keep_asking
+
 - rule: Movie rating retrieval
   steps:
   - intent: movie_rating
-  - action: utter_confirm
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie composer retrieval
   steps:
   - intent: movie_composer
-  - action: utter_confirm
   - action: action_retrieve_composer
   - action: action_show_composer
-  - action: action_keep_asking
+
 - rule: Movie producer retrieval
   steps:
   - intent: movie_producer
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
-  - action: action_keep_asking
+
 - rule: Movie cast retrieval
   steps:
   - intent: movie_cast
-  - action: utter_confirm
   - action: action_retrieve_cast
   - action: action_show_cast
-  - action: action_keep_asking
+
 
 # Multiple intents requests
 - rule: Movie genre and producer retrieval
   steps:
   - intent: movie_genre+movie_producer
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_producer
   - action: action_show_producer
-  - action: action_keep_asking
+
 - rule: Movie genre and director retrieval
   steps:
   - intent: movie_genre+movie_director
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_director
   - action: action_show_director
-  - action: action_keep_asking
+
 - rule: Movie genre and composer retrieval
   steps:
   - intent: movie_genre+movie_composer
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_composer
   - action: action_show_composer
-  - action: action_keep_asking
+
 - rule: Movie genre and cast retrieval
   steps:
   - intent: movie_genre+movie_cast
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_cast
   - action: action_show_cast
-  - action: action_keep_asking
+
 - rule: Movie genre and plot retrieval
   steps:
   - intent: movie_genre+movie_plot
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_plot
   - action: action_show_plot
-  - action: action_keep_asking
+
 - rule: Movie genre and release date retrieval
   steps:
   - intent: movie_genre+movie_release_date
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_release_date
   - action: action_show_release_date
-  - action: action_keep_asking
+
 - rule: Movie genre and budget retrieval
   steps:
   - intent: movie_genre+movie_budget
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_budget
   - action: action_show_budget
-  - action: action_keep_asking
+
 - rule: Movie genre and runtime retrieval
   steps:
   - intent: movie_genre+movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_runtime
   - action: action_show_runtime
-  - action: action_keep_asking
+
 - rule: Movie genre and revenue retrieval
   steps:
   - intent: movie_genre+movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie genre and rating retrieval
   steps:
   - intent: movie_genre+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_genre
   - action: action_show_genre
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie producer and composer retrieval
   steps:
   - intent: movie_producer+movie_composer
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
   - action: action_retrieve_composer
   - action: action_show_composer
-  - action: action_keep_asking
+
 - rule: Movie producer and director retrieval
   steps:
   - intent: movie_producer+movie_director
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
   - action: action_retrieve_director
   - action: action_show_director
-  - action: action_keep_asking
+
 - rule: Movie producer and cast retrieval
   steps:
   - intent: movie_producer+movie_cast
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
   - action: action_retrieve_cast
   - action: action_show_cast
-  - action: action_keep_asking
+
 - rule: Movie producer and plot retrieval
   steps:
   - intent: movie_producer+movie_plot
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
   - action: action_retrieve_plot
   - action: action_show_plot
-  - action: action_keep_asking
+  
 - rule: Movie producer and release date retrieval
   steps:
   - intent: movie_producer+movie_release_date
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
   - action: action_retrieve_release_date
   - action: action_show_release_date
-  - action: action_keep_asking
+
 - rule: Movie producer and budget retrieval
   steps:
   - intent: movie_producer+movie_budget
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
   - action: action_retrieve_budget
   - action: action_show_budget
-  - action: action_keep_asking
+
 - rule: Movie producer and runtime retrieval
   steps:
   - intent: movie_producer+movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
   - action: action_retrieve_runtime
   - action: action_show_runtime
-  - action: action_keep_asking
+
 - rule: Movie producer and revenue retrieval
   steps:
   - intent: movie_producer+movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie producer and rating retrieval
   steps:
   - intent: movie_producer+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_producer
   - action: action_show_producer
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie director and composer retrieval
   steps:
   - intent: movie_director+movie_composer
-  - action: utter_confirm
   - action: action_retrieve_director
   - action: action_show_director
   - action: action_retrieve_composer
   - action: action_show_composer
-  - action: action_keep_asking
+
 - rule: Movie director and cast retrieval
   steps:
   - intent: movie_director+movie_cast
-  - action: utter_confirm
   - action: action_retrieve_director
   - action: action_show_director
   - action: action_retrieve_cast
   - action: action_show_cast
-  - action: action_keep_asking
+ 
 - rule: Movie director and plot retrieval
   steps:
   - intent: movie_director+movie_plot
-  - action: utter_confirm
   - action: action_retrieve_director
   - action: action_show_director
   - action: action_retrieve_plot
   - action: action_show_plot
-  - action: action_keep_asking
+
 - rule: Movie director and release date retrieval
   steps:
   - intent: movie_director+movie_release_date
-  - action: utter_confirm
   - action: action_retrieve_director
   - action: action_show_director
   - action: action_retrieve_release_date
   - action: action_show_release_date
-  - action: action_keep_asking
+
 - rule: Movie director and budget retrieval
   steps:
   - intent: movie_director+movie_budget
-  - action: utter_confirm
   - action: action_retrieve_director
   - action: action_show_director
   - action: action_retrieve_budget
   - action: action_show_budget
-  - action: action_keep_asking
+
 - rule: Movie director and runtime retrieval
   steps:
   - intent: movie_director+movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_director
   - action: action_show_director
   - action: action_retrieve_runtime
   - action: action_show_runtime
-  - action: action_keep_asking
+
 - rule: Movie director and revenue retrieval
   steps:
   - intent: movie_director+movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_director
   - action: action_show_director
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie director and rating retrieval
   steps:
   - intent: movie_director+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_director
   - action: action_show_director
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie composer and cast retrieval
   steps:
   - intent: movie_composer+movie_cast
-  - action: utter_confirm
   - action: action_retrieve_composer
   - action: action_show_composer
   - action: action_retrieve_cast
   - action: action_show_cast
-  - action: action_keep_asking
+
 - rule: Movie composer and plot retrieval
   steps:
   - intent: movie_composer+movie_plot
-  - action: utter_confirm
   - action: action_retrieve_composer
   - action: action_show_composer
   - action: action_retrieve_plot
   - action: action_show_plot
-  - action: action_keep_asking
+
 - rule: Movie composer and release date retrieval
   steps:
   - intent: movie_composer+movie_release_date
-  - action: utter_confirm
   - action: action_retrieve_composer
   - action: action_show_composer
   - action: action_retrieve_release_date
   - action: action_show_release_date
-  - action: action_keep_asking
+
 - rule: Movie composer and budget retrieval
   steps:
   - intent: movie_composer+movie_budget
-  - action: utter_confirm
   - action: action_retrieve_composer
   - action: action_show_composer
   - action: action_retrieve_budget
   - action: action_show_budget
-  - action: action_keep_asking
+
 - rule: Movie composer and runtime retrieval
   steps:
   - intent: movie_composer+movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_composer
   - action: action_show_composer
   - action: action_retrieve_runtime
   - action: action_show_runtime
-  - action: action_keep_asking
+
 - rule: Movie composer and revenue retrieval
   steps:
   - intent: movie_composer+movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_composer
   - action: action_show_composer
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie composer and rating retrieval
   steps:
   - intent: movie_composer+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_composer
   - action: action_show_composer
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie cast and plot retrieval
   steps:
   - intent: movie_cast+movie_plot
-  - action: utter_confirm
   - action: action_retrieve_cast
   - action: action_show_cast
   - action: action_retrieve_plot
   - action: action_show_plot
-  - action: action_keep_asking
+
 - rule: Movie cast and release date retrieval
   steps:
   - intent: movie_cast+movie_release_date
-  - action: utter_confirm
   - action: action_retrieve_cast
   - action: action_show_cast
   - action: action_retrieve_release_date
   - action: action_show_release_date
-  - action: action_keep_asking
+
 - rule: Movie cast and budget retrieval
   steps:
   - intent: movie_cast+movie_budget
-  - action: utter_confirm
   - action: action_retrieve_cast
   - action: action_show_cast
   - action: action_retrieve_budget
   - action: action_show_budget
-  - action: action_keep_asking
+
 - rule: Movie cast and runtime retrieval
   steps:
   - intent: movie_cast+movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_cast
   - action: action_show_cast
   - action: action_retrieve_runtime
   - action: action_show_runtime
-  - action: action_keep_asking
+
 - rule: Movie cast and revenue retrieval
   steps:
   - intent: movie_cast+movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_cast
   - action: action_show_cast
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie cast and rating retrieval
   steps:
   - intent: movie_cast+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_cast
   - action: action_show_cast
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie plot and release date retrieval
   steps:
   - intent: movie_plot+movie_release_date
-  - action: utter_confirm
   - action: action_retrieve_plot
   - action: action_show_plot
   - action: action_retrieve_release_date
   - action: action_show_release_date
-  - action: action_keep_asking
+
 - rule: Movie plot and budget retrieval
   steps:
   - intent: movie_plot+movie_budget
-  - action: utter_confirm
   - action: action_retrieve_plot
   - action: action_show_plot
   - action: action_retrieve_budget
   - action: action_show_budget
-  - action: action_keep_asking
+
 - rule: Movie plot and runtime retrieval
   steps:
   - intent: movie_plot+movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_plot
   - action: action_show_plot
   - action: action_retrieve_runtime
   - action: action_show_runtime
-  - action: action_keep_asking
+
 - rule: Movie plot and revenue retrieval
   steps:
   - intent: movie_plot+movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_plot
   - action: action_show_plot
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie plot and rating retrieval
   steps:
   - intent: movie_plot+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_plot
   - action: action_show_plot
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie release date and budget retrieval
   steps:
   - intent: movie_release_date+movie_budget
-  - action: utter_confirm
   - action: action_retrieve_release_date
   - action: action_show_release_date
   - action: action_retrieve_budget
   - action: action_show_budget
-  - action: action_keep_asking
+
 - rule: Movie release date and runtime retrieval
   steps:
   - intent: movie_release_date+movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_release_date
   - action: action_show_release_date
   - action: action_retrieve_runtime
   - action: action_show_runtime
-  - action: action_keep_asking
+
 - rule: Movie release date and revenue retrieval
   steps:
   - intent: movie_release_date+movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_release_date
   - action: action_show_release_date
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie release date and rating retrieval
   steps:
   - intent: movie_release_date+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_release_date
   - action: action_show_release_date
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie budget and runtime retrieval
   steps:
   - intent: movie_budget+movie_runtime
-  - action: utter_confirm
   - action: action_retrieve_budget
   - action: action_show_budget
   - action: action_retrieve_runtime
   - action: action_show_runtime
-  - action: action_keep_asking
+
 - rule: Movie budget and revenue retrieval
   steps:
   - intent: movie_budget+movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_budget
   - action: action_show_budget
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie budget and rating retrieval
   steps:
   - intent: movie_budget+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_budget
   - action: action_show_budget
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie runtime and revenue retrieval
   steps:
   - intent: movie_runtime+movie_revenue
-  - action: utter_confirm
   - action: action_retrieve_runtime
   - action: action_show_runtime
   - action: action_retrieve_revenue
   - action: action_show_revenue
-  - action: action_keep_asking
+
 - rule: Movie runtime and rating retrieval
   steps:
   - intent: movie_runtime+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_runtime
   - action: action_show_runtime
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 - rule: Movie revenue and rating retrieval
   steps:
   - intent: movie_revenue+movie_rating
-  - action: utter_confirm
   - action: action_retrieve_revenue
   - action: action_show_revenue
   - action: action_retrieve_rating
   - action: action_show_rating
-  - action: action_keep_asking
+
 
 # RULES TO ASK IF YOU WANT TO KNOW MORE ABOUT OTHER MOVIES (it's a formal and smooth way of transitioning from TASK #1 to the others)
 - rule: Keep asking affirmative
@@ -600,6 +541,7 @@ rules:
   - slot_was_set:
     - is_inside_rules: null
     - keep_asking: null
+
 - rule: Keep asking negative
   condition:
   - slot_was_set:
@@ -607,15 +549,8 @@ rules:
     - keep_asking: false
   steps:
   - intent: deny
-  - action: utter_user_praise
   - action: utter_goodbye
   - action: action_reset_is_inside_rules
   - slot_was_set:
     - is_inside_rules: null
     - keep_asking: null
-
-# RULE FOR THE FALLBACK CLASSIFIER
-- rule: Ask the user to rephrase in case of low NLU confidence 
-  steps:
-  - intent: nlu_fallback
-  - action: utter_out_of_scope

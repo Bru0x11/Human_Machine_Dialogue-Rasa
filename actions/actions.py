@@ -42,24 +42,6 @@ dataframe.drop_duplicates(subset=['Plot'],inplace=True)
 # CUSTOM ACTIONS
 
 # TASK 1
-class ActionKeepAsking(Action):
-    def name(self):
-        return 'action_keep_asking'
-    
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
-        movie_title = tracker.get_slot("movie_name")
-
-        if movie_title != None:
-            choose_question = random.randint(0, 3)
-            if choose_question == 0:
-                dispatcher.utter_message(text = 'Do you want to know something else about {} or other films?'.format(movie_title))
-            elif choose_question == 1:
-                dispatcher.utter_message(text = 'Are there any other questions you have about {} or other movies?'.format(movie_title))
-            elif choose_question == 2:
-                dispatcher.utter_message(text = 'Is there anything else you\'d like to know about {} or other films?'.format(movie_title))
-            elif choose_question == 3:
-                dispatcher.utter_message(text = 'Would you like me to provide additional information about {} or other movies?'.format(movie_title))
-
 class ActionResetIsInsideRules(Action):
     def name(self):
         return 'action_reset_is_inside_rules'
@@ -105,11 +87,18 @@ class ShowGenre(Action):
 
         genre_list = tracker.get_slot('genre')
         movie_name = tracker.get_slot('movie_name')
-
         if genre_list != [] and movie_name != None:
-            dispatcher.utter_message(text = 'The genres of {} are:'.format(movie_name))
-            for genre in genre_list:
-                dispatcher.utter_message(text = '* {}'.format(genre))
+            choose_question = random.randint(0, 3)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+                'Would you like me to provide additional information about {} or other movies?'
+            ]
+            question = questions[choose_question].format(movie_name)
+            genres = '\n'.join('* {}'.format(genre) for genre in genre_list)
+            message = 'Sure! The genres of {} are:\n{}'.format(movie_name, genres, question)
+            dispatcher.utter_message(text=message)
 
             # Reset the genre slot to None. This is helpful whenever we ask a question related to another movie and we have some errors with it.
             # If we don't do so, the bot will print the genres of the previous movie.
@@ -154,14 +143,22 @@ class ShowReleaseDate(Action):
 
         if release_date != None and movie_name != None:
             choose_message = random.randint(0, 3)
-            if choose_message == 0:
-                dispatcher.utter_message(text = 'The release date of the movie {} is {}.'.format(movie_name, release_date))
-            elif choose_message == 1:
-                dispatcher.utter_message(text = '{} premiered on {}.'.format(movie_name, release_date))
-            elif choose_message == 2:
-                dispatcher.utter_message(text = '{} made its debut on {}.'.format(movie_name, release_date))
-            elif choose_message == 3:
-                dispatcher.utter_message(text = '{} was first shown to audiences on {}.'.format(movie_name, release_date))
+            messages = [
+                'The release date of the movie {} is {}.',
+                '{} premiered on {}.',
+                '{} made its debut on {}.',
+                '{} was first shown to audiences on {}.'
+            ]
+            release_date_message = messages[choose_message].format(movie_name, release_date)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+                'Would you like me to provide additional information about {} or other movies?'
+            ]
+            question = questions[choose_message].format(movie_name)
+            message = 'Sure! {} {}'.format(release_date_message, question)
+            dispatcher.utter_message(text=message)
 
             return [SlotSet("release_date", None)]
 
@@ -204,14 +201,22 @@ class ShowBudget(Action):
 
         if budget != None and movie_name != None:
             choose_message = random.randint(0, 3)
-            if choose_message == 0:
-                dispatcher.utter_message(text = 'The total budget for {} is {}.'.format(movie_name, budget))
-            elif choose_message == 1:
-                dispatcher.utter_message(text = 'The overall budget for {} amounts to {}.'.format(movie_name, budget))
-            elif choose_message == 2:
-                dispatcher.utter_message(text = '{} has a budget of {} in total.'.format(movie_name, budget))
-            elif choose_message == 3:
-                dispatcher.utter_message(text = '{} is the complete budget allocated for producing {}.'.format(budget, movie_name))
+            messages = [
+                'The total budget for {} is {}.',
+                'The overall budget for {} amounts to {}.',
+                '{} has a budget of {} in total.',
+                'The complete budget allocated for producing {} amounts for {}.'
+            ]
+            budget_message = messages[choose_message].format(movie_name, budget)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+                'Would you like me to provide additional information about {} or other movies?'
+            ]
+            question = questions[choose_message].format(movie_name)
+            message = 'Sure! {} {}'.format(budget_message, question)
+            dispatcher.utter_message(text=message)
 
             return [SlotSet("budget", None)]
 
@@ -254,14 +259,22 @@ class ShowRuntime(Action):
 
         if runtime != None and movie_name != None:
             choose_message = random.randint(0, 3)
-            if choose_message == 0:
-                dispatcher.utter_message(text = 'The {} lasts {} minutes'.format(movie_name, runtime))
-            elif choose_message == 1:
-                dispatcher.utter_message(text = 'The duration of {} is {} minutes.'.format(movie_name, runtime))
-            elif choose_message == 2:
-                dispatcher.utter_message(text = '{} has a runtime of {} minutes.'.format(movie_name, runtime))
-            elif choose_message == 3:
-                dispatcher.utter_message(text = '{} minutes is the length of {}.'.format(runtime, movie_name))
+            messages = [
+                'The {} lasts {} minutes',
+                'The duration of {} is {} minutes.',
+                '{} has a runtime of {} minutes.',
+                'The length of {} is {} minutes.'
+            ]
+            runtime_message = messages[choose_message].format(movie_name, runtime)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+                'Would you like me to provide additional information about {} or other movies?'
+            ]
+            question = questions[choose_message].format(movie_name)
+            message = 'Sure! {} {}'.format(runtime_message, question)
+            dispatcher.utter_message(text=message)
 
             return [SlotSet("runtime", None)]
 
@@ -305,14 +318,22 @@ class ShowRevenue(Action):
 
         if revenue != None and movie_name != None:
             choose_message = random.randint(0, 3)
-            if choose_message == 0:
-                dispatcher.utter_message(text = 'The revenue of {} amounts to {}.'.format(movie_name, revenue))
-            elif choose_message == 1:
-                dispatcher.utter_message(text = '{} earned {} in revenue.'.format(movie_name, revenue))
-            elif choose_message == 2:
-                dispatcher.utter_message(text = 'The total revenue generated by {} is {}.'.format(movie_name, revenue))
-            elif choose_message == 3:
-                dispatcher.utter_message(text = '{} is the amount of money {} made in revenue.'.format(revenue, movie_name))
+            messages = [
+                'The revenue of {} amounts to {}.',
+                '{} earned {} in revenue.',
+                'The total revenue generated by {} is {}.',
+                '{} earned a total of {} in revenue.'
+            ]
+            revenue_message = messages[choose_message].format(movie_name, revenue)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+                'Would you like me to provide additional information about {} or other movies?'
+            ]
+            question = questions[choose_message].format(movie_name)
+            message = 'Sure! {} {}'.format(revenue_message, question)
+            dispatcher.utter_message(text=message)
 
             return [SlotSet("revenue", None)]
 
@@ -355,12 +376,20 @@ class ShowPlot(Action):
 
         if plot != None and movie_name != None:
             choose_message = random.randint(0, 2)
-            if choose_message == 0:
-                dispatcher.utter_message(text = 'The plot of {} is the following: {}.'.format(movie_name, plot))
-            elif choose_message == 1:
-                dispatcher.utter_message(text = '{} can be summarized with the following plot: {}.'.format(movie_name, plot))
-            elif choose_message == 2:
-                dispatcher.utter_message(text = 'The storyline of {} is described as: {}.'.format(movie_name, plot))
+            messages = [
+                'The plot of {} is as follows: {}',
+                '{} can be summarized with the following plot: {}',
+                'The storyline of {} is described as: {}'
+            ]
+            plot_message = messages[choose_message].format(movie_name, plot)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+            ]
+            question = questions[choose_message].format(movie_name)
+            message = 'Sure! {} {}'.format(plot_message, question)
+            dispatcher.utter_message(text=message)
 
             return [SlotSet("plot", None)]
 
@@ -403,14 +432,21 @@ class ShowRating(Action):
 
         if rating != None and movie_name != None:
             choose_message = random.randint(0, 3)
-            if choose_message == 0:
-                dispatcher.utter_message(text = 'The rating of {} is {}.'.format(movie_name, rating))
-            elif choose_message == 1:
-                dispatcher.utter_message(text = '{} has a rating of {}.'.format(movie_name, rating))
-            elif choose_message == 2:
-                dispatcher.utter_message(text = 'The assigned rating for {} is {}.'.format(movie_name, rating))
-            elif choose_message == 3:
-                dispatcher.utter_message(text = '{} is the rating given to {}.'.format(rating, movie_name))
+            messages = [
+                'The rating of {} is {}.',
+                '{} has a rating of {}.',
+                'The assigned rating for {} is {}.',
+                'The rating given to {} is {}.'
+            ]
+            rating_message = messages[choose_message].format(movie_name, rating)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+            ]
+            question = questions[choose_message].format(movie_name)
+            message = 'Sure! {} {}'.format(rating_message, question)
+            dispatcher.utter_message(text=message)
 
             return [SlotSet("rating", None)]
 
@@ -457,12 +493,17 @@ class ShowComposer(Action):
         movie_name = tracker.get_slot('movie_name')
 
         if composer_list != [] and movie_name != None:
-            if number_of_composers > 1:
-                dispatcher.utter_message(text = 'The composers of {} are:'.format(movie_name))
-                for composer in composer_list:
-                    dispatcher.utter_message(text = '* {}'.format(composer))
-            else:
-                dispatcher.utter_message(text = 'The composer of {} is {}.'.format(movie_name, composer_list[0]))
+            choose_question = random.randint(0, 3)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+                'Would you like me to provide additional information about {} or other movies?'
+            ]
+            question = questions[choose_question].format(movie_name)
+            composers = 'The composers of {} are:\n{}\n'.format(movie_name, '\n'.join('* {}'.format(composer) for composer in composer_list))
+            message = 'Sure! {}.{}'.format(composers, question)
+            dispatcher.utter_message(text=message)
             
             return [SlotSet("composer_name", None)]
 
@@ -509,12 +550,17 @@ class ShowDirector(Action):
         movie_name = tracker.get_slot('movie_name')
 
         if directors_list != [] and movie_name != None:
-            if number_of_directors > 1:
-                dispatcher.utter_message(text = 'The directors of {} are:'.format(movie_name))
-                for director in directors_list:
-                    dispatcher.utter_message(text = '* {}'.format(director))
-            else:
-                dispatcher.utter_message(text = 'The director of {} is {}.'.format(movie_name, directors_list[0]))
+            choose_question = random.randint(0, 3)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+                'Would you like me to provide additional information about {} or other movies?'
+            ]
+            question = questions[choose_question].format(movie_name)
+            directors = 'The directors of {} are:\n{}\n'.format(movie_name, '\n'.join('* {}'.format(director) for director in directors_list))
+            message = 'Sure! {}.{}'.format(directors, question)
+            dispatcher.utter_message(text=message)
 
             return [SlotSet("director_name", None)]
     
@@ -561,12 +607,17 @@ class ShowProducer(Action):
         movie_name = tracker.get_slot('movie_name')
 
         if producers_list != [] and movie_name != None:
-            if number_of_producers > 1:
-                dispatcher.utter_message(text = 'The producers of {} are:'.format(movie_name))
-                for producer in producers_list:
-                    dispatcher.utter_message(text = '* {}'.format(producer))
-            else:
-                dispatcher.utter_message(text = 'The producer of {} is {}.'.format(movie_name, producers_list[0]))
+            choose_question = random.randint(0, 3)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+                'Would you like me to provide additional information about {} or other movies?'
+            ]
+            question = questions[choose_question].format(movie_name)
+            producers = 'The producers of {} are:\n{}\n'.format(movie_name, '\n'.join('* {}'.format(producer) for producer in producers_list))
+            message = 'Sure! {}.{}'.format(producers, question)
+            dispatcher.utter_message(text=message)
 
             return [SlotSet("producer_name", None)]
     
@@ -628,14 +679,25 @@ class ShowCast(Action):
             number_of_actors = number_of_actors
 
         if cast_list != [] and movie_name != None:
-            if number_of_actors != None:
-                dispatcher.utter_message(text = 'Here is the list for the movie {} of {} actors:'.format(movie_name, number_of_actors))
-                for cast in cast_list:
-                    dispatcher.utter_message(text = '* {}'.format(cast))
+            choose_question = random.randint(0, 3)
+            questions = [
+                'Do you want to know something else about {} or other films?',
+                'Are there any other questions you have about {} or other movies?',
+                'Is there anything else you\'d like to know about {} or other films?',
+                'Would you like me to provide additional information about {} or other movies?'
+            ]
+            question = questions[choose_question].format(movie_name)
+            if number_of_actors is not None:
+                if number_of_actors < len(cast_list):
+                    actors_to_display = cast_list[:number_of_actors]
+                    actors_message = 'Here is the list for the movie {} of {} actors:\n{}'.format(movie_name, number_of_actors, '\n'.join('* {}'.format(cast) for cast in actors_to_display))
+                else:
+                    actors_message = 'Here is the list for the movie {} of {} actors:\n{}'.format(movie_name, len(cast_list), '\n'.join('* {}'.format(cast) for cast in cast_list))
             else:
-                dispatcher.utter_message(text = 'Here is the list of actors for the movie {}:'.format(movie_name))
-                for cast in cast_list:
-                    dispatcher.utter_message(text = '* {}'.format(cast))
+                actors_message = 'Here is the list of actors for the movie {}:'.format(movie_name)
+            dispatcher.utter_message(text=actors_message)
+            message = 'Sure! {} {}'.format(actors_message, question)
+            dispatcher.utter_message(text=message)
             
             return [SlotSet("cast", None), SlotSet("number_of_actors", None)]
 
@@ -764,32 +826,31 @@ class ActionSummaryRequests(Action):
         retrieve_cast = tracker.get_slot("cast")
         retrieve_director = tracker.get_slot("director_name")
 
-        dispatcher.utter_message(text = "Great! You've provided all the essential elements for me to find a movie. Let's review the choices you've made so far: ")
+        message = "Great! You've provided all the essential elements for me to find a movie. Let's review the choices you've made so far:"
+
         if genre_list != None:
-            dispatcher.utter_message(text = 'The genres that you chose are:')
-            for genre in genre_list:
-                dispatcher.utter_message(text = '* {}'.format(genre))
+            message += '\n\nThe genres that you chose are:\n{}'.format('\n'.join('* {}'.format(genre) for genre in genre_list))
 
         if retrieve_vote != None:
-            dispatcher.utter_message(text = 'After that, the rating chosen is {}.'.format(retrieve_vote))
+            message += '\n\nAfter that, the chosen rating is {}.'.format(retrieve_vote)
 
         if retrieve_year != None:
-            if retrieve_is_before != None:
-                dispatcher.utter_message(text = "Moreover, you want to check all the films prior the year {}".format(retrieve_year))
-            elif retrieve_is_after != None:
-                dispatcher.utter_message(text = "Moreover, you want to check all the films after the year {}".format(retrieve_year))
-            elif retrieve_is_exactly != None:
-                dispatcher.utter_message(text = "Moreover, you have indicated your desire to browse films specifically for the year.{}".format(retrieve_year))
+            if retrieve_is_before:
+                message += '\n\nMoreover, you want to check all the films prior to the year {}.'.format(retrieve_year)
+            elif retrieve_is_after:
+                message += '\n\nMoreover, you want to check all the films after the year {}.'.format(retrieve_year)
+            elif retrieve_is_exactly:
+                message += '\n\nMoreover, you have indicated your desire to browse films specifically for the year {}.'.format(retrieve_year)
 
         if retrieve_cast != None:
-            dispatcher.utter_message(text = 'Also, here is the list of actors that you asked for:')
-            for cast in retrieve_cast:
-                dispatcher.utter_message(text = '* {}'.format(cast))
+            message += '\n\nAlso, here is the list of actors that you asked for:\n{}'.format('\n'.join('* {}'.format(cast) for cast in retrieve_cast))
 
         if retrieve_director != None and retrieve_director != retrieve_cast:
-            dispatcher.utter_message(text = 'Finally, the directors chosen by you are:')
-            for director in retrieve_director:
-                dispatcher.utter_message(text = '* {}'.format(director))
+            message += '\n\nFinally, the directors chosen by you are:\n{}'.format('\n'.join('* {}'.format(director) for director in retrieve_director))
+
+        message += "\nWould you like to confirm?"
+
+        dispatcher.utter_message(text=message)
         
         return []
 
@@ -873,10 +934,9 @@ class ValidateRetrievePlotForm(FormValidationAction):
             model = SentenceTransformer('task3_tools/fine_tuned_model')
             index = faiss.read_index('task3_tools/fine_tuned_encoding.index')
             results = self.search(input_plot, top_k=5, index=index, model=model, movie_dataframe=dataframe)
-            dispatcher.utter_message(text = 'Great! Here is a list of movies that bear some resemblance to the one you inquired about:')
-            for result in results:
-                dispatcher.utter_message(text = '* {}'.format(result.get('Title')))
-            dispatcher.utter_message(text = "If you want to know something more about them, feel free to ask!")
+            movies = '\n'.join('* {}'.format(result.get('Title')) for result in results)
+            message = 'Great! Here is a list of movies that bear some resemblance to the one you inquired about:\n{}\nIf you want to know something more about them, feel free to ask!'.format(movies)
+            dispatcher.utter_message(text=message)
 
             return{"is_plot_received": True, "iterate_plot": None}
 
