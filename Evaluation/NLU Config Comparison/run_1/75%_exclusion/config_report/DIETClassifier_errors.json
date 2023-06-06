@@ -1,0 +1,2793 @@
+[
+  {
+    "text": "I'm curious about Saving private Ryan. Can you tell me its genre and producer?",
+    "entities": [
+      {
+        "start": 18,
+        "end": 37,
+        "value": "Saving private Ryan",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 33,
+        "end": 37,
+        "confidence_entity": 0.6491045951843262,
+        "value": "Ryan",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you give me some information about the genre and producer of The Lion King?",
+    "entities": [
+      {
+        "start": 65,
+        "end": 78,
+        "value": "The Lion King",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 69,
+        "end": 78,
+        "confidence_entity": 0.7141630053520203,
+        "value": "Lion King",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Could you inform me of the genre and producer of Lord of the Rings?",
+    "entities": [
+      {
+        "start": 49,
+        "end": 66,
+        "value": "Lord of the Rings",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 49,
+        "end": 53,
+        "confidence_entity": 0.9225162267684937,
+        "value": "Lord",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 61,
+        "end": 66,
+        "confidence_entity": 0.7373568415641785,
+        "value": "Rings",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "In the previous year",
+    "entities": [
+      {
+        "start": 7,
+        "end": 15,
+        "value": "previous",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 16,
+        "end": 20,
+        "confidence_entity": 0.5259743928909302,
+        "value": "year",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "After this year passes, if feasible",
+    "entities": [
+      {
+        "start": 0,
+        "end": 22,
+        "value": "After this year passes",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.6452215313911438,
+        "value": "After",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_period",
+        "start": 11,
+        "end": 22,
+        "confidence_entity": 0.32550156116485596,
+        "value": "year passes",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "After this year, if it's viable",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "After this year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.6430812478065491,
+        "value": "After",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Potentially after this year",
+    "entities": [
+      {
+        "start": 12,
+        "end": 27,
+        "value": "after this year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 12,
+        "end": 17,
+        "confidence_entity": 0.6198897361755371,
+        "value": "after",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_period",
+        "start": 23,
+        "end": 27,
+        "confidence_entity": 0.5124542117118835,
+        "value": "year",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Following the current year",
+    "entities": [
+      {
+        "start": 0,
+        "end": 26,
+        "value": "Following the current year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.7571987509727478,
+        "value": "Following",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_period",
+        "start": 14,
+        "end": 26,
+        "confidence_entity": 0.6562497019767761,
+        "value": "current year",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "five or so. And can I request Wes Anderson as the director for it?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "five",
+        "entity": "rating"
+      },
+      {
+        "start": 30,
+        "end": 42,
+        "value": "Wes Anderson",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "rating",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.8391799330711365,
+        "value": "5",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "cast",
+        "start": 30,
+        "end": 42,
+        "confidence_entity": 0.2684485912322998,
+        "value": "Wes Anderson",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "exactly this year, please",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "exactly",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Preferably within this year",
+    "entities": [
+      {
+        "start": 11,
+        "end": 27,
+        "value": "within this year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 23,
+        "end": 27,
+        "confidence_entity": 0.509907066822052,
+        "value": "year",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "If it is possible, in the current year",
+    "entities": [
+      {
+        "start": 19,
+        "end": 38,
+        "value": "in the current year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 26,
+        "end": 38,
+        "confidence_entity": 0.6398921608924866,
+        "value": "current year",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "In the current year, if possible",
+    "entities": [
+      {
+        "start": 3,
+        "end": 19,
+        "value": "the current year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 7,
+        "end": 19,
+        "confidence_entity": 0.5448879599571228,
+        "value": "current year",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "exactly",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "exactly",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Action. I would also like to have Scarlett Johansson as an actress, and I would like the movie to be released in 2008.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Action",
+        "entity": "genre"
+      },
+      {
+        "start": 34,
+        "end": 52,
+        "value": "Scarlett Johansson",
+        "entity": "cast"
+      },
+      {
+        "start": 113,
+        "end": 117,
+        "value": "2008",
+        "entity": "release_date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 34,
+        "end": 52,
+        "confidence_entity": 0.57,
+        "value": "Scarlett Johansson",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "release_date",
+        "start": 113,
+        "end": 117,
+        "confidence_entity": 0.9755851626396179,
+        "value": "2008",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Fantasy adventure with also Chris Pratt would bring excitement to the movie, and I prefer the movie to be released in 2003.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Fantasy",
+        "entity": "genre"
+      },
+      {
+        "start": 28,
+        "end": 39,
+        "value": "Chris Pratt",
+        "entity": "cast"
+      },
+      {
+        "start": 118,
+        "end": 122,
+        "value": "2003",
+        "entity": "release_date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "genre",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.8589327931404114,
+        "value": "Fantasy",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "genre",
+        "start": 8,
+        "end": 17,
+        "confidence_entity": 0.8470678925514221,
+        "value": "adventure",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "cast",
+        "start": 28,
+        "end": 33,
+        "confidence_entity": 0.531669557094574,
+        "value": "Chris",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "director_name",
+        "start": 34,
+        "end": 39,
+        "confidence_entity": 0.3278862535953522,
+        "value": "Pratt",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "release_date",
+        "start": 118,
+        "end": 122,
+        "confidence_entity": 0.9675016403198242,
+        "value": "2003",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Crime drama. I also think that Robert Downey Jr. would add depth to the movie, and I prefer the movie to be released in 2002.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "Crime drama",
+        "entity": "genre"
+      },
+      {
+        "start": 31,
+        "end": 47,
+        "value": "Robert Downey Jr",
+        "entity": "cast"
+      },
+      {
+        "start": 120,
+        "end": 124,
+        "value": "2002",
+        "entity": "release_date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "genre",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.662838876247406,
+        "value": "Crime",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "genre",
+        "start": 6,
+        "end": 11,
+        "confidence_entity": 0.9032592177391052,
+        "value": "drama",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "director_name",
+        "start": 31,
+        "end": 37,
+        "confidence_entity": 0.8924841284751892,
+        "value": "Robert",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "cast",
+        "start": 45,
+        "end": 47,
+        "confidence_entity": 0.2525896430015564,
+        "value": "Jr",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "release_date",
+        "start": 120,
+        "end": 124,
+        "confidence_entity": 0.9699075222015381,
+        "value": "2002",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Family. I would also like to have Julia Roberts as an actress, and I would like the movie to be released in 2009.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Family",
+        "entity": "genre"
+      },
+      {
+        "start": 34,
+        "end": 47,
+        "value": "Julia Roberts",
+        "entity": "cast"
+      },
+      {
+        "start": 108,
+        "end": 112,
+        "value": "2009",
+        "entity": "release_date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.35151079297065735,
+        "value": "Family",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "cast",
+        "start": 34,
+        "end": 39,
+        "confidence_entity": 0.2906259298324585,
+        "value": "Julia",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "director_name",
+        "start": 40,
+        "end": 47,
+        "confidence_entity": 0.8508851528167725,
+        "value": "Roberts",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "release_date",
+        "start": 108,
+        "end": 112,
+        "confidence_entity": 0.9761107563972473,
+        "value": "2009",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Psychological thriller. I'm a fan of Leonardo DiCaprio, and I prefer the movie to be released in 2019.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 22,
+        "value": "Psychological thriller",
+        "entity": "genre"
+      },
+      {
+        "start": 37,
+        "end": 54,
+        "value": "Leonardo DiCaprio",
+        "entity": "cast"
+      },
+      {
+        "start": 97,
+        "end": 101,
+        "value": "2019",
+        "entity": "release_date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "genre",
+        "start": 14,
+        "end": 22,
+        "confidence_entity": 0.9256498217582703,
+        "value": "thriller",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "cast",
+        "start": 37,
+        "end": 54,
+        "confidence_entity": 0.7529492974281311,
+        "value": "Leonardo DiCaprio",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "release_date",
+        "start": 97,
+        "end": 101,
+        "confidence_entity": 0.9654311537742615,
+        "value": "2019",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Do you know the length of The Princess Bride?",
+    "entities": [
+      {
+        "start": 26,
+        "end": 44,
+        "value": "The Princess Bride",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 30,
+        "end": 44,
+        "confidence_entity": 0.8854649662971497,
+        "value": "Princess Bride",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Do you know the runtime of The Matrix?",
+    "entities": [
+      {
+        "start": 27,
+        "end": 37,
+        "value": "The Matrix",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 31,
+        "end": 37,
+        "confidence_entity": 0.9933678507804871,
+        "value": "Matrix",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I'm wondering, how long is Avengers: Endgame?",
+    "entities": [
+      {
+        "start": 27,
+        "end": 44,
+        "value": "Avengers: Endgame",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 27,
+        "end": 36,
+        "confidence_entity": 0.8985857367515564,
+        "value": "Avengers:",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you inform me of the duration of The Silence of the Lambs?",
+    "entities": [
+      {
+        "start": 37,
+        "end": 61,
+        "value": "The Silence of the Lambs",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 41,
+        "end": 48,
+        "confidence_entity": 0.9751179218292236,
+        "value": "Silence",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 56,
+        "end": 61,
+        "confidence_entity": 0.9818389415740967,
+        "value": "Lambs",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me the earnings of Avengers: Infinity War?",
+    "entities": [
+      {
+        "start": 32,
+        "end": 54,
+        "value": "Avengers: Infinity War",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 32,
+        "end": 41,
+        "confidence_entity": 0.895433783531189,
+        "value": "Avengers:",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 51,
+        "end": 54,
+        "confidence_entity": 0.8700958490371704,
+        "value": "War",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Could you tell me the earnings of Harry Potter and the Deathly Hallows Part 2?",
+    "entities": [
+      {
+        "start": 34,
+        "end": 77,
+        "value": "Harry Potter and the Deathly Hallows Part 2",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 34,
+        "end": 39,
+        "confidence_entity": 0.4005623459815979,
+        "value": "Harry",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 55,
+        "end": 70,
+        "confidence_entity": 0.589439332485199,
+        "value": "Deathly Hallows",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "number_of_actors",
+        "start": 76,
+        "end": 77,
+        "confidence_entity": 0.45357832312583923,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Could you tell me how well The Shawshank Redemption was received?",
+    "entities": [
+      {
+        "start": 27,
+        "end": 51,
+        "value": "The Shawshank Redemption",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 31,
+        "end": 51,
+        "confidence_entity": 0.9804450869560242,
+        "value": "Shawshank Redemption",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "How did audiences and critics rate The Silence of the Lambs?",
+    "entities": [
+      {
+        "start": 35,
+        "end": 59,
+        "value": "The Silence of the Lambs",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 39,
+        "end": 46,
+        "confidence_entity": 0.9732950329780579,
+        "value": "Silence",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 54,
+        "end": 59,
+        "confidence_entity": 0.9820918440818787,
+        "value": "Lambs",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What's the general consensus on Pulp Fiction?",
+    "entities": [
+      {
+        "start": 32,
+        "end": 44,
+        "value": "Pulp Fiction",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 32,
+        "end": 36,
+        "confidence_entity": 0.6833789944648743,
+        "value": "Pulp",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "genre",
+        "start": 37,
+        "end": 44,
+        "confidence_entity": 0.491762638092041,
+        "value": "Fiction",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you teach me how to play the guitar?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 33,
+        "end": 39,
+        "confidence_entity": 0.4087727963924408,
+        "value": "guitar",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "How can I train my dog?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 19,
+        "end": 22,
+        "confidence_entity": 0.5035868883132935,
+        "value": "dog",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "After watching The Godfather, can you suggest a similar film to watch?",
+    "entities": [
+      {
+        "start": 15,
+        "end": 28,
+        "value": "The Godfather",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.5769115090370178,
+        "value": "After",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 19,
+        "end": 28,
+        "confidence_entity": 0.6505463123321533,
+        "value": "Godfather",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What other movies would you suggest if I liked The Fly?",
+    "entities": [
+      {
+        "start": 47,
+        "end": 54,
+        "value": "The Fly",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 51,
+        "end": 54,
+        "confidence_entity": 0.3728596866130829,
+        "value": "Fly",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Do you have any movie recommendations similar to The Silence of the Lambs?",
+    "entities": [
+      {
+        "start": 49,
+        "end": 73,
+        "value": "The Silence of the Lambs",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 53,
+        "end": 60,
+        "confidence_entity": 0.971244752407074,
+        "value": "Silence",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 68,
+        "end": 73,
+        "confidence_entity": 0.9819564819335938,
+        "value": "Lambs",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What other movies would you suggest if I enjoyed watching The Social Network?",
+    "entities": [
+      {
+        "start": 58,
+        "end": 76,
+        "value": "The Social Network",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 62,
+        "end": 76,
+        "confidence_entity": 0.6015197038650513,
+        "value": "Social Network",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "After seeing Se7en, can you recommend a similar movie to watch?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 18,
+        "value": "Se7en",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.567162811756134,
+        "value": "After",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "director_name",
+        "start": 13,
+        "end": 18,
+        "confidence_entity": 0.8776301741600037,
+        "value": "Se7en",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you suggest any movies similar to The Usual Suspects?",
+    "entities": [
+      {
+        "start": 38,
+        "end": 56,
+        "value": "The Usual Suspects",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "After watching Inglourious Basterds, what other movies would you recommend?",
+    "entities": [
+      {
+        "start": 15,
+        "end": 35,
+        "value": "Inglourious Basterds",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.5784614086151123,
+        "value": "After",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "director_name",
+        "start": 15,
+        "end": 26,
+        "confidence_entity": 0.8683258891105652,
+        "value": "Inglourious",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "tv movie",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "tv movie",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Mystery thriller",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Mystery",
+        "entity": "genre"
+      },
+      {
+        "start": 8,
+        "end": 16,
+        "value": "thriller",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.33312666416168213,
+        "value": "Mystery",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "genre",
+        "start": 8,
+        "end": 16,
+        "confidence_entity": 0.9273070693016052,
+        "value": "thriller",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "western",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "western",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.64394611120224,
+        "value": "western",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "action",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "action",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "science_fiction",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "science_fiction",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.3084888458251953,
+        "value": "science_fiction",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Superhero with Action",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Superhero",
+        "entity": "genre"
+      },
+      {
+        "start": 15,
+        "end": 21,
+        "value": "Action",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I have some movie-related questions that I'd like to ask.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 17,
+        "end": 18,
+        "confidence_entity": 0.4067506790161133,
+        "value": "-",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "My queries are movie-centric and I'd like to ask them.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 20,
+        "end": 21,
+        "confidence_entity": 0.40927597880363464,
+        "value": "-",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Dark Knight, what was the budget for this movie?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "The Dark Knight",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 15,
+        "confidence_entity": 0.5170632004737854,
+        "value": "Dark Knight",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What was the budget for Avatar?",
+    "entities": [
+      {
+        "start": 24,
+        "end": 30,
+        "value": "Avatar",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Do you happen to know how much Avatar cost to produce?",
+    "entities": [
+      {
+        "start": 31,
+        "end": 37,
+        "value": "Avatar",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "What was the budget for The Incredibles?",
+    "entities": [
+      {
+        "start": 24,
+        "end": 39,
+        "value": "The Incredibles",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 28,
+        "end": 39,
+        "confidence_entity": 0.5603901743888855,
+        "value": "Incredibles",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me who is the composer of The Avengers?",
+    "entities": [
+      {
+        "start": 39,
+        "end": 51,
+        "value": "The Avengers",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 43,
+        "end": 51,
+        "confidence_entity": 0.895409882068634,
+        "value": "Avengers",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me who is the composer of The Last of the Mohicans?",
+    "entities": [
+      {
+        "start": 39,
+        "end": 63,
+        "value": "The Last of the Mohicans",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Who is the composer of The Revenant?",
+    "entities": [
+      {
+        "start": 23,
+        "end": 35,
+        "value": "The Revenant",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "The Social Network, who is the composer of this film?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 18,
+        "value": "The Social Network",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 18,
+        "confidence_entity": 0.6308290362358093,
+        "value": "Social Network",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who composed the music for Pirates of the Caribbean: The Curse of the Black Pearl?",
+    "entities": [
+      {
+        "start": 27,
+        "end": 81,
+        "value": "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 51,
+        "end": 52,
+        "confidence_entity": 0.9730747938156128,
+        "value": ":",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 57,
+        "end": 62,
+        "confidence_entity": 0.49500206112861633,
+        "value": "Curse",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 70,
+        "end": 81,
+        "confidence_entity": 0.41511937975883484,
+        "value": "Black Pearl",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Good, the Bad and the Ugly, who was the composer of this film?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 30,
+        "value": "The Good, the Bad and the Ugly",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 26,
+        "end": 30,
+        "confidence_entity": 0.48144078254699707,
+        "value": "Ugly",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Leonardo DiCaprio, Natalie Portman and Natalie Portman",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "Leonardo DiCaprio",
+        "entity": "cast"
+      },
+      {
+        "start": 19,
+        "end": 34,
+        "value": "Natalie Portman",
+        "entity": "cast"
+      },
+      {
+        "start": 39,
+        "end": 54,
+        "value": "Natalie Portman",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 0,
+        "end": 17,
+        "confidence_entity": 0.7548599243164062,
+        "value": "Leonardo DiCaprio",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I would like to see Jack Nicholson starring in it",
+    "entities": [
+      {
+        "start": 20,
+        "end": 34,
+        "value": "Jack Nicholson",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 20,
+        "end": 34,
+        "confidence_entity": 0.28136637806892395,
+        "value": "Jack Nicholson",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Natalie Portman",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Natalie Portman",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "If possible, Julia Roberts",
+    "entities": [
+      {
+        "start": 13,
+        "end": 26,
+        "value": "Julia Roberts",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 13,
+        "end": 18,
+        "confidence_entity": 0.3505439758300781,
+        "value": "Julia",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "director_name",
+        "start": 19,
+        "end": 26,
+        "confidence_entity": 0.8253898620605469,
+        "value": "Roberts",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Anthony Hopkins",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Anthony Hopkins",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.5866538286209106,
+        "value": "Anthony",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "director_name",
+        "start": 8,
+        "end": 15,
+        "confidence_entity": 0.28259041905403137,
+        "value": "Hopkins",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "John Travolta",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "John Travolta",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 13,
+        "confidence_entity": 0.58,
+        "value": "John Travolta",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Robert Downey Jr.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "Robert Downey Jr.",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9034149646759033,
+        "value": "Robert",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "director_name",
+        "start": 14,
+        "end": 16,
+        "confidence_entity": 0.23836709558963776,
+        "value": "Jr",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "George Clooney",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "George Clooney",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.62,
+        "value": "George Clooney",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Timothée Chalamet",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "Timothée Chalamet",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Can you tell me who produced The Dark Knight?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 44,
+        "value": "The Dark Knight",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 33,
+        "end": 44,
+        "confidence_entity": 0.5348273515701294,
+        "value": "Dark Knight",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who produced Rain Man?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 21,
+        "value": "Rain Man",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 18,
+        "end": 21,
+        "confidence_entity": 0.9322067499160767,
+        "value": "Man",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me who produced Back to the Future?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 47,
+        "value": "Back to the Future",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 29,
+        "end": 33,
+        "confidence_entity": 0.8208229541778564,
+        "value": "Back",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 41,
+        "end": 47,
+        "confidence_entity": 0.9758944511413574,
+        "value": "Future",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who produced Raiders of the Lost Ark?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 36,
+        "value": "Raiders of the Lost Ark",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 13,
+        "end": 20,
+        "confidence_entity": 0.9536782503128052,
+        "value": "Raiders",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 28,
+        "end": 36,
+        "confidence_entity": 0.869133710861206,
+        "value": "Lost Ark",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you find out who produced The Silence of the Lambs?",
+    "entities": [
+      {
+        "start": 30,
+        "end": 54,
+        "value": "The Silence of the Lambs",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 34,
+        "end": 41,
+        "confidence_entity": 0.9734302163124084,
+        "value": "Silence",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 49,
+        "end": 54,
+        "confidence_entity": 0.9821464419364929,
+        "value": "Lambs",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I'm curious, who produced Gone with the Wind?",
+    "entities": [
+      {
+        "start": 26,
+        "end": 44,
+        "value": "Gone with the Wind",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Can you find out who produced The French Connection?",
+    "entities": [
+      {
+        "start": 30,
+        "end": 51,
+        "value": "The French Connection",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Can you include Timur Bekmambetov",
+    "entities": [
+      {
+        "start": 16,
+        "end": 33,
+        "value": "Timur Bekmambetov",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "rating",
+        "start": 16,
+        "end": 33,
+        "confidence_entity": 0.24494437873363495,
+        "value": "Timur Bekmambetov",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Tim Burton",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Tim Burton",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 0,
+        "end": 10,
+        "confidence_entity": 0.4325248599052429,
+        "value": "Tim Burton",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Coen Brothers",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Coen Brothers",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.9769928455352783,
+        "value": "Coen",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Baz Luhrmann",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "Baz Luhrmann",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 4,
+        "end": 12,
+        "confidence_entity": 0.790496289730072,
+        "value": "Luhrmann",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Terry Gilliam and Christian Bale",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "Terry Gilliam",
+        "entity": "director_name"
+      },
+      {
+        "start": 18,
+        "end": 32,
+        "value": "Christian Bale",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 13,
+        "confidence_entity": 0.3405025601387024,
+        "value": "Terry Gilliam",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 18,
+        "end": 27,
+        "confidence_entity": 0.4939621686935425,
+        "value": "Christian",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Hayao Miyazaki",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "Hayao Miyazaki",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.54,
+        "value": "Hayao Miyazaki",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Pulp Fiction, what is the story behind this movie?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "Pulp Fiction",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.6763099431991577,
+        "value": "Pulp",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "genre",
+        "start": 5,
+        "end": 12,
+        "confidence_entity": 0.4847646653652191,
+        "value": "Fiction",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What is The Green Mile about?",
+    "entities": [
+      {
+        "start": 8,
+        "end": 22,
+        "value": "The Green Mile",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 12,
+        "end": 17,
+        "confidence_entity": 0.2981637716293335,
+        "value": "Green",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Matrix Reloaded, what is the plot of this movie?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "The Matrix Reloaded",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 10,
+        "confidence_entity": 0.9914382696151733,
+        "value": "Matrix",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Dark Knight, what is the plot of this movie?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "The Dark Knight",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 15,
+        "confidence_entity": 0.5061072111129761,
+        "value": "Dark Knight",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Exorcist, what is the storyline of this movie?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "The Exorcist",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 12,
+        "confidence_entity": 0.9810643196105957,
+        "value": "Exorcist",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you describe the plot of The Godfather?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 42,
+        "value": "The Godfather",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 33,
+        "end": 42,
+        "confidence_entity": 0.6508616209030151,
+        "value": "Godfather",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me the storyline of Indiana Jones and the Raiders of the Lost Ark?",
+    "entities": [
+      {
+        "start": 33,
+        "end": 78,
+        "value": "Indiana Jones and the Raiders of the Lost Ark",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 33,
+        "end": 46,
+        "confidence_entity": 0.6401818990707397,
+        "value": "Indiana Jones",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 55,
+        "end": 62,
+        "confidence_entity": 0.9530083537101746,
+        "value": "Raiders",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 70,
+        "end": 78,
+        "confidence_entity": 0.8619805574417114,
+        "value": "Lost Ark",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Silence of the Lambs, can you describe the plot of this movie?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 24,
+        "value": "The Silence of the Lambs",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 11,
+        "confidence_entity": 0.971174955368042,
+        "value": "Silence",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 19,
+        "end": 24,
+        "confidence_entity": 0.9826092720031738,
+        "value": "Lambs",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Do you happen to know the genre of The Dark Knight?",
+    "entities": [
+      {
+        "start": 35,
+        "end": 50,
+        "value": "The Dark Knight",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 39,
+        "end": 50,
+        "confidence_entity": 0.5005319118499756,
+        "value": "Dark Knight",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you give me an idea of the genre of Indiana Jones and the Raiders of the Lost Ark?",
+    "entities": [
+      {
+        "start": 40,
+        "end": 85,
+        "value": "Indiana Jones and the Raiders of the Lost Ark",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 40,
+        "end": 53,
+        "confidence_entity": 0.6457627415657043,
+        "value": "Indiana Jones",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 62,
+        "end": 69,
+        "confidence_entity": 0.9544514417648315,
+        "value": "Raiders",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 77,
+        "end": 85,
+        "confidence_entity": 0.8621411323547363,
+        "value": "Lost Ark",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "How would you categorize The Princess and the Frog in terms of genre?",
+    "entities": [
+      {
+        "start": 25,
+        "end": 50,
+        "value": "The Princess and the Frog",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 29,
+        "end": 37,
+        "confidence_entity": 0.8896559476852417,
+        "value": "Princess",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 46,
+        "end": 50,
+        "confidence_entity": 0.23553861677646637,
+        "value": "Frog",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me the genre of E.T. the Extra-Terrestrial?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 55,
+        "value": "E.T. the Extra-Terrestrial",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 29,
+        "end": 32,
+        "confidence_entity": 0.8734930753707886,
+        "value": "E.T",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 38,
+        "end": 55,
+        "confidence_entity": 0.42947882413864136,
+        "value": "Extra-Terrestrial",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Do you happen to know the genre of The Matrix?",
+    "entities": [
+      {
+        "start": 35,
+        "end": 45,
+        "value": "The Matrix",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 39,
+        "end": 45,
+        "confidence_entity": 0.9931331276893616,
+        "value": "Matrix",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Could you tell me the genre of The Shawshank Redemption?",
+    "entities": [
+      {
+        "start": 31,
+        "end": 55,
+        "value": "The Shawshank Redemption",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 35,
+        "end": 55,
+        "confidence_entity": 0.9833990335464478,
+        "value": "Shawshank Redemption",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Lion King, when did this movie come out?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "The Lion King",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 13,
+        "confidence_entity": 0.7268738150596619,
+        "value": "Lion King",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What is the release date of The Dark Knight?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 43,
+        "value": "The Dark Knight",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 32,
+        "end": 43,
+        "confidence_entity": 0.5070852041244507,
+        "value": "Dark Knight",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What is the release date of The Green Mile?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 42,
+        "value": "The Green Mile",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 32,
+        "end": 42,
+        "confidence_entity": 0.2986222505569458,
+        "value": "Green Mile",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Usual Suspects, what is the release date for this movie?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 18,
+        "value": "The Usual Suspects",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "The Exorcist, when did this movie come out?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "The Exorcist",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 12,
+        "confidence_entity": 0.9811267256736755,
+        "value": "Exorcist",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "When did Saving Private Ryan hit theaters?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 28,
+        "value": "Saving Private Ryan",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 24,
+        "end": 28,
+        "confidence_entity": 0.6433095932006836,
+        "value": "Ryan",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "When did The Lord of the Rings: The Two Towers come out?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 46,
+        "value": "The Lord of the Rings: The Two Towers",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 13,
+        "end": 17,
+        "confidence_entity": 0.9235100150108337,
+        "value": "Lord",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 25,
+        "end": 31,
+        "confidence_entity": 0.7372677326202393,
+        "value": "Rings:",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "rating",
+        "start": 36,
+        "end": 46,
+        "confidence_entity": 0.38258543610572815,
+        "value": "Two Towers",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who directed Monty Python and the Holy Grail?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 44,
+        "value": "Monty Python and the Holy Grail",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 34,
+        "end": 38,
+        "confidence_entity": 0.4903886616230011,
+        "value": "Holy",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who directed Eternal Sunshine of the Spotless Mind?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 50,
+        "value": "Eternal Sunshine of the Spotless Mind",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 13,
+        "end": 29,
+        "confidence_entity": 0.5929058194160461,
+        "value": "Eternal Sunshine",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 37,
+        "end": 50,
+        "confidence_entity": 0.5246807336807251,
+        "value": "Spotless Mind",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who was the director of The Graduate?",
+    "entities": [
+      {
+        "start": 24,
+        "end": 36,
+        "value": "The Graduate",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 28,
+        "end": 36,
+        "confidence_entity": 0.9281130433082581,
+        "value": "Graduate",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who was the director of The Truman Show?",
+    "entities": [
+      {
+        "start": 24,
+        "end": 39,
+        "value": "The Truman Show",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 28,
+        "end": 39,
+        "confidence_entity": 0.9304856061935425,
+        "value": "Truman Show",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Silence of the Lambs, who directed this film?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 24,
+        "value": "The Silence of the Lambs",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 11,
+        "confidence_entity": 0.9715747237205505,
+        "value": "Silence",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 19,
+        "end": 24,
+        "confidence_entity": 0.9827043414115906,
+        "value": "Lambs",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me who directed The Shawshank Redemption?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 53,
+        "value": "The Shawshank Redemption",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 33,
+        "end": 53,
+        "confidence_entity": 0.9853072166442871,
+        "value": "Shawshank Redemption",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me who directed The Green Mile?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 43,
+        "value": "The Green Mile",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 33,
+        "end": 38,
+        "confidence_entity": 0.3170355558395386,
+        "value": "Green",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who had creative control over the movie's direction?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 25,
+        "end": 29,
+        "confidence_entity": 0.5351327061653137,
+        "value": "over",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who are the actors in The Sixth Sense?",
+    "entities": [
+      {
+        "start": 22,
+        "end": 37,
+        "value": "The Sixth Sense",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 26,
+        "end": 31,
+        "confidence_entity": 0.42737770080566406,
+        "value": "Sixth",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who had creative control over the movie's casting choices?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 25,
+        "end": 29,
+        "confidence_entity": 0.5353230237960815,
+        "value": "over",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Would it be possible for you to give me the names of every individual actor that appear in the movie?",
+    "entities": [
+      {
+        "start": 53,
+        "end": 69,
+        "value": "every individual",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "The Green Mile, who is part of the cast in this movie?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "The Green Mile",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 4,
+        "end": 14,
+        "confidence_entity": 0.29958927631378174,
+        "value": "Green Mile",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Who is part of the cast in The Dark Knight?",
+    "entities": [
+      {
+        "start": 27,
+        "end": 42,
+        "value": "The Dark Knight",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 31,
+        "end": 42,
+        "confidence_entity": 0.49376311898231506,
+        "value": "Dark Knight",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you list all the possible actors from the movie?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 16,
+        "value": "all",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 8,
+        "end": 12,
+        "confidence_entity": 0.6995621919631958,
+        "value": "list",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me who stars in The Shining?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 40,
+        "value": "The Shining",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 33,
+        "end": 40,
+        "confidence_entity": 0.9733813405036926,
+        "value": "Shining",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can you give me a rundown of three actors who appeared in the movie?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 34,
+        "value": "three",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "rating",
+        "start": 29,
+        "end": 34,
+        "confidence_entity": 0.7613152265548706,
+        "value": "3",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "May I know the names of each actor who starred in the movie?",
+    "entities": [
+      {
+        "start": 24,
+        "end": 28,
+        "value": "each",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "May I ask you to identify five actors who act in the movie?",
+    "entities": [
+      {
+        "start": 26,
+        "end": 30,
+        "value": "five",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "rating",
+        "start": 26,
+        "end": 30,
+        "confidence_entity": 0.7543137073516846,
+        "value": "5",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Who stars in Indiana Jones and the Raiders of the Lost Ark?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 58,
+        "value": "Indiana Jones and the Raiders of the Lost Ark",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 13,
+        "end": 26,
+        "confidence_entity": 0.6404625177383423,
+        "value": "Indiana Jones",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 35,
+        "end": 42,
+        "confidence_entity": 0.953045129776001,
+        "value": "Raiders",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "movie_name",
+        "start": 50,
+        "end": 58,
+        "confidence_entity": 0.8665513396263123,
+        "value": "Lost Ark",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

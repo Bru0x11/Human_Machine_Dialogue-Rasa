@@ -1,0 +1,242 @@
+[
+  {
+    "text": "In the time leading up to this year",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.27322083711624146
+    }
+  },
+  {
+    "text": "Beyond the current year",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.37353086471557617
+    }
+  },
+  {
+    "text": "Beyond this year",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.34743377566337585
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.19235561788082123
+    }
+  },
+  {
+    "text": "that's right",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.09868452697992325
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "just_rating+just_director",
+      "confidence": 0.10564924031496048
+    }
+  },
+  {
+    "text": "that sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.12691760063171387
+    }
+  },
+  {
+    "text": "What was the movie's return on investment?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.9821832180023193
+    }
+  },
+  {
+    "text": "Do you know what people think of The Dark Knight?",
+    "intent": "movie_rating",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.1806451827287674
+    }
+  },
+  {
+    "text": "Can you recommend a good gym?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.5020754337310791
+    }
+  },
+  {
+    "text": "Can you provide information about the profitability of the movie?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.7175494432449341
+    }
+  },
+  {
+    "text": "What was the production budget compared to the box office revenue?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.8360984325408936
+    }
+  },
+  {
+    "text": "How much money was spent on the movie?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.832971453666687
+    }
+  },
+  {
+    "text": "Could you suggest a movie that discusses?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.9494854211807251
+    }
+  },
+  {
+    "text": "I'm interested in watching a movie that talks about. do you have any suggestions?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.77953040599823
+    }
+  },
+  {
+    "text": "I would like to see Jack Nicholson starring in it",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.2696835398674011
+    }
+  },
+  {
+    "text": "Cate Blanchett",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.5063832402229309
+    }
+  },
+  {
+    "text": "Christian Bale",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.894310474395752
+    }
+  },
+  {
+    "text": "John Travolta",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.6445325613021851
+    }
+  },
+  {
+    "text": "Timothée Chalamet",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.45242103934288025
+    }
+  },
+  {
+    "text": "Michelle Pfeiffer",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.508602499961853
+    }
+  },
+  {
+    "text": "Bernardo Bertolucci",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.9958053827285767
+    }
+  },
+  {
+    "text": "Gus Van Sant",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.5910446643829346
+    }
+  },
+  {
+    "text": "Akira Kurosawa",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.9748594164848328
+    }
+  },
+  {
+    "text": "Quentin Tarantino and Samuel L. Jackson",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.9790633320808411
+    }
+  },
+  {
+    "text": "Kenneth Branagh",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.8903271555900574
+    }
+  },
+  {
+    "text": "Is it possible to have James Wan",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.3778679370880127
+    }
+  },
+  {
+    "text": "James Cameron",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.925288200378418
+    }
+  },
+  {
+    "text": "What is the movie's premise?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.4189782738685608
+    }
+  },
+  {
+    "text": "Who are the people behind the movie's performances?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.8424800038337708
+    }
+  }
+]

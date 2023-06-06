@@ -1,0 +1,538 @@
+[
+  {
+    "text": "Can you suggest a movie for me? I'm specifically interested in horror movies with Johnny Depp in the cast. If it was released in 2020, that's even better.",
+    "intent": "recommendation_without_movie_over_informative",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.11616538198417882
+    }
+  },
+  {
+    "text": "Do you have any movie suggestions? I'm interested in horror movies, particularly ones with Johnny Depp in the cast. It would be great if they were released in 2020.",
+    "intent": "recommendation_without_movie_over_informative",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.11614314623681779
+    }
+  },
+  {
+    "text": "What can you tell me about the genre and producer of Toy Story?",
+    "intent": "movie_genre+movie_producer",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.1825601793930429
+    }
+  },
+  {
+    "text": "Do you know who produced and what genre The Departed belongs to?",
+    "intent": "movie_genre+movie_producer",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.15362663026954965
+    }
+  },
+  {
+    "text": "howdy",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4072461660833747
+    }
+  },
+  {
+    "text": "hi",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2858638890290693
+    }
+  },
+  {
+    "text": "Before, if possible",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.14949991587860503
+    }
+  },
+  {
+    "text": "If possible, preceding this year",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.21600589834142161
+    }
+  },
+  {
+    "text": "If it's possible, before the onset of this year",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.14796323002212383
+    }
+  },
+  {
+    "text": "Following the end of the year's cycle.",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.14143116630972144
+    }
+  },
+  {
+    "text": "Beyond the current year",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.2689322931411918
+    }
+  },
+  {
+    "text": "Beyond this year",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.28947408834498856
+    }
+  },
+  {
+    "text": "Within the bounds of the current year",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.1574506060310762
+    }
+  },
+  {
+    "text": "If achievable, in the present year",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.2521173598318366
+    }
+  },
+  {
+    "text": "Ideally during this year",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.2582609355411906
+    }
+  },
+  {
+    "text": "don't like that",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.3189821972334424
+    }
+  },
+  {
+    "text": "Do you have any recommendations for a movie to watch?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.33047196371336096
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.2445105432062826
+    }
+  },
+  {
+    "text": "that's right",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.13932614068218888
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.18196705114846093
+    }
+  },
+  {
+    "text": "By all means!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.12995940748848003
+    }
+  },
+  {
+    "text": "That would be great!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.20473805119241553
+    }
+  },
+  {
+    "text": "that sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.10856815868819604
+    }
+  },
+  {
+    "text": "Psychological thriller. I'm a fan of Leonardo DiCaprio, and I prefer the movie to be released in 2019.",
+    "intent": "just_genre+just_cast+just_year",
+    "intent_prediction": {
+      "name": "recommendation_without_movie_over_informative",
+      "confidence": 0.13827359322459223
+    }
+  },
+  {
+    "text": "Can you tell me how many minutes the movie is?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.19201026543168315
+    }
+  },
+  {
+    "text": "Could you tell me the length of Star Wars: A New Hope?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.2570598860982849
+    }
+  },
+  {
+    "text": "What is the running time of the movie?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.19571384061137817
+    }
+  },
+  {
+    "text": "What is the time limit for the movie?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.30310122186129007
+    }
+  },
+  {
+    "text": "What is the movie's length?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.3166166829408765
+    }
+  },
+  {
+    "text": "How successful was the movie at the box office?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_release_date",
+      "confidence": 0.2328669564442853
+    }
+  },
+  {
+    "text": "Can you tell me about the film's revenue?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.232262768003541
+    }
+  },
+  {
+    "text": "Do you happen to know the box office earnings for Star Wars: The Force Awakens?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.1695407544147251
+    }
+  },
+  {
+    "text": "What was the movie's return on investment?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.3750057246379883
+    }
+  },
+  {
+    "text": "I'm curious, how well was The Princess Bride received by audiences and critics?",
+    "intent": "movie_rating",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.07145610826277268
+    }
+  },
+  {
+    "text": "Can you give me some details about the movie's rating system?",
+    "intent": "movie_rating",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.16700023667737765
+    }
+  },
+  {
+    "text": "Do you know what people think of The Dark Knight?",
+    "intent": "movie_rating",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.1995582477058468
+    }
+  },
+  {
+    "text": "Can you tell me about the film's rating?",
+    "intent": "movie_rating",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.15917802632030967
+    }
+  },
+  {
+    "text": "horror would be great",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.28420121317454017
+    }
+  },
+  {
+    "text": "horror, if possible",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.12276231593966352
+    }
+  },
+  {
+    "text": "war",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.17620976190978155
+    }
+  },
+  {
+    "text": "action",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_rating+just_director",
+      "confidence": 0.16519917119405503
+    }
+  },
+  {
+    "text": "Can you provide information about the profitability of the movie?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.18493495972490892
+    }
+  },
+  {
+    "text": "Who had creative control over the movie's music?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.3262721901237235
+    }
+  },
+  {
+    "text": "Could you suggest a movie that discusses?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.33497025437240296
+    }
+  },
+  {
+    "text": "If I tell you the plot, could you suggest a good movie to watch?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.22845959956920386
+    }
+  },
+  {
+    "text": "I'm interested in watching a movie that talks about. do you have any suggestions?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_movie_question",
+      "confidence": 0.13997167427019355
+    }
+  },
+  {
+    "text": "Christian Bale",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.5186936108167575
+    }
+  },
+  {
+    "text": "Natalie Portman as well as Morgan Freeman",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_rating+just_director",
+      "confidence": 0.38653025438193206
+    }
+  },
+  {
+    "text": "Is it a problem if I ask you Natalie Portman and also Jack Nicholson?",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.1365157827716841
+    }
+  },
+  {
+    "text": "Do you mind including Robert De Niro?",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.2415738869735624
+    }
+  },
+  {
+    "text": "Robert Downey Jr.",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.22336826752324648
+    }
+  },
+  {
+    "text": "Can you find out who produced The Sound of Music?",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.2815158707920603
+    }
+  },
+  {
+    "text": "Can you tell me who produced Back to the Future?",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.26449915227478304
+    }
+  },
+  {
+    "text": "Bernardo Bertolucci",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.3701912399514864
+    }
+  },
+  {
+    "text": "Akira Kurosawa",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.41633373894527903
+    }
+  },
+  {
+    "text": "Is it possible to have James Wan",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.2265682962409949
+    }
+  },
+  {
+    "text": "James Cameron",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.44154441142269835
+    }
+  },
+  {
+    "text": "Could you describe the movie's narrative?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.2961286731205097
+    }
+  },
+  {
+    "text": "What is the movie's premise?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.40756709784087125
+    }
+  },
+  {
+    "text": "Could you tell me more about the movie's storyline?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.26075600979031205
+    }
+  },
+  {
+    "text": "What category of film does the movie fall under?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.15101957681765543
+    }
+  },
+  {
+    "text": "and what about the genre?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_genre+movie_producer",
+      "confidence": 0.16787289937637528
+    }
+  },
+  {
+    "text": "Perfect. And what about its genre?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_genre+movie_producer",
+      "confidence": 0.11125688387328543
+    }
+  },
+  {
+    "text": "In what genre does the movie primarily belong to?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.2010460236473811
+    }
+  },
+  {
+    "text": "Can you give me some details about the movie's director?",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.23634448700999047
+    }
+  },
+  {
+    "text": "Who are the people behind the movie's performances?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.29405391407860154
+    }
+  },
+  {
+    "text": "Who had creative control over the movie's casting choices?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.2932412666815022
+    }
+  }
+]

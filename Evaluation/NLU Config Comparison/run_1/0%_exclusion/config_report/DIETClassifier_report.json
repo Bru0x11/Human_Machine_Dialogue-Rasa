@@ -1,0 +1,89 @@
+{
+  "rating": {
+    "precision": 0.45454545454545453,
+    "recall": 0.625,
+    "f1-score": 0.5263157894736842,
+    "support": 8,
+    "confused_with": {
+      "number_of_actors": 2
+    }
+  },
+  "movie_name": {
+    "precision": 0.9145907473309609,
+    "recall": 0.9081272084805654,
+    "f1-score": 0.9113475177304965,
+    "support": 283,
+    "confused_with": {
+      "genre": 1
+    }
+  },
+  "genre": {
+    "precision": 0.896551724137931,
+    "recall": 0.8666666666666667,
+    "f1-score": 0.8813559322033899,
+    "support": 30,
+    "confused_with": {
+      "movie_name": 1
+    }
+  },
+  "number_of_actors": {
+    "precision": 0.4,
+    "recall": 0.2222222222222222,
+    "f1-score": 0.2857142857142857,
+    "support": 9,
+    "confused_with": {
+      "rating": 5
+    }
+  },
+  "release_date": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 21,
+    "confused_with": {}
+  },
+  "cast": {
+    "precision": 0.8148148148148148,
+    "recall": 0.7457627118644068,
+    "f1-score": 0.7787610619469028,
+    "support": 59,
+    "confused_with": {
+      "director_name": 14
+    }
+  },
+  "movie_period": {
+    "precision": 0.8823529411764706,
+    "recall": 0.967741935483871,
+    "f1-score": 0.923076923076923,
+    "support": 31,
+    "confused_with": {}
+  },
+  "director_name": {
+    "precision": 0.5945945945945946,
+    "recall": 0.6111111111111112,
+    "f1-score": 0.6027397260273972,
+    "support": 36,
+    "confused_with": {
+      "cast": 10
+    }
+  },
+  "micro avg": {
+    "precision": 0.8622881355932204,
+    "recall": 0.8532494758909853,
+    "f1-score": 0.8577449947312961,
+    "support": 477
+  },
+  "macro avg": {
+    "precision": 0.7446812845750284,
+    "recall": 0.7433289819786054,
+    "f1-score": 0.738663904521635,
+    "support": 477
+  },
+  "weighted avg": {
+    "precision": 0.8612044392266531,
+    "recall": 0.8532494758909853,
+    "f1-score": 0.8561737898915901,
+    "support": 477
+  },
+  "accuracy": 0.9648382559774965
+}

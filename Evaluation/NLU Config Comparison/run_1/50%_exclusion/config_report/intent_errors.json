@@ -1,0 +1,394 @@
+[
+  {
+    "text": "try to find a movie with eight of rating",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "movie_rating",
+      "confidence": 0.295474112033844
+    }
+  },
+  {
+    "text": "I would like five",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.2990063726902008
+    }
+  },
+  {
+    "text": "if possible six",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.1192360520362854
+    }
+  },
+  {
+    "text": "I'm curious about Saving private Ryan. Can you tell me its genre and producer?",
+    "intent": "movie_genre+movie_producer",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.3669374883174896
+    }
+  },
+  {
+    "text": "Can you give me some information about the genre and producer of The Lion King?",
+    "intent": "movie_genre+movie_producer",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.2625097334384918
+    }
+  },
+  {
+    "text": "long time no see",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.1930927336215973
+    }
+  },
+  {
+    "text": "In the previous year",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.24554534256458282
+    }
+  },
+  {
+    "text": "After this year, if it's viable",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.37278223037719727
+    }
+  },
+  {
+    "text": "Potentially after this year",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.6159349679946899
+    }
+  },
+  {
+    "text": "Preferably within this year",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.4869155287742615
+    }
+  },
+  {
+    "text": "exactly",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.16266369819641113
+    }
+  },
+  {
+    "text": "Thanks for the offer, but no.",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.20487511157989502
+    }
+  },
+  {
+    "text": "never",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "just_genre",
+      "confidence": 0.11842163652181625
+    }
+  },
+  {
+    "text": "I'm looking for a romantic movie to watch, do you have any suggestions?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.2618078589439392
+    }
+  },
+  {
+    "text": "Could you suggest a movie that's based on a true story?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.6949903964996338
+    }
+  },
+  {
+    "text": "By all means!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.15619361400604248
+    }
+  },
+  {
+    "text": "How much revenue did the movie generate compared to its budget?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.8597628474235535
+    }
+  },
+  {
+    "text": "Could you tell me the earnings of Harry Potter and the Deathly Hallows Part 2?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.127886563539505
+    }
+  },
+  {
+    "text": "Can you teach me how to play the guitar?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.20813710987567902
+    }
+  },
+  {
+    "text": "How do I start a blog?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.15226547420024872
+    }
+  },
+  {
+    "text": "What's the meaning of life?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.1674305498600006
+    }
+  },
+  {
+    "text": "Can you help me find a job?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.14941585063934326
+    }
+  },
+  {
+    "text": "Do you have any travel recommendations?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.20589061081409454
+    }
+  },
+  {
+    "text": "What other movies would you suggest if I liked The Fly?",
+    "intent": "ask_recommendation_with_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.14902359247207642
+    }
+  },
+  {
+    "text": "science_fiction",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.2514244019985199
+    }
+  },
+  {
+    "text": "2008, if you can",
+    "intent": "just_year",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.18374700844287872
+    }
+  },
+  {
+    "text": "Is it possible to have in 2015",
+    "intent": "just_year",
+    "intent_prediction": {
+      "name": "just_rating+just_director",
+      "confidence": 0.2792002260684967
+    }
+  },
+  {
+    "text": "1991, if possible",
+    "intent": "just_year",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.08577356487512589
+    }
+  },
+  {
+    "text": "Who oversaw the creation of the movie's music?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.4819030463695526
+    }
+  },
+  {
+    "text": "Can you provide more details about the person behind the movie's music?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.57422935962677
+    }
+  },
+  {
+    "text": "If possible, Julia Roberts",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.2750672698020935
+    }
+  },
+  {
+    "text": "Keanu Reeves",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.4466004967689514
+    }
+  },
+  {
+    "text": "John Travolta",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.509713888168335
+    }
+  },
+  {
+    "text": "George Clooney",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.929434061050415
+    }
+  },
+  {
+    "text": "Alfred Hitchcock",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.6167307496070862
+    }
+  },
+  {
+    "text": "Can you include Timur Bekmambetov",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.23414430022239685
+    }
+  },
+  {
+    "text": "Tim Burton",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.8382419347763062
+    }
+  },
+  {
+    "text": "Robert Zemeckis",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.6065428853034973
+    }
+  },
+  {
+    "text": "Kenneth Branagh",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.7270466089248657
+    }
+  },
+  {
+    "text": "Baz Luhrmann",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_rating",
+      "confidence": 0.2573854327201843
+    }
+  },
+  {
+    "text": "Stanley Kubrick",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.3935791254043579
+    }
+  },
+  {
+    "text": "Hayao Miyazaki",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.838196337223053
+    }
+  },
+  {
+    "text": "Pulp Fiction, what is the story behind this movie?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.22574059665203094
+    }
+  },
+  {
+    "text": "Can you give me a rundown of the movie's plot?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.5341510772705078
+    }
+  },
+  {
+    "text": "Can you tell me what happens in the movie?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.12570838630199432
+    }
+  },
+  {
+    "text": "What is the movie's theme?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.6375347375869751
+    }
+  },
+  {
+    "text": "When did The Lord of the Rings: The Two Towers come out?",
+    "intent": "movie_release_date",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.4329380989074707
+    }
+  },
+  {
+    "text": "Who oversaw the movie's direction and production?",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.919259786605835
+    }
+  },
+  {
+    "text": "Who was in charge of the movie's creative vision?",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.5197002291679382
+    }
+  }
+]

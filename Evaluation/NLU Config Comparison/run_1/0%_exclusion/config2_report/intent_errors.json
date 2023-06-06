@@ -1,0 +1,482 @@
+[
+  {
+    "text": "try to find a movie with eight of rating",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.20582998135231365
+    }
+  },
+  {
+    "text": "I would like five",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "ask_movie_question",
+      "confidence": 0.2634910076148187
+    }
+  },
+  {
+    "text": "if possible six",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.27272281036738766
+    }
+  },
+  {
+    "text": "long time no see",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.14745297278237413
+    }
+  },
+  {
+    "text": "In the year that came before this one",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.21494967441151897
+    }
+  },
+  {
+    "text": "In the previous year",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.40582399666745683
+    }
+  },
+  {
+    "text": "exactly this year, please",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.10238840478144332
+    }
+  },
+  {
+    "text": "exactly",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.22816537455167155
+    }
+  },
+  {
+    "text": "never",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "just_genre",
+      "confidence": 0.19576635643247128
+    }
+  },
+  {
+    "text": "Could you suggest a movie that's based on a true story?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.4324209206416651
+    }
+  },
+  {
+    "text": "Psychological thriller. I'm a fan of Leonardo DiCaprio, and I prefer the movie to be released in 2019.",
+    "intent": "just_genre+just_cast+just_year",
+    "intent_prediction": {
+      "name": "recommendation_without_movie_over_informative",
+      "confidence": 0.22723828027147017
+    }
+  },
+  {
+    "text": "What is the movie's length?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.3967843733030526
+    }
+  },
+  {
+    "text": "I'm wondering, how long is Avengers: Endgame?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.18028093999950381
+    }
+  },
+  {
+    "text": "Can you tell me the film's runtime?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.21038167614680828
+    }
+  },
+  {
+    "text": "Can you provide information about any significant cuts made to the movie's runtime?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.37406010136529505
+    }
+  },
+  {
+    "text": "How did the revenue compare to other movies of the same genre or release period?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.15093058528715397
+    }
+  },
+  {
+    "text": "Can you tell me about the film's revenue?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.17525682636572815
+    }
+  },
+  {
+    "text": "Can you tell me the earnings of Avengers: Infinity War?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.34545082900721186
+    }
+  },
+  {
+    "text": "Can you tell me about any significant events that impacted the movie's revenue?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.2616792339971289
+    }
+  },
+  {
+    "text": "Can you teach me how to play the guitar?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_genre+movie_producer",
+      "confidence": 0.12162151265174051
+    }
+  },
+  {
+    "text": "Can you translate this sentence into Spanish?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.1282611878963268
+    }
+  },
+  {
+    "text": "Do you have any travel recommendations?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.23703729541151833
+    }
+  },
+  {
+    "text": "western",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.10278399981299131
+    }
+  },
+  {
+    "text": "science_fiction",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.39848953428835454
+    }
+  },
+  {
+    "text": "2008, if you can",
+    "intent": "just_year",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.12754681953590066
+    }
+  },
+  {
+    "text": "2011 is good",
+    "intent": "just_year",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.14789588780476348
+    }
+  },
+  {
+    "text": "2017 should be fine",
+    "intent": "just_year",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.2016655686775285
+    }
+  },
+  {
+    "text": "1991, if possible",
+    "intent": "just_year",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.12767375580623885
+    }
+  },
+  {
+    "text": "and what about the composer?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_genre+movie_producer",
+      "confidence": 0.27128145422775807
+    }
+  },
+  {
+    "text": "Can you provide more details about the person behind the movie's music?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.2834363109654198
+    }
+  },
+  {
+    "text": "What movie would you recommend that focuses on?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.15574631336223788
+    }
+  },
+  {
+    "text": "Johnny Depp",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.4590115654641446
+    }
+  },
+  {
+    "text": "If possible, Julia Roberts",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.31039254427222496
+    }
+  },
+  {
+    "text": "John Travolta",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.6578050632718613
+    }
+  },
+  {
+    "text": "Robert Downey Jr.",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.30183682293655945
+    }
+  },
+  {
+    "text": "George Clooney",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.5079998304622327
+    }
+  },
+  {
+    "text": "Kate Winslet",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.6578050632718613
+    }
+  },
+  {
+    "text": "Can you give me some information about the production of the movie?",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.2675232387064599
+    }
+  },
+  {
+    "text": "and what about the producer?",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "movie_genre+movie_producer",
+      "confidence": 0.383521116124117
+    }
+  },
+  {
+    "text": "its producer",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "movie_genre+movie_producer",
+      "confidence": 0.145624805469923
+    }
+  },
+  {
+    "text": "Alfred Hitchcock",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.4743605023983759
+    }
+  },
+  {
+    "text": "Can you include Timur Bekmambetov",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.2872986581733234
+    }
+  },
+  {
+    "text": "Kenneth Branagh",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.5328165352173554
+    }
+  },
+  {
+    "text": "Coen Brothers",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_genre",
+      "confidence": 0.5038943909361582
+    }
+  },
+  {
+    "text": "Terry Gilliam and Christian Bale",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.326058708195211
+    }
+  },
+  {
+    "text": "Stanley Kubrick",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.48319894975431565
+    }
+  },
+  {
+    "text": "Hayao Miyazaki",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.39848953428835454
+    }
+  },
+  {
+    "text": "Can you tell me what happens in the movie?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.27725842392937355
+    }
+  },
+  {
+    "text": "Can you tell me the storyline of Indiana Jones and the Raiders of the Lost Ark?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.21357604898505245
+    }
+  },
+  {
+    "text": "What is the movie's theme?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.5407245524672932
+    }
+  },
+  {
+    "text": "What is the movie's classification?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.34674479226342153
+    }
+  },
+  {
+    "text": "Can you give me some details about the movie's release?",
+    "intent": "movie_release_date",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.21791209418009327
+    }
+  },
+  {
+    "text": "When did Saving Private Ryan hit theaters?",
+    "intent": "movie_release_date",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.18535016190795336
+    }
+  },
+  {
+    "text": "When did the movie become available for streaming or rental?",
+    "intent": "movie_release_date",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.15230403351767918
+    }
+  },
+  {
+    "text": "When was the movie made available for public viewing?",
+    "intent": "movie_release_date",
+    "intent_prediction": {
+      "name": "movie_budget",
+      "confidence": 0.37823843313387134
+    }
+  },
+  {
+    "text": "Who oversaw the movie's direction and production?",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.46210577705834954
+    }
+  },
+  {
+    "text": "Who directed Monty Python and the Holy Grail?",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.3517167519598995
+    }
+  },
+  {
+    "text": "Who had creative control over the movie's casting choices?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.29863033291575286
+    }
+  },
+  {
+    "text": "Who performed the movie's major roles?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.6777807277368526
+    }
+  },
+  {
+    "text": "Can you list all the possible actors from the movie?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.20348321264972527
+    }
+  }
+]

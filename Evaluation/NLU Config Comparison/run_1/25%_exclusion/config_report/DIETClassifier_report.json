@@ -1,0 +1,88 @@
+{
+  "rating": {
+    "precision": 0.4666666666666667,
+    "recall": 0.875,
+    "f1-score": 0.608695652173913,
+    "support": 8,
+    "confused_with": {}
+  },
+  "movie_name": {
+    "precision": 0.9011406844106464,
+    "recall": 0.8374558303886925,
+    "f1-score": 0.8681318681318682,
+    "support": 283,
+    "confused_with": {
+      "rating": 3
+    }
+  },
+  "genre": {
+    "precision": 0.9230769230769231,
+    "recall": 0.8,
+    "f1-score": 0.8571428571428571,
+    "support": 30,
+    "confused_with": {
+      "movie_name": 2
+    }
+  },
+  "number_of_actors": {
+    "precision": 1.0,
+    "recall": 0.2222222222222222,
+    "f1-score": 0.3636363636363636,
+    "support": 9,
+    "confused_with": {
+      "rating": 3
+    }
+  },
+  "release_date": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 21,
+    "confused_with": {}
+  },
+  "cast": {
+    "precision": 0.8181818181818182,
+    "recall": 0.7627118644067796,
+    "f1-score": 0.7894736842105264,
+    "support": 59,
+    "confused_with": {
+      "director_name": 12
+    }
+  },
+  "movie_period": {
+    "precision": 0.8823529411764706,
+    "recall": 0.967741935483871,
+    "f1-score": 0.923076923076923,
+    "support": 31,
+    "confused_with": {}
+  },
+  "director_name": {
+    "precision": 0.6486486486486487,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.6575342465753425,
+    "support": 36,
+    "confused_with": {
+      "cast": 6,
+      "movie_name": 4
+    }
+  },
+  "micro avg": {
+    "precision": 0.8609271523178808,
+    "recall": 0.8176100628930818,
+    "f1-score": 0.8387096774193549,
+    "support": 477
+  },
+  "macro avg": {
+    "precision": 0.8300084602701467,
+    "recall": 0.766474814896029,
+    "f1-score": 0.7584614493684743,
+    "support": 477
+  },
+  "weighted avg": {
+    "precision": 0.8709129444746397,
+    "recall": 0.8176100628930818,
+    "f1-score": 0.8373238191745095,
+    "support": 477
+  },
+  "accuracy": 0.959563994374121
+}

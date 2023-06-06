@@ -1,0 +1,450 @@
+[
+  {
+    "text": "0",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.4192741306146352
+    }
+  },
+  {
+    "text": "try to find a movie with eight of rating",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.18151606676233115
+    }
+  },
+  {
+    "text": "if possible six",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.1952517205383199
+    }
+  },
+  {
+    "text": "can you recommend me a movie? I would like it to be an horror movie with Johnny Depp as an actor. I would like also to be released in 2020.",
+    "intent": "recommendation_without_movie_over_informative",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.2576808630837931
+    }
+  },
+  {
+    "text": "What is the genre and who produced The Dark Knight?",
+    "intent": "movie_genre+movie_producer",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.40203096322278375
+    }
+  },
+  {
+    "text": "What is the genre and producer of Jurassic Park? I'd appreciate it if you could tell me.",
+    "intent": "movie_genre+movie_producer",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.20935881641772336
+    }
+  },
+  {
+    "text": "Can you tell me the genre and producer of The Great Gatsby? I'm interested in it.",
+    "intent": "movie_genre+movie_producer",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.32506461860384334
+    }
+  },
+  {
+    "text": "moin",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.30090643564584474
+    }
+  },
+  {
+    "text": "good evening",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2799529878892002
+    }
+  },
+  {
+    "text": "In the year that follows",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.23803460983203922
+    }
+  },
+  {
+    "text": "If it's possible, after this year ends",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_before",
+      "confidence": 0.23693464234872444
+    }
+  },
+  {
+    "text": "exactly this year, please",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.1156470298839516
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.40462418391691585
+    }
+  },
+  {
+    "text": "No, I want to make a change",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.1488032202803955
+    }
+  },
+  {
+    "text": "What movie would you suggest I watch?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.290057930268567
+    }
+  },
+  {
+    "text": "yes, please",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.1799982031205881
+    }
+  },
+  {
+    "text": "yeah",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.3328376270057441
+    }
+  },
+  {
+    "text": "Count me in!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.4325040838609718
+    }
+  },
+  {
+    "text": "What's the duration of Toy Story?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.302442163668486
+    }
+  },
+  {
+    "text": "Can you tell me about the film's revenue?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.16819612800561806
+    }
+  },
+  {
+    "text": "Can you tell me about any long-term revenue streams related to the movie, such as home video sales or merchandise?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.11232964538532142
+    }
+  },
+  {
+    "text": "Can you inform me of the overall rating of Back to the Future?",
+    "intent": "movie_rating",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.27478579949568144
+    }
+  },
+  {
+    "text": "cee you later",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.195201552675086
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.13588525300528292
+    }
+  },
+  {
+    "text": "Tell me a joke.",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.2058488821906435
+    }
+  },
+  {
+    "text": "can I have a horror movie",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.46220772198457455
+    }
+  },
+  {
+    "text": "music",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.9598984891715386
+    }
+  },
+  {
+    "text": "western",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.16950466378235868
+    }
+  },
+  {
+    "text": "horror would be great",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.19760751131624651
+    }
+  },
+  {
+    "text": "Can you provide information about the profitability of the movie?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.18100190349506057
+    }
+  },
+  {
+    "text": "Can you tell me the budget of The Hunger Games: Catching Fire?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.16301713154793324
+    }
+  },
+  {
+    "text": "Who had creative control over the movie's music?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.38858804682561926
+    }
+  },
+  {
+    "text": "Could you tell me about the film's composer?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.26910110694353745
+    }
+  },
+  {
+    "text": "Who is the composer of E.T. the Extra-Terrestrial?",
+    "intent": "movie_composer",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.2139272512482266
+    }
+  },
+  {
+    "text": "Emma Stone",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.47236187879226227
+    }
+  },
+  {
+    "text": "Natalie Portman",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.49899859904160354
+    }
+  },
+  {
+    "text": "Zendaya",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.4190664790236801
+    }
+  },
+  {
+    "text": "Is it a problem if I ask you Natalie Portman and also Jack Nicholson?",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.13814326941834099
+    }
+  },
+  {
+    "text": "John Travolta",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.4523694600771949
+    }
+  },
+  {
+    "text": "Mark Wahlberg",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.12876662712109488
+    }
+  },
+  {
+    "text": "Tom Hanks",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.22323751631724162
+    }
+  },
+  {
+    "text": "Who was involved in producing the movie?",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.351277068737741
+    }
+  },
+  {
+    "text": "Who is credited as the producer for the movie?",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.5366280631113374
+    }
+  },
+  {
+    "text": "Who produced [A Clockwork Orange] (movie_name)?",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.25326449118859334
+    }
+  },
+  {
+    "text": "Why don't you put Jean-Pierre Jeunet",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.10707844350342276
+    }
+  },
+  {
+    "text": "John Ford, please",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.2809300222012913
+    }
+  },
+  {
+    "text": "Orson Welles please",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.28188559948903164
+    }
+  },
+  {
+    "text": "Francis Ford Coppola",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.46006015685146423
+    }
+  },
+  {
+    "text": "Mel Brooks",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.3651235327968758
+    }
+  },
+  {
+    "text": "Can you tell me the storyline of Back to the Future?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.2321033835981231
+    }
+  },
+  {
+    "text": "What is the nature of the movie?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.3825791927576671
+    }
+  },
+  {
+    "text": "its director",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.10292177470783542
+    }
+  },
+  {
+    "text": "Who was responsible for directing the actors in the movie?",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.4950939842097242
+    }
+  },
+  {
+    "text": "Who directed Monty Python and the Holy Grail?",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.267886447463752
+    }
+  },
+  {
+    "text": "Who had creative control over the movie's casting choices?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.32515478144249904
+    }
+  },
+  {
+    "text": "Can you tell me about the previous works of the movie's actors?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.16261068606512005
+    }
+  }
+]

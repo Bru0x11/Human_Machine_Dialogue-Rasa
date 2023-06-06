@@ -1,0 +1,370 @@
+[
+  {
+    "text": "0",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "just_year",
+      "confidence": 0.21222037076950073
+    }
+  },
+  {
+    "text": "try to find a movie with eight of rating",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "movie_rating",
+      "confidence": 0.3674021363258362
+    }
+  },
+  {
+    "text": "can you recommend me a movie? I would like it to be an horror movie with Johnny Depp as an actor. I would like also to be released in 2020.",
+    "intent": "recommendation_without_movie_over_informative",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.5472018122673035
+    }
+  },
+  {
+    "text": "moin",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.2519457936286926
+    }
+  },
+  {
+    "text": "Preceding this year",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.36145880818367004
+    }
+  },
+  {
+    "text": "Within the span of this year, if feasible",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.43191713094711304
+    }
+  },
+  {
+    "text": "If feasible, within the current year",
+    "intent": "is_exactly",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.49904826283454895
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.45712387561798096
+    }
+  },
+  {
+    "text": "nope",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.3690299689769745
+    }
+  },
+  {
+    "text": "suggest a movie",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.7376248240470886
+    }
+  },
+  {
+    "text": "Count me in!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.33081382513046265
+    }
+  },
+  {
+    "text": "Comedy-horror. It would be hilarious to see Sandra Bullock in the movie, and I prefer the movie to be released in 1997.",
+    "intent": "just_genre+just_cast+just_year",
+    "intent_prediction": {
+      "name": "recommendation_without_movie_over_informative",
+      "confidence": 0.44548115134239197
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.21910589933395386
+    }
+  },
+  {
+    "text": "What's the meaning of life?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.23107300698757172
+    }
+  },
+  {
+    "text": "Can you recommend a good dentist?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.5376150012016296
+    }
+  },
+  {
+    "text": "Tell me a joke.",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.29093068838119507
+    }
+  },
+  {
+    "text": "After watching The Big Lebowski, what other movies would you suggest?",
+    "intent": "ask_recommendation_with_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.5533621907234192
+    }
+  },
+  {
+    "text": "After watching The Ring, what other movies would you recommend?",
+    "intent": "ask_recommendation_with_movie",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.4473988711833954
+    }
+  },
+  {
+    "text": "After watching The Godfather, can you suggest a similar film to watch?",
+    "intent": "ask_recommendation_with_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.653039813041687
+    }
+  },
+  {
+    "text": "What other movies would you suggest if I liked The Fly?",
+    "intent": "ask_recommendation_with_movie",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.2913205027580261
+    }
+  },
+  {
+    "text": "horror would be great",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.31174367666244507
+    }
+  },
+  {
+    "text": "Can you provide information about the profitability of the movie?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.602148175239563
+    }
+  },
+  {
+    "text": "I'd appreciate it if you could recommend a movie that touches on",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.7821892499923706
+    }
+  },
+  {
+    "text": "Can you recommend a movie that explores the subject of?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.8528844118118286
+    }
+  },
+  {
+    "text": "Emma Stone",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.6609064340591431
+    }
+  },
+  {
+    "text": "Is it a problem if I ask you Natalie Portman and also Jack Nicholson?",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.2032420039176941
+    }
+  },
+  {
+    "text": "John Travolta",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.5576785206794739
+    }
+  },
+  {
+    "text": "Mark Wahlberg",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "movie_rating",
+      "confidence": 0.09740322083234787
+    }
+  },
+  {
+    "text": "I would like to have Leonardo DiCaprio in it",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.21085496246814728
+    }
+  },
+  {
+    "text": "Tom Hanks",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.24923519790172577
+    }
+  },
+  {
+    "text": "Leonardo DiCaprio, Natalie Portman and Natalie Portman",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.2634107172489166
+    }
+  },
+  {
+    "text": "Who oversaw the making of the movie?",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.3845238983631134
+    }
+  },
+  {
+    "text": "Why don't you put Jean-Pierre Jeunet",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.11333083361387253
+    }
+  },
+  {
+    "text": "Lars von Trier",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.3014397621154785
+    }
+  },
+  {
+    "text": "John Ford, please",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.2795928716659546
+    }
+  },
+  {
+    "text": "Orson Welles please",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.12448310852050781
+    }
+  },
+  {
+    "text": "Bong Joon-ho",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.18047909438610077
+    }
+  },
+  {
+    "text": "Mel Brooks",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.3569466173648834
+    }
+  },
+  {
+    "text": "Christopher Nolan",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.8531577587127686
+    }
+  },
+  {
+    "text": "Spike Lee",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.2088717818260193
+    }
+  },
+  {
+    "text": "I would like Wong Kar-wai",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "ask_movie_question",
+      "confidence": 0.3121506869792938
+    }
+  },
+  {
+    "text": "Richard Linklater",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.5911149978637695
+    }
+  },
+  {
+    "text": "What type of movie is it?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "ask_movie_question",
+      "confidence": 0.16059143841266632
+    }
+  },
+  {
+    "text": "What is the nature of the movie?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.22106266021728516
+    }
+  },
+  {
+    "text": "What is the movie's style?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.3939306437969208
+    }
+  },
+  {
+    "text": "its cast",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_runtime",
+      "confidence": 0.1717739850282669
+    }
+  }
+]

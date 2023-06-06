@@ -1,0 +1,1366 @@
+[
+  {
+    "text": "try to find a movie with eight of rating",
+    "entities": [
+      {
+        "start": 25,
+        "end": 30,
+        "value": "eight",
+        "entity": "rating"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "10",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "10",
+        "entity": "rating"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number_of_actors",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.5390011703844266,
+        "value": "10",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "I'm curious about Saving private Ryan. Can you tell me its genre and producer?",
+    "entities": [
+      {
+        "start": 18,
+        "end": 37,
+        "value": "Saving private Ryan",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Could you inform me of the genre and producer of Lord of the Rings?",
+    "entities": [
+      {
+        "start": 49,
+        "end": 66,
+        "value": "Lord of the Rings",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 37,
+        "end": 66,
+        "confidence_entity": 0.6228531002575953,
+        "value": "producer of Lord of the Rings",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "I'm not sure about the genre and producer of Scream. Could you help me out?",
+    "entities": [
+      {
+        "start": 45,
+        "end": 51,
+        "value": "Scream",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "In the year that came before this one",
+    "entities": [
+      {
+        "start": 22,
+        "end": 28,
+        "value": "before",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "In the previous year",
+    "entities": [
+      {
+        "start": 7,
+        "end": 15,
+        "value": "previous",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Potentially after this year",
+    "entities": [
+      {
+        "start": 12,
+        "end": 27,
+        "value": "after this year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "10. Furthermore, is there a chance that I could recommend Martin Scorsese to direct it?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "10",
+        "entity": "rating"
+      },
+      {
+        "start": 58,
+        "end": 73,
+        "value": "Martin Scorsese",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number_of_actors",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.5130587663424626,
+        "value": "10",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "director_name",
+        "start": 58,
+        "end": 73,
+        "confidence_entity": 0.9965731623525209,
+        "value": "Martin Scorsese",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "nine. Moreover, is it possible to have David Fincher as the director for it?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "nine",
+        "entity": "rating"
+      },
+      {
+        "start": 39,
+        "end": 52,
+        "value": "David Fincher",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "rating",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.9993956731824251,
+        "value": "9",
+        "extractor": "CRFEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Preferably within this year",
+    "entities": [
+      {
+        "start": 11,
+        "end": 27,
+        "value": "within this year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "If it is possible, in the current year",
+    "entities": [
+      {
+        "start": 19,
+        "end": 38,
+        "value": "in the current year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "In the current year, if possible",
+    "entities": [
+      {
+        "start": 3,
+        "end": 19,
+        "value": "the current year",
+        "entity": "movie_period"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_period",
+        "start": 0,
+        "end": 19,
+        "confidence_entity": 0.893280030371598,
+        "value": "In the current year",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Nope",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.35698413786544414,
+        "value": "Nope",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can you suggest a movie that's suitable for the whole family?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 44,
+        "end": 60,
+        "confidence_entity": 0.9230846153395715,
+        "value": "the whole family",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Do you have a favorite comedy movie you'd recommend?",
+    "entities": [
+      {
+        "start": 23,
+        "end": 29,
+        "value": "comedy",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I'm looking for a romantic movie to watch, do you have any suggestions?",
+    "entities": [
+      {
+        "start": 18,
+        "end": 26,
+        "value": "romantic",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Could you suggest a movie that's based on a true story?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 44,
+        "end": 54,
+        "confidence_entity": 0.9600485705895192,
+        "value": "true story",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Fantasy adventure with also Chris Pratt would bring excitement to the movie, and I prefer the movie to be released in 2003.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Fantasy",
+        "entity": "genre"
+      },
+      {
+        "start": 28,
+        "end": 39,
+        "value": "Chris Pratt",
+        "entity": "cast"
+      },
+      {
+        "start": 118,
+        "end": 122,
+        "value": "2003",
+        "entity": "release_date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "genre",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9998680564253505,
+        "value": "Fantasy",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "genre",
+        "start": 8,
+        "end": 17,
+        "confidence_entity": 0.9939839490799145,
+        "value": "adventure",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "director_name",
+        "start": 28,
+        "end": 39,
+        "confidence_entity": 0.7760127235620229,
+        "value": "Chris Pratt",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "release_date",
+        "start": 118,
+        "end": 122,
+        "confidence_entity": 0.9889923269213532,
+        "value": "2003",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Family. I would also like to have Julia Roberts as an actress, and I would like the movie to be released in 2009.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Family",
+        "entity": "genre"
+      },
+      {
+        "start": 34,
+        "end": 47,
+        "value": "Julia Roberts",
+        "entity": "cast"
+      },
+      {
+        "start": 108,
+        "end": 112,
+        "value": "2009",
+        "entity": "release_date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "genre",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.7151007907141579,
+        "value": "Family",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "director_name",
+        "start": 34,
+        "end": 47,
+        "confidence_entity": 0.8612982557508533,
+        "value": "Julia Roberts",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "release_date",
+        "start": 108,
+        "end": 112,
+        "confidence_entity": 0.992536065290791,
+        "value": "2009",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Psychological thriller. I'm a fan of Leonardo DiCaprio, and I prefer the movie to be released in 2019.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 22,
+        "value": "Psychological thriller",
+        "entity": "genre"
+      },
+      {
+        "start": 37,
+        "end": 54,
+        "value": "Leonardo DiCaprio",
+        "entity": "cast"
+      },
+      {
+        "start": 97,
+        "end": 101,
+        "value": "2019",
+        "entity": "release_date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "genre",
+        "start": 0,
+        "end": 22,
+        "confidence_entity": 0.8984655843317324,
+        "value": "Psychological thriller",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "cast",
+        "start": 30,
+        "end": 33,
+        "confidence_entity": 0.5041277708720749,
+        "value": "fan",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "cast",
+        "start": 37,
+        "end": 54,
+        "confidence_entity": 0.9528729223060816,
+        "value": "Leonardo DiCaprio",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "release_date",
+        "start": 97,
+        "end": 101,
+        "confidence_entity": 0.9705279041022054,
+        "value": "2019",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me the earnings of Avengers: Infinity War?",
+    "entities": [
+      {
+        "start": 32,
+        "end": 54,
+        "value": "Avengers: Infinity War",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 32,
+        "end": 50,
+        "confidence_entity": 0.9941715897805048,
+        "value": "Avengers: Infinity",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "genre",
+        "start": 51,
+        "end": 54,
+        "confidence_entity": 0.9995294240408991,
+        "value": "War",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Could you tell me the earnings of Harry Potter and the Deathly Hallows Part 2?",
+    "entities": [
+      {
+        "start": 34,
+        "end": 77,
+        "value": "Harry Potter and the Deathly Hallows Part 2",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 34,
+        "end": 54,
+        "confidence_entity": 0.7348442965502456,
+        "value": "Harry Potter and the",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "director_name",
+        "start": 55,
+        "end": 77,
+        "confidence_entity": 0.8522425416950802,
+        "value": "Deathly Hallows Part 2",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Got it, talk to you soon.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.7508824235537026,
+        "value": "Got",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can you teach me how to play the guitar?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 29,
+        "end": 39,
+        "confidence_entity": 0.5918099696167087,
+        "value": "the guitar",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "How can I remove a virus from my computer?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 19,
+        "end": 24,
+        "confidence_entity": 0.44850791265464124,
+        "value": "virus",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "How can I train my dog?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 10,
+        "end": 15,
+        "confidence_entity": 0.8428401936633064,
+        "value": "train",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "number_of_actors",
+        "start": 16,
+        "end": 22,
+        "confidence_entity": 0.6981504019783336,
+        "value": "my dog",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can you suggest any movies similar to Fargo?",
+    "entities": [
+      {
+        "start": 38,
+        "end": 43,
+        "value": "Fargo",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "After seeing Se7en, can you recommend a similar movie to watch?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 18,
+        "value": "Se7en",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "After watching Inglourious Basterds, what other movies would you recommend?",
+    "entities": [
+      {
+        "start": 15,
+        "end": 35,
+        "value": "Inglourious Basterds",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "tv movie",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "tv movie",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "genre",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9995142490645885,
+        "value": "tv",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "western",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "western",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9865288830014043,
+        "value": "western",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "science_fiction",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "science_fiction",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.43538338095256196,
+        "value": "science_fiction",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Superhero with Action",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "Superhero",
+        "entity": "genre"
+      },
+      {
+        "start": 15,
+        "end": 21,
+        "value": "Action",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.5961851998666391,
+        "value": "Superhero with",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "genre",
+        "start": 15,
+        "end": 21,
+        "confidence_entity": 0.9947068074880838,
+        "value": "Action",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can we talk about movies and ask some questions?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 11,
+        "confidence_entity": 0.8026742384782349,
+        "value": "Can we talk",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Who is the composer of The Revenant?",
+    "entities": [
+      {
+        "start": 23,
+        "end": 35,
+        "value": "The Revenant",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Who composed the music for Pirates of the Caribbean: The Curse of the Black Pearl?",
+    "entities": [
+      {
+        "start": 27,
+        "end": 81,
+        "value": "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 27,
+        "end": 34,
+        "confidence_entity": 0.7157567770923958,
+        "value": "Pirates",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "movie_name",
+        "start": 38,
+        "end": 81,
+        "confidence_entity": 0.7055640965048233,
+        "value": "the Caribbean: The Curse of the Black Pearl",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "If possible, Julia Roberts",
+    "entities": [
+      {
+        "start": 13,
+        "end": 26,
+        "value": "Julia Roberts",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 13,
+        "end": 26,
+        "confidence_entity": 0.9491054665624513,
+        "value": "Julia Roberts",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Keanu Reeves",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "Keanu Reeves",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 12,
+        "confidence_entity": 0.7802478105718113,
+        "value": "Keanu Reeves",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Charlize Theron and Denzel Washington",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Charlize Theron",
+        "entity": "cast"
+      },
+      {
+        "start": 20,
+        "end": 37,
+        "value": "Denzel Washington",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.9860845061423056,
+        "value": "Charlize Theron",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "director_name",
+        "start": 20,
+        "end": 37,
+        "confidence_entity": 0.8758380999830163,
+        "value": "Denzel Washington",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "John Travolta",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "John Travolta",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 13,
+        "confidence_entity": 0.9195128209306916,
+        "value": "John Travolta",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Robert Downey Jr.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "Robert Downey Jr.",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 0,
+        "end": 16,
+        "confidence_entity": 0.5940602219146683,
+        "value": "Robert Downey Jr",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "George Clooney",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "George Clooney",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9724195941500057,
+        "value": "George Clooney",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Timothée Chalamet",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "Timothée Chalamet",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 17,
+        "confidence_entity": 0.5412972132303544,
+        "value": "Timothée Chalamet",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Kate Winslet",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "Kate Winslet",
+        "entity": "cast"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 0,
+        "end": 12,
+        "confidence_entity": 0.8761045481792025,
+        "value": "Kate Winslet",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Who produced Rain Man?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 21,
+        "value": "Rain Man",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 13,
+        "end": 21,
+        "confidence_entity": 0.8059203270067494,
+        "value": "Rain Man",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can you include Timur Bekmambetov",
+    "entities": [
+      {
+        "start": 16,
+        "end": 33,
+        "value": "Timur Bekmambetov",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Baz Luhrmann",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "Baz Luhrmann",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 12,
+        "confidence_entity": 0.511456263689366,
+        "value": "Baz Luhrmann",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Stanley Kubrick",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "Stanley Kubrick",
+        "entity": "director_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cast",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.9416061468672484,
+        "value": "Stanley Kubrick",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Pulp Fiction, what is the story behind this movie?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "Pulp Fiction",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 0,
+        "end": 12,
+        "confidence_entity": 0.9814911204811626,
+        "value": "Pulp Fiction",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "movie_name",
+        "start": 22,
+        "end": 38,
+        "confidence_entity": 0.8919596294665082,
+        "value": "the story behind",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can you tell me the genre of E.T. the Extra-Terrestrial?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 55,
+        "value": "E.T. the Extra-Terrestrial",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 34,
+        "end": 55,
+        "confidence_entity": 0.985866106703718,
+        "value": "the Extra-Terrestrial",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "can you tell me the genre of Spongebob?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 38,
+        "value": "Spongebob",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Would you classify Forrest Gump as a drama or a comedy?",
+    "entities": [
+      {
+        "start": 19,
+        "end": 31,
+        "value": "Forrest Gump",
+        "entity": "movie_name"
+      },
+      {
+        "start": 37,
+        "end": 42,
+        "value": "drama",
+        "entity": "genre"
+      },
+      {
+        "start": 48,
+        "end": 54,
+        "value": "comedy",
+        "entity": "genre"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 19,
+        "end": 31,
+        "confidence_entity": 0.9992916315574656,
+        "value": "Forrest Gump",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "genre",
+        "start": 37,
+        "end": 42,
+        "confidence_entity": 0.9999942911327188,
+        "value": "drama",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "When did Saving Private Ryan hit theaters?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 28,
+        "value": "Saving Private Ryan",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "director_name",
+        "start": 24,
+        "end": 28,
+        "confidence_entity": 0.3923533948909033,
+        "value": "Ryan",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "movie_name",
+        "start": 29,
+        "end": 41,
+        "confidence_entity": 0.8945352578152813,
+        "value": "hit theaters",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "When did Goodfellas hit theaters?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 19,
+        "value": "Goodfellas",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 9,
+        "end": 19,
+        "confidence_entity": 0.5804180594667809,
+        "value": "Goodfellas",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "movie_name",
+        "start": 20,
+        "end": 32,
+        "confidence_entity": 0.9796246024753891,
+        "value": "hit theaters",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Who directed Monty Python and the Holy Grail?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 44,
+        "value": "Monty Python and the Holy Grail",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 30,
+        "end": 38,
+        "confidence_entity": 0.9741367925419052,
+        "value": "the Holy",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Who directed Eternal Sunshine of the Spotless Mind?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 50,
+        "value": "Eternal Sunshine of the Spotless Mind",
+        "entity": "movie_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "movie_name",
+        "start": 13,
+        "end": 29,
+        "confidence_entity": 0.6869968803846729,
+        "value": "Eternal Sunshine",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "movie_name",
+        "start": 33,
+        "end": 50,
+        "confidence_entity": 0.9121593494541548,
+        "value": "the Spotless Mind",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Would it be possible for you to give me the names of every individual actor that appear in the movie?",
+    "entities": [
+      {
+        "start": 53,
+        "end": 69,
+        "value": "every individual",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number_of_actors",
+        "start": 53,
+        "end": 58,
+        "confidence_entity": 0.9304695722099595,
+        "value": "every",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can you list all the possible actors from the movie?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 16,
+        "value": "all",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me 7 actor for this movie?",
+    "entities": [
+      {
+        "start": 16,
+        "end": 17,
+        "value": "7",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "rating",
+        "start": 16,
+        "end": 17,
+        "confidence_entity": 0.5314472557408081,
+        "value": "7",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Can you give me a rundown of three actors who appeared in the movie?",
+    "entities": [
+      {
+        "start": 29,
+        "end": 34,
+        "value": "three",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "May I ask you to identify five actors who act in the movie?",
+    "entities": [
+      {
+        "start": 26,
+        "end": 30,
+        "value": "five",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "rating",
+        "start": 26,
+        "end": 30,
+        "confidence_entity": 0.8545693260491148,
+        "value": "5",
+        "extractor": "CRFEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Can you let me know 4 actors who feature in the movie?",
+    "entities": [
+      {
+        "start": 20,
+        "end": 21,
+        "value": "4",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "rating",
+        "start": 20,
+        "end": 21,
+        "confidence_entity": 0.8283468528774947,
+        "value": "4",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "can you tell me 1 actor for this movie?",
+    "entities": [
+      {
+        "start": 16,
+        "end": 17,
+        "value": "1",
+        "entity": "number_of_actors"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "rating",
+        "start": 16,
+        "end": 17,
+        "confidence_entity": 0.9819054874789936,
+        "value": "1",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  }
+]

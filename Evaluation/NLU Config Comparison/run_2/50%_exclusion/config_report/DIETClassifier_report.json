@@ -1,0 +1,92 @@
+{
+  "rating": {
+    "precision": 0.625,
+    "recall": 0.625,
+    "f1-score": 0.625,
+    "support": 8,
+    "confused_with": {
+      "number_of_actors": 3
+    }
+  },
+  "movie_name": {
+    "precision": 0.8666666666666667,
+    "recall": 0.7620689655172413,
+    "f1-score": 0.8110091743119265,
+    "support": 290,
+    "confused_with": {
+      "rating": 2
+    }
+  },
+  "genre": {
+    "precision": 0.9545454545454546,
+    "recall": 0.7,
+    "f1-score": 0.8076923076923077,
+    "support": 30,
+    "confused_with": {
+      "movie_name": 4
+    }
+  },
+  "number_of_actors": {
+    "precision": 0.25,
+    "recall": 0.1111111111111111,
+    "f1-score": 0.15384615384615383,
+    "support": 9,
+    "confused_with": {
+      "rating": 1
+    }
+  },
+  "release_date": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 21,
+    "confused_with": {}
+  },
+  "cast": {
+    "precision": 0.6666666666666666,
+    "recall": 0.7213114754098361,
+    "f1-score": 0.6929133858267716,
+    "support": 61,
+    "confused_with": {
+      "director_name": 6
+    }
+  },
+  "movie_period": {
+    "precision": 0.8214285714285714,
+    "recall": 0.5348837209302325,
+    "f1-score": 0.647887323943662,
+    "support": 43,
+    "confused_with": {
+      "movie_name": 1
+    }
+  },
+  "director_name": {
+    "precision": 0.7391304347826086,
+    "recall": 0.38636363636363635,
+    "f1-score": 0.5074626865671641,
+    "support": 44,
+    "confused_with": {
+      "cast": 16,
+      "movie_name": 6
+    }
+  },
+  "micro avg": {
+    "precision": 0.8266978922716628,
+    "recall": 0.6976284584980237,
+    "f1-score": 0.7566988210075026,
+    "support": 506
+  },
+  "macro avg": {
+    "precision": 0.740429724261246,
+    "recall": 0.6050923636665071,
+    "f1-score": 0.6557263790234982,
+    "support": 506
+  },
+  "weighted avg": {
+    "precision": 0.8235761488897768,
+    "recall": 0.6976284584980237,
+    "f1-score": 0.7495321637150376,
+    "support": 506
+  },
+  "accuracy": 0.9355295784626284
+}

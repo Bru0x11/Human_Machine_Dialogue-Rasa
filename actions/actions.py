@@ -910,13 +910,22 @@ class ActionFindMovieWithPlot(Action):
         return 'action_obtain_movie_from_plot'
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
+        # Get the user input for the plot/theme
         input_plot = tracker.latest_message['text']
+        
+        # Load the pre-trained SentenceTransformer model
         model = SentenceTransformer('task3_tools/fine_tuned_model')
-        index = 'C:/Users/Matteo/Desktop/Università/secondo anno/HMD/rasa_project/task3_tools/fine_tuned_encoding.index'
-        results=search(input_plot, top_k=5, index=index, model=model)
+        
+        # Load the index for the pre-trained model
+        index = 'task3_tools/fine_tuned_encoding.index'
+        
+        # Search for movies similar to the input plot/theme
+        results = search(input_plot, top_k=5, index=index, model=model)
+        
+        # Print the search results
         print("\n")
         for result in results:
-            print('\t',result)
+            print('\t', result)
 
 class ValidateRetrievePlotForm(FormValidationAction):
     def name(self):
@@ -929,21 +938,24 @@ class ValidateRetrievePlotForm(FormValidationAction):
     def validate_is_plot_received(self, slot_value, dispatcher, tracker, domain):
         reversed_events = list(reversed(tracker.events))
         if reversed_events[0].get('name') != 'iterate_plot':
-            input_plot = tracker.latest_message['text']
-            model = SentenceTransformer('task3_tools/fine_tuned_model')
-            index = faiss.read_index('task3_tools/fine_tuned_encoding.index')
-            results = self.search(input_plot, top_k=5, index=index, model=model, movie_dataframe=dataframe)
-            movies = '\n'.join('* {}'.format(result.get('Title')) for result in results)
+            input_plot = tracker.latest_message['text']  # Get the latest user message text from the tracker
+            model = SentenceTransformer('task3_tools/fine_tuned_model')  # Load the SentenceTransformer model
+            index = faiss.read_index('task3_tools/fine_tuned_encoding.index')  # Read the faiss index
+            results = self.search(input_plot, top_k=5, index=index, model=model, movie_dataframe=dataframe)  # Perform the search using the input plot
+            movies = '\n'.join('* {}'.format(result.get('Title')) for result in results)  # Generate a string of movie titles from the search results
             message = 'Great! Here is a list of movies that bear some resemblance to the one you inquired about:\n{}\nIf you want to know something more about them, feel free to ask!'.format(movies)
-            dispatcher.utter_message(text=message)
+            dispatcher.utter_message(text=message)  
 
-            return{"is_plot_received": True, "iterate_plot": None}
+            return {"is_plot_received": True, "iterate_plot": None} 
+
 
     def validate_iterate_plot(self, slot_value, dispatcher, tracker, domain):
         if slot_value == True:
-            return{"is_plot_received": None, "iterate_plot": True} #re-call the form
+            # If the slot value is True, re-call the form by setting "is_plot_received" to None and "iterate_plot" to True
+            return {"is_plot_received": None, "iterate_plot": True}
         elif slot_value == False:
-            return{"iterate_plot": False}
+            # If the slot value is False, end the form by setting "iterate_plot" to False
+            return {"iterate_plot": False}
         
     def fetch_movie_info(self, dataframe_idx, movie_dataframe):
         info = movie_dataframe.iloc[dataframe_idx]

@@ -1,0 +1,308 @@
+{
+  "movie_composer": {
+    "precision": 1.0,
+    "recall": 0.8461538461538461,
+    "f1-score": 0.9166666666666666,
+    "support": 13,
+    "confused_with": {
+      "movie_producer": 2
+    }
+  },
+  "deny": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 6,
+    "confused_with": {
+      "goodbye": 2,
+      "just_cast": 1
+    }
+  },
+  "ask_movie_question": {
+    "precision": 0.8461538461538461,
+    "recall": 1.0,
+    "f1-score": 0.9166666666666666,
+    "support": 11,
+    "confused_with": {}
+  },
+  "movie_release_date": {
+    "precision": 0.8461538461538461,
+    "recall": 0.7333333333333333,
+    "f1-score": 0.7857142857142856,
+    "support": 15,
+    "confused_with": {
+      "movie_revenue": 1,
+      "movie_producer": 1
+    }
+  },
+  "is_before": {
+    "precision": 0.5,
+    "recall": 0.25,
+    "f1-score": 0.3333333333333333,
+    "support": 4,
+    "confused_with": {
+      "is_after": 3
+    }
+  },
+  "just_genre+just_cast+just_year": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "movie_plot": {
+    "precision": 0.5789473684210527,
+    "recall": 0.7857142857142857,
+    "f1-score": 0.6666666666666667,
+    "support": 14,
+    "confused_with": {
+      "movie_genre": 1,
+      "movie_runtime": 1
+    }
+  },
+  "just_year": {
+    "precision": 1.0,
+    "recall": 0.5555555555555556,
+    "f1-score": 0.7142857142857143,
+    "support": 9,
+    "confused_with": {
+      "affirm": 1,
+      "is_exactly": 1
+    }
+  },
+  "recommendation_without_movie_over_informative": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "ask_movie_with_similar_plot": {
+    "precision": 0.8461538461538461,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.8799999999999999,
+    "support": 12,
+    "confused_with": {
+      "ask_recommendation_with_movie": 1
+    }
+  },
+  "movie_revenue": {
+    "precision": 0.6666666666666666,
+    "recall": 0.25,
+    "f1-score": 0.36363636363636365,
+    "support": 8,
+    "confused_with": {
+      "movie_plot": 2,
+      "movie_budget": 2
+    }
+  },
+  "just_rating": {
+    "precision": 1.0,
+    "recall": 0.25,
+    "f1-score": 0.4,
+    "support": 4,
+    "confused_with": {
+      "ask_movie_with_similar_plot": 1,
+      "is_exactly": 1
+    }
+  },
+  "movie_producer": {
+    "precision": 0.6875,
+    "recall": 0.7857142857142857,
+    "f1-score": 0.7333333333333334,
+    "support": 14,
+    "confused_with": {
+      "movie_runtime": 1,
+      "movie_genre+movie_producer": 1
+    }
+  },
+  "ask_recommendation_with_movie": {
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1-score": 0.8571428571428571,
+    "support": 9,
+    "confused_with": {}
+  },
+  "affirm": {
+    "precision": 0.8888888888888888,
+    "recall": 1.0,
+    "f1-score": 0.9411764705882353,
+    "support": 8,
+    "confused_with": {}
+  },
+  "goodbye": {
+    "precision": 0.5714285714285714,
+    "recall": 1.0,
+    "f1-score": 0.7272727272727273,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_recommendation_without_movie": {
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.8,
+    "support": 6,
+    "confused_with": {
+      "ask_movie_with_similar_plot": 1,
+      "ask_recommendation_with_movie": 1
+    }
+  },
+  "is_exactly": {
+    "precision": 0.6,
+    "recall": 0.6,
+    "f1-score": 0.6,
+    "support": 5,
+    "confused_with": {
+      "is_before": 1,
+      "just_cast": 1
+    }
+  },
+  "movie_genre+movie_producer": {
+    "precision": 0.6666666666666666,
+    "recall": 0.5,
+    "f1-score": 0.5714285714285715,
+    "support": 4,
+    "confused_with": {
+      "movie_genre": 2
+    }
+  },
+  "movie_genre": {
+    "precision": 0.75,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.7999999999999999,
+    "support": 14,
+    "confused_with": {
+      "movie_plot": 2
+    }
+  },
+  "greetings": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 4,
+    "confused_with": {
+      "goodbye": 4
+    }
+  },
+  "movie_budget": {
+    "precision": 0.7142857142857143,
+    "recall": 0.9090909090909091,
+    "f1-score": 0.8,
+    "support": 11,
+    "confused_with": {
+      "ask_movie_question": 1
+    }
+  },
+  "just_genre": {
+    "precision": 0.8571428571428571,
+    "recall": 0.75,
+    "f1-score": 0.7999999999999999,
+    "support": 8,
+    "confused_with": {
+      "just_director": 2
+    }
+  },
+  "movie_rating": {
+    "precision": 0.8888888888888888,
+    "recall": 0.8888888888888888,
+    "f1-score": 0.8888888888888888,
+    "support": 9,
+    "confused_with": {
+      "movie_plot": 1
+    }
+  },
+  "movie_director": {
+    "precision": 0.9230769230769231,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.888888888888889,
+    "support": 14,
+    "confused_with": {
+      "movie_cast": 1,
+      "movie_producer": 1
+    }
+  },
+  "just_rating+just_director": {
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1-score": 0.8571428571428571,
+    "support": 4,
+    "confused_with": {
+      "just_cast": 1
+    }
+  },
+  "just_cast": {
+    "precision": 0.5714285714285714,
+    "recall": 0.3076923076923077,
+    "f1-score": 0.4,
+    "support": 13,
+    "confused_with": {
+      "just_director": 9
+    }
+  },
+  "is_after": {
+    "precision": 0.625,
+    "recall": 1.0,
+    "f1-score": 0.7692307692307693,
+    "support": 5,
+    "confused_with": {}
+  },
+  "out_of_scope": {
+    "precision": 1.0,
+    "recall": 0.5555555555555556,
+    "f1-score": 0.7142857142857143,
+    "support": 9,
+    "confused_with": {
+      "movie_runtime": 3,
+      "ask_recommendation_with_movie": 1
+    }
+  },
+  "just_director": {
+    "precision": 0.48,
+    "recall": 0.9230769230769231,
+    "f1-score": 0.631578947368421,
+    "support": 13,
+    "confused_with": {
+      "ask_movie_question": 1
+    }
+  },
+  "movie_runtime": {
+    "precision": 0.3333333333333333,
+    "recall": 0.375,
+    "f1-score": 0.35294117647058826,
+    "support": 8,
+    "confused_with": {
+      "movie_plot": 2,
+      "movie_genre": 1
+    }
+  },
+  "movie_cast": {
+    "precision": 0.8947368421052632,
+    "recall": 0.8947368421052632,
+    "f1-score": 0.8947368421052632,
+    "support": 19,
+    "confused_with": {
+      "movie_producer": 1,
+      "movie_director": 1
+    }
+  },
+  "accuracy": 0.7542662116040956,
+  "macro avg": {
+    "precision": 0.7652016509623418,
+    "recall": 0.7096291181406312,
+    "f1-score": 0.7084901377432338,
+    "support": 293
+  },
+  "weighted avg": {
+    "precision": 0.7744513642555676,
+    "recall": 0.7542662116040956,
+    "f1-score": 0.7411129706992934,
+    "support": 293
+  },
+  "micro avg": {
+    "precision": 0.7542662116040956,
+    "recall": 0.7542662116040956,
+    "f1-score": 0.7542662116040956,
+    "support": 293
+  }
+}

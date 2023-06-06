@@ -1,0 +1,1252 @@
+version: "3.1"
+nlu:
+- intent: just_rating
+  examples: |
+    - [4](rating)
+    - [8](rating)
+    - [3](rating)
+    - [9](rating)
+    - [three](rating) is enough.
+    - [1](rating)
+    - [6](rating)
+    - at least [seven](rating)
+    - [10](rating)
+    - [2](rating)
+    - I would like [five](rating)
+    - [ten](rating)
+- intent: recommendation_without_movie_over_informative
+  examples: |
+    - Can you recommend a movie to me? I'm in the mood for a [horror](genre) movie and would love to see [Johnny Depp](cast) in it. It should have been released in [2020](release_date).
+    - I'd like a movie recommendation, please. Specifically, I'm looking for a [horror](genre) film with [Johnny Depp](cast) as one of the actors. If it was released in [2020](release_date), even better.
+    - Could you suggest a movie? I'm in the mood for a [horror](genre) flick and would like [Johnny Depp](cast) to be one of the actors. It should have been released in [2020](release_date).
+    - Do you have any movie suggestions? I'm interested in watching a [horror](genre) movie, and it would be awesome if [Johnny Depp](cast) starred in it. Also, I prefer movies released in [2020](release_date).
+    - I'm looking for a movie recommendation. [horror](genre) movies are my preference, especially ones with [Johnny Depp](cast) in the cast. If it was released in [2020](release_date), that would be perfect.
+    - I'm seeking a movie recommendation. An ideal choice would be a [horror](genre) film with [Johnny Depp](cast) in it. If it was released in [2020](release_date), that would be perfect.
+    - I'm looking for a movie recommendation. Specifically, I'd love a [horror](genre) flick with [Johnny Depp](cast) in the cast. It should have been released in [2020](release_date).
+    - Do you have any movie suggestions? I'm in the mood for a [horror](genre) film and would like [Johnny Depp](cast) to be part of the cast. It would be ideal if it was released in [2020](release_date).
+    - I'm seeking a movie recommendation. Specifically, I'd like a [horror](genre) flick with [Johnny Depp](cast) in the cast. If it was released in [2020](release_date), even better.
+    - Can you suggest a movie for me? I'm in the mood for a [horror](genre) film and would love to see [Johnny Depp](cast) as one of the actors. It would be great if it was released in [2020](release_date).
+    - Can you suggest a movie for me? I'm specifically interested in [horror](genre) movies with [Johnny Depp](cast) in the cast. If it was released in [2020](release_date), that's even better.
+    - I'm seeking a movie recommendation. A [horror](genre) movie with [Johnny Depp](cast) as an actor would be great. If it was released in [2020](release_date), I'd be thrilled.
+    - I'd like a movie recommendation, please. Something in the [horror](genre) genre with [Johnny Depp](cast) as one of the actors. If it was released in [2020](release_date), that's what I'm looking for.
+    - Could you recommend a movie? I'm specifically looking for a [horror](genre) movie with [Johnny Depp](cast) in it. It should have been released in [2020](release_date).
+- intent: movie_genre+movie_producer
+  examples: |
+    - Could you tell me the genre and producer of [Inception](movie_name)?
+    - What do you know about the genre and producer of [Dunkirk](movie_name)?
+    - If you don't mind, could you provide me with the genre and producer of [Saw V](movie_name)?
+    - Do you know who produced and what genre [The Departed](movie_name) belongs to?
+    - Would you happen to know the genre and producer of [The Martian](movie_name)?
+    - I'm curious about [Saving private Ryan](movie_name). Can you tell me its genre and producer?
+    - Can you provide me with the genre and producer of [Gravity](movie_name), please?
+    - Can you give me some information about the genre and producer of [The Lion King](movie_name)?
+    - Can you give me some insight into the genre and producer of [Saw I](movie_name)?
+    - Do you have any information about the genre and producer of [Saw IV](movie_name) that you could share with me?
+    - I'm looking for some information on [Saw II](movie_name)'s genre and producer. Can you assist me?
+    - I'm interested in [The Prestige](movie_name). Can you provide me with its genre and producer?
+    - What can you tell me about the genre and producer of [Toy Story](movie_name)?
+    - Would you mind sharing the genre and producer of [The Terminator](movie_name) with me?
+    - I'm not sure about the genre and producer of [Scream](movie_name). Could you help me out?
+- intent: greetings
+  examples: |
+    - goodevening
+    - hey dude
+    - Hi!
+    - long time no see
+    - hey there
+    - Hi
+    - hi
+    - good afternoon
+    - Hello there
+    - good morning
+    - Hey
+    - hello there
+    - Hello
+    - howdy
+    - goodmorning
+    - hello
+- intent: is_after
+  examples: |
+    - [Following this year's end](movie_period), if doable
+    - [After this year's end](movie_period)
+    - [In the next year](movie_period)
+    - [After](movie_period)
+    - [Following the conclusion of this year](movie_period), if attainable
+    - [Following the end of the year's](movie_period) cycle.
+    - [Following the current year](movie_period)
+    - [Beyond this year](movie_period)
+    - [After this year passes](movie_period), if feasible
+    - [after](movie_period)
+    - [After this year](movie_period), if it's viable
+    - Potentially [after this year](movie_period)
+    - [after](movie_period), if possible
+    - [after](movie_period), please
+    - [Beyond the current year](movie_period)
+    - If it can be done, [after this year](movie_period)
+- intent: is_before
+  examples: |
+    - [Before](movie_period) the onset of this year
+    - If it's possible, [before](movie_period) the onset of this year
+    - [Preceding](movie_period) the start of this year, if attainable
+    - [Prior](movie_period) to the current year
+    - [Prior](movie_period) to the start of this year
+    - In the time [leading up to](movie_period) this year
+    - [Before](movie_period) this year begins, if feasible
+    - [Prior](movie_period) to this year's commencement
+    - If possible, [preceding](movie_period) this year
+    - [Prior](movie_period) to the beginning of this year's cycle
+    - [Earlier than](movie_period) the present year
+    - [Before](movie_period)
+    - [Before](movie_period) the current calendar year
+    - If achievable, [before](movie_period) this year
+    - [Before](movie_period), if possible
+    - [Before](movie_period) this year, if it's viable
+    - In the [previous](movie_period) year
+- intent: just_rating+just_director
+  examples: |
+    - [three](rating) and can I have [James Cameron](director_name) as the director for it?
+    - [one](rating) if possible. In addition to that, can I have [Christopher Nolan](director_name) as the director for it?
+    - [4](rating). Furthermore, could I ask if it's feasible to have [Martin Scorsese](director_name) helm the project?
+    - [1](rating) and [Yorgos Lanthimos](director_name) if possible.
+    - [10](rating). Furthermore, is there a chance that I could recommend [Martin Scorsese](director_name) to direct it?
+    - [6](rating). Furthermore, might I propose [Martin Scorsese](director_name) as the preferred choice for directing it?
+    - [9](rating). Moreover, may I raise the question of considering [Martin Scorsese](director_name) as the director for it?
+    - [four](rating) seems about enough. Additionally, can I have [Denis Villeneuve](director_name) as the director for it?
+    - rated [2](rating) and directed by [Martin Scorsese](director_name).
+    - [ten](rating) and [Spike Lee](director_name) as the director.
+    - [five](rating) or so. And can I request [Wes Anderson](director_name) as the director for it?
+    - [nine](rating). Moreover, is it possible to have [David Fincher](director_name) as the director for it?
+    - [six](rating). Also, can I have [Taika Waititi](director_name) as the director for it?
+    - [seven](rating). In addition to that, can I request [Jordan Peele](director_name) as the director for it?
+    - [3](rating) preferably directed by [Martin Scorsese](director_name).
+    - [7](rating). I also would like to have [Dario Argento](director_name) as director.
+    - [7](rating). Moreover, can I express my desire for [Martin Scorsese](director_name) to take on the role of director?
+- intent: is_exactly
+  examples: |
+    - [During this year](movie_period), if it can be accomplished
+    - If it is possible, [in the current year](movie_period)
+    - [exactly](movie_period) this year
+    - Ideally [during this year](movie_period)
+    - [During the current year](movie_period), if it is doable
+    - If achievable, [precisely in this year](movie_period)
+    - If doable, [in this year](movie_period)
+    - [Within the bounds of the current year](movie_period)
+    - If it is within reach, [within this year](movie_period)
+    - If it is realizable, [exactly this year](movie_period)
+    - If within the realm of possibility, [this year](movie_period)
+    - Preferably [within this year](movie_period)
+    - If attainable, [during this year](movie_period)
+    - [Within the confines of this year](movie_period), if possible
+    - If viable, [during this calendar year](movie_period)
+    - [exactly](movie_period)
+    - [exactly](movie_period) this year if possible
+    - If achievable, [in the present year](movie_period)
+- intent: deny
+  examples: |
+    - never
+    - No, I'll pass.
+    - I'm good, thanks
+    - no
+    - No, I'm not interested, but thank you.
+    - I don't think so
+    - no i'm fine
+    - Nope
+    - Not interested, thanks.
+    - I'm done
+    - actually no
+    - Noo
+    - no, thanks
+    - not really
+    - no, I'm fine
+    - No, I'm good.
+    - don't like that
+    - Thanks, but I'll have to say no.
+    - No, thank you.
+    - Thanks, but no.
+    - I appreciate it, but no thanks.
+    - I'll have to decline, thanks.
+    - no way
+- intent: ask_recommendation_without_movie
+  examples: |
+    - What's a good [science fiction](genre) movie you'd recommend?
+    - Can you suggest a movie that's based on a book?
+    - Could you suggest a movie that's based on a true story?
+    - Could you recommend a classic movie to watch?
+    - I'm looking for a movie that's not too heavy, can you recommend one?
+    - Could you suggest a movie that's similar to one I liked?
+    - I'm looking for a movie to watch, do you have any suggestions?
+    - Could you recommend a movie that's set in a specific time period?
+    - Can you give me a movie recommendation?
+    - What's a good movie you'd recommend?
+    - What's a movie you'd recommend for a rainy day?
+    - Can you recommend a movie with great cinematography?
+    - recommend a movie
+    - Can you suggest a movie that's suitable for the whole family?
+    - I'm looking for a [romantic](genre) movie to watch, do you have any suggestions?
+    - Can you recommend a movie that's suitable for kids?
+    - What's a good [action](genre) movie you'd recommend?
+    - I'm in the mood for a movie, do you have any recommendations?
+    - I'm in the mood for a [thriller](genre), could you recommend one?
+    - Could you suggest a good movie to watch?
+    - Could you recommend a movie that you enjoyed?
+    - Could you recommend a movie that won an award?
+    - Do you have a favorite [comedy](genre) movie you'd recommend?
+    - I'm looking for a feel-good movie, could you recommend one?
+    - Can you suggest a movie with a good plot?
+    - Do you have any recommendations for a movie to watch?
+- intent: affirm
+  examples: |
+    - That would be great!
+    - all good
+    - perfect
+    - Yes
+    - Yes, please!
+    - Sure thing!
+    - Yeah
+    - Without a doubt!
+    - Certainly!
+    - yes
+    - that's right
+    - y
+    - You bet!
+    - I would love to!
+    - great
+    - Absolutely!
+    - Yes, I'm interested!
+    - Absolutely, yes!
+    - of course
+    - yeah all is good
+    - Of course!
+    - I'm all for it!
+    - Yes, absolutely!
+    - yes please
+    - That sounds perfect!
+    - By all means!
+    - yep
+    - that sounds good
+    - correct
+- intent: just_genre+just_cast+just_year
+  examples: |
+    - [Historical](genre). I would also like to have [Denzel Washington](cast) as an actor, and I would like the movie to be released in [2007](release_date).
+    - [Musical](genre). I would also like to have [Meryl Streep](cast) as an actress, and I would like the movie to be released in [2020](release_date).
+    - [Romantic comedy](genre). I would also love to see [Jennifer Lawrence](cast) starring in it, and I prefer the movie to be released in [2005](release_date).
+    - If available, I prefer a [horror](genre) film. Is it possible to have [Brad Pitt](cast) as the actor? Additionally, I'd like the movie to be released in [2020](release_date).
+    - [Psychological thriller](genre). I'm a fan of [Leonardo DiCaprio](cast), and I prefer the movie to be released in [2019](release_date).
+    - [Romance](genre). I would also like to have [Natalie Portman](cast) as an actress, and I would like the movie to be released in [2017](release_date).
+    - [War](genre), if possible. I would also like to have [Matt Damon](cast) as an actor, and I would like the movie to be released in [2016](release_date).
+    - [Action](genre). I would also like to have [Scarlett Johansson](cast) as an actress, and I would like the movie to be released in [2008](release_date).
+    - [Drama](genre). [Ryan Gosling](cast) would also be perfect for a dramatic role, and I prefer the movie to be released in [2015](release_date).
+    - If available, I'd like to watch a [horror](genre) movie. Is it feasible to have [Brad Pitt](cast) as the actor? Furthermore, I'd prefer the movie to be released in [2020](release_date).
+    - [Fantasy](genre) adventure with also [Chris Pratt](cast) would bring excitement to the movie, and I prefer the movie to be released in [2003](release_date).
+    - [Supernatural](genre). I would also like to have [Johnny Depp](cast) as an actor, and I would like the movie to be released in [2006](release_date).
+    - If possible, I would like to watch a [horror](genre) movie. Can you please consider casting [Brad Pitt](cast)? Additionally, I'd prefer the movie to be released in [2020](release_date).
+    - [Crime drama](genre). I also think that [Robert Downey Jr](cast). would add depth to the movie, and I prefer the movie to be released in [2002](release_date).
+    - If there's a choice, I would like to watch a [horror](genre) movie. It would be great if [Brad Pitt](cast) could be included as the actor. Also, can the movie be released in [2020](release_date)?
+    - [Adventure](genre). I would also like to have [Chris Hemsworth](cast) as an actor, and I would like the movie to be released in [2014](release_date).
+    - I have a preference for [horror](genre) movies, if you can find one. It would be great if [Brad Pitt](cast) could be included as the actor. Also, can the movie be released in [2020](release_date)?
+    - I'm specifically interested in [horror](genre) movies, if there are any available. It would be fantastic to have [Brad Pitt](cast) as the actor. Furthermore, can the movie be released in [2020](release_date)?
+    - [Romantic comedy](genre). I would also like to have [Jennifer Lawrence](cast) as an actress, and I would like the movie to be released in [2005](release_date).
+    - [Mystery](genre). I would also like to have [Emma Stone](cast) as an actress, and I would like the movie to be released in [2010](release_date).
+    - [Sci-fi thriller](genre). It would be great if [Tom Hanks](cast) is part of the cast, and I prefer the movie to be released in [2021](release_date).
+    - [Sci-fi](genre). I would also like to have [Tom Hanks](cast) as an actor, and I would like the movie to be released in [2021](release_date).
+    - [Mystery](genre) suspense. I would love to see [Emma Stone](cast) in a mysterious role, and I prefer the movie to be released in [2010](release_date).
+    - [Science fiction](genre). I would also like to have [Anne Hathaway](cast) as an actress, and I would like the movie to be released in [2013](release_date).
+    - [Drama](genre). I would also like to have [Ryan Gosling](cast) as an actor, and I would like the movie to be released in [2015](release_date).
+    - I have a preference for [horror](genre) films, if you can find one. Including [Brad Pitt](cast) as the actor would be terrific. Moreover, I'd like the movie to be released in [2020](release_date).
+    - [Crime](genre). I would also like to have [Robert Downey Jr](cast). as an actor, and I would like the movie to be released in [2002](release_date).
+    - [horror](genre). I would also like to have [Brad Pitt](cast) as an actor and I would like to have the movie released in [2012](release_date)
+    - [Action](genre)-packed. Having [Scarlett Johansson](cast) as the lead actor would be fantastic, and I prefer the movie to be released in [2008](release_date).
+- intent: movie_rating
+  examples: |
+    - Can you give me the general opinion of [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
+    - Can you tell me how well [Titanic](movie_name) was received by critics?
+    - What was the impact of the movie's rating on its overall success or reception?
+    - What was the audience response to the movie's rating?
+    - I'm wondering, how well was [Avengers: Endgame(movie_name) received?
+    - Could you provide more information about the movie's rating?
+    - What's the overall rating of [The Godfather](movie_name)?
+    - What's the rating of [Ghostbusters](movie_name)?
+    - Can you give me some details about the movie's rating system?
+    - What was the critical response to the movie's rating?
+    - Do you know what people think of [The Dark Knight](movie_name)?
+    - How does the movie's rating compare to other movies of the same genre or rating system?
+    - How did audiences and critics rate the movie?
+    - How did audiences and critics rate [Forrest Gump](movie_name)?
+    - How did audiences and critics rate [The Matrix](movie_name)?
+    - its rating
+    - How did the movie's rating influence its distribution and release?
+    - What's the general opinion of [The Terminator](movie_name)?
+    - How did audiences and critics rate [The Silence of the Lambs](movie_name)?
+    - Can you tell me about any controversies surrounding the movie's rating?
+    - What is the movie's classification or certification?
+    - What is the movie's overall rating?
+    - I'm curious, what's the general opinion of [Jurassic Park](movie_name)?
+    - Could you tell me how [The Wizard of Oz](movie_name) is generally rated?
+    - Could you tell me how [Star Wars: A New Hope](movie_name) was received?
+    - Can you provide information about any alternative ratings or classifications for the movie?
+    - What rating did the movie receive?
+    - What is the movie's rating?
+    - Can you inform me of the rating of [The Lion King](movie_name)?
+    - What are the factors that influenced the movie's rating?
+    - What's the general consensus on [Pulp Fiction](movie_name)?
+    - How did the rating impact the movie's marketing and promotion?
+- intent: movie_runtime
+  examples: |
+    - How long is the movie from beginning to end?
+    - How did the runtime affect the movie's pacing and storytelling?
+    - Do you happen to know the length of [The Dark Knight](movie_name)?
+    - What is the movie's length?
+    - What is the time limit for the movie?
+    - What is the duration of the movie?
+    - Could you provide more information about the movie's runtime?
+    - How long does the movie last?
+    - How did the runtime compare to the movie's source material or genre standards?
+    - Can you tell me the runtime of [Titanic](movie_name)?
+    - I'm curious, what's the duration of [Jurassic Park](movie_name)?
+    - Can you give me some details about the movie's duration?
+    - and what about the runtime?
+    - How much time does [Forrest Gump](movie_name) take up?
+    - Could you tell me the duration of [The Wizard of Oz](movie_name)?
+    - Can you tell me about any notable scenes or moments in the movie's runtime?
+    - Can you give me the duration of [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
+    - How long is the movie compared to other movies?
+    - Can you inform me of the duration of [The Silence of the Lambs](movie_name)?
+    - Could you tell me the length of [Star Wars: A New Hope](movie_name)?
+    - How much time does the movie require?
+    - How much time does [Jaws](movie_name) run for?
+    - Can you tell me the film's runtime?
+    - How much time does [The Terminator](movie_name) take up?
+    - its runtime
+    - What's the length of [Ghostbusters](movie_name)?
+    - I'm wondering, how long is [Avengers: Endgame](movie_name)?
+    - What is the running time of the movie?
+    - Could you tell me the runtime of [The Shawshank Redemption](movie_name)?
+    - Can you inform me of the runtime of [The Lion King](movie_name)?
+    - How much time does the movie take up?
+    - Can you provide information about any significant cuts made to the movie's runtime?
+    - How long is [The Godfather](movie_name)?
+- intent: movie_revenue
+  examples: |
+    - its revenue
+    - Do you know the box office revenue for [Black Panther](movie_name)?
+    - Can you tell me about any significant events that impacted the movie's revenue?
+    - Do you happen to know the box office earnings for [Star Wars: The Force Awakens](movie_name)?
+    - I'm wondering, how much money did [The Dark Knight](movie_name) bring in?
+    - What was the total earnings for [The Avengers](movie_name)?
+    - How much money did [The Lord of the Rings: The Return of the King](movie_name) make in theaters?
+    - How much money did the movie make?
+    - How much profit did the movie make?
+    - Can you tell me the earnings of [Avengers: Infinity War](movie_name)?
+    - How much did [The Exorcist](movie_name) make at the box office?
+    - and what about the revenue?
+    - How successful was the movie at the box office?
+    - What was the movie's return on investment?
+    - What was the total revenue for [The Lion King](movie_name)?
+    - Could you tell me the earnings of [Harry Potter and the Deathly Hallows Part 2](movie_name)?
+    - What is the overall financial success of the movie?
+    - What was the movie's profit margin?
+    - Can you give me some details about the movie's financial performance?
+    - What was the box office revenue for [Avatar](movie_name)?
+    - Could you tell me the box office revenue of [The Hunger Games](movie_name)?
+    - I'm curious, how much did [Jurassic World](movie_name) make in theaters?
+    - How much revenue did the movie generate compared to its budget?
+    - What was the total gross revenue of [Frozen](movie_name)?
+    - Could you provide more information about the movie's revenue?
+    - What was the movie's box office earnings?
+    - How did the movie's marketing and promotion affect its revenue?
+    - What was the box office earnings for [E.T. the Extra-Terrestrial](movie_name)?
+    - What is the total revenue generated by the movie?
+    - Do you know the financial success of [The Sound of Music](movie_name)?
+    - How did the revenue compare to other movies of the same genre or release period?
+    - What was the audience and critical reception of the movie's revenue performance?
+    - Can you give me the financial performance of [Indiana Jones and the Kingdom of the Crystal Skull](movie_name)?
+- intent: out_of_scope
+  examples: |
+    - How can I remove a virus from my computer?
+    - What's the best way to organize my closet?
+    - What's the best pizza place in town?
+    - What's the population of Tokyo?
+    - What's the best way to lose weight?
+    - How do I fix my broken phone screen?
+    - Can you recommend a good workout routine?
+    - Can you recommend a good restaurant nearby?
+    - What's the recipe for spaghetti carbonara?
+    - Can you translate this sentence into Spanish?
+    - Can you teach me how to play the guitar?
+    - What's the best way to learn a new language?
+    - How can I train my dog?
+    - What's the meaning of a particular dream I had?
+    - What's the weather like today?
+    - What's the latest news?
+    - What's the best way to clean a stain from clothes?
+    - Can you help me find my lost keys?
+    - Can you help me find a job?
+    - How do I start my own business?
+    - Can you help me with my math homework?
+    - What's the capital of Australia?
+    - Do you have any travel recommendations?
+    - Can you give me tips on public speaking?
+    - Can you recommend a good hiking trail?
+    - What's the capital of France?
+    - How can I fix my computer?
+    - What's the price of Bitcoin right now?
+    - Who won the Super Bowl last year?
+    - Can you recommend a good book to read?
+    - How can I improve my photography skills?
+    - How do I bake a chocolate cake?
+    - Can you give me fashion advice?
+- intent: ask_recommendation_with_movie
+  examples: |
+    - After seeing [Se7en](movie_name), can you recommend a similar movie to watch?
+    - After watching [The Dark Knight](movie_name), what other movies would you suggest?
+    - Are there any movies similar to [The Matrix Reloaded](movie_name) that you would recommend?
+    - After seeing [The Prestige](movie_name), can you suggest a similar movie to watch?
+    - I really enjoyed [Heat](movie_name), can you suggest a similar movie to watch?
+    - Can you suggest any movies similar to [One Flew Over the Cuckoo's Nest](movie_name)?
+    - I recently watched [No Country for Old Men](movie_name), do you know any movies that are similar?
+    - Can you suggest any movies similar to [The Usual Suspects](movie_name)?
+    - I just watched [Taxi Driver](movie_name), do you know any movies that are similar?
+    - Can you recommend any movies similar to [The Deer Hunter](movie_name)?
+    - Can you suggest any movies similar to [Alien](movie_name)?
+    - Do you know any movies that are similar to [Forrest Gump](movie_name)?
+    - Can you recommend any movies similar to [The Green Mile](movie_name)?
+    - Do you have any movie recommendations similar to [Blade Runner](movie_name)?
+    - I loved [The Shawshank Redemption](movie_name), can you recommend a similar movie?
+    - Can you recommend any movies similar to [Apocalypse Now](movie_name)?
+    - Do you have any movie recommendations similar to [The Departed](movie_name)?
+    - Can you recommend any movies similar to [The Grudge](movie_name)?
+    - I just watched [A Clockwork Orange](movie_name), do you know any movies that are similar?
+    - Can you suggest any movies similar to [Fargo](movie_name)?
+    - What other movies would you suggest if I enjoyed watching [Fight Club](movie_name)?
+    - I really enjoyed [Full Metal Jacket](movie_name), can you suggest a similar movie to watch?
+    - After seeing [The Exorcist](movie_name), can you recommend a similar movie to watch?
+    - I just watched [The Thing](movie_name), do you know any movies that are similar?
+    - Do you have any movie recommendations similar to [The Terminator](movie_name)?
+    - What other movies would you suggest if I enjoyed watching [The Social Network](movie_name)?
+    - [Inception](movie_name) was great, what other movies would you recommend that are similar?
+    - Are there any movies similar to [The Silence of the Lambs](movie_name) that you would recommend?
+    - After watching [Memento](movie_name), can you suggest a similar movie to watch?
+    - I just saw [The Matrix](movie_name), do you have any similar movie recommendations?
+    - What other movies would you suggest if I liked [American History X](movie_name)?
+    - I really enjoyed [The Sixth Sense](movie_name), can you suggest a similar movie to watch?
+    - Do you have any movie recommendations similar to [The Silence of the Lambs](movie_name)?
+- intent: goodbye
+  examples: |
+    - Okay then, talk to you soon.
+    - OK, bye now.
+    - Affirmative, goodbye for now.
+    - Alright, see you later.
+    - That's fine, goodbye for now.
+    - cu
+    - No worries, catch you later.
+    - Got it, talk to you soon.
+    - Got it, see you later.
+    - Agreed, talk to you later.
+    - I comprehend, talk to you later.
+    - ok perfect, bye
+    - have a nice day
+    - Alright then, talk to you soon.
+    - good night
+    - Okay, goodbye for now.
+    - Understood, bye for now.
+    - Sure thing, catch you later.
+    - goodbye
+    - Affirmative, see you later.
+    - Copy that, goodbye for now.
+    - ok, bye
+    - Gotcha, see you later.
+    - Agreeable, bye for now.
+    - bye
+    - Acknowledged, talk to you soon.
+    - Fine, see you soon.
+    - Roger that, see you later.
+    - Copy that, talk to you soon.
+    - Sounds good to me, talk to you later.
+    - bye bye
+    - Fine with me, goodbye for now.
+    - No problem, bye for now.
+    - Sounds good, catch you later.
+- intent: just_genre
+  examples: |
+    - [documentary](genre)
+    - [Fantasy](genre) with some elements of [Adventure](genre)
+    - [Musical](genre) as well as [Comedy](genre)
+    - [family](genre), [Thriller](genre)
+    - [horror](genre) please
+    - [thriller](genre)
+    - [horror](genre), if possible
+    - [horror](genre)
+    - [Romantic](genre) and [Comedy](genre)
+    - [Crime](genre) together with [Drama](genre)
+    - [Sci-Fi](genre) and [Fantasy](genre)
+    - I would like a [horror](genre) movie
+    - [Biopic](genre) with [Drama](genre) elements
+    - [animation](genre)
+    - [Historical](genre) and [Drama](genre)
+    - [drama](genre)
+    - [adventure](genre)
+    - [romance](genre)
+    - [fantasy](genre)
+    - [Documentary](genre) together with [Crime](genre)
+    - [history](genre)
+    - [Adventure](genre) [Comedy](genre)
+    - [action](genre)
+    - [War](genre) and also [science fiction](genre)
+    - [Superhero](genre) with [Action](genre)
+    - [mistery](genre)
+    - [comedy](genre)
+    - [family](genre)
+    - [war](genre)
+    - [Western](genre) [Drama](genre)
+    - [tv movie](genre)
+    - [tv movie](genre), [Horror](genre) and also [Comedy](genre)
+    - [science_fiction](genre)
+    - [Mystery](genre) [thriller](genre)
+- intent: just_year
+  examples: |
+    - can you find something in the year [1994](release_date)
+    - [1990](release_date)
+    - [2012](release_date)
+    - [2023](release_date)
+    - [1997](release_date)
+    - [2018](release_date)
+    - [1993](release_date)
+    - [2000](release_date)
+    - [2004](release_date)
+    - [1991](release_date), if possible
+    - [2019](release_date)
+    - [2009](release_date)
+    - [2017](release_date) should be fine
+    - [2001](release_date)
+    - [1992](release_date)
+    - [1996](release_date)
+    - [1987](release_date)
+    - [2021](release_date)
+    - Is it possible to have in [2015](release_date)
+    - [1983](release_date)
+    - [2011](release_date) is good
+    - [1984](release_date)
+    - [2014](release_date)
+    - [2002](release_date)
+    - [2013](release_date)
+    - [2008](release_date), if you can
+    - find something in [2020](release_date)
+    - [1981](release_date)
+    - [2010](release_date)
+    - [1986](release_date)
+    - [1995](release_date)
+    - in [2006](release_date)
+    - it would be nice in [1998](release_date)
+    - in the year [2003](release_date)
+- intent: ask_movie_question
+  examples: |
+    - My queries are movie-centric and I'd like to ask them.
+    - I want to ask a few questions about movies, if that's alright.
+    - What are the acceptable question formats?
+    - I'd like to pose some questions that pertain to movies.
+    - I'm hoping to ask questions specifically about movies.
+    - Which types of questions am I allowed to ask?
+    - I'd appreciate the opportunity to ask some questions about movies.
+    - Can you specify the types of questions within the allowed scope?
+    - What types of queries are appropriate?
+    - Are there any guidelines on the nature of questions I can inquire about?
+    - Are there any restrictions on the nature of questions I can ask?
+    - What are you capable of'
+    - Are there any limitations on the subject matter of the questions?
+    - I have a few inquiries about movies that I'd like to make.
+    - Can you provide guidance on the types of questions I can raise?
+    - I'd like to ask some questions that are related to the world of movies.
+    - I have some burning questions about movies that I'd like to ask.
+    - I have some movie-related inquiries that I would like to make.
+    - May I ask a few questions about movies?
+    - What can I do with this chatbot?
+    - Could you provide examples of suitable question topics?
+    - What kind of things can you do?
+    - My intention is to ask questions pertaining to movies.
+    - Are there any specific question categories I should adhere to?
+    - I have some questions about movies that I'd like to ask.
+    - What parameters define the questions I can ask?
+    - I'm interested in asking questions about the world of movies.
+    - I'm curious about the variety of questions I can pose.
+    - Could I trouble you with some questions about movies?
+    - I have some movie-related questions that I'd like to ask.
+    - What is the scope of questions that I can present?
+    - I'd appreciate some guidance on the kinds of questions that are appropriate.
+    - What are the permissible question types?
+    - I'd like to understand the boundaries of question types that I can explore.
+    - I want to pick your brain about movies by asking some questions.
+    - What sorts of inquiries can I pose?
+    - I'm interested in asking questions about movies.
+    - I'm curious and would like to ask some questions about movies.
+    - What categories of questions fall within the permissible range?
+    - I'd like to ask some questions about films.
+    - I would like to know the range of questions I can inquire about.
+    - I'm hoping to discuss some movie-related questions.
+- intent: movie_budget
+  examples: |
+    - What was the production budget compared to the box office revenue?
+    - Can you tell me about the film's budget?
+    - What was the budget allocation for various aspects of the movie?
+    - Can you tell me the budget for [Jurassic World](movie_name)?
+    - How much money was spent on the movie?
+    - What was the total budget for [The Matrix](movie_name)?
+    - How much did it cost to produce the movie?
+    - How much did [Terminator 2: Judgment Day](movie_name) cost to make?
+    - How much did [E.T. the Extra-Terrestrial](movie_name) cost to make?
+    - [The Dark Knight](movie_name), what was the budget for this movie?
+    - and what about the budget?
+    - Do you happen to know how much [The Terminator](movie_name) cost to produce?
+    - What was the production budget for the movie?
+    - Can you give me some details about the movie's financing?
+    - How much did [Jaws](movie_name) cost to make?
+    - How much did the movie's cast and crew get paid?
+    - What is the budget of the movie?
+    - Do you know how much [Titanic](movie_name) cost to produce?
+    - [Frozen](movie_name), can you tell me the production budget for this movie?
+    - What is the estimated budget for the movie?
+    - What was the production budget for [Transformers: Age of Extinction](movie_name)?
+    - Do you happen to know how much [Avatar](movie_name) cost to produce?
+    - How much was spent on the movie's special effects?
+    - How did the budget affect the movie's creative choices?
+    - What was the budget of [Titanic](movie_name)?
+    - What was the budget for [The Incredibles](movie_name)?
+    - Can you tell me the production budget for [The Avengers](movie_name)?
+    - Could you provide more information about the movie's budget?
+    - What was the total budget for [Star Wars: Episode IV - A New Hope](movie_name)?
+    - Can you tell me the budget for [Pulp Fiction](movie_name)?
+    - What was the movie's funding source?
+    - [Indiana Jones and the Kingdom of the Crystal Skull](movie_name), what was the budget for this movie?
+    - What was the return on investment for the movie?
+    - [Pirates of the Caribbean: On Stranger Tides](movie_name), what was the budget for this movie?
+    - Do you know how much [The Shawshank Redemption](movie_name) cost to produce?
+    - Can you tell me the budget for [Forrest Gump](movie_name)?
+    - its budget
+    - Can you tell me about any significant financial decisions made during the movie's production?
+    - What was the total budget for [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
+    - How much did [The Lion King](movie_name) cost to make?
+    - What was the total budget for [Rocky](movie_name)?
+    - What was the budget for [The Avengers: Age of Ultron](movie_name)?
+    - Do you happen to know what the budget for [Jurassic Park](movie_name) was?
+    - Can you tell me the budget for [Gone with the Wind](movie_name)?
+    - What was the production budget for [Harry Potter and the Deathly Hallows: Part 2](movie_name)?
+    - Can you tell me the production budget for [The Hobbit: An Unexpected Journey](movie_name)?
+- intent: movie_composer
+  examples: |
+    - Who is the composer of [The Grand Budapest Hotel](movie_name)?
+    - Who is the composer of [Schindler's List](movie_name)?
+    - Who composed the music for [The Godfather](movie_name)?
+    - [The Social Network](movie_name), who is the composer of this film?
+    - Who is responsible for the movie's musical arrangements?
+    - Who composed the music for [The Lion King](movie_name)?
+    - [Gladiator](movie_name), who was the composer of this film?
+    - Who composed the music for the movie?
+    - Who wrote the movie's score?
+    - What is the name of the person who composed the movie's music?
+    - Who is the composer of [The Matrix](movie_name)?
+    - Can you tell me who is the composer of [The Last of the Mohicans](movie_name)?
+    - Who is responsible for the movie's soundtrack?
+    - Who is credited with creating the movie's music?
+    - [Psycho](movie_name), who was the composer of this film?
+    - Who is the composer of [Interstellar](movie_name)?
+    - Who composed the music for [Pirates of the Caribbean: The Curse of the Black Pearl](movie_name)?
+    - Who composed the music for [The Hateful Eight](movie_name)?
+    - Who composed the music for [Inception](movie_name)?
+    - Who was involved in composing the movie's score?
+    - and what about the composer?
+    - Who composed the music for [Forrest Gump](movie_name)?
+    - [The Good, the Bad and the Ugly](movie_name), who was the composer of this film?
+    - Can you give me some information about the music created specifically for the movie?
+    - Can you provide more details about the person behind the movie's music?
+    - Who created the musical themes for the movie?
+    - Who was in charge of composing the movie's music?
+    - What is the name of the person who created the movie's score?
+    - Can you tell me who is the composer of [The Avengers](movie_name)?
+    - [Scream](movie_name), who composed the music for this film?
+    - Who is the composer of [The Revenant](movie_name)?
+    - Can you tell me who is the composer of [La La Land](movie_name)?
+    - Who composed the music for [The Sound of Music](movie_name)?
+    - Who composed the music for [Jaws](movie_name)?
+    - Who is the composer of [Harry Potter and the Philosopher's Stone](movie_name)?
+    - Who is the composer of the movie's score?
+    - [Doctor Zhivago](movie_name), who composed the music for this movie?
+    - Can you give me more information about the movie's music composer?
+    - Can you tell me who is the composer of [Titanic](movie_name)?
+    - [Star Wars](movie_name), who was the composer of this film?
+    - Can you tell me about the composer's previous work?
+    - [The Dark Knight](movie_name), who was the composer of this film?
+    - [Raiders of the Lost Ark](movie_name), who composed the music for this film?
+    - Who put together the movie's musical team, including the composer?
+    - [Ghostbusters](movie_name), who was the composer of this film?
+    - Can you tell me who is the composer of [Schindler's List](movie_name)?
+    - [2001: A Space Odyssey](movie_name), who composed the music for this film?
+    - its composer
+- intent: ask_movie_with_similar_plot
+  examples: |
+    - If I give you the plot, can you recommend a movie with a similar storyline?
+    - If I describe a plot, could you recommend a movie with a similar storyline?
+    - May I describe a plot and you find a movie with a similar one?
+    - If I tell you the plot, could you recommend a movie that would be worth watching?
+    - Would it be possible for you to recommend a movie based on a plot I give you?
+    - Could you assist me in locating a film with a plot similar to the one I'm describing?
+    - If I give you a plot, would you be able to recommend a movie?
+    - Can you suggest a movie that fits the plot I have in mind?
+    - Could you help me locate a movie with a plot similar to the one I'm describing?
+    - Would you be able to suggest a movie that fits a plot I provide?
+    - If I give you a plot, can you suggest a movie that would be a good fit?
+    - Are you able to recommend a movie if I tell you the plot?
+    - Could you suggest a movie that discusses?
+    - Could you recommend a movie based on a plot I tell you?
+    - Can you suggest a movie that delves into the theme of?
+    - Would you be able to identify a movie with a plot similar to the one I'm describing?
+    - Do you think you could identify a movie with a similar plot if I describe it to you?
+    - Could you suggest a movie that matches the plot I have in mind?
+    - If I provide a plot, could you suggest a movie for me to watch?
+    - Is there a possibility that you could suggest a movie with a similar plot if I tell you the story?
+    - Can I describe a plot and you help me find a movie with a similar one?
+    - What movie would you recommend that focuses on?
+    - Can you help me find a movie with a storyline that's similar to the plot I'm about to describe?
+    - I'm interested in watching a movie that talks about. do you have any suggestions?
+    - I'm looking for a movie suggestion based on a plot I have, can you help?
+    - I have a plot in mind, could you suggest a movie that fits it?
+    - Is there a movie that you would recommend that discusses?
+    - If I tell you the plot, could you suggest a movie with a similar storyline?
+    - Is there a chance you could suggest a movie with a plot similar to the one I'm describing?
+    - Could you help me find a movie with a plot that's similar to the one I'm about to describe?
+    - If I give you a plot, can you help me find a movie with a similar one?
+    - Can you help me find a movie with a similar plot if I tell you the story?
+    - Can you help me find a movie with a plot that's similar to the one I'm describing?
+    - May I tell you a plot and you suggest a movie with a similar storyline?
+    - I'm looking for a movie recommendation that matches a plot I have, can you assist?
+    - Do you know of any movies that cover the subject of?
+    - If I give you a plot, could you recommend a movie with a comparable story?
+    - If I give you a plot, can you recommend a movie that fits it well?
+    - Can you help me find a movie with a similar plot to the one I'm about to describe?
+    - May I share a plot with you and you suggest a movie with a similar one?
+    - i have a plot in mind can you recommend me a movie with a similar one
+    - Can you recommend a movie that matches a plot I have in mind?
+    - Would you be able to suggest a movie with a plot similar to the one I'm describing?
+    - Could you point me in the direction of a movie that addresses the topic of?
+    - Can I give you a plot and you find a movie that has a similar one?
+    - is there a movie with similar plot?
+    - Can you suggest a movie with a plot similar to the one I'm going to describe?
+    - If I tell you the plot, can you recommend a movie with a similar plotline?
+    - Would it be possible for me to tell you a plot and you find a movie with a similar storyline?
+    - Is it possible for me to tell you a plot and you suggest a movie with a similar one?
+- intent: just_cast
+  examples: |
+    - [Samuel L. Jackson](cast)
+    - [Francis Ford Coppola](cast) and [Al Pacino](cast)
+    - [Meryl Streep](cast) and [Johnny Depp](cast)
+    - [Cameron Diaz](cast)
+    - [Jodie Foster](cast)
+    - [Saoirse Ronan](cast)
+    - [Ben Affleck](cast)
+    - [Jennifer Aniston](cast)
+    - Do you mind including [Robert De Niro](cast)?
+    - [Charlize Theron](cast) and [Bill Murray](cast)
+    - can you please include [Jennifer Lawrence](cast)?
+    - [Brad Pitt](cast)
+    - [Timothée Chalamet](cast)
+    - If you can find something with [Natalie Portman](cast) together with [Brad Pitt](cast)
+    - [Matt Damon](cast)
+    - [Keanu Reeves](cast)
+    - [Anne Hathaway](cast)
+    - include [Charlize Theron](cast)
+    - Is it ok if I ask you [Denzel Washington](cast)?
+    - [Halle Berry](cast)
+    - [Eddie Murphy](cast)
+    - [Kevin Spacey](cast)
+    - [Anthony Hopkins](cast)
+    - [Robert Downey Jr.](cast)
+    - [Scarlett Johansson](cast)
+    - [Lupita Nyong'o](cast)
+    - I would like to see [Jack Nicholson](cast) starring in it
+    - [Sandra Bullock](cast)
+    - why don't you put [Mira Nair](cast)?
+    - If possible, [Julia Roberts](cast)
+    - [Cate Blanchett](cast)
+    - [Natalie Portman](cast) as well as [Morgan Freeman](cast)
+    - [Chris Evans](cast)
+    - [Gwyneth Paltrow](cast)
+    - [Johnny Depp](cast)
+    - [Tom Cruise](cast)
+    - [Angelina Jolie](cast)
+    - [Nicole Kidman](cast)
+    - [James Cameron](cast) and [Arnold Schwarzenegger](cast)
+    - [Will Smith](cast)
+    - [George Clooney](cast)
+    - [Oprah Winfrey](cast)
+    - [Ryan Gosling](cast)
+    - [Christian Bale](cast)
+    - [Viola Davis](cast)
+    - [Charlize Theron](cast), [Matt Damon](cast)
+    - [Meryl Streep](cast)
+    - It would be awesome to have [Charlize Theron](cast) with also [Russell Crowe](cast)
+    - [Idris Elba](cast)
+    - [Daniel Kaluuya](cast)
+- intent: movie_producer
+  examples: |
+    - What is the name of the movie's producer?
+    - Who produced [The Godfather Part II](movie_name)?
+    - Who funded the movie's production?
+    - Who was the producer of [The Usual Suspects](movie_name)?
+    - Who was the producer of [The Elephant Man](movie_name)?
+    - Who is the producer of the movie?
+    - its producer
+    - Can you find out who produced [The French Connection](movie_name)?
+    - What company produced the movie?
+    - Do you know who produced [The Matrix](movie_name)?
+    - Can you find out who produced [The Green Mile](movie_name)?
+    - Can you provide more details about the people behind the movie's production?
+    - I'm curious, who produced [The Elephant Man](movie_name)?
+    - Can you tell me who produced [Alien](movie_name)?
+    - Can you find out who produced [The King's Speech](movie_name)?
+    - Can you find out who produced [The Shining](movie_name)?
+    - Do you know who produced [The Godfather](movie_name)?
+    - Can you find out who produced [The Sound of Music](movie_name)?
+    - Could you tell me about the production team behind the movie?
+    - Do you know who produced [The Princess Bride](movie_name)?
+    - Do you know who produced [The Graduate](movie_name)?
+    - I'm curious, who produced [Schindler's List](movie_name)?
+    - Who is behind the making of the movie?
+    - Can you find out who produced [The Silence of the Lambs](movie_name)?
+    - Can you find out who produced [The Great Gatsby](movie_name)?
+    - Who backed the making of the movie?
+    - Who put together the movie's production team?
+    - I'm curious, who produced [Gone with the Wind](movie_name)?
+    - Could you tell me about the film's production company?
+    - Who produced [Apocalypse Now](movie_name)?
+    - Who was the producer of [One Flew Over the Cuckoo's Nest](movie_name)?
+    - Who was in charge of producing the movie?
+    - I'm curious, who produced [The Departed](movie_name)?
+    - Who produced [Fight Club](movie_name)?
+    - Can you tell me who produced [The Great Gatsby](movie_name)?
+    - Who produced [Raiders of the Lost Ark](movie_name)?
+    - Who are the executive producers of the movie?
+    - Who produced [Rain Man](movie_name)?
+    - I'm curious, who produced [Platoon](movie_name)?
+    - Who was the producer of [The Bridge on the River Kwai](movie_name)?
+    - Do you know who produced [The Avengers](movie_name)?
+    - Can you tell me who produced [The Lion King](movie_name)?
+    - Can you give me more information about the movie's producer?
+    - Do you know who produced [The Lion King](movie_name)?
+    - Who produced [Inception](movie_name)?
+    - Who produced [The Social Network](movie_name)?
+    - Can you give me some information about the production of the movie?
+    - Who was the producer of [The Godfather](movie_name)?
+    - Do you know who produced [Forrest Gump](movie_name)?
+    - Who produced [Goodfellas](movie_name)?
+    - Can you tell me who produced [Back to the Future](movie_name)?
+    - Can you tell me who produced [The Truman Show](movie_name)?
+- intent: just_director
+  examples: |
+    - [Joel Coen](director_name) and [Ethan Coen](director_name)
+    - [Joel Coen](director_name), if you can
+    - [Sergio Leone](director_name)
+    - [J.J. Abrams](director_name)
+    - [Michael Bay](director_name) please
+    - [Steven Soderbergh](director_name)
+    - [Anthony Russo](director_name)
+    - [Baz Luhrmann](director_name)
+    - [Quentin Tarantino](director_name)
+    - Can you include [Timur Bekmambetov](director_name)
+    - [Denis Villeneuve](director_name)
+    - [Guillermo del Toro](director_name)
+    - [Paul Thomas Anderson](director_name)
+    - [Coen Brothers](director_name)
+    - [Ang Lee](director_name) if possible
+    - [Woody Allen](director_name)
+    - [Steven Spielberg](director_name)
+    - [Fritz Lang](director_name)
+    - [Terry Gilliam](director_name) and [Christian Bale](director_name)
+    - [James Cameron](director_name)
+    - [Lilly Wachowski](director_name) and [Lana Wachowski](director_name)
+    - [Stanley Kubrick](director_name)
+    - Is it possible to have [James Wan](director_name)
+    - [Gus Van Sant](director_name)
+    - [Jean-Luc Godard](director_name)
+    - [George Lucas](director_name)
+    - [Hayao Miyazaki](director_name)
+    - I prefer [Ethan Coen](director_name), if possible
+    - [Quentin Tarantino](director_name) and [Samuel L. Jackson](director_name)
+    - [Ridley Scott](director_name)
+    - [Roman Polanski](director_name)
+    - [Wes Anderson](director_name)
+    - [Kenneth Branagh](director_name)
+    - [Jane Campion](director_name)
+    - [Danny Boyle](director_name)
+    - [David Lynch](director_name)
+    - [Darren Aronofsky](director_name)
+    - [Robert Zemeckis](director_name)
+    - [Alejandro González Iñárritu](director_name)
+    - Can I choose [Terry Gilliam](director_name)?
+    - [Akira Kurosawa](director_name)
+    - [Pedro Almodóvar](director_name)
+    - [Joel Schumacher](director_name)
+    - [Alfred Hitchcock](director_name)
+    - [Billy Wilder](director_name)
+    - [Tim Burton](director_name)
+    - [Bernardo Bertolucci](director_name)
+    - [Kathryn Bigelow](director_name)
+    - [Joe Russo](director_name)
+    - [François Truffaut](director_name)
+    - [Martin Scorsese](director_name) and [Robert De Niro](director_name)
+    - [Oliver Stone](director_name)
+    - [Guy Ritchie](director_name)
+    - [Martin Scorsese](director_name)
+- intent: movie_plot
+  examples: |
+    - [Star Wars: Episode V - The Empire Strikes Back](movie_name), can you describe the plot of this movie?
+    - [The Matrix](movie_name), what is the storyline of this movie?
+    - [Gladiator](movie_name), can you describe the plot of this movie?
+    - What is the movie's storyline?
+    - What is [Fight Club](movie_name) about?
+    - [The Shining](movie_name), can you describe the plot of this movie?
+    - What is the movie about?
+    - What is [Schindler's List](movie_name) about?
+    - [Pulp Fiction](movie_name), what is the story behind this movie?
+    - Can you tell me the storyline of [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
+    - [The Shawshank Redemption](movie_name), what is the plot of this movie?
+    - [Saving Private Ryan](movie_name), what is the plot of this movie?
+    - Could you tell me more about the movie's storyline?
+    - Can you tell me the plot of [The Prestige](movie_name)?
+    - Could you elaborate on the movie's plot?
+    - What is [The Big Lebowski](movie_name) about?
+    - Can you provide more information about the movie's plot?
+    - What is [The Departed](movie_name) about?
+    - What is the movie's central conflict?
+    - [The Matrix Reloaded](movie_name), what is the plot of this movie?
+    - Can you tell me what happens in the movie?
+    - What is [The Green Mile](movie_name) about?
+    - What is [Goodfellas](movie_name) about?
+    - and what about the plot?
+    - Can you give me an overview of the movie's plot?
+    - [The Godfather: Part III](movie_name), what is the storyline of this movie?
+    - What are the major plot points of the movie?
+    - Can you tell me the plot of [The Breakfast Club](movie_name)?
+    - What is [Inception](movie_name) about?
+    - What is [The Usual Suspects](movie_name) about?
+    - [Jurassic Park](movie_name), can you describe the plot of this movie?
+    - its plot
+    - [The Princess Bride](movie_name), can you describe the plot of this movie?
+    - Could you describe the movie's narrative?
+    - Can you tell me the plot of [Forrest Gump](movie_name)?
+    - [The Dark Knight](movie_name), what is the plot of this movie?
+    - What is [Good Will Hunting](movie_name) about?
+    - What is the main storyline of the movie?
+    - What is the movie's premise?
+    - What is the movie's primary plot?
+    - Can you give me a brief summary of the movie's plot?
+    - What is [Titanic](movie_name) about?
+    - What is [The Dark Knight Rises](movie_name) about?
+    - [The Sixth Sense](movie_name), can you describe the plot of this movie?
+    - [The Lord of the Rings: The Fellowship of the Ring](movie_name), can you describe the plot of this movie?
+    - Can you tell me the storyline of [The Green Mile](movie_name)?
+    - What is [American Beauty](movie_name) about?
+    - Can you tell me the storyline of [The Godfather: Part II](movie_name)?
+    - What is the movie's central theme or message?
+    - [The Lion King](movie_name), what is the plot of this movie?
+    - What is the movie's storyline or narrative arc?
+    - [The Terminator](movie_name), what is the plot of this movie?
+    - What is [The Lord of the Rings: The Two Towers](movie_name) about?
+    - Can you tell me the plot of [Star Wars: Episode IV - A New Hope](movie_name)?
+    - [The Exorcist](movie_name), what is the storyline of this movie?
+- intent: movie_release_date
+  examples: |
+    - Can you tell me when [The Shining](movie_name) premiered?
+    - When was the movie officially released in theaters?
+    - Can you tell me the release date of [Star Wars: Episode V - The Empire Strikes Back](movie_name)?
+    - When was [The Godfather: Part II](movie_name) released?
+    - [Inception](movie_name), what is the release date for this movie?
+    - When did the movie hit theaters?
+    - [The Princess Bride](movie_name), can you tell me the premiere date of this movie?
+    - When was [The Prestige](movie_name) released?
+    - When was [The Matrix](movie_name) released?
+    - Can you tell me when the film was released?
+    - When did the movie's promotional campaign begin in anticipation of its release?
+    - When was [The Truman Show](movie_name) released?
+    - [The Silence of the Lambs](movie_name), when was this movie released?
+    - When did [Pulp Fiction](movie_name) come out?
+    - Could you provide more information about the movie's release date?
+    - When was [The Godfather](movie_name) released?
+    - [Fight Club](movie_name), what is the release date for this movie?
+    - What is the release date of [The Green Mile](movie_name)?
+    - and what about the release date?
+    - its release date
+    - [Forrest Gump](movie_name), when was this movie released?
+    - When did [Jaws](movie_name) come out?
+    - What is the release date of [The Godfather: Part III](movie_name)?
+    - When did [Goodfellas](movie_name) hit theaters?
+    - What is the release date of [American Beauty](movie_name)?
+    - [The Lord of the Rings: The Return of the King](movie_name), what is the premiere date of this movie?
+    - What is the release date of [The Breakfast Club](movie_name)?
+    - When did the movie become commercially available?
+    - When was [The Dark Knight Rises](movie_name) released?
+    - [Indiana Jones and the Raiders of the Lost Ark](movie_name), when was this movie released?
+    - When did the movie premiere?
+    - What is the release date of [One Flew Over the Cuckoo's Nest](movie_name)?
+    - Can you tell me when [The Silence of the Lambs](movie_name) was released?
+    - When was [The Departed](movie_name) released?
+    - [Titanic](movie_name), when was this movie released?
+    - When did the movie become available on DVD or Blu-ray?
+    - Can you tell me when [The Shawshank Redemption](movie_name) premiered?
+    - Can you give me some details about the movie's release?
+    - When was [Fight Club](movie_name) released?
+    - Can you tell me about any significant events that happened on the movie's release date?
+    - [Schindler's List](movie_name), what is the release date of this movie?
+    - When was the movie released?
+    - What is the release date of [Back to the Future](movie_name)?
+    - [The Matrix Reloaded](movie_name), when was this movie released?
+    - Can you tell me when [The Godfather: Part III](movie_name) was released?
+    - When did [The Lord of the Rings: The Two Towers](movie_name) come out?
+    - [The Lion King](movie_name), when did this movie come out?
+    - What date did the movie come out?
+    - When did the movie become available for streaming or rental?
+    - Can you tell me the release date of [Gladiator](movie_name)?
+    - When was the movie first screened to the public?
+    - When did [Saving Private Ryan](movie_name) hit theaters?
+    - When was the movie released in different countries?
+    - [The Usual Suspects](movie_name), what is the release date for this movie?
+    - Can you tell me the release date of [The Shawshank Redemption](movie_name)?
+- intent: movie_genre
+  examples: |
+    - ok! and what about its genre?
+    - Would you classify [Back to the Future](movie_name) as a [sci-fi](genre) or a [comedy](genre) movie?
+    - Can you inform me of the genre of [The Dark Knight Rises](movie_name)?
+    - Do you know the genre of [The Little Mermaid](movie_name)?
+    - Can you give me an idea of the genre of [The Lion King 1½](movie_name)?
+    - What genre would you classify [Rocky](movie_name) as?
+    - Can you tell me the genre of [The Lion King 2: Simba's Pride](movie_name)?
+    - What would you classify [Toy Story](movie_name) as?
+    - What category does it fall under?
+    - Do you know the gnere of [The Princess Bride](movie_name)?
+    - can you tell me the genre of [Spongebob](movie_name)?
+    - I'm curious, what genre does [Pulp Fiction](movie_name) fall under?
+    - Could you tell me the genre of [Star Wars: A New Hope](movie_name)?
+    - Can you tell me the genre of [E.T. the Extra-Terrestrial](movie_name)?
+    - Can you give me an idea of the genre of [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
+    - How would you categorize [The Exorcist](movie_name) in terms of genre?
+    - ok and can you tell me the genre of [Inception](movie_name)?
+    - Do you happen to know the genre of [The Dark Knight](movie_name)?
+    - How would you categorize [Black Panther](movie_name) in terms of genre?
+    - What genre does the movie fall into?
+    - How would you categorize [The Princess and the Frog](movie_name) in terms of genre?
+    - What is the movie's theme?
+    - What is the genre of the movie we're discussing?
+    - How would you categorize [Jurassic Park](movie_name) in terms of genre?
+    - What genre would you classify [The Shawshank Redemption](movie_name) as?
+    - What genre would you classify [Harry Potter and the Philosopher's Stone](movie_name) as?
+    - Can you clarify the genre of the movie?
+    - What kind of movie is it?
+    - Do you happen to know the genre of [The Matrix](movie_name)?
+    - In what genre does the movie fit?
+    - Would you classify [Gone with the Wind](movie_name) as a [drama](genre) or a [romance](genre) movie?
+    - What category of film does the movie fall under?
+    - Can you tell me the genre of [The Godfather](movie_name)?
+    - Could you tell me the movie's genre?
+    - Do you happen to know the genre of [The Hunger Games](movie_name)?
+    - and what about the genre?
+    - Can you tell me the genre of [The Incredibles](movie_name)?
+    - Can you give me an idea of the genre of [Finding Nemo](movie_name)?
+    - I'm curious, what genre does [La La Land](movie_name) belong to?
+    - How would you categorize [Wreck-It Ralph](movie_name) in terms of genre?
+    - I'm wondering, what genre does [The Lion King](movie_name) belong to?
+    - What is the movie's classification?
+    - Could you tell me the genre of [The Shawshank Redemption](movie_name)?
+    - Nice, thank you! can you tell me also about its genre?
+    - Perfect. And what about its genre?
+    - I'm curious, what genre does [Scream](movie_name) belong to?
+    - What genre would you classify [The Hobbit: An Unexpected Journey](movie_name) as?
+    - Can you tell me the movie's category?
+    - Would you classify [The Terminator](movie_name) as a [sci-fi](genre) or an [action](genre) movie?
+    - Can you describe the movie's genre?
+    - How would you categorize [Jaws](movie_name) in terms of genre?
+    - Would you classify [Aladdin](movie_name) as a [romance](genre) or an [adventure](genre) movie?
+    - I'm wondering, what gnere does [The Avengers](movie_name) fall under?
+    - In what genre does the movie primarily belong to?
+    - What genre would you classify [The Hunchback of Notre Dame](movie_name) as?
+    - perfect and can you tell me the gerne of [Avatar](movie_name)?
+- intent: movie_director
+  examples: |
+    - Who is credited as the director for the movie?
+    - Who was the director of [The Usual Suspects](movie_name)?
+    - Can you tell me who directed [Blade Runner](movie_name)?
+    - [2001: A Space Odyssey](movie_name), who directed this film?
+    - Who directed [Gladiator](movie_name)?
+    - Who was the director of [The Graduate](movie_name)?
+    - Who directed [A Beautiful Mind](movie_name)?
+    - Could you provide more information about the movie's director?
+    - Who directed [Goodfellas](movie_name)?
+    - Can you tell me who directed [The Green Mile](movie_name)?
+    - Who directed [Heat](movie_name)?
+    - Who was the director of [Inception](movie_name)?
+    - Can you tell me the name of the film's director?
+    - Who is the person behind the movie's direction?
+    - Can you tell me who directed [The Matrix](movie_name)?
+    - Who directed [Psycho](movie_name)?
+    - Who directed [The Prestige](movie_name)?
+    - Who directed [Raiders of the Lost Ark](movie_name)?
+    - Who directed [Reservoir Dogs](movie_name)?
+    - [Schindler's List](movie_name), can you tell me who directed this film?
+    - Do you know who directed [Forrest Gump](movie_name)?
+    - Who was in charge of directing the movie?
+    - [Jaws](movie_name), who was the director of this film?
+    - Who is the director of the movie?
+    - [Saving Private Ryan](movie_name), who directed this film?
+    - Who directed the movie?
+    - Who directed [Scarface](movie_name)?
+    - [The Big Lebowski](movie_name), who directed this film?
+    - Who directed [Eternal Sunshine of the Spotless Mind](movie_name)?
+    - Who directed [No Country for Old Men](movie_name)?
+    - Who was the director of [The Truman Show](movie_name)?
+    - Can you tell me who directed [The Breakfast Club](movie_name)?
+    - [The Godfather](movie_name), who was the director of this film?
+    - and what about the director?
+    - [The Departed](movie_name), who was the director of this film?
+    - [Gone with the Wind](movie_name), who directed this film?
+    - [Pulp Fiction](movie_name), can you tell me who directed this film?
+    - Who was the director of [Taxi Driver](movie_name)?
+    - Can you tell me who directed [Back to the Future](movie_name)?
+    - Who was the director of [The Silence](movie_name)?
+    - Can you tell me who was at the helm of the movie's direction?
+    - [Die Hard](movie_name), who directed this film?
+    - Can you give me some details about the movie's director?
+    - Who directed [Apocalypse Now](movie_name)?
+    - Who directed [The Princess Bride](movie_name)?
+    - Who is responsible for the direction of the movie?
+    - [The Terminator](movie_name), who directed this film?
+    - Can you tell me who directed [The Lion King](movie_name)?
+    - Who oversaw the movie's direction and production?
+    - Who had creative control over the movie's direction?
+    - Can you tell me who directed [The Exorcist](movie_name)?
+    - Who directed [Fight Club](movie_name)?
+    - Who helmed the movie's direction?
+    - Who was in charge of the movie's creative vision?
+    - Who was involved in the movie's direction?
+    - Who led the movie's direction and creative choices?
+    - What is the director's name?
+- intent: movie_cast
+  examples: |
+    - list me [2](number_of_actors) actors for the aforementioned movie
+    - can you tell me [1](number_of_actors) actor for this movie?
+    - Would you be able to tell me the names of [four](number_of_actors) actors that played roles in the movie?
+    - Who are the people behind the movie's performances?
+    - [American Beauty](movie_name), who is in the cast of this movie?
+    - Can you let me know [4](number_of_actors) actors who feature in the movie?
+    - Who starred in the movie?
+    - Can you provide me with the names of [30](number_of_actors) actors in the movie?
+    - [The Dark Knight Rises](movie_name), who is in the cast of this movie?
+    - What is the name of the movie's actors?
+    - Who are the actors in [Fight Club](movie_name)?
+    - Who are the actors in [The Usual Suspects](movie_name)?
+    - [The Lion King](movie_name), who stars in this movie?
+    - I'm curious to know if you can tell me [3](number_of_actors)] actors in the movie?
+    - Who is in the cast of [The Prestige](movie_name)?
+    - [The Terminator](movie_name), who is in the cast of this movie?
+    - Can you name some of the actors in [Saving Private Ryan](movie_name)?
+    - Who are the actors in [The Princess Bride](movie_name)?
+    - how about you tell me [6](number_of_actors) actors for this movie.
+    - Who are the actors in [Schindler's List](movie_name)?
+    - [Inception](movie_name), who are the actors in this movie?
+    - can you tell me [9](number_of_actors) actor for this movie?
+    - Can you tell me who stars in [The Matrix](movie_name)?
+    - Can you name some of the cast of [The Lord of the Rings: The Return of the King](movie_name)?
+    - Could you please provide me with the names of [every](number_of_actors) actor who acted in the movie?
+    - Can you tell me who stars in [The Shining](movie_name)?
+    - Would it be possible for you to give me the names of [every individual](number_of_actors) actor that appear in the movie?
+    - Who are the actors in [The Silence of the Lambs](movie_name)?
+    - Can you list [all](number_of_actors) the possible actors from the movie?
+    - May I ask you to identify [five](number_of_actors) actors who act in the movie?
+    - Who are the actors in [Back to the Future](movie_name)?
+    - Who had significant roles in the movie's casting?
+    - Who played the lead roles in the movie?
+    - Can you tell me who stars in [Jurassic Park](movie_name)?
+    - Who is in the cast of [Star Wars: Episode V - The Empire Strikes Back](movie_name)?
+    - [Schindler's List](movie_name), who is part of the cast in this movie?
+    - Could you provide more information about the movie's cast?
+    - Who was involved in selecting the actors for the movie?
+    - [The Lord of the Rings: The Fellowship of the Ring](movie_name), who stars in this movie?
+    - Who is credited with acting in the movie?
+    - Can you provide some information about the chemistry between the actors in the movie?
+    - Who is in the cast of [The Green Mile](movie_name)?
+    - Who was responsible for casting the actors in the movie?
+    - Who collaborated with the actors in the movie's production?
+    - [The Silence of the Lambs](movie_name), who is in the cast of this movie?
+    - Could you give me a list of [ten](number_of_actors) actors who star in the movie?
+    - Who stars in [Indiana Jones and the Raiders of the Lost Ark](movie_name)?
+    - [Pulp Fiction](movie_name), who are the actors in this movie?
+    - [The Departed](movie_name), who is part of the cast in this movie?
+    - Can you tell me [10](number_of_actors) actors in the movie?
+    - can you tell me [7](number_of_actors) actor for this movie?
+    - Can you tell me about the film's cast?
+    - Can you give me a rundown of [three](number_of_actors) actors who appeared in the movie?
+    - Who put together the movie's cast?
+    - Who stars in [Goodfellas](movie_name)?
+    - Who are the actors in [The Breakfast Club](movie_name)?
+    - May I request that you name [two](number_of_actors) actors who acted in the movie?
+    - Who were the supporting actors in the movie?
+    - [The Green Mile](movie_name), who is part of the cast in this movie?
+    - Who performed the movie's major roles?
+    - Who is part of the cast in [The Dark Knight](movie_name)?
+    - Who is part of the cast in [Titanic](movie_name)?
+    - May I know the names of [each](number_of_actors) actor who starred in the movie?
+    - Can you name some of the actors in [Forrest Gump](movie_name)?
+    - What is the name of the person who portrayed the main character?
+    - Who stars in [Jaws](movie_name)?
+    - [Fight Club](movie_name), who is part of the cast in this movie?
+    - Can you name some of the actors in [Gladiator](movie_name)?
+    - Could you please inform me of [2](number_of_actors) actors that starred in the movie?
+    - Can you name some of the cast of [The Godfather: Part II](movie_name)?
+    - Who are the main actors in the movie?
+    - Who are the actors in [The Sixth Sense](movie_name)?
+    - I was wondering if you could tell me the names of [thirty](number_of_actors) actors featured in the movie?
+    - Can you tell me the names of [every single](number_of_actors) actor who had roles in the movie?
+    - [Star Wars: Episode IV - A New Hope](movie_name), who are the actors in this movie?
+    - Would you mind sharing the names of [12](number_of_actors) actors who played roles in the movie?
+    - Can you tell me who stars in [The Truman Show](movie_name)?
+- synonym: '1'
+  examples: |
+    - one
+    - One
+- synonym: '2'
+  examples: |
+    - two
+    - Two
+- synonym: '3'
+  examples: |
+    - three
+    - Three
+- synonym: '4'
+  examples: |
+    - four
+    - Four
+- synonym: '5'
+  examples: |
+    - five
+    - Five
+- synonym: '6'
+  examples: |
+    - six
+    - Six
+- synonym: '7'
+  examples: |
+    - seven
+    - Seven
+- synonym: '8'
+  examples: |
+    - eight
+    - Eight
+- synonym: '9'
+  examples: |
+    - nine
+    - Nine
+- synonym: '10'
+  examples: |
+    - ten
+    - Ten
+- synonym: horror
+  examples: |
+    - scary
+- synonym: comedy
+  examples: |
+    - funny

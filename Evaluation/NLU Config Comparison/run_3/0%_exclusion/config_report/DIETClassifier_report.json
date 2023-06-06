@@ -1,0 +1,89 @@
+{
+  "rating": {
+    "precision": 0.8333333333333334,
+    "recall": 0.625,
+    "f1-score": 0.7142857142857143,
+    "support": 8,
+    "confused_with": {
+      "movie_name": 3
+    }
+  },
+  "movie_name": {
+    "precision": 0.878125,
+    "recall": 0.9183006535947712,
+    "f1-score": 0.8977635782747604,
+    "support": 306,
+    "confused_with": {
+      "number_of_actors": 1
+    }
+  },
+  "genre": {
+    "precision": 0.8928571428571429,
+    "recall": 0.8620689655172413,
+    "f1-score": 0.8771929824561403,
+    "support": 29,
+    "confused_with": {
+      "movie_name": 1
+    }
+  },
+  "number_of_actors": {
+    "precision": 0.8571428571428571,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.75,
+    "support": 9,
+    "confused_with": {
+      "rating": 1
+    }
+  },
+  "release_date": {
+    "precision": 0.9523809523809523,
+    "recall": 1.0,
+    "f1-score": 0.975609756097561,
+    "support": 20,
+    "confused_with": {}
+  },
+  "cast": {
+    "precision": 0.8333333333333334,
+    "recall": 0.8771929824561403,
+    "f1-score": 0.8547008547008548,
+    "support": 57,
+    "confused_with": {
+      "director_name": 3
+    }
+  },
+  "movie_period": {
+    "precision": 0.9555555555555556,
+    "recall": 0.9772727272727273,
+    "f1-score": 0.9662921348314608,
+    "support": 44,
+    "confused_with": {}
+  },
+  "director_name": {
+    "precision": 0.8214285714285714,
+    "recall": 0.5227272727272727,
+    "f1-score": 0.6388888888888888,
+    "support": 44,
+    "confused_with": {
+      "cast": 8
+    }
+  },
+  "micro avg": {
+    "precision": 0.8796116504854369,
+    "recall": 0.8762088974854932,
+    "f1-score": 0.877906976744186,
+    "support": 517
+  },
+  "macro avg": {
+    "precision": 0.8780195932539683,
+    "recall": 0.8061536585293525,
+    "f1-score": 0.8343417386919225,
+    "support": 517
+  },
+  "weighted avg": {
+    "precision": 0.8775918378311997,
+    "recall": 0.8762088974854932,
+    "f1-score": 0.8732623714529706,
+    "support": 517
+  },
+  "accuracy": 0.9638342696629213
+}

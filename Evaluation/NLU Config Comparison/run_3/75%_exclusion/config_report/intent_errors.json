@@ -1,0 +1,594 @@
+[
+  {
+    "text": "0",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.30946576595306396
+    }
+  },
+  {
+    "text": "try to find a movie with eight of rating",
+    "intent": "just_rating",
+    "intent_prediction": {
+      "name": "movie_rating",
+      "confidence": 0.30313199758529663
+    }
+  },
+  {
+    "text": "I'm looking for a movie recommendation. I have a preference for horror films, especially those featuring Johnny Depp. If it was released in 2020, that would be fantastic.",
+    "intent": "recommendation_without_movie_over_informative",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.4024762213230133
+    }
+  },
+  {
+    "text": "Do you have any movie suggestions? I'm interested in watching a horror movie, and it would be awesome if Johnny Depp starred in it. Also, I prefer movies released in 2020.",
+    "intent": "recommendation_without_movie_over_informative",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.30168023705482483
+    }
+  },
+  {
+    "text": "can you recommend me a movie? I would like it to be an horror movie with Johnny Depp as an actor. I would like also to be released in 2020.",
+    "intent": "recommendation_without_movie_over_informative",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.6402233839035034
+    }
+  },
+  {
+    "text": "Could you inform me of the genre and producer of Lord of the Rings?",
+    "intent": "movie_genre+movie_producer",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.34489262104034424
+    }
+  },
+  {
+    "text": "What is the genre and producer of Jurassic Park? I'd appreciate it if you could tell me.",
+    "intent": "movie_genre+movie_producer",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.3705715835094452
+    }
+  },
+  {
+    "text": "moin",
+    "intent": "greetings",
+    "intent_prediction": {
+      "name": "just_rating",
+      "confidence": 0.17304866015911102
+    }
+  },
+  {
+    "text": "Preceding this year",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.2593795955181122
+    }
+  },
+  {
+    "text": "In the year that came before this one",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.293333500623703
+    }
+  },
+  {
+    "text": "Prior to the start of this year, if doable",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.4996231198310852
+    }
+  },
+  {
+    "text": "Potentially before this year",
+    "intent": "is_before",
+    "intent_prediction": {
+      "name": "is_after",
+      "confidence": 0.2097943127155304
+    }
+  },
+  {
+    "text": "In the year that follows",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.25596246123313904
+    }
+  },
+  {
+    "text": "If feasible, after this year",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.5896018147468567
+    }
+  },
+  {
+    "text": "If it's possible, after this year ends",
+    "intent": "is_after",
+    "intent_prediction": {
+      "name": "is_exactly",
+      "confidence": 0.5063420534133911
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "just_genre",
+      "confidence": 0.14190608263015747
+    }
+  },
+  {
+    "text": "nope",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.3056359887123108
+    }
+  },
+  {
+    "text": "No, I want to make a change",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.1477242261171341
+    }
+  },
+  {
+    "text": "Can you suggest a movie that's worth watching?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.26298099756240845
+    }
+  },
+  {
+    "text": "What movie would you suggest I watch?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.28613603115081787
+    }
+  },
+  {
+    "text": "suggest a movie",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.30047470331192017
+    }
+  },
+  {
+    "text": "I'm in the mood for a foreign movie, could you recommend one?",
+    "intent": "ask_recommendation_without_movie",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.31286126375198364
+    }
+  },
+  {
+    "text": "yeah",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.47893932461738586
+    }
+  },
+  {
+    "text": "indeed",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.15170398354530334
+    }
+  },
+  {
+    "text": "Count me in!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.284685343503952
+    }
+  },
+  {
+    "text": "What is the total length of the movie?",
+    "intent": "movie_runtime",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.20751886069774628
+    }
+  },
+  {
+    "text": "Can you tell me about any long-term revenue streams related to the movie, such as home video sales or merchandise?",
+    "intent": "movie_revenue",
+    "intent_prediction": {
+      "name": "ask_recommendation_with_movie",
+      "confidence": 0.2212384045124054
+    }
+  },
+  {
+    "text": "see you later",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.09761584550142288
+    }
+  },
+  {
+    "text": "cee you later",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.17539045214653015
+    }
+  },
+  {
+    "text": "All right, chat with you later.",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2700594663619995
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.12871597707271576
+    }
+  },
+  {
+    "text": "What's the meaning of life?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_rating",
+      "confidence": 0.12499590218067169
+    }
+  },
+  {
+    "text": "What's the stock price of Apple?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.14594519138336182
+    }
+  },
+  {
+    "text": "Tell me a joke.",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.078056201338768
+    }
+  },
+  {
+    "text": "music",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.24816539883613586
+    }
+  },
+  {
+    "text": "western",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.08764945715665817
+    }
+  },
+  {
+    "text": "horror would be great",
+    "intent": "just_genre",
+    "intent_prediction": {
+      "name": "movie_rating",
+      "confidence": 0.07571946084499359
+    }
+  },
+  {
+    "text": "try to find it in the year 1988",
+    "intent": "just_year",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.4249735474586487
+    }
+  },
+  {
+    "text": "What can I do with you?",
+    "intent": "ask_movie_question",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.10553980618715286
+    }
+  },
+  {
+    "text": "Can you provide information about the profitability of the movie?",
+    "intent": "movie_budget",
+    "intent_prediction": {
+      "name": "movie_producer",
+      "confidence": 0.2936588525772095
+    }
+  },
+  {
+    "text": "Can you recommend a movie that explores the subject of?",
+    "intent": "ask_movie_with_similar_plot",
+    "intent_prediction": {
+      "name": "ask_recommendation_without_movie",
+      "confidence": 0.31641140580177307
+    }
+  },
+  {
+    "text": "Emma Stone",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.46374863386154175
+    }
+  },
+  {
+    "text": "[Natalie Portman] and possibly Diane Keaton",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.2673993408679962
+    }
+  },
+  {
+    "text": "Harrison Ford",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.3502187728881836
+    }
+  },
+  {
+    "text": "Michelle Pfeiffer",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "ask_movie_question",
+      "confidence": 0.13379056751728058
+    }
+  },
+  {
+    "text": "Charlize Theron and Denzel Washington",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.36067846417427063
+    }
+  },
+  {
+    "text": "Is it a problem if I ask you Natalie Portman and also Jack Nicholson?",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_rating+just_director",
+      "confidence": 0.18512149155139923
+    }
+  },
+  {
+    "text": "John Travolta",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.429165780544281
+    }
+  },
+  {
+    "text": "Mark Wahlberg",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.18280555307865143
+    }
+  },
+  {
+    "text": "I would like to have Leonardo DiCaprio in it",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_genre+just_cast+just_year",
+      "confidence": 0.15226905047893524
+    }
+  },
+  {
+    "text": "Tom Hanks",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.1273210644721985
+    }
+  },
+  {
+    "text": "Leonardo DiCaprio, Natalie Portman and Natalie Portman",
+    "intent": "just_cast",
+    "intent_prediction": {
+      "name": "just_director",
+      "confidence": 0.35050126910209656
+    }
+  },
+  {
+    "text": "Who oversaw the making of the movie?",
+    "intent": "movie_producer",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.4818402826786041
+    }
+  },
+  {
+    "text": "Why don't you put Jean-Pierre Jeunet",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.09358540922403336
+    }
+  },
+  {
+    "text": "David Fincher",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.23166653513908386
+    }
+  },
+  {
+    "text": "Lars von Trier",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "movie_composer",
+      "confidence": 0.19510865211486816
+    }
+  },
+  {
+    "text": "John Ford, please",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.1244509145617485
+    }
+  },
+  {
+    "text": "Orson Welles please",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "ask_movie_with_similar_plot",
+      "confidence": 0.16670000553131104
+    }
+  },
+  {
+    "text": "Mel Brooks",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.15188640356063843
+    }
+  },
+  {
+    "text": "Christopher Nolan",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.4560765027999878
+    }
+  },
+  {
+    "text": "Spike Lee",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.13501191139221191
+    }
+  },
+  {
+    "text": "Clint Eastwood",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "greetings",
+      "confidence": 0.22007714211940765
+    }
+  },
+  {
+    "text": "I would like Wong Kar-wai",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "ask_movie_question",
+      "confidence": 0.1025443822145462
+    }
+  },
+  {
+    "text": "Richard Linklater",
+    "intent": "just_director",
+    "intent_prediction": {
+      "name": "just_cast",
+      "confidence": 0.3955863118171692
+    }
+  },
+  {
+    "text": "Can you give me a rundown of the movie's plot?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.12506252527236938
+    }
+  },
+  {
+    "text": "Could you describe the movie's main events?",
+    "intent": "movie_plot",
+    "intent_prediction": {
+      "name": "movie_genre",
+      "confidence": 0.23445162177085876
+    }
+  },
+  {
+    "text": "What is the movie's style?",
+    "intent": "movie_genre",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.4018847942352295
+    }
+  },
+  {
+    "text": "When was the movie made available for public viewing?",
+    "intent": "movie_release_date",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.2528335154056549
+    }
+  },
+  {
+    "text": "Who was responsible for directing the actors in the movie?",
+    "intent": "movie_director",
+    "intent_prediction": {
+      "name": "movie_cast",
+      "confidence": 0.6226786971092224
+    }
+  },
+  {
+    "text": "its cast",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.09215801954269409
+    }
+  },
+  {
+    "text": "Who had creative control over the movie's casting choices?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_director",
+      "confidence": 0.5779568552970886
+    }
+  },
+  {
+    "text": "Can you tell me about the previous works of the movie's actors?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_plot",
+      "confidence": 0.1484864354133606
+    }
+  },
+  {
+    "text": "Can you give me some details about the cast of the movie?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_revenue",
+      "confidence": 0.1731603592634201
+    }
+  },
+  {
+    "text": "and what about the cast?",
+    "intent": "movie_cast",
+    "intent_prediction": {
+      "name": "movie_release_date",
+      "confidence": 0.16652625799179077
+    }
+  }
+]

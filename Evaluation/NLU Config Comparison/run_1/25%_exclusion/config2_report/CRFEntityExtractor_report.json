@@ -1,0 +1,89 @@
+{
+  "rating": {
+    "precision": 0.5555555555555556,
+    "recall": 0.625,
+    "f1-score": 0.5882352941176471,
+    "support": 8,
+    "confused_with": {
+      "number_of_actors": 2
+    }
+  },
+  "movie_name": {
+    "precision": 0.9580152671755725,
+    "recall": 0.8869257950530035,
+    "f1-score": 0.9211009174311927,
+    "support": 283,
+    "confused_with": {
+      "cast": 4
+    }
+  },
+  "genre": {
+    "precision": 0.9655172413793104,
+    "recall": 0.9333333333333333,
+    "f1-score": 0.9491525423728815,
+    "support": 30,
+    "confused_with": {
+      "director_name": 1
+    }
+  },
+  "number_of_actors": {
+    "precision": 0.6666666666666666,
+    "recall": 0.4444444444444444,
+    "f1-score": 0.5333333333333333,
+    "support": 9,
+    "confused_with": {
+      "rating": 2
+    }
+  },
+  "release_date": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 21,
+    "confused_with": {}
+  },
+  "cast": {
+    "precision": 0.7777777777777778,
+    "recall": 0.711864406779661,
+    "f1-score": 0.7433628318584071,
+    "support": 59,
+    "confused_with": {
+      "director_name": 16
+    }
+  },
+  "movie_period": {
+    "precision": 0.9629629629629629,
+    "recall": 0.8387096774193549,
+    "f1-score": 0.896551724137931,
+    "support": 31,
+    "confused_with": {}
+  },
+  "director_name": {
+    "precision": 0.5853658536585366,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.6233766233766234,
+    "support": 36,
+    "confused_with": {
+      "cast": 8
+    }
+  },
+  "micro avg": {
+    "precision": 0.8930957683741648,
+    "recall": 0.8406708595387841,
+    "f1-score": 0.8660907127429806,
+    "support": 477
+  },
+  "macro avg": {
+    "precision": 0.8089826656470478,
+    "recall": 0.763368040462058,
+    "f1-score": 0.781889158328502,
+    "support": 477
+  },
+  "weighted avg": {
+    "precision": 0.8979920204799976,
+    "recall": 0.8406708595387841,
+    "f1-score": 0.8673901199719821,
+    "support": 477
+  },
+  "accuracy": 0.9694092827004219
+}
