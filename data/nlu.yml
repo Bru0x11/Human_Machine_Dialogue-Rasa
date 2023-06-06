@@ -1406,7 +1406,7 @@ nlu:
     - [Fantasy](genre) with some elements of [Adventure](genre)
     - [music](genre) with some [Mystery](genre) and [Thriller](genre) elements
     - [horror](genre)
-- intent: just_cast #we include both actors/actresses
+- intent: just_cast
   examples: |
     - [Tom Hanks](cast)
     - [Meryl Streep](cast)

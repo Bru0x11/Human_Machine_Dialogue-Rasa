@@ -69,7 +69,12 @@ policies:
   - name: TEDPolicy
     max_history: 7
     epochs: 50
-    constrain_similarities: yes
+    constrain_similarities: true
   - name: AugmentedMemoizationPolicy
     max_history: 4
   - name: RulePolicy
+  - name: UnexpecTEDIntentPolicy
+    epochs: 20
+    nlu_threshold: 0.2
+    ambiguity_threshold: 0.1
+    core_threshold: 0.2

@@ -22,7 +22,7 @@ rules:
 - rule: Movie genre retrieval
   steps:
   - intent: movie_genre
-  - action: action_retrieve_genre #set here is_inside_rules to True
+  - action: action_retrieve_genre
   - action: action_show_genre
 
 - rule: Movie director retrieval
@@ -84,7 +84,6 @@ rules:
   - intent: movie_cast
   - action: action_retrieve_cast
   - action: action_show_cast
-
 
 # Multiple intents requests
 - rule: Movie genre and producer retrieval
@@ -526,7 +525,6 @@ rules:
   - action: action_show_revenue
   - action: action_retrieve_rating
   - action: action_show_rating
-
 
 # RULES TO ASK IF YOU WANT TO KNOW MORE ABOUT OTHER MOVIES (it's a formal and smooth way of transitioning from TASK #1 to the others)
 - rule: Keep asking affirmative

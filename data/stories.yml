@@ -314,7 +314,7 @@ stories:
   - checkpoint: director_name_done
 
 # user over-informative from the very first interaction
-- story: recommendation_without_movie user over-informative in the first iteration
+- story: recommendation_without_movie user over-informative in the first iteraction
   steps:
   - intent: recommendation_without_movie_over_informative
     entities:
