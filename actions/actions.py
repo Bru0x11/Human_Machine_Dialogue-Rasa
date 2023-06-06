@@ -97,7 +97,7 @@ class ShowGenre(Action):
             ]
             question = questions[choose_question].format(movie_name)
             genres = '\n'.join('* {}'.format(genre) for genre in genre_list)
-            message = 'Sure! The genres of {} are:\n{}'.format(movie_name, genres, question)
+            message = 'Sure! The genres of {} are:\n{}.\n{}'.format(movie_name, genres, question)
             dispatcher.utter_message(text=message)
 
             # Reset the genre slot to None. This is helpful whenever we ask a question related to another movie and we have some errors with it.
@@ -942,7 +942,7 @@ class ValidateRetrievePlotForm(FormValidationAction):
             model = SentenceTransformer('task3_tools/fine_tuned_model')  # Load the SentenceTransformer model
             index = faiss.read_index('task3_tools/fine_tuned_encoding.index')  # Read the faiss index
             results = self.search(input_plot, top_k=5, index=index, model=model, movie_dataframe=dataframe)  # Perform the search using the input plot
-            movies = '\n'.join('* {}'.format(result.get('Title')) for result in results)  # Generate a string of movie titles from the search results
+            movies = '\n'.join('* {}.'.format(result.get('Title')) for result in results)  # Generate a string of movie titles from the search results
             message = 'Great! Here is a list of movies that bear some resemblance to the one you inquired about:\n{}\nIf you want to know something more about them, feel free to ask!'.format(movies)
             dispatcher.utter_message(text=message)  
 

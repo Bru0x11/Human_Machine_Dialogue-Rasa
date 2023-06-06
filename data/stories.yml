@@ -503,7 +503,7 @@ stories:
   - slot_was_set:
     - iterate_plot: null
   - active_loop: null
-  - checkpoint: continue_using_bot
+  - checkpoint: reset_phase # it can be the case that some slots are filled wrongly by the system, so I reset them
 
 # DO YOU WANT TO CONTINUE? + ENDING
 - story: continue_yes
